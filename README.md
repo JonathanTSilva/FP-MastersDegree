@@ -3,7 +3,7 @@
 <!-- LOGO DO PROJETO -->
 <h1 align="center">
   <br>
-  <a href="https://github.com/JonathanTSilva/<REPO>"><img src="https://img.freepik.com/fotos-gratis/bandeira-do-brasil-fundo_135932-1335.jpg" alt="Logo" width="200"></a>
+  <a href="https://github.com/JonathanTSilva/<REPO>"><img src="http://portal.eesc.usp.br/comunicacao/wp-content/uploads/2020/06/logo_eesc_vertical_com_subtitulo_ingles-1.png" alt="Logo" width="200"></a>
   <br>
   Título
   <br>
