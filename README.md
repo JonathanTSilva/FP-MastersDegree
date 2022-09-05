@@ -5,7 +5,7 @@
   <br>
   <a href="https://github.com/JonathanTSilva/<REPO>"><img src="http://portal.eesc.usp.br/comunicacao/wp-content/uploads/2020/06/logo_eesc_vertical_com_subtitulo_ingles-1.png" alt="Logo" width="200"></a>
   <br>
-  Título
+  Master of Science in Electrical Engineering
   <br>
 </h1>
 
