@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<minder version="1.14.0" parent-etag="1354373793" etag="1526894947">
+  <theme name="default" label="Light" index="-1"/>
+  <styles>
+    <style level="0" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="1" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="2" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="3" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="4" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="5" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="6" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="7" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="8" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="9" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+    <style level="10" isset="true" branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100"/>
+  </styles>
+  <drawarea x="-1204.2600986221769" y="-677.43468245839699" scale="0.25"/>
+  <images/>
+  <nodes>
+    <node id="0" posx="2031.3825758357184" posy="1192.4346824583984" width="276" height="50" side="left" fold="false" treesize="1619.9999999999998" layout="Horizontal" group="false">
+      <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+      <nodename posx="2047.3825758357184" posy="1208.4346824583984" maxwidth="800">
+        <text data="Mestrado em Engenharia El&#xE9;trica"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="2" posx="2387.3825758357184" posy="457.43468245839853" width="126" height="50" side="right" fold="false" treesize="150.00000000000011" color="#f37329" colorroot="false" layout="Horizontal" group="false">
+          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <nodename posx="2403.3825758357184" posy="473.43468245839853" maxwidth="800">
+            <text data="Parte pr&#xE1;tica"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="33" posx="2593.3825758357184" posy="457.43468245839853" width="176" height="50" side="right" fold="false" treesize="150.00000000000006" color="#f37329" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2609.3825758357184" posy="473.43468245839853" maxwidth="800">
+                <text data="Ambiente de testes"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="4" posx="2849.3825758357184" posy="407.43468245839858" width="337" height="50" side="right" fold="false" treesize="50" color="#f37329" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="2865.3825758357184" posy="423.43468245839858" maxwidth="800">
+                    <text data="1x OPC UA Server (pode estar no device)"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="5" posx="2849.3825758357184" posy="457.43468245839853" width="159" height="50" side="right" fold="false" treesize="50" color="#f37329" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="2865.3825758357184" posy="473.43468245839853" maxwidth="800">
+                    <text data="1x OPC UA Client"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="3" posx="2849.3825758357184" posy="507.43468245839847" width="265" height="50" side="right" fold="false" treesize="50" color="#f37329" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="2865.3825758357184" posy="523.43468245839847" maxwidth="800">
+                    <text data="1x Device (DCN, DF63, S71200)"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+        <node id="17" posx="2387.3825758357184" posy="1058.4346824583981" width="626" height="68" side="right" fold="false" treesize="1070" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <nodename posx="2403.3825758357184" posy="1074.4346824583981" maxwidth="800">
+            <text data="Disserta&#xE7;&#xE3;o: Desenvolvimento de um m&#xE9;todo de detec&#xE7;&#xE3;o de intrus&#xE3;o em redes&#10;OPC UA baseado em t&#xE9;cnicas de Aprendizagem de M&#xE1;quinas."/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="18" posx="3093.3825758357184" posy="557.43468245839836" width="110" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="3109.3825758357184" posy="573.43468245839836" maxwidth="800">
+                <text data="Introdu&#xE7;&#xE3;o"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="6" posx="3283.3825758357184" posy="557.43468245839836" width="212" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="3299.3825758357184" posy="573.43468245839836" maxwidth="800">
+                    <text data="Motiva&#xE7;&#xE3;o e Justificativa"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+            <node id="9" posx="3093.3825758357184" posy="1092.4346824583984" width="170" height="50" side="right" fold="false" treesize="1019.9999999999998" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="3109.3825758357184" posy="1108.4346824583984" maxwidth="800">
+                <text data="Referencial Te&#xF3;rico"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="42" posx="3343.3825758357184" posy="882.43468245839836" width="190" height="50" side="right" fold="false" treesize="599.99999999999977" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="3359.3825758357184" posy="898.43468245839836" maxwidth="800">
+                    <text data="Pesquisa bibliogr&#xE1;fica"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="16" posx="3613.3825758357184" posy="732.43468245839847" width="177" height="50" side="right" fold="false" treesize="300" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                      <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                      <nodename posx="3629.3825758357184" posy="748.43468245839847" maxwidth="800">
+                        <text data="Termos de pesquisa"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="10" posx="3870.3825758357193" posy="607.43468245839847" width="138" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3886.3825758357193" posy="623.43468245839847" maxwidth="800">
+                            <text data="&quot;cyber attack&quot;"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="11" posx="3870.3825758357193" posy="657.43468245839847" width="151" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3886.3825758357193" posy="673.43468245839847" maxwidth="800">
+                            <text data="&quot;cyber security&quot;"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="12" posx="3870.3825758357193" posy="707.43468245839847" width="243" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3886.3825758357193" posy="723.43468245839847" maxwidth="800">
+                            <text data="&quot;intrusion detection system&quot;"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="13" posx="3870.3825758357193" posy="757.43468245839847" width="242" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3886.3825758357193" posy="773.43468245839847" maxwidth="800">
+                            <text data="&quot;anomaly detection system&quot;"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="14" posx="3870.3825758357193" posy="807.43468245839847" width="103" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3886.3825758357193" posy="823.43468245839847" maxwidth="800">
+                            <text data="&quot;OPC UA&quot;"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="15" posx="3870.3825758357193" posy="857.43468245839847" width="249" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3886.3825758357193" posy="873.43468245839847" maxwidth="800">
+                            <text data="&quot;Industrial Internet of Things&quot;"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node id="49" posx="3613.3825758357184" posy="957.43468245839824" width="150" height="50" side="right" fold="false" treesize="150" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                      <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                      <nodename posx="3629.3825758357184" posy="973.43468245839824" maxwidth="800">
+                        <text data="Filtros aplicados"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="50" posx="3843.3825758357193" posy="907.43468245839836" width="103" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3859.3825758357193" posy="923.43468245839836" maxwidth="800">
+                            <text data="Em ingl&#xEA;s"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="52" posx="3843.3825758357193" posy="957.43468245839824" width="192" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3859.3825758357193" posy="973.43468245839824" maxwidth="800">
+                            <text data="OPC UA em keywords"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="51" posx="3843.3825758357193" posy="1007.4346824583982" width="182" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3859.3825758357193" posy="1023.4346824583982" maxwidth="800">
+                            <text data="Nos &#xFA;ltimos 10 anos"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node id="43" posx="3613.3825758357184" posy="1107.4346824583981" width="150" height="50" side="right" fold="false" treesize="150" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                      <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                      <nodename posx="3629.3825758357184" posy="1123.4346824583981" maxwidth="800">
+                        <text data="Bases de Dados"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="44" posx="3843.3825758357193" posy="1057.4346824583981" width="116" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3859.3825758357193" posy="1073.4346824583981" maxwidth="800">
+                            <text data="IEEEXplorer"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="45" posx="3843.3825758357193" posy="1107.4346824583981" width="84" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3859.3825758357193" posy="1123.4346824583981" maxwidth="800">
+                            <text data="Scopus"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="48" posx="3843.3825758357193" posy="1157.4346824583981" width="144" height="50" side="right" fold="false" treesize="50" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="3859.3825758357193" posy="1173.4346824583981" maxwidth="800">
+                            <text data="Web of Science"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+                <node id="21" posx="3343.3825758357184" posy="1392.4346824583979" width="163" height="50" side="right" fold="false" treesize="420" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="3359.3825758357184" posy="1408.4346824583979" maxwidth="800">
+                    <text data="Artigos correlatos"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="22" posx="3586.3825758357184" posy="1383.4346824583979" width="467" height="68" side="right" fold="false" treesize="420" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                      <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                      <nodename posx="3602.3825758357184" posy="1399.4346824583979" maxwidth="800">
+                        <text data="**dias2018b**: Panorama, challenges and opportunities in&#10;PROFINET protocol research"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="39" posx="4133.3825758357179" posy="1207.4346824583981" width="830" height="248" side="right" fold="false" treesize="248" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="4149.3825758357179" posy="1223.4346824583981" maxwidth="800">
+                            <text data="**Fichamento de resumo:** Este artigo trata de um estudo realizado com 92 artigos referente ao protocolo PROFINET, apresentando um panorama, desafios e oportunidades deste protocolo RTE (Real Time Ethernet). Ele &#xE9; dividido em 5 partes: (II) conceitos te&#xF3;ricos do PROFINET. (III) An&#xE1;lise de dados com algumas estat&#xED;sticas. (IV) Principais t&#xF3;picos endere&#xE7;ados para a comunidade cient&#xED;fica e alguns indicadores. (V) Conclus&#xE3;o. A pesquisa foi feita no IEEEXplore, Scopus e Web of Science e teve o criterio: PROFINET nas palavras chaves - publicado nos &#xFA;ltimos 10 anos e escritos em Ingl&#xEA;s - resultou em 150 publica&#xE7;&#xF5;es. Da&#xED;, o crit&#xE9;rio de exclus&#xE3;o foi: publica&#xE7;&#xE3;o com objetivo diferente, sem ser comunica&#xE7;&#xE3;o em redes industriais, com foco diferente ou para fins de marketing, resultando assim em 92 publica&#xE7;&#xF5;es. Ap&#xF3;s isso, faz a an&#xE1;lise estat&#xED;stica desses artigos, e classifica-os em alguns tipos de publica&#xE7;&#xF5;es (o que &#xE9; importante para verificar gaps na comunidade cient&#xED;fica. Com a an&#xE1;lise dos dados, ve-se que diagnostico e seguran&#xE7;a s&#xE3;o as duas &#xE1;reas com menos papers. Dessas divis&#xF5;es, todas s&#xE3;o explicadas no trabalho com as refer&#xEA;ncias encontradas."/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="40" posx="4133.3825758357179" posy="1455.4346824583981" width="808" height="68" side="right" fold="false" treesize="68" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="4149.3825758357179" posy="1471.4346824583981" maxwidth="800">
+                            <text data="A falta de caracter&#xED;sticas essenciais como: imunidade a ru&#xED;dos, comunica&#xE7;&#xE3;o em tempo real, robustez de conectores e cabos, tornou seu uso considerado inadequado (p.1)"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="41" posx="4133.3825758357179" posy="1523.4346824583986" width="824" height="104" side="right" fold="false" treesize="104" color="#c6262e" colorroot="false" layout="Horizontal" group="false">
+                          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                          <nodename posx="4149.3825758357179" posy="1539.4346824583986" maxwidth="800">
+                            <text data="A avalia&#xE7;&#xE3;o de desempenho &#xE9; baseada em indicadores de desempenho. A IEC 61784-2 define 9 indicadores de desempenho para redes RTE, sendo oito deles aplic&#xE1;veis ao PROFINET: tempo de entrega [10], n&#xFA;mero de dispositivos na rede, topologia, n&#xFA;mero de comuta&#xE7;&#xF5;es entre elementos, throughput RT e throughput n&#xE3;o RT [11], Precis&#xE3;o na sincroniza&#xE7;&#xE3;o de tempo, Tempo de recupera&#xE7;&#xE3;o devido &#xE0; redund&#xE2;ncia. (p.3)"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+        <node id="20" posx="2387.3825758357184" posy="1627.4346824583988" width="118" height="50" side="right" fold="false" treesize="50" color="#f9c440" colorroot="false" layout="Horizontal" group="false">
+          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <nodename posx="2403.3825758357184" posy="1643.4346824583988" maxwidth="800">
+            <text data="Publica&#xE7;&#xF5;es"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="23" posx="2387.3825758357184" posy="1752.4346824583988" width="110" height="50" side="right" fold="false" treesize="200" color="#68b723" colorroot="false" layout="Horizontal" group="false">
+          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <nodename posx="2403.3825758357184" posy="1768.4346824583988" maxwidth="800">
+            <text data="Disciplinas"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="24" posx="2577.3825758357184" posy="1677.4346824583988" width="309" height="50" side="right" fold="false" treesize="50" color="#68b723" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2593.3825758357184" posy="1693.4346824583988" maxwidth="800">
+                <text data="1. Redes Neurais Artificiais (SEL5712)"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="30" posx="2577.3825758357184" posy="1727.4346824583988" width="333" height="50" side="right" fold="false" treesize="50" color="#68b723" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2593.3825758357184" posy="1743.4346824583988" maxwidth="800">
+                <text data="2. Aprendizagem de M&#xE1;quinas (SEL5742)"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="31" posx="2577.3825758357184" posy="1777.4346824583988" width="386" height="50" side="right" fold="false" treesize="50" color="#68b723" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2593.3825758357184" posy="1793.4346824583988" maxwidth="800">
+                <text data="3. Otimiza&#xE7;&#xE3;o Aplicada &#xE0; Engenharia (SEM5920)"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="32" posx="2577.3825758357184" posy="1827.4346824583988" width="514" height="50" side="right" fold="false" treesize="50" color="#68b723" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2593.3825758357184" posy="1843.4346824583988" maxwidth="800">
+                <text data="4. Processamento Anal&#xED;tico de Dados em Larga Escala (SCC5968)"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="26" posx="2387.3825758357184" posy="1927.4346824583993" width="90" height="50" side="right" fold="false" treesize="150" color="#7a36b1" colorroot="false" layout="Horizontal" group="false">
+          <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <nodename posx="2403.3825758357184" posy="1943.4346824583993" maxwidth="800">
+            <text data="Exames"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="25" posx="2557.3825758357184" posy="1902.4346824583993" width="122" height="50" side="right" fold="false" treesize="100" color="#7a36b1" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2573.3825758357184" posy="1918.4346824583993" maxwidth="800">
+                <text data="Qualifica&#xE7;&#xE3;o"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="27" posx="2759.3825758357184" posy="1877.4346824583993" width="133" height="50" side="right" fold="false" treesize="50" color="#7a36b1" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="2775.3825758357184" posy="1893.4346824583993" maxwidth="800">
+                    <text data="Apresenta&#xE7;&#xE3;o"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="29" posx="2759.3825758357184" posy="1927.4346824583993" width="116" height="50" side="right" fold="false" treesize="50" color="#7a36b1" colorroot="false" layout="Horizontal" group="false">
+                  <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+                  <nodename posx="2775.3825758357184" posy="1943.4346824583993" maxwidth="800">
+                    <text data="Documento"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+            <node id="28" posx="2557.3825758357184" posy="1977.4346824583997" width="192" height="50" side="right" fold="false" treesize="50" color="#7a36b1" colorroot="false" layout="Horizontal" group="false">
+              <style branchmargin="80" branchradius="25" linktype="curved" linkwidth="3" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="800" nodeborderwidth="3" nodefill="false" nodemargin="10" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <nodename posx="2573.3825758357184" posy="1993.4346824583997" maxwidth="800">
+                <text data="Profici&#xEA;ncia em Ingl&#xEA;s"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+  <groups/>
+  <stickers/>
+</minder>
