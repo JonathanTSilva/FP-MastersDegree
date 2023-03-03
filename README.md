@@ -1,9 +1,9 @@
-<!-- NOTA: AO INICIAR O PROJETO, SUBSTITUTIR TODOS <REPO> PELO NOME DO SEU REPOSITÓRIO ATUAL -->
+<!-- NOTA: AO INICIAR O PROJETO, SUBSTITUTIR TODOS FP-MastersDegree PELO NOME DO SEU REPOSITÓRIO ATUAL -->
 
 <!-- LOGO DO PROJETO -->
 <h1 align="center">
   <br>
-  <a href="https://github.com/JonathanTSilva/<REPO>"><img src="http://portal.eesc.usp.br/comunicacao/wp-content/uploads/2020/06/logo_eesc_vertical_com_subtitulo_ingles-1.png" alt="Logo" width="200"></a>
+  <a href="https://github.com/JonathanTSilva/FP-MastersDegree"><img src="http://portal.eesc.usp.br/comunicacao/wp-content/uploads/2020/06/logo_eesc_vertical_com_subtitulo_ingles-1.png" alt="Logo" width="200"></a>
   <br>
   Master of Science in Electrical Engineering
   <br>
@@ -17,20 +17,20 @@
 
 <!-- SHIELDS DO PROJETO -->
 <p align="center">
-  <a href="https://github.com/JonathanTSilva/<REPO>/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/JonathanTSilva/<REPO>.svg?style=flat" alt="Contributors">
+  <a href="https://github.com/JonathanTSilva/FP-MastersDegree/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/JonathanTSilva/FP-MastersDegree.svg?style=flat" alt="Contributors">
   </a>
-  <a href="https://github.com/JonathanTSilva/<REPO>/network/members">
-    <img src="https://img.shields.io/github/forks/JonathanTSilva/<REPO>.svg?style=flat" alt="Members">
+  <a href="https://github.com/JonathanTSilva/FP-MastersDegree/network/members">
+    <img src="https://img.shields.io/github/forks/JonathanTSilva/FP-MastersDegree.svg?style=flat" alt="Members">
   </a>
-  <a href="https://github.com/JonathanTSilva/<REPO>/stargazers">
-    <img src="https://img.shields.io/github/stars/JonathanTSilva/<REPO>.svg?style=flat" alt="Stargazers">
+  <a href="https://github.com/JonathanTSilva/FP-MastersDegree/stargazers">
+    <img src="https://img.shields.io/github/stars/JonathanTSilva/FP-MastersDegree.svg?style=flat" alt="Stargazers">
   </a>
-  <a href="https://github.com/JonathanTSilva/<REPO>/issues">
-    <img src="https://img.shields.io/github/issues/JonathanTSilva/<REPO>.svg?style=flat" alt="Issues">
+  <a href="https://github.com/JonathanTSilva/FP-MastersDegree/issues">
+    <img src="https://img.shields.io/github/issues/JonathanTSilva/FP-MastersDegree.svg?style=flat" alt="Issues">
   </a>
-  <a href="https://github.com/JonathanTSilva/<REPO>/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/JonathanTSilva/<REPO>.svg?style=flat" alt="License">
+  <a href="https://github.com/JonathanTSilva/FP-MastersDegree/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/JonathanTSilva/FP-MastersDegree.svg?style=flat" alt="License">
   </a>
 </p>
 
@@ -71,7 +71,7 @@
 Se você quer contribuir com este projeto e aprimorá-lo, sua ajuda é sempre bem vinda! Por favor, leia as [diretrizes de contribuição][A] para contribuir corretamente. :tada:
 
 <!-- LICENÇA -->
-<a href="https://github.com/JonathanTSilva/<REPO>/blob/main/LICENSE"><img width="100px" src="https://miro.medium.com/max/886/1*C87EjxGeMPrkTuVRVWVg4w.png" align="right" /></a>
+<a href="https://github.com/JonathanTSilva/FP-MastersDegree/blob/main/LICENSE"><img width="100px" src="https://miro.medium.com/max/886/1*C87EjxGeMPrkTuVRVWVg4w.png" align="right" /></a>
 
 ## 📝 Licença
 
@@ -81,13 +81,13 @@ Distribuída por **MIT License**. Veja [LICENSE][B] para mais informações.
 
 :globe_with_meridians: [Jonathan T. da Silva][C] <br>
 :email: jonathantobias2009@hotmail.com <br>
-:package: [JonathanTSilva/<REPO>][D]
+:package: [JonathanTSilva/FP-MastersDegree][D]
 
 <!-- MARKDOWN LINKS>
 <!-- SITES -->
-[A]: https://github.com/JonathanTSilva/<REPO>/blob/main/Docs/CONTRIBUTING.md
-[B]: https://github.com/JonathanTSilva/<REPO>/blob/main/LICENSE
+[A]: https://github.com/JonathanTSilva/FP-MastersDegree/blob/main/Docs/CONTRIBUTING.md
+[B]: https://github.com/JonathanTSilva/FP-MastersDegree/blob/main/LICENSE
 [C]: https://www.linkedin.com/in/JonathanTSilva/
-[D]: https://github.com/JonathanTSilva/<REPO>
+[D]: https://github.com/JonathanTSilva/FP-MastersDegree
 
 <!-- IMAGENS -->
