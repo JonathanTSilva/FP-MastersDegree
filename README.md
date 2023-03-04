@@ -1,5 +1,3 @@
-<!-- NOTA: AO INICIAR O PROJETO, SUBSTITUTIR TODOS FP-MastersDegree PELO NOME DO SEU REPOSITÓRIO ATUAL -->
-
 <!-- LOGO DO PROJETO -->
 <h1 align="center">
   <br>
