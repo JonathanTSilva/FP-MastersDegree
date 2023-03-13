@@ -34,17 +34,17 @@
 
 <!-- SUMÁRIO -->
 <details close="close" align="center">
-  <summary><b>Sumário</b></summary>
-    <a href="#sobre-o-projeto">Sobre o Projeto</a> |
-    <a href="#índice">Índice</a> |
-    <a href="#contribuindo">Contribuindo</a> |
-    <a href="#licença">Licença</a> |
-    <a href="#contato">Contato</a> |
+  <summary><b>Table of Contents</b></summary>
+    <a href="#about-the-project">About the project</a> |
+    <a href="#index">Index</a> |
+    <a href="#contributing">Contributing</a> |
+    <a href="#license">License</a> |
+    <a href="#contact">Contact</a> |
     <a href="#"></a>
 </details>
 
 <!-- CORPO-->
-## 📃 Sobre o Projeto
+## 📃 About the project
 
 <table>
   <tr>
@@ -59,23 +59,23 @@
   </tr>
 </table>
 
-## 🔎 Índice
+## 🔎 Index
 
 - [ex1](https://github.com/JonathanTSilva)
   - [ex1](https://github.com/JonathanTSilva)
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
 Se você quer contribuir com este projeto e aprimorá-lo, sua ajuda é sempre bem vinda! Por favor, leia as [diretrizes de contribuição][A] para contribuir corretamente. :tada:
 
 <!-- LICENÇA -->
 <a href="https://github.com/JonathanTSilva/FP-MastersDegree/blob/main/LICENSE"><img width="100px" src="https://miro.medium.com/max/886/1*C87EjxGeMPrkTuVRVWVg4w.png" align="right" /></a>
 
-## 📝 Licença
+## 📝 License
 
 Distribuída por **MIT License**. Veja [LICENSE][B] para mais informações.
 
-## 📧 Contato
+## 📧 Contact
 
 :globe_with_meridians: [Jonathan T. da Silva][C] <br>
 :email: jonathantobias2009@hotmail.com <br>
