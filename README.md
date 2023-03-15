@@ -73,7 +73,7 @@ Se você quer contribuir com este projeto e aprimorá-lo, sua ajuda é sempre be
 
 ## 📝 License
 
-Distribuída por **MIT License**. Veja [LICENSE][B] para mais informações.
+Distributed by **MIT License**. See [LICENSE][B] for more information.
 
 ## 📧 Contact
 
