@@ -66,7 +66,7 @@
 
 ## 🤝 Contributing
 
-Se você quer contribuir com este projeto e aprimorá-lo, sua ajuda é sempre bem vinda! Por favor, leia as [diretrizes de contribuição][A] para contribuir corretamente. :tada:
+If you want to contribute to this project and improve it, your help is always welcome! Please read the [contribution guidelines][A] to properly contribute. :tada:
 
 <!-- LICENÇA -->
 <a href="https://github.com/JonathanTSilva/FP-MastersDegree/blob/main/LICENSE"><img width="100px" src="https://miro.medium.com/max/886/1*C87EjxGeMPrkTuVRVWVg4w.png" align="right" /></a>
