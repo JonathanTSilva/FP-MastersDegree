@@ -59,10 +59,11 @@
   </tr>
 </table>
 
+<!-- 
 ## 🔎 Index
 
 - [](https://github.com/JonathanTSilva)
-  - [](https://github.com/JonathanTSilva)
+  - [](https://github.com/JonathanTSilva) -->
 
 ## 🤝 Contributing
 
