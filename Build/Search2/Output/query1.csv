@@ -1,0 +1,54 @@
+,Title,Authors,Year,DOI,Document Type
+0,A Security Model based Authorization Concept for OPC Unified Architecture,"Wallis, K., Reich, C., Merzinger, M., Schindelhauer, C.",2018,10.1145/3291280.3291799,Conference Paper
+1,A Unified Architecture for Industrial IoT Security Requirements in Open Platform Communications,G. Hansch; P. Schneider; K. Fischer; K. Böttinger,2019,10.1109/ETFA.2019.8869524,IEEE Conferences
+2,A prefatory study on data channelling mechanism towards industry 4.0,"Ng, K.H., Tew, Y., Yip, M.W.",2019,10.1109/APSIPAASC47483.2019.9023089,Conference Paper
+3,A review of PROFIBUS protocol vulnerabilities: Considerations for implementing authentication and authorization controls,"Watson, V., Lou, X., Gao, Y.",2017,10.5220/0006426504440449,Conference Paper
+4,An Implementation of Convergence Security Solution for Overcoming of Security Vulnerabilities in Industrial Control Communication Network,"Lee, J.-K., Lee, S.-W., Lee, K.-H.",2019,10.1007/s11277-018-5970-4,Article
+5,An idea of using digital twin to perform the functional safety and cybersecurity analysis,"Lou, X., Guo, Y., Gao, Y., Waedt, K., Parekh, M.",2019,10.18420/inf2019_ws32,Conference Paper
+6,Application Study of Hardware-Based Security for Future Industrial IoT,R. Matischek; B. Bara,2019,10.1109/DSD.2019.00044,IEEE Conferences
+7,Attack Detection in Cyber-Physical Production Systems using the Deterministic Dendritic Cell Algorithm,"Pinto, R., Goncalves, G., Tovar, E., Delsing, J.",2020,10.1109/ETFA46521.2020.9212021,Conference Paper
+8,Authorization in asset administration shells using OPC UA,"Schmitt, J., Gamer, T., Platenius-Mohr, M., Malakuti, S., Finster, S.",2019,10.1515/auto-2019-0020,Article
+9,Cyber Security Risks of Technical Components in Industry 4.0,W. Matsuda; M. Fujimoto; Y. Hashimoto; T. Mitsunaga,2021,10.1109/COINS51742.2021.9524088,IEEE Conferences
+10,Cyber Security Risks of aspects of operations of OPC Unified Architecture,"Fujimoto, M., Mitsunaga, T., Matsuzawa, T., Hashimoto, Y.",2022,10.1016/B978-0-323-85159-6.50248-7,Book Chapter
+11,Design and Implementation of the Substation Intelligent Auxiliary Control System Based on OPC UA,C. Zhu; B. Li; Z. Lv; X. Zhao,2022,10.1109/REPE55559.2022.9949983,IEEE Conferences
+12,Design of Multi-Protocol Industrial Ethernet Security Monitor,D. Han; Y. Zhao; Y. Gong,2021,10.1109/ICPECA51329.2021.9362589,IEEE Conferences
+13,Design of unidirectional security gateway system for secure monitoring of OPC-UA data,B. -K. Kim; Y. -J. Heo; J. -C. Na,2017,10.1109/ICTC.2017.8190923,IEEE Conferences
+14,Development and implementation of a secure production network,"Reithner, I., Papa, M., Lueger, B., Ćato, M., Hollerer, S., Seemann, R.",2020,10.2507/31st.daaam.proceedings.102,Conference Paper
+15,Development of a monitoring system for encrypted data by OPC UA,T. Honda; Y. Shimazawa; T. Hamaguchi; Y. Hashimoto,2021,10.1109/IIAI-AAI53430.2021.00129,IEEE Conferences
+16,Enabling Smart Manufacturing by Empowering Data Integration with Industrial IoT Support,"Bosi, F., Corradi, A., Di Modica, G., Foschini, L., Montanari, R., Patera, L., Solimando, M.",2020,10.1109/ICTE47868.2020.9215538,Conference Paper
+17,Evaluating and improving the internal security of OPC-UA based software applications,"Jankovic, M., Siavvas, M., Tsoukalas, D., Kehagias, D.",2020,,Conference Paper
+18,Flexible Safety Systems for Smart Manufacturing,"Etz, D., Fruhwirth, T., Kastner, W.",2020,10.1109/ETFA46521.2020.9211905,Conference Paper
+19,Gateway for Industrial Cyber-Physical Systems with Hardware-Based Trust Anchors,"Bienhaus, D., Jäger, L., Rieke, R., Krauß, C.",2020,10.1007/978-3-030-32258-8_61,Conference Paper
+20,Honeypot inside an opc ua wrapper for water pumping stations,"Petre, C.-A., Korodi, A.",2019,10.1109/CSCS.2019.00020,Conference Paper
+21,Hybrid OPC UA: Enabling Post-Quantum Security for the Industrial Internet of Things,"Paul, S., Guerin, E.",2020,10.1109/ETFA46521.2020.9212112,Conference Paper
+22,Improving security in industry 4.0 by extending OPC-UA with usage control,"Martinelli, F., Osliak, O., Mori, P., Saracino, A.",2020,10.1145/3407023.3407077,Conference Paper
+23,Industrial Internet of Things Interoperability Between OPC UA and OneM2M,"Lai, P.-W., Lin, F.J.",2020,10.1007/978-3-030-44751-9_37,Book Chapter
+24,Interoperability and security challenges of Industrie 4.0,"Watson, V., Tellabi, A., Sassmannshausen, J., Lou, X.",2017,10.18420/in2017_100,Conference Paper
+25,Interoperability of OPC UA PubSub with Existing Message Broker Integration Architectures,"Hastbacka, D., Kannisto, P., Katkytniemi, A.",2022,10.1109/IECON49645.2022.9969039,Conference Paper
+26,Monitoring and control system for smart buildings based on OPC UA specifications,"Ungurean, I., GǍitan, N.C.",2016,10.1109/DAAS.2016.7492552,Conference Paper
+27,Multi-level user and role concept for a secure plug-and-work based on OPC UA and AutomationML,M. Schleipen; E. Selyansky; R. Henssen; T. Bischoff,2015,10.1109/ETFA.2015.7301640,IEEE Conferences
+28,OPC UA information modeling: A case study for smart house,"Yi, M.-J., Son, M.",2013,10.4028/www.scientific.net/AMM.241-244.2862,Conference Paper
+29,OPC UA security for protecting substation and control center data communication in the distribution domain of the smart grid,P. Jafary; S. Repo; M. Salmenpera; H. Koivisto,2015,10.1109/INDIN.2015.7281811,IEEE Conferences
+30,On the Security of IIoT Deployments: An Investigation of Secure Provisioning Solutions for OPC UA,F. Kohnhäuser; D. Meier; F. Patzer; S. Finster,2021,10.1109/ACCESS.2021.3096062,IEEE Journals
+31,On the Feasibility and Performance of Secure OPC UA Communication with IIoT Devices,"Kohnhäuser, F., Coppik, N., Mendoza, F., Kumari, A.",2022,10.1007/978-3-031-14835-4_13,Conference Paper
+32,Open-Source OPC UA Security and Scalability,N. Mühlbauer; E. Kirdan; M. -O. Pahl; G. Carle,2020,10.1109/ETFA46521.2020.9212091,IEEE Conferences
+33,Overview of OPC UA TSN,"Yuan, H., Hao, H., Zhang, M.",2021,10.1109/ITNEC52019.2021.9586911,Conference Paper
+34,Portable Trust Anchor for OPC UA Using Auto-Configuration,D. Meier; F. Patzer; M. Drexler; J. Beyerer,2020,10.1109/ETFA46521.2020.9211904,IEEE Conferences
+35,Reasoning on Adopting OPC UA for an IoT-Enhanced Smart Energy System from a Security Perspective,S. Marksteiner,2018,10.1109/CBI.2018.10060,IEEE Conferences
+36,Rent'n'Produce: A Secure Cloud Manufacturing Platform for Small and Medium Enterprises,C. Ellwein; O. Riedel; O. Meyer; D. Schel,2018,10.1109/ICE.2018.8436332,IEEE Conferences
+37,Research of integrity and authentication in OPC UA communication using Whirlpool hash function,"Wu, K., Li, Y., Chen, L., Wang, Z.",2015,10.3390/app5030446,Article
+38,Research on OPC UA Security Encryption Method,Z. Luo; X. Zhang,2020,10.1109/ICIBA50161.2020.9276932,IEEE Conferences
+39,Research on Security Mechanism of Service Interoperability Based on Power Grid Computer System,"Zhang, Y., Wang, J., Liu, W., Wang, T.",2021,10.1088/1742-6596/1881/4/042022,Conference Paper
+40,"SCADA System Framework for Monitoring, Controlling and Data Logging of Industrial Processing Plants",S. S. Mohani; M. Khalid; S. S. Hussain; S. Ghori; H. Akbar,2020,10.1109/ICCI51257.2020.9247645,IEEE Conferences
+41,Secure Granular Interoperability with OPC UA,"Watson, V., Sassmannshausen, J., Waedt, K.",2019,10.18420/inf2019_ws34,Conference Paper
+42,Secure Onboarding of IIoT Devices using OPC UA,"Kohnhauser, F., Gruner, S., Heuschkel, J.",2022,10.1109/ETFA52439.2022.9921547,Conference Paper
+43,Secure Provisioning of OPC UA Applications Using the Asset Administration Shell,"Meier, D., Vogl, J., Kohnhauser, F., Beyerer, J.",2022,10.1109/ICIEA54703.2022.10005899,Conference Paper
+44,Secure framework and key agreement mechanism for OPC-UA in industrial IoT,"Wei, M., Mo, L., Zhuang, Y., Kim, K.",2018,10.1145/3164541.3164568,Conference Paper
+45,Secure gate: Secure gateways and wireless sensors as enablers for sustainability in production plants,"Bienhaus, D., Ebner, A., Jäger, L., Rieke, R., Krauß, C.",2021,10.1016/j.simpat.2021.102282,Article
+46,Securing javascript runtime of OPC UA deployments,"Schindler, J., Belaidi, S., Kirdan, E., Waedt, K.",2022,10.18420/inf2022_133,Conference Paper
+47,Security Analysis of Vendor Implementations of the OPC UA Protocol for Industrial Control Systems,"Erba, A., Müller, A., Tippenhauer, N.O.",2022,10.1145/3560826.3563380,Conference Paper
+48,Simulating and detecting attacks of untrusted clients in OPC UA networks,"Neu, C.V., Schiering, I., Zorzo, A.",2019,10.1145/3360664.3360675,Conference Paper
+49,Software defined networking firewall for industry 4.0 manufacturing systems,"Tsuchiya, A., Fraile, F., Koshijima, I., Órtiz, A., Poler, R.",2018,10.3926/jiem.2534,Article
+50,The 5th GI/ACM Workshop 2020 Scope and Draft Programme on Standardization of Secure and Safe Smart Manufacturing Systems with respect to IEC 62443 IACS,"deMeer, J., Waedt, K., Rennoch, A., Hof, H.-J.",2020,10.18420/inf2020_26,Conference Paper
+51,The Industrie 4.0 Asset Administration Shell as Information Source for Security Analysis,F. Patzer; F. Volz; T. Usländer; I. Blöcher; J. Beyerer,2019,10.1109/ETFA.2019.8869059,IEEE Conferences
+52,Towards post-quantum security for cyber-physical systems: Integrating PQC into industrial M2M communication,"Paul, S., Scheible, P., Wiemer, F.",2021,10.3233/JCS-210037,Article

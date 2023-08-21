@@ -1,0 +1,39 @@
+,Title,Authors,Year,DOI,Document Type
+0,A Unified Architecture for Industrial IoT Security Requirements in Open Platform Communications,G. Hansch; P. Schneider; K. Fischer; K. Böttinger,2019,10.1109/ETFA.2019.8869524,IEEE Conferences
+1,An effective data reduction model for machine emergency state detection from big data tree topology structures,"Iaremko, I., Senkerik, R., Jasek, R., Lukastik, P.",2021,10.34768/amcs-2021-0041,Article
+2,Anomaly-based intrusion detection in industrial data with SVM and random forests,"Anton, S.D.D., Sinha, S., Dieter Schotten, H.",2019,10.23919/SOFTCOM.2019.8903672,Conference Paper
+3,Application Study of Hardware-Based Security for Future Industrial IoT,R. Matischek; B. Bara,2019,10.1109/DSD.2019.00044,IEEE Conferences
+4,Attack Detection in Cyber-Physical Production Systems using the Deterministic Dendritic Cell Algorithm,"Pinto, R., Goncalves, G., Tovar, E., Delsing, J.",2020,10.1109/ETFA46521.2020.9212021,Conference Paper
+5,Autoencoder-Ensemble-Based Unsupervised Selection of Production-Relevant Variables for Context-Aware Fault Diagnosis,"Kaupp, L., Humm, B., Nazemi, K., Simons, S.",2022,10.3390/s22218259,Article
+6,"CPSIoTSec 2022 - Proceedings of the 4th Workshop on CPS and IoT Security and Privacy, co-located with CCS 2022",[No author name available],2022,,Conference Review
+7,Cyber Security Risks of Technical Components in Industry 4.0,W. Matsuda; M. Fujimoto; Y. Hashimoto; T. Mitsunaga,2021,10.1109/COINS51742.2021.9524088,IEEE Conferences
+8,Design and Implementation of the Substation Intelligent Auxiliary Control System Based on OPC UA,C. Zhu; B. Li; Z. Lv; X. Zhao,2022,10.1109/REPE55559.2022.9949983,IEEE Conferences
+9,Design of Multi-Protocol Industrial Ethernet Security Monitor,D. Han; Y. Zhao; Y. Gong,2021,10.1109/ICPECA51329.2021.9362589,IEEE Conferences
+10,Design of unidirectional security gateway system for secure monitoring of OPC-UA data,B. -K. Kim; Y. -J. Heo; J. -C. Na,2017,10.1109/ICTC.2017.8190923,IEEE Conferences
+11,Development of a monitoring system for encrypted data by OPC UA,T. Honda; Y. Shimazawa; T. Hamaguchi; Y. Hashimoto,2021,10.1109/IIAI-AAI53430.2021.00129,IEEE Conferences
+12,Enabling data-driven anomaly detection by design in cyber-physical production systems,"Pinto, R., Gonçalves, G., Delsing, J., Tovar, E.",2022,10.1186/s42400-022-00114-z,Article
+13,Enhanced Cybersecurity in Smart Cities: Integration Methods of OPC UA and Suricata,"García-Retuerta, D., Casado-Vara, R., Prieto, J.",2022,10.1007/978-3-030-78901-5_6,Conference Paper
+14,Evaluation and Adaption of Maintenance Prediction Methods in Mixed Production Line Setups based on Anomaly Detection,"Soller, S., Fleischmann, B., Kranz, M., Holzl, G.",2021,10.1109/PerComWorkshops51409.2021.9430995,Conference Paper
+15,Exploring How The Unique Behaviours Of Industrial Control System Networks Can Be Applied To Enhance Intrusion Prevention,"Hazell, P., Lu, J.",2022,10.1109/Control55989.2022.9781374,Conference Paper
+16,Heterogeneous Connection and Process Anomaly Detection of Industrial Robot in Intelligent Factory,"Wen, X., Chen, H.",2020,10.1142/S0218001420590417,Article
+17,Incremental Dendritic Cell Algorithm for Intrusion Detection in Cyber-Physical Production Systems,"Pinto, R., Gonçalves, G., Delsing, J., Tovar, E.",2021,10.1007/978-3-030-80129-8_47,Conference Paper
+18,Leveraging Relational Database for Fast Construction of OPC UA Information Model,"Wang, R., He, S., Liu, Y., Zhou, C., Shi, Z., Chen, J.",2021,10.1109/ICITES53477.2021.9637064,Conference Paper
+19,Methodology and Tools for Digital Twin Management—The FA3ST Approach,"Stojanovic, L., Usländer, T., Volz, F., Weißenbacher, C., Müller, J., Jacoby, M., Bischoff, T.",2021,10.3390/iot2040036,Article
+20,Model-based generation of run-time data collection systems exploiting AutomationML,"Mazak, A; Luder, A; Wolny, S; Wimmer, M; Winkler, D; Kirchheim, K; Rosendahl, R; Bayanifar, H; Biffl, S",2018,10.1515/auto-2018-0022,J
+21,Multi-level user and role concept for a secure plug-and-work based on OPC UA and AutomationML,M. Schleipen; E. Selyansky; R. Henssen; T. Bischoff,2015,10.1109/ETFA.2015.7301640,IEEE Conferences
+22,Multi-protocol Integration and Intercommunication Technology Based on OPC UA and MQTT,"Wang, Z., Han, D., Gong, Y., Zhao, Y.",2022,10.1088/1742-6596/2173/1/012070,Conference Paper
+23,OPC UA security for protecting substation and control center data communication in the distribution domain of the smart grid,P. Jafary; S. Repo; M. Salmenpera; H. Koivisto,2015,10.1109/INDIN.2015.7281811,IEEE Conferences
+24,On the Security of IIoT Deployments: An Investigation of Secure Provisioning Solutions for OPC UA,F. Kohnhäuser; D. Meier; F. Patzer; S. Finster,2021,10.1109/ACCESS.2021.3096062,IEEE Journals
+25,Open Source OPC UA Data Traffic Characteristic and Anomaly Detection using Image-Encoding based Convolutional Neural Network,"Rahadian, H., Bandong, S., Widyotriatmo, A., Joelianto, E.",2022,10.1109/ICEVT55516.2022.9925002,Conference Paper
+26,Open-Source OPC UA Security and Scalability,N. Mühlbauer; E. Kirdan; M. -O. Pahl; G. Carle,2020,10.1109/ETFA46521.2020.9212091,IEEE Conferences
+27,Portable Trust Anchor for OPC UA Using Auto-Configuration,D. Meier; F. Patzer; M. Drexler; J. Beyerer,2020,10.1109/ETFA46521.2020.9211904,IEEE Conferences
+28,Reasoning on Adopting OPC UA for an IoT-Enhanced Smart Energy System from a Security Perspective,S. Marksteiner,2018,10.1109/CBI.2018.10060,IEEE Conferences
+29,Rent'n'Produce: A Secure Cloud Manufacturing Platform for Small and Medium Enterprises,C. Ellwein; O. Riedel; O. Meyer; D. Schel,2018,10.1109/ICE.2018.8436332,IEEE Conferences
+30,Research on OPC UA Security Encryption Method,Z. Luo; X. Zhang,2020,10.1109/ICIBA50161.2020.9276932,IEEE Conferences
+31,"SCADA System Framework for Monitoring, Controlling and Data Logging of Industrial Processing Plants",S. S. Mohani; M. Khalid; S. S. Hussain; S. Ghori; H. Akbar,2020,10.1109/ICCI51257.2020.9247645,IEEE Conferences
+32,Security Analysis of Vendor Implementations of the OPC UA Protocol for Industrial Control Systems,"Erba, A., Müller, A., Tippenhauer, N.O.",2022,10.1145/3560826.3563380,Conference Paper
+33,Security Challenges in Control Network Protocols: A Survey,"Volkova, A; Niedermeier, M; Basmadjian, R; de Meer, H",2019,10.1109/COMST.2018.2872114,J
+34,Simulating and detecting attacks of untrusted clients in OPC UA networks,"Neu, C.V., Schiering, I., Zorzo, A.",2019,10.1145/3360664.3360675,Conference Paper
+35,Survey of domain specific languages to build packet parsers for industrial protocols,"Bhardwaj, S., Larbig, P., Khondoker, R., Bayarou, K.",2018,10.1109/ICCITECHN.2017.8281842,Conference Paper
+36,The Industrie 4.0 Asset Administration Shell as Information Source for Security Analysis,F. Patzer; F. Volz; T. Usländer; I. Blöcher; J. Beyerer,2019,10.1109/ETFA.2019.8869059,IEEE Conferences
+37,Towards bio-inspired anomaly detection using the cursory dendritic cell algorithm,"Pinto, C., Pinto, R., Gonçalves, G.",2022,10.3390/a15010001,Article
