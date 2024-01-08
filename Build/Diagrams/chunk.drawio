@@ -1,0 +1,43 @@
+<mxfile host="Electron" modified="2023-10-18T17:18:58.718Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="B7QW3rwlX6-3gtrM-F_B" version="22.0.2" type="device">
+  <diagram name="Page-1" id="yLMaFRjBej31CIYulhUY">
+    <mxGraphModel dx="1434" dy="875" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-1" value="Mensagem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-2" value="Cabeçalho" style="rounded=0;whiteSpace=wrap;html=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="265" y="115" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-3" value="Segurança" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="110" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-4" value="Sequência" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="140" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-5" value="Corpo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-6" value="Preenchimento" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="230" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-7" value="Assinatura" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="260" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-8" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="425" y="140" width="20" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-10" value="Dados para criptografar" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="445" y="195" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-11" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="275" y="80" width="20" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="T5hI3A-cgFPTEyedzKXL-13" value="Dados para assinar" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="185" y="135" width="90" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

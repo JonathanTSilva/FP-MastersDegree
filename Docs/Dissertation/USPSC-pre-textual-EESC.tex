@@ -1,0 +1,487 @@
+%% USPSC-pre-textual-EESC.tex
+%% Camandos para definição do tipo de documento (tese ou dissertação), área de concentração, opção, preâmbulo, titulação 
+%% referentes aos Programas de Pós-Graduação
+\instituicao{Escola de Engenharia de S\~ao Carlos, Universidade de S\~ao Paulo}
+\unidade{ESCOLA DE ENGENHARIA DE S\~AO CARLOS}
+\unidademin{Escola de Engenharia de S\~ao Carlos}
+\universidademin{Universidade de S\~ao Paulo}
+
+% A EESC não inclui a nota "Versão original", portanto o comando abaixo não tem a mensagem entre {}
+\notafolharosto{ }
+%Para a versão corrigida tire a % do comando/declaração abaixo e inclua uma % antes do comando acima
+%\notafolharosto{VERS\~AO CORRIGIDA}
+% ---
+% dados complementares para CAPA e FOLHA DE ROSTO
+% ---
+\universidade{UNIVERSIDADE DE S\~AO PAULO}
+\titulo{Análise de vulnerabilidades em redes OPC UA industriais}
+\titleabstract{Vulnerability analysis in industrial OPC UA networks}
+\tituloresumo{Análise de vulnerabilidades em redes OPC UA industriais}
+\autor{Jonathan Tobias da Silva}
+\autorficha{Silva, Jonathan Tobias da}
+\autorabr{SILVA, J.T.}
+
+\cutter{S856m}
+% Para gerar a ficha catalográfica sem o Código Cutter, basta 
+% incluir uma % na linha acima e tirar a % da linha abaixo
+%\cutter{ }
+
+\local{S\~ao Carlos}
+\data{2023}
+% Quando for Orientador, basta incluir uma % antes do comando abaixo
+\renewcommand{\orientadorname}{Orientador:}
+% Quando for Coorientadora, basta tirar a % utilizar o comando abaixo
+%\newcommand{\coorientadorname}{Coorientador:}
+\orientador{Prof. Dr. Ivan Nunes da Silva}
+\orientadorcorpoficha{orientador Ivan Nunes da Silva}
+\orientadorficha{Silva, Ivan Nunes da, orient}
+%Se houver co-orientador, inclua % antes das duas linhas (antes dos comandos \orientadorcorpoficha e \orientadorficha) 
+%          e tire a % antes dos 3 comandos abaixo
+%\coorientador{Prof. Dr. Jo\~ao Alves Serqueira}
+%\orientadorcorpoficha{orientadora Elisa Gon\c{c}alves Rodrigues ;  co-orientador Jo\~ao Alves Serqueira}
+%\orientadorficha{Rodrigues, Elisa Gon\c{c}alves, orient. II. Serqueira, Jo\~ao Alves, co-orient}
+
+\notaautorizacao{AUTORIZO A REPRODU\c{C}\~AO E DIVULGA\c{C}\~AO TOTAL OU PARCIAL DESTE TRABALHO, POR QUALQUER MEIO CONVENCIONAL OU ELETR\^ONICO PARA FINS DE ESTUDO E PESQUISA, DESDE QUE CITADA A FONTE.}
+\notabib{~  ~}
+
+\newcommand{\programa}[1]{
+
+% DCEA ==========================================================================
+\ifthenelse{\equal{#1}{DCEA}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Ci\^encias da Engenharia Ambiental}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Ci\^encias da Engenharia Ambiental.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Ci\^encias da Engenharia Ambiental}
+    }{
+% MCEA ===========================================================================
+\ifthenelse{\equal{#1}{MCEA}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Ci\^encias da Engenharia Ambiental}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Ci\^encias da Engenharia Ambiental.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Ci\^encias da Engenharia Ambiental}
+        }{
+% DEE =======================================================================
+\ifthenelse{\equal{#1}{DEE}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Estruturas}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Civil (Engenharia de Estruturas).}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Civil (Engenharia de Estruturas) e \'Area de Concentra\c{c}\~ao em Estruturas}
+    }{
+% MEE ===========================================================================
+\ifthenelse{\equal{#1}{MEE}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Estruturas}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Civil (Engenharia de Estruturas).}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Civil (Engenharia de Estruturas) e \'Area de Concentra\c{c}\~ao em Estruturas}
+    }{
+% DEPP ==========================================================================
+\ifthenelse{\equal{#1}{DEPP}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Processos e Gest\~ao de Opera\c{c}\~oes}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Processos e Gest\~ao de Opera\c{c}\~oes}
+    }{
+% MEPP ===========================================================================
+\ifthenelse{\equal{#1}{MEPP}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Processos e Gest\~ao de Opera\c{c}\~oes}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Processos e Gest\~ao de Opera\c{c}\~oes}
+    }{			
+% DEPE ==========================================================================
+\ifthenelse{\equal{#1}{DEPE}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Economia, Organiza\c{c}\~oes e Gest\~ao do Conhecimento}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Economia, Organiza\c{c}\~oes e Gest\~ao do Conhecimento}
+    }{
+% MEPE ===========================================================================
+\ifthenelse{\equal{#1}{MEPE}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Economia, Organiza\c{c}\~oes e Gest\~ao do Conhecimento}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Produ\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Economia, Organiza\c{c}\~oes e Gest\~ao do Conhecimento}
+    }{			
+% DETI ==========================================================================
+\ifthenelse{\equal{#1}{DETI}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Infraestrutura de Transportes}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes e \'Area de Concentra\c{c}\~ao em Infraestrutura de Transportes}
+    }{
+% METI ===========================================================================
+\ifthenelse{\equal{#1}{METI}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Infraestrutura de Transportes}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes e \'Area de Concentra\c{c}\~ao em Infraestrutura de Transportes}
+    }{	   			
+% DETT ==========================================================================
+\ifthenelse{\equal{#1}{DETT}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Transportes}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes e \'Area de Concentra\c{c}\~ao em Transportes}
+    }{
+% METT ===========================================================================
+\ifthenelse{\equal{#1}{METT}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Transportes}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes e \'Area de Concentra\c{c}\~ao em Transportes}
+    }{	  				
+% DETP ==========================================================================
+\ifthenelse{\equal{#1}{DETP}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Planejamento e Opera\c{c}\~ao de Sistemas de Transporte}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes e \'Area de Concentra\c{c}\~ao em Planejamento e Opera\c{c}\~ao de Sistemas de Transporte}
+    }{
+% METP ===========================================================================
+\ifthenelse{\equal{#1}{METP}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Planejamento e Opera\c{c}\~ao de Sistemas de Transporte}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia de Transportes e \'Area de Concentra\c{c}\~ao em Planejamento e Opera\c{c}\~ao de Sistemas de Transporte}
+    }{	    
+% DEEP ==========================================================================
+\ifthenelse{\equal{#1}{DEEP}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Processamento de Sinais e Instrumenta\c{c}\~ao}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Processamento de Sinais e Instrumenta\c{c}\~ao}
+    }{
+% MEEP ===========================================================================
+\ifthenelse{\equal{#1}{MEEP}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Processamento de Sinais e Instrumenta\c{c}\~ao}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Processamento de Sinais e Instrumenta\c{c}\~ao}
+    }{	  
+% DEED ==========================================================================
+\ifthenelse{\equal{#1}{DEED}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Sistemas Din\^amicos}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Sistemas Din\^amicos}
+    }{
+% MEED ===========================================================================
+\ifthenelse{\equal{#1}{MEED}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Sistemas Din\^amicos}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Sistemas Din\^amicos}
+    }{	  
+% DEEE ==========================================================================
+\ifthenelse{\equal{#1}{DEEE}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Sistemas El\'etricos de Pot\^encia}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Sistemas El\'etricos de Pot\^encia}
+    }{
+% MEEE ===========================================================================
+\ifthenelse{\equal{#1}{MEEE}}{
+    \tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+    \tipotrabalhoabs{Dissertation (Master)}
+    \area{Sistemas El\'etricos de Pot\^encia}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Sistemas El\'etricos de Pot\^encia}
+    }{	  
+% DEET ==========================================================================
+\ifthenelse{\equal{#1}{DEET}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Telecomunica\c{c}\~oes}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Telecomunica\c{c}\~oes}
+    }{
+% MEET ===========================================================================
+\ifthenelse{\equal{#1}{MEET}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\area{Telecomunica\c{c}\~oes}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia El\'etrica e \'Area de Concentra\c{c}\~ao em Telecomunica\c{c}\~oes}
+    }{	
+% DEHS ==========================================================================
+\ifthenelse{\equal{#1}{DEHS}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Hidr\'aulica e Saneamento}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Hidr\'aulica e Saneamento.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Engenharia Hidr\'aulica e Saneamento}
+    }{
+% MEHS ===========================================================================
+\ifthenelse{\equal{#1}{MEHS}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Hidr\'aulica e Saneamento}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Hidr\'aulica e Saneamento.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Engenharia Hidr\'aulica e Saneamento} 
+    }{	
+% DEMA ==========================================================================
+\ifthenelse{\equal{#1}{DEMA}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Aerona\'utica}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Aerona\'utica}
+    }{
+% MEMA ===========================================================================
+\ifthenelse{\equal{#1}{MEMA}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Aerona\'utica}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Aerona\'utica}
+    }{	
+% DEMD ==========================================================================
+\ifthenelse{\equal{#1}{DEMD}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Din\^amica e Mecatr\^onica}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Din\^amica e Mecatr\^onica}
+    }{
+% MEMD ===========================================================================
+\ifthenelse{\equal{#1}{MEMD}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Din\^amica e Mecatr\^onica}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Din\^amica e Mecatr\^onica}
+    }{	
+% DEMF ==========================================================================
+\ifthenelse{\equal{#1}{DEMF}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Projeto, Materiais e Manufatura}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Projeto, Materiais e Manufatura}
+    }{
+% MEMF ===========================================================================
+\ifthenelse{\equal{#1}{MEMF}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Projeto, Materiais e Manufatura}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Projeto, Materiais e Manufatura}
+    }{	
+% DEMT ==========================================================================
+\ifthenelse{\equal{#1}{DEMT}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Termoci\^encias e Mec\^anica de Fluidos}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Termoci\^encias e Mec\^anica de Fluidos}
+    }{
+% MEMT ===========================================================================
+\ifthenelse{\equal{#1}{MEMT}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Termoci\^encias e Mec\^anica de Fluidos}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Engenharia Mec\^anica e \'Area de Concentra\c{c}\~ao em Termoci\^encias e Mec\^anica de Fluidos}
+    }{	
+% DCEM ==========================================================================
+\ifthenelse{\equal{#1}{DCEM}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Caracteriza\c{c}\~ao, Desenvolvimento e Aplica\c{c}\~ao de Materiais}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Ci\^encia e Engenharia de Materiais.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao em Ci\^encias e Engenharia de Materiais e \'Area de Concentra\c{c}\~ao em Desenvolvimento, Caracteriza\c{c}\~ao e Aplica\c{c}\~ao de Materiais}
+    }{
+% MCEM ===========================================================================
+\ifthenelse{\equal{#1}{MCEM}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Caracteriza\c{c}\~ao, Desenvolvimento e Aplica\c{c}\~ao de Materiais}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Ci\^encia e Engenharia de Materiais.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Ci\^encias e Engenharia de Materiais e \'Area de Concentra\c{c}\~ao em Desenvolvimento, Caracteriza\c{c}\~ao e Aplica\c{c}\~ao de Materiais}
+    }{	
+% DGEO ==========================================================================
+\ifthenelse{\equal{#1}{DGEO}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Geotecnia}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Geotecnia.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Geotecnia}
+    }{
+% MGEO ===========================================================================
+\ifthenelse{\equal{#1}{MGEO}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Geotecnia}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Geotecnia.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Geotecnia}
+    }{	
+% DIUB ==========================================================================
+\ifthenelse{\equal{#1}{DIUB}}{
+    \tipotrabalho{Tese (Doutorado)}
+    \tipotrabalhoabs{Thesis (Doctor)}
+    \area{Bioengenharia}
+	%\opcao{Nome da Opção}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao Interunidades em Bioengenharia.}
+	\notaficha{Tese (Doutorado) - Programa de P\'os-Gradua\c{c}\~ao Interunidades em Bioengenharia e \'Area de Concentra\c{c}\~ao em Bioengenharia}
+    }{
+% MIUB ===========================================================================
+\ifthenelse{\equal{#1}{MIUB}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Bioengenharia}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao Interunidades em Bioengenharia.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao Interunidades em Bioengenharia e \'Area de Concentra\c{c}\~ao em Bioengenharia}
+    }{	
+% MRNECA ===========================================================================
+\ifthenelse{\equal{#1}{MRNECA}}{
+	\tipotrabalho{Disserta\c{c}\~ao (Mestrado)}
+	\tipotrabalhoabs{Dissertation (Master)}
+	\area{Ensino de Ci\^encias Ambientais}
+	%\opcao{Nome da Opção}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Rede Nacional para Ensino das Ci\^encias Ambientais.}
+	\notaficha{Disserta\c{c}\~ao (Mestrado) - Programa de P\'os-Gradua\c{c}\~ao em Rede Nacional para Ensino das Ci\^encias Ambientais e \'Area de Concentra\c{c}\~ao em Ensino de Ci\^encias Ambientais}
+    }{	         
+% Outros
+	\tipotrabalho{Disserta\c{c}\~ao/Tese (Mestrado/Doutorado)}
+	\tipotrabalhoabs{Dissertation/Thesis (Master/Doctor)}
+    \area{Nome da \'Area}
+    \opcao{Nome da Op\c{c}\~ao}
+    % O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição, a área de concentração e opção quando houver
+	\preambulo{Disserta\c{c}\~ao/Tese apresentada \`a Escola de Engenharia de S\~ao Carlos da Universidade de S\~ao Paulo, para obten\c{c}\~ao do t\'itulo de Mestre/Doutor em Ci\^encias - Programa de P\'os-Gradua\c{c}\~ao em Engenharia.}
+	\notaficha{Disserta\c{c}\~ao/Tese (Mestrado/Doutorado) - Programa de P\'os-Gradua\c{c}\~ao e \'Area de Concentra\c{c}\~ao em Engenharia}		
+    }}}}}}}}}}}}}}}}}}}}}
+    }}}}}}}}}}}}}}}}}}}

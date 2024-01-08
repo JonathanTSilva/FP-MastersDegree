@@ -1,0 +1,68 @@
+%% USPSC-Anexos.tex
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+\partanexos
+
+% ---
+\chapter{Taxonomia de SDI para IACS} \label{anexo:exIDS}
+% ---
+    \newcolumntype{P}[1]{>{\hspace{0pt}}p{#1}}
+    \renewcommand\LTcaptype{quadro}
+    \small
+    \begin{longtable}{|P{2.25cm}|p{1.00cm}|p{2.50cm}|p{1.75cm}|p{6.25cm}|}
+        \caption{Taxonomia de SDI para IACS}\tabularnewline
+            % |p{1.00cm}|p{4.25cm}|p{2.00cm}|p{7.00cm}|
+            \hline
+            \multicolumn{1}{|c|}{\textbf{Referência}} & \multicolumn{1}{c|}{\textbf{Tipo}} & \multicolumn{1}{c|}{\textbf{Técnica}} & \multicolumn{1}{c|}{\textbf{Dados}} & \multicolumn{1}{c|}{\textbf{Método}} \\
+            \hline
+            \cite{tsang2005} & NIDS & Aprendizagem de Máquina (\textit{ant colony clustering}) & Pacotes da rede & Realize clustering de vizinho mais próximo \textit{online} no conjunto de dados de treinamento, a fim de obter clusters e, em seguida, transformá-los em regras difusas que determinam se os dados são normais \\
+            \hline
+            \cite{yang2008} & NIDS & Estatística & Indicadores do sistema & Use um modelo de regressão de kernel auto-associativo acoplado a um teste de taxa de probabilidade estatística para identificar padrões de comportamento normais e anômalos em sistemas SCADA com base em vários indicadores, incluindo utilização de link, uso de CPU e falha de login\\
+            \hline
+            \cite{cheung2007} & NIDS & Conhecimento & Atributos Modbus & Defina as especificações para os padrões de comunicação esperados e os valores legais nos campos de dados do Modbus e use-os para extrair as regras do \textit{snort} \\
+            \hline
+            \cite{valdes2009} & NIDS & Estatística & Pacotes da rede & Encontre tráfego malicioso em fluxos de tráfego de rede usando métodos estatísticos para calcular a probabilidade de um padrão ser normal ou malicioso \\
+            \hline
+            \cite{carcano2010} & NIDS & Conhecimento & Atributos Modbus & Detectar pacotes ilegais enviados por CLPs ou RTUs fazendo uma análise semântica dos comandos de controle e modelando os estados do sistema para detectar comandos de controle inválidos geralmente levam o sistema a um estado crítico \\
+            \hline
+            \cite{linda2009} & NIDS & Aprendizagem de Máquina (\textit{neural network}) & Pacotes da rede & Modelando o comportamento normal do sistema usando a combinação de dois algoritmos de aprendizado de rede neural (\textit{Error Back-Propagation} e \textit{Levenberg-Marquardt}) com uma técnica específica de extração de recursos baseada em janela proposta para extrair 16 tipos de recursos de rede \\
+            \hline
+            \cite{dussel2010} & NIDS & Estatística & Pacotes da rede & O detector de anomalias aprende um modelo global de comportamento normal, então as sequências de bytes de pacotes são comparadas com o modelo aprendido anteriormente e com base na distância (desvio) uma pontuação de anomalia é calculada \\
+            \hline
+            \cite{hadeli2009} & NIDS & Conhecimento & Pacotes da rede e especificações do sistema & Extraia padrões de tráfego de rede legais e ilegais das especificações de protocolo predefinidas e da descrição formal de um sistema e, em seguida, transforme-os em modelos de tráfego legítimo e ilegítimo \\
+            \hline
+            \cite{wei2010} & NIDS & Aprendizagem de Máquina (\textit{neural network}) & Dados de processo & Um SDI baseado em rede neural monitora as propriedades físicas do sistema controlado para detectar ataques de injeção de resposta falsa \\
+            \hline
+            \cite{linda2011} & NIDS & Aprendizagem de Máquina (lógica \textit{fuzzy}) & Pacotes da rede & As regras \textit{fuzzy} que representam os padrões normais de comportamento do ICS são extraídas do pacote de rede usando um algoritmo de agrupamento de vizinho mais próximo \textit{online} adaptado \\
+            \hline
+            \cite{carcano2011} & HIDS & Conhecimento & Variáveis de processo & Projete uma linguagem de modelagem formal para descrever os estados do sistema, então uma medida paramétrica da distância entre um determinado estado e o conjunto de estados críticos pode ser usada para rastrear a evolução do sistema para um estado crítico \\
+            \hline
+            \cite{cardenas2011} & HIDS & Conhecimento & Dados de processo e comandos de controle & Descrever o comportamento do sistema usando um modelo linear que pode ser usado para prever a saída do sistema físico com base na sequência de entrada do controle e, assim, qualquer ataque ao sensor ou aos dados do controlador pode ser detectado comparando a saída esperada com o sinal recebido \\
+            \hline
+            \cite{lin2013} & NIDS & Conhecimento & Pacote de atributos & Desenvolva um analisador de pacotes para o protocolo DNP3 e usando especificações de processo, as políticas de segurança do sistema são extraídas e usadas por um SDI baseado em Bro para verificar os valores legais dos diferentes campos nos pacotes DNP3 \\
+            \hline
+            \cite{lin2013b} & NIDS & Conhecimento & Comandos de controle & Proponha uma estrutura de análise semântica que combine o conhecimento do sistema de infraestrutura cibernética (comandos de controle) e física (medidas de sensores) na rede elétrica para estimar qual será o estado do sistema se um comando de controle for permitido \\
+            \hline
+            \cite{hadvziosmanovic2014} & HIDS & Aprendizagem de Máquina (modelo autorregressivo) & Variáveis de processo & Detecte ataques de controle de processo observando variáveis no tráfego de rede em um ICS e compare os valores capturados com os valores previstos calculados em um período de aprendizado usando o modelo autorregressivo \\
+            \hline
+            \cite{maglaras2014} & NIDS & Aprendizagem de Máquina (\textit{One-Class SVM}) & Tráfego de rede & Use o método One-Class Support Vector Machine (OCSVM), que não requer dados de treinamento rotulados e é usado para construir os modelos de tráfego para distinguir os comportamentos normais dos anormais \\
+            \hline
+            \cite{almalawi2014} & HIDS & Aprendizagem de Máquina (\textit{clustering}) & Variáveis de processo & Proponha uma abordagem de aprendizado não supervisionado, que consiste em identificar estados consistentes/inconsistentes a partir de dados não rotulados, atribuindo uma pontuação de inconsistência a cada observação usando o fator de densidade para os k vizinhos mais próximos da observação e extraindo regras de detecção baseadas em proximidade para cada comportamento, seja inconsistente ou consistente \\
+            \hline
+            \cite{zhou2015} & NIDS/\newline HIDS & Estatística & Pacotes da rede e variáveis de processo & Um IDS baseado em multi-modelos usa diferentes modelos que representam diferentes aspectos do sistema (comunicação, estados físicos, fluxo de controle) para detectar anomalias, então um classificador inteligente baseado no modelo oculto de Markov (HMM) é usado para distinguir o ataque da falha \\
+            \hline
+            \cite{caseli2015} & NIDS & Estatística & Pacotes da rede e variáveis de processo & O tráfego de rede do modelo é rastreado em um modelo DTMC (Discrete-Time Markov Chain) e extrai seu significado semântico para descrever as sequências de mensagens normais, em seguida, um mecanismo de detecção baseado no cálculo de uma distância ponderada entre os estados da cadeia de Markov é usado para detectar ataques semânticos \\
+            \hline
+            \cite{ponomarec2016} & NIDS & Aprendizagem de Máquina (classificação) & Pacotes da rede & Monitore e analise os dados do tráfego de rede para calcular uma média contínua dos dados de telemetria e, usando um algoritmo de classificação, o SDI pode detectar as anomalias no tráfego \\
+            \hline
+            \cite{yusheng2017} & NIDS & Conhecimento & Pacotes da rede & Realize uma inspeção profunda do tráfego Modbus TCP em tempo real. Consiste em duas partes: extração de regras e inspeção profunda. O módulo de extração de regras é responsável por extrair conjuntos de regras normais e anormais. O módulo de inspeção profunda realiza a detecção de anomalias com base nos relacionamentos extraídos \\
+            \hline
+        \end{longtable}
+        \fonte{adaptado de \cite{kaouk2019}.}
+        \renewcommand\LTcaptype{table}
+
+\end{anexosenv}
