@@ -1264,7 +1264,7 @@
 % ---
 
 % Chamanda para dados pre-textuais
-\include{USPSC-unidades}  
+\input{USPSC-unidades}  
 %
 
 % ------------------------------------------------------------------------

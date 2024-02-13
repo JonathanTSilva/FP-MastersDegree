@@ -76,7 +76,7 @@ brazil				% o último idioma é o principal do documento
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{float} 				% Fixa tabelas e figuras no local exato
-\usepackage{chemfig,chemmacros} % Para escrever reações químicas
+% \usepackage{chemfig,chemmacros} % Para escrever reações químicas
 \usepackage{tikz}				% Para escrever reações químicas e outros
 \usetikzlibrary{matrix,shapes,arrows,positioning,chains}
 \usepackage{microtype} 			% para melhorias de justificação
@@ -412,9 +412,9 @@ straight connector/.style={
 
 % Se você optar por elaborar a ficha catalográfica, deverá 
 % incluir uma % antes da linha % antes
-% do comando \include{USPSC-TA-PreTextual/USPSC-fichacatalografica} 
+% do comando \input{USPSC-TA-PreTextual/USPSC-fichacatalografica} 
 % e retirar o % do comando abaixo
-% \include{USPSC-TA-PreTextual/USPSC-fichacatalografica}
+% \input{USPSC-TA-PreTextual/USPSC-fichacatalografica}
 % As informações que compõem a ficha catalográfica estão 
 % definidas no arquivo USPSC-pre-textual-UUUU.tex
 % ---
@@ -431,7 +431,7 @@ straight connector/.style={
 % Inserir errata
 % ---
 
-% \include{USPSC-TA-PreTextual/USPSC-Errata}
+% \input{USPSC-TA-PreTextual/USPSC-Errata}
 
 % ---
 
@@ -446,25 +446,25 @@ straight connector/.style={
 % Alternativa para a Folha de Aprovação:
 % Se for a sua opção elaborar uma folha de aprovação, insira uma % antes do comando acima que inclui o arquivo folhadeaprovacao.pdf,
 % tire o % do comando abaixo e altere o arquivo folhadeaprovacao.tex conforme suas necessidades
-\include{USPSC-TA-PreTextual/USPSC-folhadeaprovacao}
+\input{USPSC-TA-PreTextual/USPSC-folhadeaprovacao}
 \includepdf{USPSC-TA-PreTextual/USPSC-PaginaEmBranco.pdf}
 
 % ---
 % Dedicatória
 % ---
-\include{USPSC-TA-PreTextual/USPSC-Dedicatoria}
+\input{USPSC-TA-PreTextual/USPSC-Dedicatoria}
 % ---
 
 % ---
 % Agradecimentos
 % ---
-\include{USPSC-TA-PreTextual/USPSC-Agradecimentos}
+\input{USPSC-TA-PreTextual/USPSC-Agradecimentos}
 % ---
 
 % ---
 % Epígrafe
 % ---
-\include{USPSC-TA-PreTextual/USPSC-Epigrafe}
+\input{USPSC-TA-PreTextual/USPSC-Epigrafe}
 % ---
 
 % A T E N Ç Ã O
@@ -473,12 +473,12 @@ straight connector/.style={
 %
 % Resumo
 % ---
-\include{USPSC-TA-PreTextual/USPSC-Resumo}
+\input{USPSC-TA-PreTextual/USPSC-Resumo}
 % ---
 
 % Abstract
 % ---
-\include{USPSC-TA-PreTextual/USPSC-Abstract}
+\input{USPSC-TA-PreTextual/USPSC-Abstract}
 % ---
 
 % ---
@@ -508,13 +508,13 @@ straight connector/.style={
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-\include{USPSC-TA-PreTextual/USPSC-AbreviaturasSiglas}
+\input{USPSC-TA-PreTextual/USPSC-AbreviaturasSiglas}
 % ---
 
 % ---
 % inserir lista de símbolos
 % ---
-\include{USPSC-TA-PreTextual/USPSC-Simbolos}
+\input{USPSC-TA-PreTextual/USPSC-Simbolos}
 % ---
 % ---
 % inserir o sumario
@@ -530,17 +530,17 @@ straight connector/.style={
 % Os capítulos são inseridos como arquivos externos 
 
 % Capítulos
-\include{USPSC-TA-Textual/USPSC-Cap1-Introducao}
+\input{USPSC-TA-Textual/USPSC-Cap1-Introducao}
 
-\include{USPSC-TA-Textual/USPSC-Cap2-Referencial}
+\input{USPSC-TA-Textual/USPSC-Cap2-Referencial}
 
-\include{USPSC-TA-Textual/USPSC-Cap3-Desenvolvimento}
+\input{USPSC-TA-Textual/USPSC-Cap3-Desenvolvimento}
 
-\include{USPSC-TA-Textual/USPSC-Cap4-Resultados}
+\input{USPSC-TA-Textual/USPSC-Cap4-Resultados}
 
-\include{USPSC-TA-Textual/USPSC-Cap5-Conclusao}
+\input{USPSC-TA-Textual/USPSC-Cap5-Conclusao}
 
-\include{USPSC-TA-Textual/USPSC-Cronograma}
+\input{USPSC-TA-Textual/USPSC-Cronograma}
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -565,17 +565,17 @@ straight connector/.style={
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
-% \include{USPSC-TA-PosTextual/USPSC-Apendices}
+% \input{USPSC-TA-PosTextual/USPSC-Apendices}
 
 % ----------------------------------------------------------
 % Anexos
 % ----------------------------------------------------------
-% \include{USPSC-TA-PosTextual/USPSC-Anexos}
+% \input{USPSC-TA-PosTextual/USPSC-Anexos}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %--------------------------------------------------------------------
-\include{USPSC-TA-PosTextual/USPSC-IndicesRemissivos}
+\input{USPSC-TA-PosTextual/USPSC-IndicesRemissivos}
 
 %---------------------------------------------------------------------
 
