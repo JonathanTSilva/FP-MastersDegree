@@ -42,8 +42,8 @@
 % -- opções da classe memoir --
 12pt,		% tamanho da fonte
 openright,	% capítulos começam em pág ímpar (insere página vazia caso preciso)
-oneside,  % para impressão em anverso (frente) e verso. Oposto a oneside/twoside - Nota: utilizar \imprimirfolhaderosto*
-%oneside, % para impressão em páginas separadas (somente anverso) -  Nota: utilizar \imprimirfolhaderosto
+%twoside,  % para impressão em anverso (frente) e verso. Oposto a oneside/twoside - Nota: utilizar \imprimirfolhaderosto*
+oneside, % para impressão em páginas separadas (somente anverso) -  Nota: utilizar \imprimirfolhaderosto
 % inclua uma % antes do comando twoside e exclua a % antes do oneside 
 a4paper,			% tamanho do papel. 
 % -- opções da classe abntex2 --
@@ -78,14 +78,15 @@ brazil				% o último idioma é o principal do documento
 \usepackage{float} 				% Fixa tabelas e figuras no local exato
 % \usepackage{chemfig,chemmacros} % Para escrever reações químicas
 \usepackage{tikz}				% Para escrever reações químicas e outros
+
 \usetikzlibrary{matrix,shapes,arrows,positioning,chains}
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{pdfpages}
 \usepackage{makeidx}            % para gerar índice remissivo
-\usepackage{hyphenat}          % Pacote para retirar a hifenizacao do texto
-\usepackage[absolute]{textpos} % Pacote permite o posicionamento do texto
-\usepackage{eso-pic}           % Pacote para incluir imagem de fundo
-\usepackage{makebox}           % Pacote para criar caixa de texto
+\usepackage{hyphenat}           % Pacote para retirar a hifenizacao do texto
+\usepackage[absolute]{textpos}  % Pacote permite o posicionamento do texto
+\usepackage{eso-pic}            % Pacote para incluir imagem de fundo
+\usepackage{makebox}            % Pacote para criar caixa de texto
 % ---
 
 % ---
@@ -297,6 +298,9 @@ straight connector/.style={
     to path=--(\tikztotarget) \tikztonodes
 }
 }
+
+% Altera o tamanho da fonte da subfigura (precisa do pacote subcaption)
+\captionsetup[sub]{font=scriptsize}
 
 \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
@@ -540,7 +544,7 @@ straight connector/.style={
 
 \input{USPSC-TA-Textual/USPSC-Cap5-Conclusao}
 
-\input{USPSC-TA-Textual/USPSC-Cronograma}
+% \input{USPSC-TA-Textual/USPSC-Cronograma}
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -560,12 +564,12 @@ straight connector/.style={
 %
 % Consulte o manual da classe abntex2 para orientações sobre o glossário.
 %
-%\glossary
+% \glossary
 
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
-% \input{USPSC-TA-PosTextual/USPSC-Apendices}
+\input{USPSC-TA-PosTextual/USPSC-Apendices}
 
 % ----------------------------------------------------------
 % Anexos
@@ -575,6 +579,19 @@ straight connector/.style={
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %--------------------------------------------------------------------
+% Para compilar o índice, utilize a sequencia de comandos: pdflatex ➞ makeindex ➞ bibtex ➞ pdflatex × 2
+% Com o makeindex executado com as seguintes opções (no VSCode):
+% { 
+%     "name": "makeindex",
+%     "command": "makeindex",
+%     "args": [
+%         "%DOCFILE%.idx",
+%         "-s",
+%         "%DOCFILE%.ilg",
+%         "-o",
+%         "%DOCFILE%.ind"
+%     ]
+% },
 \input{USPSC-TA-PosTextual/USPSC-IndicesRemissivos}
 
 %---------------------------------------------------------------------

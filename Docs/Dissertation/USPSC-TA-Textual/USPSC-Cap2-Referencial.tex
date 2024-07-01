@@ -12,7 +12,7 @@
         \caption{Convergência de diferentes visões destacadas pela IoT}
         \label{fig:convergenceIoT}
         \begin{center}
-            \includegraphics[width=0.7\linewidth]{USPSC-img/convergenceIoT2-low.png}
+            \includegraphics[width=0.7\linewidth]{USPSC-img/convergenceIoT2.png}
         \end{center}
         \fonte{adaptada de \cite{bandyopadhyay2011}}
     \end{figure}
@@ -23,7 +23,7 @@
         \caption{Convergência dos tópicos de formação da IIoT}
         \label{fig:convergenceIIoT}
         \begin{center}
-            \includegraphics[width=0.7\linewidth]{USPSC-img/convergenceIIoT2-low.png}
+            \includegraphics[width=0.7\linewidth]{USPSC-img/convergenceIIoT2.png}
         \end{center}
         \fonte{elaborada pelo autor.}
     \end{figure}
@@ -73,7 +73,7 @@
             \caption{Arquitetura Cliente-Servidor do OPC UA}
             \label{fig:opcuaArqCS}
             \begin{center}
-                \includegraphics[width=1\linewidth]{USPSC-img/opcuaClientServerArc1-low.png}
+                \includegraphics[width=1\linewidth]{USPSC-img/opcuaClientServerArc1.png}
             \end{center}
             \fonte{adaptada de \cite[Parte 6]{opc2022} e \cite{huang2010}.}
         \end{figure}
@@ -101,7 +101,7 @@
             \caption{Categorização da comunicação OPC UA no modelo de referência OSI}
             \label{fig:ua-osi}
             \begin{center}
-                \includegraphics[width=0.9\linewidth]{USPSC-img/ua-osi-low.png}
+                \includegraphics[width=0.9\linewidth]{USPSC-img/ua-osi.png}
             \end{center}
             \fonte{adaptada de \cite{neumann2015}.}
         \end{figure}
@@ -128,7 +128,7 @@
             \caption{Processo de criação e encerramento de conexão no OPC UA}
             \label{fig:seqConn}
             \begin{center}
-                \includegraphics[width=0.972\linewidth]{USPSC-img/seqConn-low.png}
+                \includegraphics[width=0.972\linewidth]{USPSC-img/seqConn.png}
             \end{center}
             \fonte{adaptada de \cite{mahnke2009}.}
         \end{figure}
@@ -177,7 +177,7 @@
     \begin{figure}[htbp]
         \caption{\label{fig:convIT/OT}Tópicos da convergência TI/TO}
         \begin{center}
-            \includegraphics[width=1\textwidth]{USPSC-img/convergenceITOT-low.png}
+            \includegraphics[width=1\textwidth]{USPSC-img/convergenceITOT.png}
         \end{center}
         \legend{Fonte: adaptado de \cite{yassine2021}.}
     \end{figure}
@@ -346,6 +346,40 @@
         \item \underline{Análise Estática de Fluxo de Dados}: também referida como "Análise de Fluxo de Dados Contaminado", é uma abordagem de análise estática em que dados de entradas de fontes não confiáveis são classificados como contaminados. Seu fluxo em direção a instruções confidenciais do \textit{sofware} é rastreado como um possível indicador de vulnerabilidade.
     \end{itemize}
     
+    {\color{red}
+    \section{Indicadores de Desempenho em Redes Industriais}
+
+    A análise do tráfego de rede em sistemas industriais, como aqueles baseados no protocolo OPC UA, requer a utilização de diversos indicadores de desempenho para avaliar a eficácia e a segurança da comunicação. Dois desses indicadores cruciais são o throughput e o round trip time (RTT). A seguir, são definidas e discutidas suas importâncias e aplicações no contexto de redes industriais.
+
+    \subsection{Throughput}
+
+    O throughput é um indicador de desempenho que mede a quantidade de dados transmitidos através da rede em um período específico, geralmente expresso em kilobits por segundo (kbps) ou megabits por segundo (Mbps). Ele é um parâmetro fundamental para avaliar a capacidade e eficiência de uma rede em transportar dados.
+
+    A análise do throughput em redes OPC UA é vital por várias razões:
+
+    \begin{enumerate}
+        \item \textbf{Capacidade da Rede:} Avaliar o throughput permite determinar se a rede pode suportar a quantidade de dados necessária para a operação contínua e eficiente de sistemas industriais.
+        \item \textbf{Detecção de Gargalos:} Um throughput baixo pode indicar gargalos ou problemas de congestionamento na rede, que podem afetar a performance geral dos sistemas de controle e automação.
+        \item \textbf{Impacto de Ataques:} Durante ataques cibernéticos, como DoS, o throughput pode ser significativamente afetado. Analisar as mudanças no throughput pode ajudar a identificar a presença e a intensidade de tais ataques.
+    \end{enumerate}
+
+    Para medir o throughput, são utilizados softwares de monitoramento de rede que capturam e analisam pacotes de dados transmitidos. Em nosso estudo, o throughput foi calculado durante um período de 60 segundos para cada cenário de ataque, sob diferentes políticas de segurança do OPC UA.
+
+    \subsection{Round Trip Time (RTT)}
+
+    O round trip time (RTT) é o tempo que um pacote de dados leva para ir do ponto de origem ao destino e voltar ao ponto de origem. É um indicador crucial da latência de rede e é normalmente medido em milissegundos (ms).
+
+    A importância do RTT na análise de desempenho de redes industriais OPC UA inclui:
+
+    \begin{enumerate}
+        \item \textbf{Latência de Comunicação:} O RTT oferece uma medida direta da latência na comunicação entre dispositivos. Em sistemas de controle industrial, uma latência baixa é essencial para o funcionamento em tempo real.
+        \item \textbf{Qualidade de Serviço:} Um RTT elevado pode indicar problemas na rede que impactam negativamente a qualidade do serviço (QoS), como roteamento ineficiente, problemas de congestionamento, ou ataques cibernéticos.
+        \item \textbf{Detecção de Anomalias:} Análises de RTT podem ajudar a identificar anomalias na rede, como atrasos inesperados que podem ser causados por problemas de configuração ou atividades maliciosas.
+    \end{enumerate}
+
+    A medição do RTT envolve a análise do tempo de ida e volta de pacotes de dados utilizando ferramentas de rede. Em nossa pesquisa, o RTT foi normalizado em uma escala de 0 a 1 e analisado para cada cenário de ataque, proporcionando uma visão detalhada das variações na latência sob diferentes condições de segurança.
+    }
+
     \section{Trabalhos Correlatos} \label{sec:trabCorrelatos}
 
     O crescente dinamismo dos sistemas industriais e o aumento significativo dos ataques aos IACSs demandam estudos aprofundados para compreender como as mudanças na arquitetura desses sistemas afetam o desempenho dos mecanismos de segurança. Além disso, é fundamental manter constantemente atualizada a base de conhecimento, particularmente no que diz respeito aos principais aspectos de segurança cibernética relacionados ao protocolo OPC UA, amplamente utilizado por esses sistemas industriais.
