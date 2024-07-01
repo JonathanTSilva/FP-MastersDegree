@@ -1,5 +1,12 @@
 {
     "cSpell.words": [
         "pcapng"
-    ]
+    ],
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "ranges": "c"
+    }
 }
