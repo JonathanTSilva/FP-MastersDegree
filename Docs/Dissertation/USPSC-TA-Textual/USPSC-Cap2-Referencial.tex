@@ -351,6 +351,18 @@
 
     A análise do tráfego de rede em sistemas industriais, como aqueles baseados no protocolo OPC UA, requer a utilização de diversos indicadores de desempenho para avaliar a eficácia e a segurança da comunicação. Dois desses indicadores cruciais são o throughput e o round trip time (RTT). A seguir, são definidas e discutidas suas importâncias e aplicações no contexto de redes industriais.
 
+    {\color{red}O throughput é uma medida crítica da capacidade de transmissão de dados da rede. A análise do throughput permite identificar como os ataques afetam a quantidade de dados que podem ser transmitidos em um determinado período. Reduções significativas no throughput indicam que o ataque está conseguindo interromper ou diminuir a eficiência da comunicação na rede. Este indicador é essencial para avaliar a degradação da performance da rede e a eficácia das políticas de segurança implementadas.
+
+    O desempenho da RAM e da CPU é um indicador direto da carga de trabalho imposta ao servidor OPC UA durante um ataque. Monitorar o uso desses recursos é crucial para identificar sobrecargas que podem levar à instabilidade ou falhas no sistema. Um aumento significativo no uso de CPU e RAM durante um ataque pode sugerir que o servidor está sendo sobrecarregado com solicitações maliciosas, o que pode comprometer sua capacidade de atender às solicitações legítimas. Analisar esses dados ajuda a entender a resistência do servidor sob diferentes tipos de ataques e políticas de segurança.
+
+    A quantidade de pacotes OPC UA por segundo fornece uma visão detalhada do fluxo de dados na rede. Alterações abruptas na quantidade de pacotes podem indicar comportamentos anômalos ou interrupções causadas pelos ataques. Este indicador é especialmente útil para detectar atividades suspeitas, como tentativas de captura de dados (sniffing) ou interferências na comunicação (MITM). A análise desse gráfico ajuda a identificar padrões de tráfego anômalos que podem estar associados a atividades maliciosas.
+
+    O RTT normalizado é uma medida da latência na comunicação entre cliente e servidor. A latência é um fator crítico para a eficiência e a responsividade das redes OPC UA. Aumentos no RTT durante um ataque indicam que a comunicação está sendo retardada, possivelmente devido a sobrecargas ou interferências. Analisar o RTT ajuda a entender como os ataques afetam a velocidade e a eficiência da comunicação na rede, e a normalização permite comparar o impacto em diferentes cenários de forma consistente.
+
+    A representação visual dos dados através dos gráficos permite uma interpretação mais intuitiva e imediata dos impactos dos ataques. Gráficos fornecem uma forma eficaz de identificar tendências, anomalias e padrões que podem não ser facilmente detectáveis através da análise de dados brutos. Além disso, eles facilitam a comparação entre diferentes cenários de ataque e políticas de segurança, permitindo uma avaliação clara da eficácia das medidas de proteção implementadas.
+
+    Em resumo, a análise dos gráficos de throughput, desempenho de RAM e CPU, quantidade de pacotes por segundo e RTT normalizado oferece uma compreensão detalhada e multidimensional dos efeitos dos ataques cibernéticos em redes OPC UA. Essa abordagem é essencial para identificar vulnerabilidades, avaliar a eficácia das políticas de segurança e desenvolver estratégias de defesa mais robustas.}
+    
     \subsection{Throughput}
 
     O throughput é um indicador de desempenho que mede a quantidade de dados transmitidos através da rede em um período específico, geralmente expresso em kilobits por segundo (kbps) ou megabits por segundo (Mbps). Ele é um parâmetro fundamental para avaliar a capacidade e eficiência de uma rede em transportar dados.

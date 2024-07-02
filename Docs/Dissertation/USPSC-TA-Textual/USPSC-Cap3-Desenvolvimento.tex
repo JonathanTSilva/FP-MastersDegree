@@ -1,10 +1,10 @@
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
 
-Devido à importância do tema e ao raciocínio apresentado, um método para análise de \index{Vulnerabilidade}vulnerabilidades em redes industriais \index{OPC UA}OPC UA foi desenvolvido. O presente capítulo oferece os principais aspectos da bancada experimental utilizada e o conjunto de estratégias adotados para a realização e desenvolvimento do mesmo, assim como o cronograma proposto para o cumprimento das metas estabelecidas.
+Devido à importância do tema e ao raciocínio apresentado, um método para análise de \index{Vulnerabilidade}vulnerabilidades em redes industriais \index{OPC UA}OPC UA foi desenvolvido. O presente capítulo oferece os principais aspectos da bancada experimental utilizada e o conjunto de estratégias adotados para a realização e desenvolvimento do mesmo.
 
 \section{Aspectos da Bancada Experimental para Ensaios de Intrusão em Redes OPC UA}
 
-    Nesta seção, toda a estrutura responsável pela aquisição de dados experimentais gerados para auxiliar no desenvolvimento do presente trabalho é descrita. A \autoref{fig:esqBanc} ilustra a composição da estrutura da bancada experimental utilizada, cujos principais componentes são detalhados a seguir:
+    Nesta seção, toda a estrutura responsável pela aquisição de dados experimentais gerados para auxiliar no desenvolvimento do trabalho é descrita. A \autoref{fig:esqBanc} ilustra a composição da estrutura da bancada experimental utilizada, cujos principais componentes são detalhados a seguir:
 
     \begin{figure}[htbp]
         \caption{\label{fig:esqBanc}Esquema geral da bancada experimental para ensaios de segurança cibernética}
@@ -21,7 +21,7 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
     \begin{itemize}
         \item \underline{DF63 NG}: representa a nova geração dos controladores multifuncionais da plataforma DFI302 da Nova Smar S/A funcionando como um `\textit{linking device}' para conectar redes H1 independentes e redes Ethernet HSE, especialmente projetado para soluções de controle distribuído em redes industriais. Além de suportar comunicação Modbus, oferece recursos avançados, incluindo redundância `\textit{Hot standby}', comunicação OPC UA nativa, estampa de tempo e configuração por meio da linguagem Ladder conforme IEC 61131. A DF63 NG é altamente versátil, permitindo a instanciação de centenas de blocos funcionais, incluindo blocos flexíveis, e possui um servidor Web integrado para diagnóstico e parametrização;
         \item \underline{Raspberry Pi 4 Modelo B}: são utilizados dois mini-computadores de placa única multiplataforma, configuradas com o sistema operacional Kali Linux, hospedando um cliente e um servidor OPC UA cada. A Raspberry Pi 4 Modelo B representa uma evolução significativa em relação às gerações anteriores, incorporando um processador ARM Cortex-A72 quad-core de 64 bits rodando a 1,5 GHz, suporte a Wi-Fi 802.11ac, Bluetooth 5.0 e maior capacidade de memória. Estes aprimoramentos garantem um ambiente experimental mais robusto e capacidade de processamento aprimorada para a condução de testes de intrusão em redes OPC UA. Todas as Raspberry Pi's existentes na bancada experimental são configuradas como cliente e servidor OPC UA;
-        \item \underline{Ethernet Switch}: Trata-se de um dos dispositivos de rede mais ubíquos, empregado para centralizar a comunicação entre múltiplos dispositivos. Utiliza a técnica de comutação de pacotes para receber e encaminhar dados de um dispositivo para outro. Neste projeto, faz-se uso de um \textit{Switch} Ethernet da marca TP-Link para estabelecer uma conexão entre os clientes OPC UA e os servidores. O componente de rede que atuar como hospedeiro do servidor OPC UA, encontra-se conectado ao comutador Ethernet por meio de um cabo LAN, da mesma maneira que outro responsável por hospedar o cliente também está conectado ao\textit{Switch}. Cumpre destacar que os comutadores Ethernet da TP-Link incorporam tecnologia Ethernet verde, que resulta em economia de consumo energético, enquanto o controle de fluxo IEEE 802.3x proporciona uma transferência de dados confiável.
+        \item \underline{Ethernet Switch}: Trata-se de um dos dispositivos de rede mais ubíquos, empregado para centralizar a comunicação entre múltiplos dispositivos. Utiliza a técnica de comutação de pacotes para receber e encaminhar dados de um dispositivo para outro. Neste projeto, faz-se uso de um \textit{Switch} Ethernet da marca TP-Link para estabelecer uma conexão entre os clientes OPC UA e o servidor. O componente de rede que atuar como hospedeiro do servidor OPC UA, encontra-se conectado ao comutador Ethernet por meio de um cabo LAN, da mesma maneira que outro responsável por hospedar o cliente também está conectado ao\textit{Switch}. Cumpre destacar que os comutadores Ethernet da TP-Link incorporam tecnologia Ethernet verde, que resulta em economia de consumo energético, enquanto o controle de fluxo IEEE 802.3x proporciona uma transferência de dados confiável.
         \item \underline{Elemento Invasor}: desempenha um papel fundamental na condução dos testes de intrusão propostos neste estudo. Representa uma simulação de ataque por meio de um computador que pode ser configurado de maneira flexível para atender a cenários específicos de teste. Os ataques são realizados utilizando uma variedade de ferramentas de software, como Hping3 e Nmap (veja \autoref{subsec:software}). Vale ressaltar que o Elemento Invasor é empregado com extrema cautela em um ambiente controlado, a fim de evitar qualquer impacto adverso e garantir a segurança contínua. Assim, respeitando rigorosamente as considerações éticas, os ataques efetuados neste trabalho pelo elemento invasor não implicam em nenhuma violação das regulamentações estabelecidas pela Lei Geral de Proteção de Dados (LGPD) por não ser aplicado em nenhuma rede ou implementação real.
     \end{itemize}
     
@@ -31,7 +31,7 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
 
     \begin{itemize}
         \item \underline{Smar OPC UA server}: servidor OPC UA proprietário da Nova Smar S/A, é amplamente aplicado no setor industrial juntamente com a linha de produtos compatíveis com o novo padrão O-PAS (do inglês, \textit{Open Process Automation™ Standards}), desenvolvido pelo OPAF (do inglês, \textit{Open Process Automation™ Forum}), oferecendo um ambiente altamente seguro e eficiente para a comunicação e troca de dados em sistemas de automação industrial. A Nova Smar S/A continua aprimorando seu servidor OPC UA para atender às crescentes demandas do mercado, proporcionando uma solução de conectividade sólida e confiável;
-        \item \underline{opcua-asyncio}: implementação de código aberto do OPC UA, escrito em Python com suporte para asyncio. O opcua-asyncio opera sob a GNU Lesser General Public License v3.0,  permitindo sua integração e distribuição com \textit{software} proprietário. Essa biblioteca é versátil, compatível com vários ambientes Python, e oferece informações detalhadas sobre a implementação de clientes e servidores OPC UA. O opcua-asyncio implementa o conjunto de protocolos binários OPC UA, SDK de cliente e servidor, e é uma opção flexível para desenvolvedores que preferem Python como sua linguagem de programação;
+        \item \underline{opcua-asyncio}: implementação de código aberto do OPC UA, escrito em Python com suporte para asyncio. O opcua-asyncio opera sob a GNU Lesser General Public License v3.0,  permitindo sua integração e distribuição com \textit{software} proprietário. Essa biblioteca é versátil, compatível com vários ambientes Python, e oferece informações detalhadas sobre a implementação de clientes e servidor OPC UA. O opcua-asyncio implementa o conjunto de protocolos binários OPC UA, SDK de cliente e servidor, e é uma opção flexível para desenvolvedores que preferem Python como sua linguagem de programação;
         \item \underline{OPC UA Exploit Framework}: projeto \textit{open-source}, desenvolvido e mantido pela Claroty Team82, que fornece um framework avançado de ferramentas para pesquisa e exploração de vulnerabilidades em redes OPC UA. O intuito deste projeto é facilitar e auxiliar empresas desenvolvedoras de software e fornecedoras de OPC UA na fase de teste e aprimoramento dos seus produtos, além de suportar pesquisadores da área na análise de novas vulnerabilidades e \textit{bugs} sistêmicos;
         \item \underline{Ettercap}: ferramenta de \textit{software} utilizada principalmente para implementar ataques do tipo MITM. Possui recursos extras de captura de conexões \textit{real-time}, filtragem de conteúdo e análise de \textit{hosts} de destino. O Ettercap é utilizado neste projeto para implementar o primeiro cenário de ataque, capturando a conexão entre cliente e servidor OPC UA;
         \item \underline{Hping3}: ferramenta de linha de comando que serve como montadora e analisadora de pacotes TCP/IP. Inicialmente concebida para executar ataques de negação de serviço (DoS), o hping3 é agora amplamente empregado em testes de segurança de rede. Oferece suporte a protocolos TCP, UDP e ICMP, bem como um modo de rastreamento de rota;
@@ -51,7 +51,7 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
 
 \section{Ataques Cibernéticos em Redes Industriais OPC UA} \label{sec:attacks}
 
-    Nesta seção, uma análise detalhada dos cenários de ataque implementados minuciosamente no âmbito do presente projeto é apresentada. A exposição abrangente engloba uma descrição passo a passo das metodologias empregadas para orquestrar três formas distintas de ciberataques: \textit{sniffing} de pacotes (do inglês \textit{Packet Sniffing}), ataques do tipo MITM e de negação de serviço. Ao elucidar as complexidades destes vetores de ataque, objetiva-se proporcionar uma compreensão profunda do cenário em evolução das ameaças à cibersegurança em redes OPC UA.
+    Nesta seção, uma análise detalhada dos cenários de ataque implementados minuciosamente no âmbito deste projeto é apresentada. A exposição abrangente engloba uma descrição passo a passo das metodologias empregadas para orquestrar três formas distintas de ciberataques: intervenção de pacotes (do inglês \textit{Packet Sniffing}), ataques do tipo MITM e de negação de serviço. Ao elucidar as complexidades destes vetores de ataque, objetiva-se proporcionar uma compreensão profunda do cenário em evolução das ameaças à cibersegurança em redes OPC UA.
 
     \subsection{\textit{Packet Sniffing}}
 
@@ -77,7 +77,7 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
     
     Os detalhes dos pacotes capturados pelo Wireshark são analisados e descritos detalhadamente no \autoref{cap:resultados}.
     
-    \subsection{\textit{Man in The Middle (MITM)}}
+    \subsection{\textit{Man in the Middle (MITM)}}
 
     Ao efetuar esse ataque, o Elemento Invasor pode interceptar as informações do \textbf{SecureChannel} entre o cliente e servidor OPC UA, como mostra a \autoref{fig:mitm}.
 
@@ -93,7 +93,7 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
     
     Após o término dessa operação de varredura, o Elemento Invasor pode selecionar o(s) alvo(s) nos quais receberam o ataque MITM e então, prosseguir com a falsificação da rede por ARP (do inglês \textit{ARP Spoofing}), um dos tipos mais comuns de efetuar esse ataque. O ARP (do ingês \textit{Address Resolution Protocol}) é um dos protocolos de comunicação mais importantes da camada de rede do modelo OSI, utilizado para determinar o endereço MAC (do inglês \textit{Media Access Control}) de um dispositivo com base no seu endereço IP. Com o \textit{ARP Spoofing}, o invasor é capaz de anunciar à rede que o seu endereço MAC é o correto para os endereços IP pertencentes ao roteador e à estação de trabalho. Assim, estes dois dispositivos atualizam as suas entradas de cache ARP, e, a partir desse ponto, comunicam-se com o invasor, em vez de diretamente entre si.
 
-    Enquanto o \textit{ARP Spoofing} é realizado pela ferramenta Ettercap, inicia-se a captura de pacotes pelo Wireshark. Para facilitar a visualização e a análise realizada neste estudo, o Wireshark é configurado para o protocolo OPC UA, permitindo um exame detalhado da comunicação entre os dispositivos na rede.
+    Enquanto a falsificação da tabela ARP é realizada pela ferramenta Ettercap, inicia-se a captura de pacotes pelo Wireshark. Para facilitar a visualização e a análise realizada neste estudo, o Wireshark é configurado para o protocolo OPC UA, permitindo um exame detalhado da comunicação entre os dispositivos na rede.
     
     \subsection{\textit{Denial of Service (DoS)}}
 
@@ -107,7 +107,7 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
         \legend{Fonte: elaborada pelo autor.}
     \end{figure}
     
-    Existem diversos cenários possíveis para a efetuação do ataque de negação de serviço. Além do impacto da inundação na rede, ressaltam-se os efeitos no processamento do componente ao sofrer ataques intensivos, nos quais os servidores precisam avaliar as certificações para responderem solicitações. Segundo \citeonline{neu2019}, os principais cenários são:
+    Existem diversos cenários possíveis para a efetuação do ataque de negação de serviço. Além do impacto da inundação na rede, ressaltam-se os efeitos no processamento do componente ao sofrer ataques intensivos, no qual o servidor precisa avaliar as certificações para responderem solicitações. Segundo \citeonline{neu2019}, os principais cenários são:
 
     \begin{enumerate}
         \item \underline{SYN \textit{Flooding}}: o cliente sobrecarrega o servidor enviando mensagens SYN de forma contínua, e o servidor responde com ACK a cada uma dessas mensagens. Embora essa ação possa inundar a rede com tráfego sobrecarregado com estas mensagens, seu impacto no consumo de recursos do servidor é limitado;
@@ -132,10 +132,10 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
         bgcolor=codeback,
         fontsize=\footnotesize
     ]{console}
-Nmap -sS 192.168.164.*
+nmap -sS 192.168.164.*
     \end{minted}
 
-    A correta execução desse mapeamento resulta em uma lista de IPs disponíveis e portas abertas, que servirão de entrada para os próximos passos. O Hping3 é utilizado para realizar o SYN \textit{Flooding} na rede. Para isso, o \textit{script} de configuração abaixo deve ser implementado pelo Elemento Invasor, customizando-o de acordo com cada cenário.
+    A correta execução desse mapeamento resulta em uma lista de IPs disponíveis e portas abertas, que servirão de entrada para os próximos passos. O Hping3 é utilizado para realizar o SYN \textit{Flooding} (1) na rede. Para isso, o \textit{script} de configuração abaixo deve ser implementado pelo Elemento Invasor, customizando-o de acordo com cada cenário.
 
     \begin{minted}[
         breaklines,
@@ -155,7 +155,7 @@ set BROADCAST "192.168.164.254"  # Endereço de broadcast da rede
 set PORTS {{4840}{4192}}  # Utilizar as portas abertas encontradas no Nmap
 set PORTUDP 123  # Utilizar uma porta UDP ativa
 
-set commandRunTime 180
+set commandRunTime 60
 
 # EXECUÇÃO
 foreach port $PORTS {
@@ -163,12 +163,12 @@ foreach port $PORTS {
 }
     \end{minted}
 
-    Com isso, o Hping3 está preparado para iniciar o ataque direcionado ao endereço e portas especificados, com uma frequência predefinida (neste caso, 180 segundos). A interpretação dos parâmetros utilizados na execução é a seguinte: o argumento \textbf{-S} define o tipo de ataque, \textbf{-p} identifica a porta de destino, \textbf{-V} indica o endereço IP do alvo, enquanto \textbf{-a} determina o endereço IP falsificado utilizado no ataque, uma estratégia que pode contornar \textit{firewalls} de forma eficaz.
+    Com isso, o Hping3 está preparado para iniciar o ataque direcionado ao endereço e portas especificados, com uma frequência predefinida (neste caso, sessenta segundos). A interpretação dos parâmetros utilizados na execução é a seguinte: o argumento \textbf{-S} define o tipo de ataque, \textbf{-p} identifica a porta de destino, \textbf{-V} indica o endereço IP do alvo, enquanto \textbf{-a} determina o endereço IP falsificado utilizado no ataque, uma estratégia que pode contornar \textit{firewalls} de forma eficaz.
 
     Por fim, alguns ataques mais robustos são efetuados com o auxílio da ferramenta OPC UA Exploit Framework. Os ataques de negação de serviço disponibilizados pelo \textit{framework} e escolhidos para execução no ambiente de simulação industrial proposto, são apresentados abaixo, seguidos de suas respectivas categorias, conforme os cenários supracitados e apresentados por \citeonline{neu2019}, e suas descrições:
 
     \begin{itemize}
-        \item[N/A] \underline{Loop infinito na cadeia de certificados}: refere-se a uma situação em que alguns servidores implementam a verificação da cadeia de certificados por conta própria, sem proteção contra um loop de cadeia infinita. Isso pode ocorrer quando um certificado A, por exemplo, é assinado por outro certificado B, que por sua vez é assinado pelo A. Cria-se uma dependência circular entre os certificados A e B, resultando em um loop infinito durante o processo de verificação da cadeia de certificados;
+        \item[N/A] \underline{Loop infinito na cadeia de certificados}: refere-se a uma situação em que algum servidor implementa a verificação da cadeia de certificados por conta própria, sem proteção contra um loop de cadeia infinita. Isso pode ocorrer quando um certificado A, por exemplo, é assinado por outro certificado B, que por sua vez é assinado pelo A. Cria-se uma dependência circular entre os certificados A e B, resultando em um loop infinito durante o processo de verificação da cadeia de certificados;
         % \item[(3)] \underline{Inundação por \textit{Chunk}}: envolve o envio de uma quantidade abundante de fragmentos de dados ao servidor sem o envio do fragmento final correspondente. O OPC UA permite a divisão dos dados em fragmentos, comumente chamados como \textit{MessageChunks} ou \textit{Chunks}, que são enviados à medida que são codificados, a fim de facilitar a transmissão e o processamento. Caso ocorra um erro na criação de um destes fragmentos, um \textit{Chunk} final deve ser enviado ao destinatário para notificar o erro, que por sua vez, é marcado com um sinalizador `A' (abortar) para indicar o erro. O receptor deve verificar a segurança do \textit{MessageChunk} abortado antes de processá-lo e, caso esteja tudo certo, ignorar a mensagem, mas sem encerrar o \textbf{SecureChannel};
         \item[(3)] \underline{Chamada da função \textit{Dereference} nula}: envolve a chamada de vários métodos OPC UA e encerramento da sessão antes da conclusão destes. Isso resulta em uma situação em que a aplicação servidora é forçada a referenciar um objeto nulo ou um ponteiro invalido, levando a um erro de execução;
         \item[(6)] \underline{Abertura de múltiplos canais seguros}: tentativa de inundação do servidor com uma quantidade abundante de solicitações \textbf{OpenSecureChannels};
@@ -181,7 +181,7 @@ foreach port $PORTS {
         % \item[(6)] \underline{Atualização de condição ilimitada}: refere-se ao envio repetido e quantidade abundante de chamadas do método \textbf{ConditionRefresh}, o que leva a alocações de memória não controladas e, eventualmente, pode resultar em uma falha no sistema. O método ConditionRefresh é usado para atualizar as condições e estados das variáveis monitoradas em um servidor OPC UA.
     \end{itemize}
 
-    Sabendo disso, os ataques acima podem ser efetuados através da seguinte linha de comando base, substituindo SERVER\_TYPE pelo tipo de servidor utilizado (\textit{e.g.}, softing, unified, prosys, kepware, triangle, dotnetstd, open62541, ignition, rust, node-opcua, opcua-python, milo e s2opc), IP\_ADDR pelo endereço de IP do alvo, PORT pela porta aberta para a comunicação UA, ENDPOINT\_ADDRESS pelo endpoint do servidor, FUNC\_TYPE pelo tipo de ataque escolhido (verificar na documentação oficial do framework \cite{claroty2023}, quais os nomes das funções disponíveis) e DIR, necessário para algumas funções:
+    Sabendo disso, os ataques acima podem ser efetuados através da seguinte linha de comando base, substituindo SERVER\_TYPE pelo tipo de servidor utilizado (\textit{e.g.}, softing, unified, prosys, kepware, triangle, dotnetstd, open62541, ignition, rust, node-opcua, opcua-python, milo e s2opc), IP\_ADDR pelo endereço de IP do alvo, PORT pela porta aberta para a comunicação UA, ENDPOINT\_ADDRESS pelo endpoint do servidor, FUNC\_TYPE pelo tipo de ataque escolhido (verificar na documentação oficial do framework quais os nomes das funções disponíveis \cite{claroty2023}) e DIR, necessário para algumas funções:
 
     \begin{minted}[
         breaklines,
@@ -208,7 +208,22 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
         \legend{Fonte: elaborada pelo autor.}
     \end{figure}
 
-    Para a realização adequada do experimento proposto neste estudo, a infraestrutura de rede do protocolo OPC UA foi configurada conforme os seguintes parâmetros: um dos Raspberry Pi e a DF63 NG atuaram como servidores, enquanto a outro Raspberry Pi desempenhou o papel de cliente. Além disso, um elemento de rede chamado `Sniffer' (conforme ilustrado na \autoref{fig:banc}) foi inserido na configuração para monitorar e registrar a comunicação da rede. Com o propósito de fornecer uma visão clara dos componentes envolvidos e facilitar a análise dos dados coletados durante o experimento, os endereços IP e MAC de cada elemento do sistema estão resumidos na \autoref{tab:ender}. Importante mencionar que os servidores OPC UA foram configurados para utilizar a porta padrão 4840, e os \textit{endpoints} correspondentes também são apresentados ao lado de seus respectivos elementos. Essa estrutura de configuração foi essencial para a condução eficaz do experimento e a subsequente análise dos resultados.
+    Para a realização adequada do experimento proposto neste estudo, a infraestrutura de rede do protocolo OPC UA foi configurada conforme os seguintes parâmetros: o Raspberry Pi atuando como servidor e a DF63 NG desempenhando o papel de cliente. Além disso, um elemento de rede chamado `Sniffer' (conforme ilustrado na \autoref{fig:banc}) foi inserido na configuração para monitorar e registrar a comunicação da rede. Com o propósito de fornecer uma visão clara dos componentes envolvidos e facilitar a análise dos dados coletados durante o experimento, os endereços IP e MAC de cada elemento do sistema estão resumidos na \autoref{tab:ender}. Importante mencionar que o servidor OPC UA foram configurados para utilizar a porta padrão 4840, e os \textit{endpoints} correspondentes adotam o padrão abaixo. Essa estrutura de configuração foi essencial para a condução eficaz do experimento e a subsequente análise dos resultados.
+
+    \begin{minted}[
+        breaklines,
+        %linenos,
+        mathescape,
+        encoding=utf8,
+        framesep=2mm,
+        baselinestretch=1.2,
+        bgcolor=codeback,
+        fontsize=\footnotesize
+    ]{console}
+<esquema>://<endereço>:<porta>/<DiscoveryEndpoint>
+    \end{minted}
+
+    Onde, `<esquema>' pode ser `opc.tcp' ou `opc.https', `<endereço>' é o endereço IP do servidor, `<porta>' é a porta de comunicação OPC UA, e `<DiscoveryEndpoint>' é o ponto de descoberta do servidor OPC UA.
 
     \begin{table}[htbp!]
         \centering
@@ -234,9 +249,9 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
 
     \subsection{Aquisição de Dados}
 
-    A fase de aquisição de dados fundamenta-se na captura do tráfego de pacotes transmitidos pela rede OPC UA durante a comunicação entre a aplicação servidora e o cliente da rede, enquanto ocorre os ataques. Esse processo se baseia na utilização do software Wireshark, no qual permite a coleta de informações cruciais sobre a comunicação, incluindo detalhes como o tipo de protocolo empregado e a origem e o destino dos dados. As informações capturadas são armazenadas em ordem cronológica com a capacidade de serem salvas em arquivos no formato `.pcapng'. O software Wireshark está configurado para atualizar a captura a cada segundo.
+    A fase de aquisição de dados fundamenta-se na captura do tráfego de pacotes transmitidos pela rede OPC UA durante a comunicação entre a aplicação servidora e o cliente da rede, enquanto ocorrem os ataques. Esse processo se baseia na utilização do software Wireshark, no qual permite a coleta de informações cruciais sobre a comunicação, incluindo detalhes como o tipo de protocolo empregado, a origem e o destino dos dados. As informações capturadas são armazenadas em ordem cronológica com a capacidade de serem salvas em arquivos no formato `.pcapng'. O software Wireshark foi configurado para finalizar a captura com sessenta segundos de coleta.
 
-    Os alvos dos ataques são os servidores OPC UA, e em cada cenário, o elemento \textit{Sniffer} é configurado para realizar a captura do tráfego gerado por estes ataques. Para organizar os pacotes capturados, foi adotada a seguinte nomenclatura de arquivos: `[Modo de Segurança]-[Tipo do Ataque]-[Número da Captura].pcapng'. Aqui, o modo de segurança pode assumir os valores 0 (None), 1 (Sign) e 2 (Sign\&Encrypt). Os tipos de ataques correspondem àqueles detalhados na \autoref{sec:attacks} (`sniffing', `mitm' e `dos-[função]'), e o número da captura é representado por um dígito de 0 a 9. Por exemplo, para salvar a terceira captura obtida durante uma negação de serviço pelo ataque de chamada da função \textit{Dereference} nula, com a rede configurada no modo de segurança \textbf{Sign}, o arquivo seria nomeado como: `1-dos\_function\_call\_null\_deref.pcapng'. A \autoref{tab:attacks} apresenta os arquivos de captura gerados durante os experimentos para cada tipo de ataque.
+    Os alvos dos ataques é o servidor OPC UA, e em cada cenário, o elemento \textit{Sniffer} é configurado para realizar a captura do tráfego gerado por estes ataques. Para organizar os pacotes capturados, foi adotada a seguinte nomenclatura de arquivos: `[Modo de Segurança]-[Tipo do Ataque]-[Número da Captura].pcapng'. Aqui, o modo de segurança pode assumir os valores 0 (None), 1 (Sign) e 2 (Sign\&Encrypt). Os tipos de ataques correspondem àqueles detalhados na \autoref{sec:attacks} (`sniffing', `mitm' e `dos-[função]'), e o número da captura é representado por um dígito de 0 a 9. Por exemplo, para salvar a terceira captura obtida durante uma negação de serviço pelo ataque de chamada da função \textit{Dereference} nula, com a rede configurada no modo de segurança \textbf{Sign}, o arquivo seria nomeado como: `1-dos\_function\_call\_null\_deref.pcapng'. A \autoref{tab:attacks} apresenta os arquivos de captura gerados durante os experimentos para cada tipo de ataque.
 
     \begin{table}[htbp]
         \centering
@@ -256,9 +271,9 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
             \midrule 
             (0/1/2)-dos\_translate\_browse\_path\_call.pcapng & DoS pela tradução do caminho de navegação \\
             \midrule
-            (0/1/2)-mitm\_arp.pcapng & MiTM pela falsificação da tabela ARP \\
+            (0/1/2)-mitm\_arp.pcapng & MITM pela falsificação da tabela ARP \\
             \midrule
-            (0/1/2)-mitm\_port.pcapng & MiTM pelo roubo de portas \\
+            (0/1/2)-mitm\_port.pcapng & MITM pelo roubo de portas \\
             \midrule
             (0/1/2)-sniffing.pcapng & \textit{Packet Sniffing} \\
             \midrule
@@ -296,11 +311,11 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
     %         1-dos\_translate\_browse\_path\_call.pcapng & \\
     %         2-dos\_translate\_browse\_path\_call.pcapng & \\
     %         \midrule
-    %         0-mitm\_arp.pcapng & \multirow{3}{*}{\parbox{6cm}{MiTM pela falsificação da tabela ARP}} \\
+    %         0-mitm\_arp.pcapng & \multirow{3}{*}{\parbox{6cm}{MITM pela falsificação da tabela ARP}} \\
     %         1-mitm\_arp.pcapng & \\
     %         2-mitm\_arp.pcapng & \\
     %         \midrule
-    %         0-mitm\_port.pcapng & \multirow{3}{*}{\parbox{6cm}{MiTM pelo roubo de portas}} \\
+    %         0-mitm\_port.pcapng & \multirow{3}{*}{\parbox{6cm}{MITM pelo roubo de portas}} \\
     %         1-mitm\_port.pcapng & \\
     %         2-mitm\_port.pcapng & \\
     %         \midrule
@@ -316,7 +331,7 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
     %     \fonte{elaborada pelo autor.}%
     % \end{table}
 
-    Além disso, é importante salientar que durante o processo de coleta de dados com o Wireshark, simultaneamente, obtêm-se informações sobre a carga de processamento da CPU nos hospedeiros do servidor OPC UA. Essa abordagem complementa significativamente a análise dos efeitos do ataque sobre o desempenho do sistema. Para viabilizar esse monitoramento, desenvolveu-se um \textit{script} que deve ser ativado pelo elemento \textit{Sniffer} no início da captura de dados. Essa avaliação detalhada contribui para uma compreensão mais completa e precisa dos efeitos das ameaças cibernéticas na infraestrutura OPC UA em análise.
+    Além disso, é importante salientar que durante o processo de coleta de dados com o Wireshark, simultaneamente, obtêm-se informações sobre a carga de processamento da CPU nos hospedeiros do servidor OPC UA. Essa abordagem complementa significativamente a análise dos efeitos do ataque sobre o desempenho do sistema. Para viabilizar esse monitoramento, desenvolveu-se um \textit{script} que deve ser ativado pelo elemento \textit{Sniffer} no início da captura de dados.
 
     \begin{minted}[
         breaklines,
@@ -393,54 +408,46 @@ def main():
 if __name__ == "__main__":
     main()
     \end{minted}
-    
-    { \color{red} A implementação deste script visa fornecer uma visão integrada do impacto dos ataques não apenas em termos de tráfego de rede, mas também em termos de uso de recursos do sistema, permitindo uma análise mais abrangente das vulnerabilidades e seus efeitos nas operações dos sistemas OPC UA. Esse monitoramento contínuo possibilita a identificação de padrões de comportamento anômalo que podem ser associados a atividades maliciosas, além de fornecer dados quantitativos que auxiliam na avaliação do impacto real dos ataques.
 
-    Para garantir a precisão e a confiabilidade dos dados coletados, cada ataque foi repetido múltiplas vezes, e as capturas resultantes foram analisadas de forma comparativa. Esse método permite a identificação de variações nos resultados que possam ser atribuídas a fatores externos ou a inconsistências na execução dos ataques. Todas as capturas foram realizadas em um ambiente controlado, com a configuração dos dispositivos de rede e dos servidores OPC UA mantida constante ao longo dos experimentos.
+    A implementação desta aquisição visa fornecer uma visão integrada do impacto dos ataques não apenas em termos de tráfego de rede, mas também em termos de uso de recursos do sistema, permitindo uma análise mais abrangente das vulnerabilidades e seus efeitos nas operações dos sistemas OPC UA. Esse monitoramento contínuo possibilita a identificação de padrões de comportamento anômalo que podem ser associados a atividades maliciosas, além de fornecer dados quantitativos que auxiliam na avaliação do impacto real dos ataques.
 
-    Adicionalmente, a coleta de dados incluiu a utilização de ferramentas adicionais de monitoramento para verificar a integridade dos servidores OPC UA durante os ataques. Foram empregadas métricas de desempenho como latência de resposta, taxa de transferência de dados e tempo de inatividade, que fornecem uma visão mais detalhada sobre como os ataques impactam a operação normal dos servidores. Essas métricas são essenciais para avaliar a resiliência e a robustez do protocolo OPC UA frente a diferentes tipos de ataques cibernéticos.
-
-    Por fim, todos os dados coletados foram organizados e documentados de forma sistemática para facilitar a análise subsequente. Os resultados das capturas de pacotes e das medições de desempenho foram armazenados em uma base de dados centralizada, permitindo o acesso fácil e a comparação entre diferentes experimentos. Essa abordagem estruturada garante que todas as informações relevantes estejam disponíveis para a fase de análise, contribuindo para a elaboração de conclusões fundamentadas sobre as vulnerabilidades identificadas e as possíveis medidas de mitigação.}
+    Para garantir a precisão e a confiabilidade dos dados coletados, cada ataque foi repetido múltiplas vezes, e as capturas resultantes foram analisadas de forma comparativa. Esse método permite a identificação de variações nos resultados que possam ser atribuídas a fatores externos ou a inconsistências na execução dos ataques. Todas as capturas foram realizadas em um ambiente controlado, com a configuração dos dispositivos de rede e do servidor OPC UA mantida constante ao longo dos experimentos.
 
     \subsection{Interpretação dos Dados}
 
-    { \color{red} Uma vez que os ataques são coletados e salvos nos arquivos de capturas, os dados podem ser interpretados para o estudo de vulnerabilidades nos cenários propostos. A análise detalhada dos dados capturados durante os ataques cibernéticos em redes OPC UA é fundamental para entender o impacto das vulnerabilidades exploradas. A geração de gráficos específicos para cada cenário de ataque permite visualizar de forma clara e objetiva as consequências dos ataques na rede e nos dispositivos envolvidos. A seguir, apresenta-se uma introdução à interpretação dos dados, destacando a importância dos gráficos gerados e a relevância da análise dos atributos monitorados.
+    Uma vez que o tráfego da rede é coletado para cada ataque e salvos nos arquivos de captura, os dados podem ser interpretados para o estudo de vulnerabilidades nos cenários propostos.  A análise detalhada dos dados capturados durante os ataques cibernéticos em redes OPC UA é fundamental para entender o impacto das vulnerabilidades exploradas. Assim, uma nova aplicação denominada \textbf{uanalyser} foi desenvolvida para auxiliar na interpretação dos dados capturados, permitindo a geração de gráficos específicos para cada cenário de ataque. A seguir, apresenta-se como os dados obtidos foram interpretados, destacando a importância dos gráficos gerados e a relevância da análise dos atributos monitorados.
 
-    A geração dos gráficos visa fornecer uma representação visual dos principais indicadores de desempenho e segurança da rede OPC UA sob ataque. Os gráficos selecionados foram:
+    A geração dos gráficos visa fornecer uma representação visual dos principais indicadores de desempenho e segurança da rede OPC UA sob ataque. Logo, quatro gráficos são gerados para cada coleta: (a) \textit{Throughput} (kbps), (b) desempenho do hospedeiro do servidor OPC UA (RAM e CPU), (c) quantidade de pacotes OPC UA por segundo e (d) \textit{Round Trip Time} (RTT) normalizado, por pacote. Esses gráficos foram escolhidos devido à sua capacidade de ilustrar diferentes aspectos do funcionamento e da resiliência ou fragilidade da rede em condições adversas.
 
-    \begin{itemize}
-        \item Throughput (kbps)
-        \item Desempenho RAM e CPU
-        \item Quantidade de Pacotes OPC UA por segundo
-        \item Round Trip Time (RTT) normalizado por pacote
-    \end{itemize}
-    
-    Esses gráficos foram escolhidos devido à sua capacidade de ilustrar diferentes aspectos do funcionamento e da resiliência da rede em condições adversas. Cada um desses indicadores oferece insights específicos sobre o comportamento da rede durante um ataque, permitindo uma análise abrangente e multidimensional dos efeitos causados pelas ameaças cibernéticas.
+    Para a construção do \textbf{uanalyser}, utilizou-se a linguagem de programação Python e os seguintes pacotes essenciais para a obtenção dos resultados em gráficos: Scapy, Matplotlib, NumPy e Pandas, além de contar com os pacotes para o ambiente de desenvolvimento: MkDocs, PyTest e Taskipy.
 
-    O throughput é uma medida crítica da capacidade de transmissão de dados da rede. A análise do throughput permite identificar como os ataques afetam a quantidade de dados que podem ser transmitidos em um determinado período. Reduções significativas no throughput indicam que o ataque está conseguindo interromper ou diminuir a eficiência da comunicação na rede. Este indicador é essencial para avaliar a degradação da performance da rede e a eficácia das políticas de segurança implementadas.
+    O Scapy é uma ferramenta poderosa para manipulação de pacotes de rede, que facilita a captura, a análise e a criação de pacotes. Com Scapy, o \textbf{uanalyser} lê arquivos de captura no formato .pcapng, extrai informações específicas dos pacotes e realiza análises detalhadas. O fluxograma da aplicação é apresentado na \autoref{fig:flux2} e detalha como é realizada a interpretação destes dados. Com esses dados, são construídos alguns gráficos que mostram como cada ataque afeta a rede em termos de \textit{throughput}, uso de recursos do hospedeiro, quantidade de pacotes por segundo e RTT.
 
-    O desempenho da RAM e da CPU é um indicador direto da carga de trabalho imposta ao servidor OPC UA durante um ataque. Monitorar o uso desses recursos é crucial para identificar sobrecargas que podem levar à instabilidade ou falhas no sistema. Um aumento significativo no uso de CPU e RAM durante um ataque pode sugerir que o servidor está sendo sobrecarregado com solicitações maliciosas, o que pode comprometer sua capacidade de atender às solicitações legítimas. Analisar esses dados ajuda a entender a resistência do servidor sob diferentes tipos de ataques e políticas de segurança.
+    \begin{figure}[htbp!]
+        \caption{\label{fig:flux2}Fluxograma da aplicação \textbf{uanalyser} desenvolvida}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{USPSC-img/fluxograma.png}
+        \end{center}
+        \legend{Fonte: elaborada pelo autor.}
+    \end{figure}
 
-    A quantidade de pacotes OPC UA por segundo fornece uma visão detalhada do fluxo de dados na rede. Alterações abruptas na quantidade de pacotes podem indicar comportamentos anômalos ou interrupções causadas pelos ataques. Este indicador é especialmente útil para detectar atividades suspeitas, como tentativas de captura de dados (sniffing) ou interferências na comunicação (MiTM). A análise desse gráfico ajuda a identificar padrões de tráfego anômalos que podem estar associados a atividades maliciosas.
+    Dentro do contexto do protocolo OPC UA, as mensagens trocadas entre cliente e servidor podem incluir várias estruturas de dados, como mensagens de sessão, mensagens de serviço e dados de publicação/subscrição. Cada tipo de mensagem tem seu próprio formato e estrutura, conforme especificado pelo padrão OPC UA. A análise dessas mensagens é crucial para identificar comportamentos anômalos e potenciais vulnerabilidades.
 
-    O RTT normalizado é uma medida da latência na comunicação entre cliente e servidor. A latência é um fator crítico para a eficiência e a responsividade das redes OPC UA. Aumentos no RTT durante um ataque indicam que a comunicação está sendo retardada, possivelmente devido a sobrecargas ou interferências. Analisar o RTT ajuda a entender como os ataques afetam a velocidade e a eficiência da comunicação na rede, e a normalização permite comparar o impacto em diferentes cenários de forma consistente.
-
-    A representação visual dos dados através dos gráficos permite uma interpretação mais intuitiva e imediata dos impactos dos ataques. Gráficos fornecem uma forma eficaz de identificar tendências, anomalias e padrões que podem não ser facilmente detectáveis através da análise de dados brutos. Além disso, eles facilitam a comparação entre diferentes cenários de ataque e políticas de segurança, permitindo uma avaliação clara da eficácia das medidas de proteção implementadas.
-
-    Em resumo, a análise dos gráficos de throughput, desempenho de RAM e CPU, quantidade de pacotes por segundo e RTT normalizado oferece uma compreensão detalhada e multidimensional dos efeitos dos ataques cibernéticos em redes OPC UA. Essa abordagem é essencial para identificar vulnerabilidades, avaliar a eficácia das políticas de segurança e desenvolver estratégias de defesa mais robustas.
-    }
+    A análise dos pacotes capturados e a visualização dos gráficos gerados pelo \textbf{uanalyser} permitem uma compreensão detalhada dos efeitos dos ataques nas redes OPC UA. Essa abordagem sistemática e visual facilita a identificação de vulnerabilidades específicas do protocolo e o desenvolvimento de contramedidas eficazes para melhorar a segurança e a resiliência das redes industriais.
 
     \subsection{Análise de Ataques e Vulnerabilidades}
+
+    
 
     {\color{red}
     A análise de ataques e vulnerabilidades em redes industriais OPC UA é um processo sistemático e detalhado que visa identificar, avaliar e mitigar possíveis pontos fracos no protocolo e na implementação de redes OPC UA. Este processo é essencial para garantir a segurança e a continuidade operacional dos Sistemas de Controle e Automação Industrial (IACS). Nesta seção, discutiremos como essa análise é conduzida, quais metodologias e ferramentas são utilizadas, e como os resultados podem ser interpretados para melhorar a segurança das redes OPC UA.
 
     Metodologia para Análise de Ataques
-    A análise de ataques em redes OPC UA envolve a execução de uma série de testes e simulações de ataques cibernéticos, como Sniffing, Man-in-The-Middle (MiTM) e Denial of Service (DoS). Cada tipo de ataque explora diferentes vulnerabilidades potenciais do protocolo e da infraestrutura de rede. A metodologia para conduzir essa análise inclui os seguintes passos:
+    A análise de ataques em redes OPC UA envolve a execução de uma série de testes e simulações de ataques cibernéticos, como Sniffing, Man-in-The-Middle (MITM) e Denial of Service (DoS). Cada tipo de ataque explora diferentes vulnerabilidades potenciais do protocolo e da infraestrutura de rede. A metodologia para conduzir essa análise inclui os seguintes passos:
 
     Preparação do Ambiente de Testes:
 
-    Configuração de uma bancada experimental que simula uma rede industrial OPC UA. Este ambiente deve incluir servidores OPC UA, clientes, switches e outros componentes de rede relevantes.
+    Configuração de uma bancada experimental que simula uma rede industrial OPC UA. Este ambiente deve incluir servidor OPC UA, clientes, switches e outros componentes de rede relevantes.
     Configuração de ferramentas de captura de tráfego de rede, como Wireshark, para registrar todas as comunicações durante os testes.
     Execução de Ataques:
 
@@ -455,7 +462,7 @@ if __name__ == "__main__":
 
     Análise do Throughput:
 
-    Avaliar a taxa de transferência de dados (throughput) durante os ataques. Reduções significativas no throughput podem indicar a presença de ataques de DoS ou congestionamento causado por ataques MiTM.
+    Avaliar a taxa de transferência de dados (throughput) durante os ataques. Reduções significativas no throughput podem indicar a presença de ataques de DoS ou congestionamento causado por ataques MITM.
     Comparar o throughput sob diferentes políticas de segurança (None, Sign, Sign \& Encrypt) para determinar a eficácia das medidas de segurança implementadas.
     Monitoramento de Recursos do Sistema:
 
@@ -467,7 +474,7 @@ if __name__ == "__main__":
     Correlacionar os picos e quedas na contagem de pacotes com a execução de ataques específicos para identificar vulnerabilidades no manuseio de tráfego pelo protocolo OPC UA.
     Avaliação do Round Trip Time (RTT):
 
-    Medir o RTT dos pacotes durante os ataques para avaliar a latência da comunicação. Aumento no RTT pode ser um indicativo de ataques MiTM que interferem na comunicação ou ataques DoS que sobrecarregam a rede.
+    Medir o RTT dos pacotes durante os ataques para avaliar a latência da comunicação. Aumento no RTT pode ser um indicativo de ataques MITM que interferem na comunicação ou ataques DoS que sobrecarregam a rede.
     Normalizar os dados de RTT para facilitar a comparação entre diferentes cenários de ataque e políticas de segurança.
     Ferramentas e Técnicas Utilizadas
     A análise de vulnerabilidades em redes OPC UA envolve o uso de diversas ferramentas e técnicas para captura, análise e interpretação dos dados. As principais ferramentas incluem:
@@ -556,7 +563,7 @@ if __name__ == "__main__":
     Melhorias na Configuração de Segurança do OPC UA:
 
     Criptografia e Assinatura: Reforçamos a criptografia e a assinatura digital para todas as comunicações OPC UA, conforme recomendado pelas políticas de segurança Sign e Sign \& Encrypt. Isso inclui a utilização de certificados robustos e algoritmos de criptografia atualizados.
-    Autenticação Forte: Implementamos métodos de autenticação forte para acesso aos servidores OPC UA, incluindo autenticação multifator (MFA) e uso de certificados digitais para a autenticação de dispositivos.
+    Autenticação Forte: Implementamos métodos de autenticação forte para acesso aos servidor OPC UA, incluindo autenticação multifator (MFA) e uso de certificados digitais para a autenticação de dispositivos.
     Segmentação de Rede e Controle de Acesso:
 
     Segmentação de Rede: Criamos zonas de segurança dentro da rede industrial para limitar a propagação de ataques. Cada zona é separada por firewalls e dispositivos de segurança que monitoram e controlam o tráfego de rede.
@@ -567,8 +574,8 @@ if __name__ == "__main__":
     Resposta a Incidentes: Desenvolvemos um plano de resposta a incidentes que define procedimentos claros para identificar, conter e remediar ataques cibernéticos. Este plano é baseado nas melhores práticas recomendadas pela norma IEC 62443 e frameworks de segurança correlatos.
     Fortalecimento da Infraestrutura:
 
-    Atualizações Regulares: Garantimos que todos os componentes da rede, incluindo servidores OPC UA e dispositivos de rede, estejam sempre atualizados com os últimos patches de segurança.
-    Hardening de Sistemas: Aplicamos técnicas de hardening para reduzir a superfície de ataque dos servidores e dispositivos de rede. Isso inclui a desativação de serviços desnecessários, configuração segura de sistemas operacionais e aplicações, e implementação de políticas de segurança rígidas.
+    Atualizações Regulares: Garantimos que todos os componentes da rede, incluindo servidor OPC UA e dispositivos de rede, estejam sempre atualizados com os últimos patches de segurança.
+    Hardening de Sistemas: Aplicamos técnicas de hardening para reduzir a superfície de ataque do servidor e dispositivos de rede. Isso inclui a desativação de serviços desnecessários, configuração segura de sistemas operacionais e aplicações, e implementação de políticas de segurança rígidas.
     Avaliação e Validação das Contramedidas
     A eficácia das contramedidas implementadas foi avaliada através de novos testes e simulações de ataques, utilizando o mesmo ambiente experimental. As principais atividades de avaliação incluíram:
 
