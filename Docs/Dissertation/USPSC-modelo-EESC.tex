@@ -304,6 +304,8 @@ straight connector/.style={
 
 \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\AtBeginEnvironment{longtable}{\scriptsize}
 
 \usepackage{makecell}
 \renewcommand\theadfont{\bfseries}
@@ -592,7 +594,7 @@ straight connector/.style={
 %         "%DOCFILE%.ind"
 %     ]
 % },
-\input{USPSC-TA-PosTextual/USPSC-IndicesRemissivos}
+\input{USPSC-TA-PosTextual/USPSC-IndicesRemissivos}  % DESCOMENTAR
 
 %---------------------------------------------------------------------
 

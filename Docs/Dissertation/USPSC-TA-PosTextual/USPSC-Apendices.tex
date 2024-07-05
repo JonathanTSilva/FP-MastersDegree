@@ -8,7 +8,75 @@
 
 \partapendices
 
-\chapter{Gráficos de \textit{throughput}, desempenho e \textit{Round Trip Time} (RTT) em diferentes cenários da comunicação OPC UA}
+\chapter{Modelo de relatório de vulnerabilidades}\label{ap:relatorio}
+
+\newcommand{\theadmulti}[3]{
+    \multicolumn{#1}{|>{\bfseries\normalsize\columncolor{#2}}l|}{\Gape[0.2em][0.2em]{#3}}
+}
+\newcommand{\bodymulti}[1]{
+    \multicolumn{6}{|m{15.5cm}|}{\color{gray}#1}
+}
+\begin{longtable}{%92
+    |m{1.60cm}
+    m{3.05cm}
+    m{2.10cm}
+    m{2.25cm}
+    m{1.60cm}
+    m{2.90cm}|
+}
+    \caption{Modelo de relatório de vulnerabilidades}
+    \label{tab:relatorio}
+    \tabularnewline
+    \hline
+    \theadmulti{6}{gridgray}{1. Sumário executivo} \\
+    \hline
+    \bodymulti{Uma visão geral de alto nível da avaliação, destinada a executivos não técnicos.} \\
+    \hline
+    \textbf{Classe:} & & \textbf{Tipo:} & & \textbf{Alvo:} & \\
+    \hline
+    \multicolumn{2}{|l}{\textbf{Título da Vulnerabilidade:}} & & & & \\
+    \hline
+    \theadmulti{6}{gridgray}{2. Informações da vulnerabilidade} \\
+    \hline
+    \multicolumn{6}{|l|}{\textbf{Visão geral:}} \\
+    \hline
+    \bodymulti{Uma vulnerabilidade é uma fraqueza em uma aplicação (frequentemente um controle quebrado ou ausente) que permite que um ataque seja bem-sucedido. Certifique-se de não colocar [ataques] ou [controles] nesta categoria. \newline Comece com uma descrição de uma frase da vulnerabilidade. Prossiga respondendo as seguintes perguntas: \newline (1) Qual é o problema que cria a vulnerabilidade? (2) Quais são os ataques que têm como alvo essa vulnerabilidade? (3) Quais são os impactos técnicos dessa vulnerabilidade?} \\
+    \hline
+    \multicolumn{6}{|l|}{\textbf{Detalhes técnicos:}} \\
+    \hline
+    \bodymulti{Forneça detalhes técnicos da vulnerabilidade, incluindo o seguinte: (1) Descrição detalhada dos detalhes técnicos da vulnerabilidade. (2) Passos detalhados para reproduzir a vulnerabilidade (crucial para que seja possível reproduzir as descobertas). (3) Se disponível, um PoC (do inglês \textit{Prof of Concept}) pode ser anexado como um arquivo adicional a este relatório.} \\
+    \hline
+    \multicolumn{6}{|l|}{\textbf{Descrição do cenário de exploração da vulnerabilidade:}} \\
+    \hline
+    \bodymulti{O cenário de ataque da vulnerabilidade é diferente dos passos para reproduzir a vulnerabilidade. Ele descreve como um atacante explora com sucesso a vulnerabilidade, incluindo as condições pré-requisitas para o atacante lançar o ataque, as limitações de disparo da vulnerabilidade e se é necessária a interação com a vítima.} \\
+    \hline
+    \multicolumn{6}{|l|}{\textbf{Fatores de risco:}} \\
+    \hline
+    \bodymulti{Discuta os fatores que tornam essa vulnerabilidade mais ou menos provável de realmente ocorrer. Além disso, Aborde o impacto técnico de uma exploração bem-sucedida dessa vulnerabilidade e considere os possíveis [impactos nos negócios] de um ataque bem-sucedido.} \\
+    \hline
+    \theadmulti{6}{gridgray}{3. Mitigações} \\
+    \hline
+    \multicolumn{6}{|l|}{\textbf{Sugestões para medidas de remediação e mitigação:}} \\
+    \hline
+    \bodymulti{Inclua recomedações de ações específicas para corrigir a vulnerabilidade. Pode conter implementações de políticas de segurança rigorosas, execução de auditorias e testes de penetração regularmente ou treinamento de funcionários sobre práticas de segurança cibernética.} \\
+    \hline
+    \multicolumn{6}{|l|}{\textbf{Boas práticas:}} \\
+    \hline
+    \bodymulti{Recomendações adicionais para evitar vulnerabilidades semelhantes no futuro, incluindo práticas de desenvolvimento seguro e estratégias de defesa em profundidade.} \\
+    \hline
+    \theadmulti{6}{gridgray}{4. Referências} \\
+    \hline
+    \bodymulti{Documentos técnicos, artigos, e outros recursos que fornecem informações adicionais sobre a vulnerabilidade, ou, se aplicável, referência ao CVE correspondente.} \\
+    \hline
+    \theadmulti{6}{gridgray}{5. Histórico de alterações} \\
+    \hline
+    \textbf{Versão} & \textbf{Data} & \multicolumn{3}{l}{\textbf{Descrição}} & \textbf{Autor} \\
+    \hline
+    1.0 & AAAA-MM-DD & \multicolumn{3}{l}{Descrição da versão do documento} & Nome completo \\
+    \hline
+\end{longtable}
+
+\chapter{Gráficos de \textit{throughput}, desempenho e \textit{Round Trip Time} (RTT) em diferentes cenários da comunicação OPC UA}\label{ap:graficos}
 
 \begin{figure}[htbp!]
     \centering

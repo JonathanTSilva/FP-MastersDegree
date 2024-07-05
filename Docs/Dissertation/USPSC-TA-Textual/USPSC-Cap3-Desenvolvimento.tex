@@ -228,7 +228,7 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
     \begin{table}[htbp!]
         \centering
         \caption{Endereços IP e MAC dos equipamentos da rede OPC UA}%
-	\label{tab:ender}
+        \label{tab:ender}
         \begin{tabular}{ccc}
             \toprule
             \thead{Equipamento} & \thead{IP} & \thead{MAC} \\
@@ -421,12 +421,12 @@ if __name__ == "__main__":
 
     Para a construção do \textbf{uanalyser}, utilizou-se a linguagem de programação Python e os seguintes pacotes essenciais para a obtenção dos resultados em gráficos: Scapy, Matplotlib, NumPy e Pandas, além de contar com os pacotes para o ambiente de desenvolvimento: MkDocs, PyTest e Taskipy.
 
-    O Scapy é uma ferramenta poderosa para manipulação de pacotes de rede, que facilita a captura, a análise e a criação de pacotes. Com Scapy, o \textbf{uanalyser} lê arquivos de captura no formato .pcapng, extrai informações específicas dos pacotes e realiza análises detalhadas. O fluxograma da aplicação é apresentado na \autoref{fig:flux2} e detalha como é realizada a interpretação destes dados. Com esses dados, são construídos alguns gráficos que mostram como cada ataque afeta a rede em termos de \textit{throughput}, uso de recursos do hospedeiro, quantidade de pacotes por segundo e RTT.
+    O Scapy é uma ferramenta poderosa para manipulação de pacotes de rede, que facilita a captura, a análise e a criação de pacotes, independentemente de pilhas predefinidas ou regras de rede comuns. Logo, utilizando os recursos desse pacote, o \textbf{uanalyser} lê arquivos de captura no formato .pcapng, extrai informações específicas dos pacotes e realiza análises detalhadas. O diagrama de sequência da aplicação é apresentado na \autoref{fig:seqUanalyser} e detalha como é realizada a interpretação destes dados. São construídos alguns gráficos que mostram como cada ataque afeta a rede em termos de \textit{throughput}, uso de recursos do hospedeiro, quantidade de pacotes por segundo e RTT.
 
     \begin{figure}[htbp!]
-        \caption{\label{fig:flux2}Fluxograma da aplicação \textbf{uanalyser} desenvolvida}
+        \caption{\label{fig:seqUanalyser}Diagrama de sequência da aplicação \textbf{uanalyser}}
         \begin{center}
-            \includegraphics[width=0.7\textwidth]{USPSC-img/fluxograma.png}
+            \includegraphics[width=0.972\textwidth]{USPSC-img/seqUanalyser.png}
         \end{center}
         \legend{Fonte: elaborada pelo autor.}
     \end{figure}
@@ -435,115 +435,57 @@ if __name__ == "__main__":
 
     A análise dos pacotes capturados e a visualização dos gráficos gerados pelo \textbf{uanalyser} permitem uma compreensão detalhada dos efeitos dos ataques nas redes OPC UA. Essa abordagem sistemática e visual facilita a identificação de vulnerabilidades específicas do protocolo e o desenvolvimento de contramedidas eficazes para melhorar a segurança e a resiliência das redes industriais.
 
-    \subsection{Análise de Ataques e Vulnerabilidades}
+    O software desenvolvido para este trabalho está disponível no GitHub \footnote{Disponível em: \url{https://github.com/JonathanTSilva/opcua-analyser}. Acesso em: 04 jul. 2024} e aberto para contribuições. Aqueles que desejarem contribuir devem seguir os padrões de desenvolvimento estabelecidos no arquivo \texttt{contributing.md} e aderir ao código de conduta do projeto.
+
+    \subsection{Análise dos Ataques e Vulnerabilidades}
+
+    A análise de ataques e vulnerabilidades em redes industriais OPC UA é um processo sistemático e detalhado que visa identificar, avaliar e mitigar possíveis pontos fracos no protocolo e na implementação de redes OPC UA. Esta etapa é essencial para garantir a segurança e a continuidade operacional dos IACSs e consiste na análise dos resultados da série de testes e simulações de ataques cibernéticos obtidos nos processos anteriores. Cada tipo de ataque explora diferentes vulnerabilidades potenciais do protocolo e da infraestrutura de rede.
+
+    Ao testar vulnerabilidades da comunicação em redes industriais OPC UA, foca-se na determinação da qualidade da comunicação durante e após um ataque. Em outras palavras, se o equipamento é capaz de desempenhar sua tarefa nestes períodos. Adicionalmente, é examinado se o alvo sofre com falta de resposta ou respostas incomuns.
+
+    Como a observação de soluções existentes faz parte da abordagem deste desenvolvimento, precisamos ter algum ponto de referência como base para nossas observações das vulnerabilidades existentes e comportamento durante ataques. Com base nisso, são definidas as seguinte classes de vulnerabilidades para este projeto em específico:
+
+    \begin{itemize}
+        \item \textbf{Classe 1}: falhas que interrompem o comunicação OPC UA entre os agentes, afetando a disponibilidade;
+        \item \textbf{Classe 2}: serviços interrompidos ou comportamento inesperado que não alteram a comunicação, mas prejudica a integridade;
+        \item \textbf{Classe 3}: vulnerabilidades que não interrompem a comunicação, mas afetam a confiabilidade.
+    \end{itemize}
+
+    A partir dos gráficos gerados e do comportamento da rede e dispositivos durante e após o ataque, é possível identificar as vulnerabilidades existentes e classificá-las de acordo com as classes supracitadas. Além disso, é possível verificar a eficácia das diferentes políticas de segurança do OPC UA (`None', `Sign', `Sign \& Encrypt'). A análise dos resultados obtidos é essencial para a identificação de possíveis falhas e a proposição de medidas corretivas e preventivas para mitigar os riscos de segurança nas redes OPC UA.
+
+    Essa abordagem metodológica, que inclui a observação de gráficos de throughput, desempenho de RAM e CPU, quantidade de pacotes OPC UA por segundo e RTT normalizado, permite uma compreensão detalhada do impacto dos ataques nas redes industriais OPC UA. Com isso, é possível desenvolver estratégias de mitigação eficazes e assegurar a robustez e a resiliência das redes contra possíveis ameaças cibernéticas.
+    
+    \subsection{Relatório de Vulnerabilidade}
+
+    A construção de um relatório de vulnerabilidade é uma etapa crucial no processo de avaliação de segurança cibernética, especialmente no contexto de redes industriais OPC UA. Através deste relatório, é possível documentar e comunicar as vulnerabilidades identificadas, fornecer uma análise detalhada dos riscos e propor contramedidas adequadas. Este documento é fundamental não apenas para entender as falhas de segurança, mas também para tomar ações corretivas eficazes e melhorar a postura de segurança da organização.
+
+    A elaboração de um relatório de vulnerabilidade deve seguir padrões internacionais de segurança cibernética e estar alinhada com as melhores práticas do setor. Um bom relatório deve ser estruturado de forma clara e objetiva, contemplando diferentes níveis de detalhamento para atender a diversos públicos, desde executivos até equipes técnicas.
+
+    O relatório de vulnerabilidade é essencial para diversos stakeholders dentro de uma organização. Ele auxilia os executivos a compreenderem a postura de segurança atual da empresa e a justificarem investimentos em segurança. Para a equipe de TI, o relatório oferece detalhes técnicos sobre as vulnerabilidades descobertas e orientações sobre como corrigi-las. Além disso, o relatório pode ser utilizado para fins de conformidade regulatória, sendo compartilhado com auditores e reguladores para demonstrar os esforços de segurança da organização.
+
+    Para garantir a eficácia do relatório de vulnerabilidade, ele deve incluir as seguintes seções principais:
+
+    \begin{itemize}
+        \item \textbf{Sumário Executivo}: Uma visão geral de alto nível da avaliação, destinada a executivos não técnicos. Esta seção deve ajudar os executivos a avaliarem a postura de segurança da empresa e destacar quaisquer questões críticas que possam impactar a segurança corporativa ou a conformidade regulatória.
+        \item \textbf{Visão Geral}: Uma seção voltada para um público mais técnico, fornecendo um resumo da avaliação. Deve incluir informações sobre os sistemas analisados, ferramentas utilizadas e o número e a severidade das vulnerabilidades descobertas.
+        \item \textbf{Detalhes da Avaliação}: Esta seção deve fornecer detalhes técnicos sobre como a avaliação de vulnerabilidade foi conduzida. Deve descrever as etapas realizadas em cada fase da avaliação e seus resultados, permitindo que o leitor possa replicar os achados da avaliação.
+        \item \textbf{Resultados}: Esta seção deve detalhar os achados da avaliação. As vulnerabilidades devem ser classificadas por severidade para chamar a atenção para os maiores problemas dentro do ambiente da organização. Para cada vulnerabilidade potencial verificada, esta seção deve descrever o resultado, os sistemas afetados, o nível de severidade e fornecer um link para informações adicionais, como um CVE.
+        \item \textbf{Mitigações Recomendadas}: O objetivo de uma avaliação de vulnerabilidade é ajudar a organização a melhorar sua postura de segurança. Portanto, fornecer recomendações de mitigação é essencial. Em muitos casos, isso pode ser tão simples quanto recomendar uma atualização de software, uma senha mais forte em um sistema ou uma alteração em uma configuração de segurança insegura.
+    \end{itemize}
+
+    Uma vez que o relatório de vulnerabilidade é elaborado, ele deve ser aplicado nas bases de conhecimento da organização para garantir que todas as vulnerabilidades identificadas sejam tratadas de forma adequada. O relatório deve ser revisado regularmente e atualizado conforme novas vulnerabilidades sejam descobertas e medidas corretivas sejam implementadas. Além disso, é importante que o relatório siga os padrões globais de cibersegurança, como o CVE (do inglês \textit{Common Vulnerabilities and Exposures}) e os padrões de segurança IEC 62443, para garantir a consistência e a confiabilidade das informações.
+
+    A utilização de frameworks reconhecidos internacionalmente, como o CVE e o IEC 62443, proporciona uma base sólida para a identificação e a classificação de vulnerabilidades. Estes padrões oferecem diretrizes claras sobre como avaliar e mitigar riscos, além de promover a adoção de práticas de segurança consistentes e eficazes. Além disso, existem diversos modelos para a elaboração de relatórios de vulnerabilidade, como o da CISA (Cybersecurity and Infrastructure Security Agency), do NIST (National Institute of Standards and Technology), que podem ser adaptados para atender às necessidades específicas de cada organização. Caso alguma vulnerabilidade desconhecida do protocolo OPC UA seja encontrada, será utilizado o modelo de relatório personalizado e disponibilizado no \autoref{ap:relatorio} para documentar e comunicar a descoberta.
+
+    \subsection{Contramedidas de Segurança}
+
+    Uma implementação bem projetada e sem complicações das contramedidas de segurança é uma das principais medidas para minimizar os riscos cibernéticos e maximizar a disponibilidade dos IACS. A segurança das redes industriais OPC UA deve contemplar uma abordagem holística, que inclua a proteção dos ativos de informação, a prevenção de ameaças e a detecção de incidentes.
+
+    A determinação das contramedidas variam de acordo com o cenário de ataque e as vulnerabilidades identificadas. No entanto, algumas práticas comuns podem ser adotadas para fortalecer a segurança das redes OPC UA. Entre as principais contramedidas recomendadas estão:
 
     
 
     {\color{red}
-    A análise de ataques e vulnerabilidades em redes industriais OPC UA é um processo sistemático e detalhado que visa identificar, avaliar e mitigar possíveis pontos fracos no protocolo e na implementação de redes OPC UA. Este processo é essencial para garantir a segurança e a continuidade operacional dos Sistemas de Controle e Automação Industrial (IACS). Nesta seção, discutiremos como essa análise é conduzida, quais metodologias e ferramentas são utilizadas, e como os resultados podem ser interpretados para melhorar a segurança das redes OPC UA.
-
-    Metodologia para Análise de Ataques
-    A análise de ataques em redes OPC UA envolve a execução de uma série de testes e simulações de ataques cibernéticos, como Sniffing, Man-in-The-Middle (MITM) e Denial of Service (DoS). Cada tipo de ataque explora diferentes vulnerabilidades potenciais do protocolo e da infraestrutura de rede. A metodologia para conduzir essa análise inclui os seguintes passos:
-
-    Preparação do Ambiente de Testes:
-
-    Configuração de uma bancada experimental que simula uma rede industrial OPC UA. Este ambiente deve incluir servidor OPC UA, clientes, switches e outros componentes de rede relevantes.
-    Configuração de ferramentas de captura de tráfego de rede, como Wireshark, para registrar todas as comunicações durante os testes.
-    Execução de Ataques:
-
-    Implementação de scripts e ferramentas que simulam diferentes tipos de ataques cibernéticos. Cada ataque é executado sob condições controladas e é repetido várias vezes para garantir a consistência dos resultados.
-    Monitoramento contínuo da rede durante os ataques para capturar dados relevantes, incluindo pacotes de rede, utilização de recursos (CPU, RAM), e desempenho da comunicação (throughput, RTT).
-    Captura e Armazenamento de Dados:
-
-    Utilização do Wireshark para capturar o tráfego de rede em formato .pcapng. Os dados capturados são organizados de forma sistemática, permitindo uma análise detalhada posterior.
-    Armazenamento dos dados de utilização de recursos e desempenho em arquivos de log para análise comparativa.
-    Coleta e Identificação de Vulnerabilidades
-    Para identificar as vulnerabilidades do protocolo OPC UA, é essencial analisar os dados capturados durante os ataques. As principais etapas deste processo incluem:
-
-    Análise do Throughput:
-
-    Avaliar a taxa de transferência de dados (throughput) durante os ataques. Reduções significativas no throughput podem indicar a presença de ataques de DoS ou congestionamento causado por ataques MITM.
-    Comparar o throughput sob diferentes políticas de segurança (None, Sign, Sign \& Encrypt) para determinar a eficácia das medidas de segurança implementadas.
-    Monitoramento de Recursos do Sistema:
-
-    Analisar o desempenho da CPU e RAM do servidor OPC UA durante os ataques. Picos de utilização de recursos podem indicar ataques que exigem processamento intensivo, como a inundação de pacotes em ataques DoS.
-    Identificar padrões de utilização de recursos que correspondem a diferentes tipos de ataques e suas variações sob diferentes políticas de segurança.
-    Contagem de Pacotes OPC UA:
-
-    Monitorar a quantidade de pacotes OPC UA transmitidos por segundo. Flutuações abruptas na quantidade de pacotes podem indicar tentativas de manipulação do tráfego ou injeção de pacotes maliciosos.
-    Correlacionar os picos e quedas na contagem de pacotes com a execução de ataques específicos para identificar vulnerabilidades no manuseio de tráfego pelo protocolo OPC UA.
-    Avaliação do Round Trip Time (RTT):
-
-    Medir o RTT dos pacotes durante os ataques para avaliar a latência da comunicação. Aumento no RTT pode ser um indicativo de ataques MITM que interferem na comunicação ou ataques DoS que sobrecarregam a rede.
-    Normalizar os dados de RTT para facilitar a comparação entre diferentes cenários de ataque e políticas de segurança.
-    Ferramentas e Técnicas Utilizadas
-    A análise de vulnerabilidades em redes OPC UA envolve o uso de diversas ferramentas e técnicas para captura, análise e interpretação dos dados. As principais ferramentas incluem:
-
-    Wireshark: Utilizado para capturar e analisar o tráfego de rede. Permite a inspeção detalhada dos pacotes de dados, identificação de anomalias e registro de informações essenciais para a análise.
-    uanalyser: Software desenvolvido especificamente para este trabalho, disponível no GitHub, que automatiza a análise dos arquivos .pcapng e gera gráficos detalhados sobre throughput, desempenho de recursos, quantidade de pacotes e RTT.
-    Scripts de Monitoramento: Ferramentas desenvolvidas para registrar a utilização de CPU e RAM durante os ataques. Estes scripts são integrados ao ambiente de testes e coletam dados em intervalos regulares para análise posterior.
-    Interpretação dos Resultados
-    A interpretação dos resultados da análise de ataques e vulnerabilidades é um processo crítico que envolve a correlação dos dados capturados com as atividades de ataque. Os principais pontos a serem considerados incluem:
-
-    Identificação de Padrões: Analisar os gráficos gerados para identificar padrões recorrentes que possam indicar vulnerabilidades específicas. Por exemplo, um aumento consistente no uso de CPU durante ataques de DoS pode indicar uma vulnerabilidade no processamento de pacotes pelo servidor OPC UA.
-    Comparação de Políticas de Segurança: Avaliar a eficácia das diferentes políticas de segurança do OPC UA (None, Sign, Sign \& Encrypt) na mitigação dos ataques. Comparar os resultados para determinar quais configurações oferecem melhor proteção contra cada tipo de ataque.
-    Desenvolvimento de Contramedidas: Com base na análise dos dados, desenvolver recomendações para mitigar as vulnerabilidades identificadas. Isso pode incluir ajustes nas configurações de segurança, implementação de novas políticas de firewall, ou adoção de tecnologias adicionais de segurança.
-    Considerações Finais
-    A análise de ataques e vulnerabilidades em redes industriais OPC UA é um processo complexo que requer uma abordagem sistemática e detalhada. Através da captura e análise de tráfego de rede, é possível identificar pontos fracos no protocolo e na infraestrutura, avaliar o impacto de diferentes tipos de ataques, e desenvolver estratégias de mitigação eficazes. Este processo é essencial para garantir a segurança e a continuidade operacional dos sistemas de automação e controle industrial em um ambiente cada vez mais interconectado e suscetível a ameaças cibernéticas.
-    }
-
-    \subsection{Relatório de Vulnerabilidades}
-
-    {\color{red}
-    A detecção de novas vulnerabilidades em redes OPC UA exige a criação de um relatório detalhado que documente a vulnerabilidade descoberta, suas implicações e as recomendações para mitigação. Este relatório deve seguir padrões internacionais de cibersegurança para garantir a consistência e a eficácia na comunicação das descobertas. O formato e os elementos essenciais do relatório são descritos a seguir.
-
-    Estrutura do Relatório de Vulnerabilidade
-    Identificação da Vulnerabilidade:
-
-    ID da Vulnerabilidade: Um identificador único, geralmente composto por uma combinação de letras e números (ex: OPCUA-2024-001).
-    Título da Vulnerabilidade: Um breve título que descreve a natureza da vulnerabilidade (ex: “Falta de Validação de Certificados no Protocolo OPC UA”).
-    Descrição:
-
-    Resumo: Uma descrição concisa da vulnerabilidade, incluindo como ela foi descoberta.
-    Detalhes Técnicos: Informações técnicas detalhadas sobre a vulnerabilidade, como a origem do problema, o componente afetado, e o contexto em que a vulnerabilidade ocorre.
-    Impacto:
-
-    Gravidade: Classificação da severidade da vulnerabilidade (ex: Baixa, Média, Alta, Crítica), frequentemente determinada usando métricas como CVSS (Common Vulnerability Scoring System).
-    Impacto no Sistema: Descrição dos efeitos potenciais da vulnerabilidade no sistema, incluindo compromissos de confidencialidade, integridade e disponibilidade.
-    Exploração:
-
-    Método de Exploração: Descrição de como a vulnerabilidade pode ser explorada por um atacante.
-    Precondições: Requisitos ou condições necessárias para que a exploração da vulnerabilidade seja possível.
-    Cenários de Ataque: Exemplos de cenários em que a vulnerabilidade pode ser explorada, ilustrando possíveis ataques.
-    Mitigação e Recomendação:
-
-    Correção: Descrição das ações necessárias para corrigir a vulnerabilidade, incluindo patches de software, atualizações de configuração, ou mudanças de arquitetura.
-    Contramedidas Temporárias: Medidas paliativas que podem ser adotadas até que uma correção permanente esteja disponível.
-    Boas Práticas: Recomendações adicionais para evitar vulnerabilidades semelhantes no futuro, incluindo práticas de desenvolvimento seguro e estratégias de defesa em profundidade.
-    Referências:
-
-    Documentação Relacionada: Links para documentos técnicos, artigos, e outros recursos que fornecem informações adicionais sobre a vulnerabilidade.
-    CVE ID: Se aplicável, referência ao CVE correspondente.
-    Histórico:
-
-    Data de Descoberta: Quando a vulnerabilidade foi identificada.
-    Data de Relatório: Quando a vulnerabilidade foi formalmente reportada.
-    Histórico de Revisões: Registros de revisões ou atualizações do relatório de vulnerabilidade.
-    Informações de Contato:
-
-    Relator: Nome e informações de contato da pessoa ou equipe que descobriu e relatou a vulnerabilidade.
-    Equipe de Resposta a Incidentes: Informações de contato da equipe responsável por responder e mitigar a vulnerabilidade.
-
-    Este formato de relatório garante que todas as informações relevantes sobre uma vulnerabilidade sejam documentadas de maneira clara e detalhada, facilitando a compreensão e a ação por parte dos responsáveis pela segurança. Adotar padrões internacionais e frameworks de segurança fortalece a abordagem de mitigação e resposta a incidentes, contribuindo para a proteção efetiva das redes industriais OPC UA.
-    }
-
-    \subsection{Contramedidas de Segurança}
-
-    {\color{red}
-    A implementação de contramedidas de segurança é fundamental para mitigar as vulnerabilidades e proteger redes industriais OPC UA contra ataques cibernéticos. Este estudo aborda a determinação e aplicação de contramedidas eficazes, utilizando frameworks de segurança reconhecidos, como o CVE (Common Vulnerabilities and Exposures) e a norma IEC 62443, entre outros. A seguir, detalhamos as abordagens e metodologias adotadas para garantir a segurança das redes OPC UA.
-
-    Determinação de Contramedidas
-    A determinação das contramedidas iniciou-se com a identificação das vulnerabilidades específicas do protocolo OPC UA, reveladas através dos ataques simulados e da análise dos dados capturados. As principais etapas deste processo foram:
 
     Análise de Vulnerabilidades Conhecidas:
 
