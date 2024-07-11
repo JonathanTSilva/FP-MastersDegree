@@ -299,16 +299,29 @@ straight connector/.style={
 }
 }
 
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+
 % Altera o tamanho da fonte da subfigura (precisa do pacote subcaption)
 \captionsetup[sub]{font=scriptsize}
 
 \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcolumntype{O}[1]{>{\raggedleft\arraybackslash}m{#1}}
+\newcolumntype{B}[1]{>{\centering\arraybackslash\bfseries}m{#1}}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \AtBeginEnvironment{longtable}{\scriptsize}
 
 \usepackage{makecell}
 \renewcommand\theadfont{\bfseries}
+\newcommand{\thcell}[1]{\textbf{\centering #1}}
+
+% Criar ambiente \code
+\definecolor{codefore}{HTML}{f92763}
+\definecolor{codeback}{HTML}{ededeb}
+\newcommand{\code}[1]{{\color{codefore} \colorbox{codeback}{\scriptsize\texttt{#1}}}}
+
 % ---
 
 % ---
@@ -343,7 +356,6 @@ straight connector/.style={
 % \makeatother
 % ---
 
-
 \usepackage{xpatch}
 
 \makeatletter
@@ -363,10 +375,6 @@ straight connector/.style={
   \fi
 }
 \makeatother
-
-\definecolor{codefore}{HTML}{f92763}
-\definecolor{codeback}{HTML}{ededeb}
-\newcommand{\code}[1]{{\color{codefore} \colorbox{codeback}{\texttt{#1}}}}
 
 % ----
 % Início do documento
@@ -571,7 +579,7 @@ straight connector/.style={
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
-\input{USPSC-TA-PosTextual/USPSC-Apendices}
+% \input{USPSC-TA-PosTextual/USPSC-Apendices} % DESCOMENTAR
 
 % ----------------------------------------------------------
 % Anexos

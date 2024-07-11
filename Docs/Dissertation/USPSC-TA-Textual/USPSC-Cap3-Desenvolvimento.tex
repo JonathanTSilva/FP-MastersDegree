@@ -39,16 +39,6 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
         \item \underline{Nmap}: ferramenta gratuita de código aberto amplamente utilizada para varredura de rede e portas. Através dela, pode-se descobrir os \textit{hosts} e serviços em uma rede dada, bem como detalhes como qual serviço está em execução em qual porta e se a porta está aberta ou fechada, entre outros. Esse resultado é alcançado ao enviar pacotes para o alvo e analisar posteriormente sua resposta.
     \end{itemize}
 
-    A \autoref{fig:banc} apresenta a bancada experimental para ensaios de segurança cibernética.
-    
-    \begin{figure}[htbp]
-        \caption{\label{fig:banc}Bancada experimental para ensaios de segurança cibernética}
-        \begin{center}
-            \includegraphics[width=0.5\textwidth]{USPSC-img/cyberkit2.png}
-        \end{center}
-        \legend{Fonte: elaborada pelo autor.}
-    \end{figure}
-
 \section{Ataques Cibernéticos em Redes Industriais OPC UA} \label{sec:attacks}
 
     Nesta seção, uma análise detalhada dos cenários de ataque implementados minuciosamente no âmbito deste projeto é apresentada. A exposição abrangente engloba uma descrição passo a passo das metodologias empregadas para orquestrar três formas distintas de ciberataques: intervenção de pacotes (do inglês \textit{Packet Sniffing}), ataques do tipo MITM e de negação de serviço. Ao elucidar as complexidades destes vetores de ataque, objetiva-se proporcionar uma compreensão profunda do cenário em evolução das ameaças à cibersegurança em redes OPC UA.
@@ -247,89 +237,91 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
         \fonte{elaborada pelo autor.}%
     \end{table}
 
-    \subsection{Aquisição de Dados}
+    \subsection{Aquisição de Dados} \label{sec:aquisicao}
 
     A fase de aquisição de dados fundamenta-se na captura do tráfego de pacotes transmitidos pela rede OPC UA durante a comunicação entre a aplicação servidora e o cliente da rede, enquanto ocorrem os ataques. Esse processo se baseia na utilização do software Wireshark, no qual permite a coleta de informações cruciais sobre a comunicação, incluindo detalhes como o tipo de protocolo empregado, a origem e o destino dos dados. As informações capturadas são armazenadas em ordem cronológica com a capacidade de serem salvas em arquivos no formato `.pcapng'. O software Wireshark foi configurado para finalizar a captura com sessenta segundos de coleta.
 
-    Os alvos dos ataques é o servidor OPC UA, e em cada cenário, o elemento \textit{Sniffer} é configurado para realizar a captura do tráfego gerado por estes ataques. Para organizar os pacotes capturados, foi adotada a seguinte nomenclatura de arquivos: `[Modo de Segurança]-[Tipo do Ataque]-[Número da Captura].pcapng'. Aqui, o modo de segurança pode assumir os valores 0 (None), 1 (Sign) e 2 (Sign\&Encrypt). Os tipos de ataques correspondem àqueles detalhados na \autoref{sec:attacks} (`sniffing', `mitm' e `dos-[função]'), e o número da captura é representado por um dígito de 0 a 9. Por exemplo, para salvar a terceira captura obtida durante uma negação de serviço pelo ataque de chamada da função \textit{Dereference} nula, com a rede configurada no modo de segurança \textbf{Sign}, o arquivo seria nomeado como: `1-dos\_function\_call\_null\_deref.pcapng'. A \autoref{tab:attacks} apresenta os arquivos de captura gerados durante os experimentos para cada tipo de ataque.
-
-    \begin{table}[htbp]
-        \centering
-        \caption{Arquivos de captura gerados durante a fase de aquisição de dados}%
-	    \label{tab:attacks}
-        \begin{tabular}{lp{5cm}}
-            \toprule
-            \thead{Arquivo} & \thead{Ataque} \\
-            \toprule
-            (0/1/2)-dos\_certificate\_inf\_chain\_loop.pcapng & DoS pelo loop infinito na cadeia de certificados \\
-            \midrule
-            (0/1/2)-dos\_function\_call\_null\_deref.pcapng & DoS pela chamada da função \textit{Dereference} nula \\
-            \midrule
-            (0/1/2)-dos\_hping3.pcapng & DoS pela inundação do TCP/IP \\
-            \midrule
-            (0/1/2)-dos\_open\_multiple\_secure\_channels.pcapng & DoS pela abertura de múltiplos canais seguros \\
-            \midrule 
-            (0/1/2)-dos\_translate\_browse\_path\_call.pcapng & DoS pela tradução do caminho de navegação \\
-            \midrule
-            (0/1/2)-mitm\_arp.pcapng & MITM pela falsificação da tabela ARP \\
-            \midrule
-            (0/1/2)-mitm\_port.pcapng & MITM pelo roubo de portas \\
-            \midrule
-            (0/1/2)-sniffing.pcapng & \textit{Packet Sniffing} \\
-            \midrule
-            (0/1/2)-normal\_local\_server.pcapng & Comunicação normal entre cliente e servidor \\
-            \bottomrule
-        \end{tabular}
-        \fonte{elaborada pelo autor.}%
-    \end{table}
+    Os alvos dos ataques é o servidor OPC UA, e em cada cenário, o elemento \textit{Sniffer} é configurado para realizar a captura do tráfego gerado por estes ataques. Para organizar os pacotes capturados, foi adotada a seguinte nomenclatura de arquivos: `[Modo de Segurança]-[Tipo do Ataque]-[Número da Captura].pcapng'. Aqui, o modo de segurança pode assumir os valores 0 (None), 1 (Sign) e 2 (Sign\&Encrypt). Os tipos de ataques correspondem àqueles detalhados na \autoref{sec:attacks} (`sniffing', `mitm' e `dos-[função]'), e o número da captura é representado por um dígito de 0 a 9. Por exemplo, para salvar a terceira captura obtida durante uma negação de serviço pelo ataque de chamada da função \textit{Dereference} nula, com a rede configurada no modo de segurança \textbf{Sign}, o arquivo seria nomeado como: `1-dos\_function\_call\_null\_deref.pcapng'. A \autoref{tab:attacks} apresenta os cenários e os arquivos de captura gerados durante os experimentos para cada tipo de ataque.
 
     % \begin{table}[htbp]
     %     \centering
-    %     \caption{Arquivos de captura gerados durante a fase de aquisição de dados}%
+    %     \caption{Cenários e arquivos de captura gerados durante a fase de aquisição de dados}%
 	%     \label{tab:attacks}
-    %     \begin{tabular}{ll}
+    %     \begin{tabular}{lp{4cm}}
     %         \toprule
     %         \thead{Arquivo} & \thead{Ataque} \\
     %         \toprule
-    %         0-dos\_certificate\_inf\_chain\_loop.pcapng & \multirow{3}{*}{\parbox{6cm}{DoS pelo loop infinito na cadeia de certificados}} \\
-    %         1-dos\_certificate\_inf\_chain\_loop.pcapng & \\
-    %         2-dos\_certificate\_inf\_chain\_loop.pcapng & \\
+    %         (0/1/2)-dos\_certificate\_inf\_chain\_loop.pcapng & DoS pelo loop infinito na cadeia de certificados \\
     %         \midrule
-    %         0-dos\_function\_call\_null\_deref.pcapng & \multirow{3}{*}{\parbox{6cm}{DoS pela chamada da função \textit{Dereference} nula}} \\
-    %         1-dos\_function\_call\_null\_deref.pcapng & \\
-    %         2-dos\_function\_call\_null\_deref.pcapng & \\
+    %         (0/1/2)-dos\_function\_call\_null\_deref.pcapng & DoS pela chamada da função \textit{Dereference} nula \\
     %         \midrule
-    %         0-dos\_hping3.pcapng & \multirow{3}{*}{\parbox{6cm}{DoS pela inundação do TCP/IP}} \\
-    %         1-dos\_hping3.pcapng & \\
-    %         2-dos\_hping3.pcapng & \\
+    %         (0/1/2)-dos\_hping3.pcapng & DoS pela inundação do TCP/IP \\
     %         \midrule
-    %         0-dos\_open\_multiple\_secure\_channels.pcapng & \multirow{3}{*}{\parbox{6cm}{DoS pela abertura de múltiplos canais seguros}} \\
-    %         1-dos\_open\_multiple\_secure\_channels.pcapng & \\
-    %         2-dos\_open\_multiple\_secure\_channels.pcapng & \\
+    %         (0/1/2)-dos\_open\_multiple\_secure\_channels.pcapng & DoS pela abertura de múltiplos canais seguros \\
     %         \midrule 
-    %         0-dos\_translate\_browse\_path\_call.pcapng & \multirow{3}{*}{\parbox{6cm}{DoS pela tradução do caminho de navegação}} \\
-    %         1-dos\_translate\_browse\_path\_call.pcapng & \\
-    %         2-dos\_translate\_browse\_path\_call.pcapng & \\
+    %         (0/1/2)-dos\_translate\_browse\_path\_call.pcapng & DoS pela tradução do caminho de navegação \\
     %         \midrule
-    %         0-mitm\_arp.pcapng & \multirow{3}{*}{\parbox{6cm}{MITM pela falsificação da tabela ARP}} \\
-    %         1-mitm\_arp.pcapng & \\
-    %         2-mitm\_arp.pcapng & \\
+    %         (0/1/2)-mitm\_arp.pcapng & MITM pela falsificação da tabela ARP \\
     %         \midrule
-    %         0-mitm\_port.pcapng & \multirow{3}{*}{\parbox{6cm}{MITM pelo roubo de portas}} \\
-    %         1-mitm\_port.pcapng & \\
-    %         2-mitm\_port.pcapng & \\
+    %         (0/1/2)-mitm\_port.pcapng & MITM pelo roubo de portas \\
     %         \midrule
-    %         0-sniffing.pcapng & \multirow{3}{*}{\parbox{6cm}{\textit{Packet Sniffing}}} \\
-    %         1-sniffing.pcapng & \\
-    %         2-sniffing.pcapng & \\
+    %         (0/1/2)-sniffing.pcapng & \textit{Packet Sniffing} \\
     %         \midrule
-    %         0-normal\_local\_server.pcapng & \multirow{3}{*}{\parbox{6cm}{Comunicação normal entre cliente e servidor}} \\
-    %         1-normal\_local\_server.pcapng & \\
-    %         2-normal\_local\_server.pcapng & \\
+    %         (0/1/2)-normal\_local\_server.pcapng & Comunicação normal entre cliente e servidor \\
     %         \bottomrule
     %     \end{tabular}
     %     \fonte{elaborada pelo autor.}%
     % \end{table}
+
+    \begin{table}[htbp]
+        \centering
+        \caption{Arquivos de captura gerados para cada cenário durante a fase de aquisição de dados}%
+	    \label{tab:attacks}
+        \begin{tabular}{B{1.5cm}B{3cm}B{5.5cm}B{3.5cm}}
+        \toprule
+            Cenário & Modo de Segurança & Arquivo (.pcapng) & Descrição do Ataque \\
+        \end{tabular}
+        \begin{tabular}{M{1.5cm}N{3cm}N{5.5cm}N{3.5cm}}
+            \toprule
+            C1 & None & \code{0-dos\_certificate\_inf\_chain\_loop} & \multirow{3}{*}{\parbox{3.5cm}{DoS pelo loop infinito na cadeia de certificados}} \\
+            C2 & Sign & \code{1-dos\_certificate\_inf\_chain\_loop} & \\
+            C3 & Sign \& Encrypt & \code{2-dos\_certificate\_inf\_chain\_loop} & \\
+            \midrule
+            C4 & None & \code{0-dos\_function\_call\_null\_deref} & \multirow{3}{*}{\parbox{3.5cm}{DoS pela chamada da função \textit{Dereference} nula}} \\
+            C5 & Sign & \code{1-dos\_function\_call\_null\_deref} & \\
+            C6 & Sign \& Encrypt & \code{2-dos\_function\_call\_null\_deref} & \\
+            \midrule
+            C7 & None & \code{0-dos\_hping3} & \multirow{3}{*}{\parbox{3.5cm}{DoS pela inundação do TCP/IP}} \\
+            C8 & Sign & \code{1-dos\_hping3} & \\
+            C9 & Sign \& Encrypt & \code{2-dos\_hping3} & \\
+            \midrule
+            C10 & None & \code{0-dos\_open\_multiple\_channels} & \multirow{3}{*}{\parbox{3.5cm}{DoS pela abertura de múltiplos canais seguros}} \\
+            C11 & Sign & \code{1-dos\_open\_multiple\_channels} & \\
+            C12 & Sign \& Encrypt & \code{2-dos\_open\_multiple\_channels} & \\
+            \midrule 
+            C13 & None & \code{0-dos\_translate\_browse\_path\_call} & \multirow{3}{*}{\parbox{3.5cm}{DoS pela tradução do caminho de navegação}} \\
+            C14 & Sign & \code{1-dos\_translate\_browse\_path\_call} & \\
+            C15 & Sign \& Encrypt & \code{2-dos\_translate\_browse\_path\_call} & \\
+            \midrule
+            C16 & None & \code{0-mitm\_arp} & \multirow{3}{*}{\parbox{3.5cm}{MITM pela falsificação da tabela ARP}} \\
+            C17 & Sign & \code{1-mitm\_arp} & \\
+            C18 & Sign \& Encrypt & \code{2-mitm\_arp} & \\
+            \midrule
+            C19 & None & \code{0-mitm\_port} & \multirow{3}{*}{\parbox{3.5cm}{MITM pelo roubo de portas}} \\
+            C20 & Sign & \code{1-mitm\_port} & \\
+            C21 & Sign \& Encrypt & \code{2-mitm\_port} & \\
+            \midrule
+            C22 & None & \code{0-sniffing} & \multirow{3}{*}{\parbox{3.5cm}{\textit{Packet Sniffing}}} \\
+            C23 & Sign & \code{1-sniffing} & \\
+            C24 & Sign \& Encrypt & \code{2-sniffing} & \\
+            \midrule
+            C25 & None & \code{0-normal\_local\_server} & \multirow{3}{*}{\parbox{3.5cm}{Comunicação normal entre cliente e servidor}} \\
+            C26 & Sign & \code{1-normal\_local\_server} & \\
+            C27 & Sign \& Encrypt & \code{2-normal\_local\_server} & \\
+            \bottomrule
+        \end{tabular}
+        \fonte{elaborada pelo autor.}%
+    \end{table}
 
     Além disso, é importante salientar que durante o processo de coleta de dados com o Wireshark, simultaneamente, obtêm-se informações sobre a carga de processamento da CPU nos hospedeiros do servidor OPC UA. Essa abordagem complementa significativamente a análise dos efeitos do ataque sobre o desempenho do sistema. Para viabilizar esse monitoramento, desenvolveu-se um \textit{script} que deve ser ativado pelo elemento \textit{Sniffer} no início da captura de dados.
 
@@ -483,56 +475,47 @@ if __name__ == "__main__":
 
     A determinação das contramedidas variam de acordo com o cenário de ataque e as vulnerabilidades identificadas. No entanto, algumas práticas comuns podem ser adotadas para fortalecer a segurança das redes OPC UA. Entre as principais contramedidas recomendadas estão:
 
-    
+    \begin{itemize}
+        \item \textbf{Criptografia e modos de seguranças:} conforme recomendado pelas políticas de segurança `Sign' e `Sign \& Encrypt', a criptografia e assinatura da comunicação OPC UA se destacam como as principais melhorias na configuração de segurança. Isso inclui a utilização de certificados robustos e algoritmos de criptografia atualizados.
+        \item \textbf{Alto nível de autenticação:} implementação de métodos de autenticação forte para acesso aos servidor OPC UA, incluindo autenticação multifator (MFA) e uso de certificados digitais para a autenticação de dispositivos.
+        \item \textbf{Apriomaramento da segurança da rede:} criação de zonas de segurança dentro da rede industrial para limitar a propagação de ataques, de acordo com o modelo de defesa em profundidade (do inglês \textit{defense in depth}), na qual cada zona é separada por \textit{firewalls} e dispositivos de segurança que monitoram e controlam o tráfego de rede. O modelo \textit{Zero Trust} se destaca atualmente como uma abordagem complementar à segregação de rede ao operar sob a premissa de "nunca confiar, sempre verificar". Considera-se que a rede é inerentemente insegura e que a confiança deve ser verificada continuamente, exigindo autenticação e autorização rigorosas para cada tentativa de acesso. 
+        \item \textbf{Controle de Acesso Baseado em Função (RBAC, do inglês \textit{Role-Based Access Control}):} aplicado para limitar o acesso aos recursos de rede e serviços da comunicação apenas aos usuários e dispositivos autorizados, minimizando o risco de acessos não autorizados.
+        \item \textbf{Monitoramento contínuo:} implementação de sistemas de monitoramento contínuo para detectar atividades anômalas e potenciais ataques em tempo real. Os IDS (do inglês \textit{Intrusion Detection Systems}) e SIEM (do inglês \textit{Security Information and Event Management}) se destacam como sistemas eficazes utilizados para garantir esse diagnóstico contínuo.
+        \item \textbf{Resposta a incidentes:} um bom plano de resposta a incidentes que define procedimentos claros para identificar, conter e remediar ataques cibernéticos é imprescindível para mitigar possíveis ataques às redes industriais. Este plano pode ser baseado nas melhores práticas recomendadas pela norma IEC 62443 e frameworks de segurança correlatos.
+        \item \textbf{Atualizações regulares:} garantia de que todos os componentes da rede, incluindo servidor OPC UA e dispositivos de rede, estejam sempre atualizados com os últimos \textit{patches} de segurança.
+        \item \textbf{\textit{Hardening} de sistemas:} aplicação de técnicas de \textit{hardening} para reduzir a superfície de ataque do servidor e dispositivos de rede. Isso inclui a desativação de serviços desnecessários, configuração segura de sistemas operacionais e aplicações, e implementação de políticas de segurança rígidas.
+    \end{itemize}
 
-    {\color{red}
-
-    Análise de Vulnerabilidades Conhecidas:
-
-    Utilizamos o banco de dados CVE para identificar vulnerabilidades conhecidas no protocolo OPC UA e em suas implementações. Cada CVE fornece detalhes sobre a vulnerabilidade, incluindo sua descrição, impacto e formas recomendadas de mitigação. Comparando essas vulnerabilidades com os resultados dos testes realizados, conseguimos correlacionar diretamente vulnerabilidades conhecidas com novas descobertas.
-
-    Referência a Padrões de Segurança:
-
-    Adotamos as diretrizes fornecidas pela norma IEC 62443, que é um conjunto de padrões desenvolvidos especificamente para a segurança de sistemas de automação e controle industrial. A IEC 62443 abrange desde os requisitos de segurança do produto até a gestão de segurança no ciclo de vida. Implementamos práticas recomendadas, como segmentação de rede, controle de acesso baseado em função e monitoramento contínuo de segurança.
-
-    Frameworks Adicionais:
-
-    Consultamos outros frameworks de segurança, como o NIST Cybersecurity Framework, para complementar nossas estratégias de mitigação com práticas amplamente aceitas e validadas. Integrando recomendações de múltiplos frameworks, criamos um conjunto robusto e abrangente de contramedidas.
-
-    Implementação das Contramedidas
-    Com base na análise das vulnerabilidades e nas diretrizes dos frameworks de segurança, implementamos as seguintes contramedidas:
-
-    Melhorias na Configuração de Segurança do OPC UA:
-
-    Criptografia e Assinatura: Reforçamos a criptografia e a assinatura digital para todas as comunicações OPC UA, conforme recomendado pelas políticas de segurança Sign e Sign \& Encrypt. Isso inclui a utilização de certificados robustos e algoritmos de criptografia atualizados.
-    Autenticação Forte: Implementamos métodos de autenticação forte para acesso aos servidor OPC UA, incluindo autenticação multifator (MFA) e uso de certificados digitais para a autenticação de dispositivos.
-    Segmentação de Rede e Controle de Acesso:
-
-    Segmentação de Rede: Criamos zonas de segurança dentro da rede industrial para limitar a propagação de ataques. Cada zona é separada por firewalls e dispositivos de segurança que monitoram e controlam o tráfego de rede.
-    Controle de Acesso Baseado em Função (RBAC): Aplicamos RBAC para limitar o acesso aos recursos de rede e serviços OPC UA apenas aos usuários e dispositivos autorizados, minimizando o risco de acessos não autorizados.
-    Monitoramento e Resposta a Incidentes:
-
-    Monitoramento Contínuo: Implementamos sistemas de monitoramento contínuo para detectar atividades anômalas e potenciais ataques em tempo real. Utilizamos IDS (Intrusion Detection Systems) e SIEM (Security Information and Event Management).
-    Resposta a Incidentes: Desenvolvemos um plano de resposta a incidentes que define procedimentos claros para identificar, conter e remediar ataques cibernéticos. Este plano é baseado nas melhores práticas recomendadas pela norma IEC 62443 e frameworks de segurança correlatos.
-    Fortalecimento da Infraestrutura:
-
-    Atualizações Regulares: Garantimos que todos os componentes da rede, incluindo servidor OPC UA e dispositivos de rede, estejam sempre atualizados com os últimos patches de segurança.
-    Hardening de Sistemas: Aplicamos técnicas de hardening para reduzir a superfície de ataque do servidor e dispositivos de rede. Isso inclui a desativação de serviços desnecessários, configuração segura de sistemas operacionais e aplicações, e implementação de políticas de segurança rígidas.
-    Avaliação e Validação das Contramedidas
-    A eficácia das contramedidas implementadas foi avaliada através de novos testes e simulações de ataques, utilizando o mesmo ambiente experimental. As principais atividades de avaliação incluíram:
-
-    Reexecução dos Ataques:
-
-    Realizamos novos testes de ataques cibernéticos sob as mesmas condições iniciais, mas com as contramedidas aplicadas. Isso permitiu a comparação direta dos resultados antes e depois da implementação das contramedidas. Monitoramos os indicadores de desempenho, como throughput, utilização de CPU e RAM, quantidade de pacotes por segundo e RTT, para verificar melhorias na resiliência da rede.
-
-    Análise Comparativa:
-
-    Comparamos os dados coletados durante os testes pós-contramedidas com os dados originais, para identificar reduções nos impactos dos ataques e melhorias na segurança da rede. Avaliamos a eficácia das contramedidas utilizando métricas de segurança, como a redução na taxa de sucesso dos ataques e o tempo de recuperação após incidentes.
-
-    Feedback e Melhoria Contínua:
-
-    Reavaliamos continuamente as contramedidas com base no feedback dos testes e na evolução das ameaças cibernéticas. Ajustes e melhorias foram implementados conforme necessário para garantir a proteção contínua da rede OPC UA.
-
-    Conclusão
     A determinação e implementação de contramedidas de segurança em redes industriais OPC UA é um processo complexo, mas essencial para garantir a segurança e a integridade dos sistemas de automação e controle. Através da combinação de análise detalhada de vulnerabilidades, referência a frameworks de segurança reconhecidos e avaliação contínua da eficácia das medidas implementadas, é possível desenvolver uma abordagem robusta para proteger redes OPC UA contra uma ampla gama de ameaças cibernéticas. Este trabalho contribui para o fortalecimento da segurança nas redes industriais, promovendo a resiliência dos sistemas críticos em um cenário de ameaças em constante evolução.
-    }
+
+    % {\color{red}
+
+    % Análise de Vulnerabilidades Conhecidas:
+
+    % Utilizamos o banco de dados CVE para identificar vulnerabilidades conhecidas no protocolo OPC UA e em suas implementações. Cada CVE fornece detalhes sobre a vulnerabilidade, incluindo sua descrição, impacto e formas recomendadas de mitigação. Comparando essas vulnerabilidades com os resultados dos testes realizados, conseguimos correlacionar diretamente vulnerabilidades conhecidas com novas descobertas.
+
+    % Referência a Padrões de Segurança:
+
+    % Adotamos as diretrizes fornecidas pela norma IEC 62443, que é um conjunto de padrões desenvolvidos especificamente para a segurança de sistemas de automação e controle industrial. A IEC 62443 abrange desde os requisitos de segurança do produto até a gestão de segurança no ciclo de vida. Implementamos práticas recomendadas, como segmentação de rede, controle de acesso baseado em função e monitoramento contínuo de segurança.
+
+    % Frameworks Adicionais:
+
+    % Consultamos outros frameworks de segurança, como o NIST Cybersecurity Framework, para complementar nossas estratégias de mitigação com práticas amplamente aceitas e validadas. Integrando recomendações de múltiplos frameworks, criamos um conjunto robusto e abrangente de contramedidas.
+    
+    % A eficácia das contramedidas implementadas foi avaliada através de novos testes e simulações de ataques, utilizando o mesmo ambiente experimental. As principais atividades de avaliação incluíram:
+
+    % Reexecução dos Ataques:
+
+    % Realizamos novos testes de ataques cibernéticos sob as mesmas condições iniciais, mas com as contramedidas aplicadas. Isso permitiu a comparação direta dos resultados antes e depois da implementação das contramedidas. Monitoramos os indicadores de desempenho, como throughput, utilização de CPU e RAM, quantidade de pacotes por segundo e RTT, para verificar melhorias na resiliência da rede.
+
+    % Análise Comparativa:
+
+    % Comparamos os dados coletados durante os testes pós-contramedidas com os dados originais, para identificar reduções nos impactos dos ataques e melhorias na segurança da rede. Avaliamos a eficácia das contramedidas utilizando métricas de segurança, como a redução na taxa de sucesso dos ataques e o tempo de recuperação após incidentes.
+
+    % Feedback e Melhoria Contínua:
+
+    % Reavaliamos continuamente as contramedidas com base no feedback dos testes e na evolução das ameaças cibernéticas. Ajustes e melhorias foram implementados conforme necessário para garantir a proteção contínua da rede OPC UA.
+
+    % Conclusão
+    % A determinação e implementação de contramedidas de segurança em redes industriais OPC UA é um processo complexo, mas essencial para garantir a segurança e a integridade dos sistemas de automação e controle. Através da combinação de análise detalhada de vulnerabilidades, referência a frameworks de segurança reconhecidos e avaliação contínua da eficácia das medidas implementadas, é possível desenvolver uma abordagem robusta para proteger redes OPC UA contra uma ampla gama de ameaças cibernéticas. Este trabalho contribui para o fortalecimento da segurança nas redes industriais, promovendo a resiliência dos sistemas críticos em um cenário de ameaças em constante evolução.
+    % }
