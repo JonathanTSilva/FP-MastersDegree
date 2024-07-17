@@ -8,13 +8,13 @@ Como regra geral, espera-se fornecer informações valiosas sobre vulnerabilidad
 
 A \autoref{fig:banc} apresenta a bancada experimental para ensaios de segurança cibernética, composta por um servidor OPC UA, um cliente OPC UA e um \textit{firewall} industrial. O servidor OPC UA é responsável por disponibilizar os dados de processo e controlar o sistema de automação industrial, enquanto o cliente OPC UA é responsável por acessar e visualizar esses dados. O \textit{firewall} industrial é utilizado para monitorar e controlar o tráfego de dados entre o servidor e o cliente, garantindo a segurança da rede.
 
-    \begin{figure}[htbp!]
-        \caption{\label{fig:banc}Bancada experimental para ensaios de segurança cibernética}
-        \begin{center}
-            \includegraphics[width=0.5\textwidth]{USPSC-img/cyberkit2.png}
-        \end{center}
-        \legend{Fonte: elaborada pelo autor.}
-    \end{figure}
+\begin{figure}[htbp!]
+    \caption{\label{fig:banc}Bancada experimental para ensaios de segurança cibernética}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{USPSC-img/cyberkit2.png}
+    \end{center}
+    \legend{Fonte: elaborada pelo autor.}
+\end{figure}
 
 \section{Aquisição dos Dados nos Cenários de Ataques Cibernéticos} \label{sec:exec-attacks}
 
@@ -103,35 +103,35 @@ Essa análise destaca a importância de considerar múltiplas métricas ao avali
 
 Uma vez que os dados de tráfego da rede e desempenho do hospedeiro do servidor OPC UA foram coletados para cada cenário de ataque, o próximo passo é processar esses dados para análise e interpretação. Este processamento é realizado pelo aplicativo \textbf{uanalyser}, que é responsável por extrair informações relevantes dos dados brutos e gerar métricas de desempenho para cada cenário.
 
-Na versão atual do aplicativo (v1.0.0), são gerados gráficos de (a) \textit{Throughput} (kbps), (b) desempenho do hospedeiro do servidor OPC UA (RAM e CPU), (c) quantidade de pacotes OPC UA por segundo e (d) \textit{Round Trip Time} (RTT) normalizado, por pacote. A figura \autoref{fig:0-normal_local_server} apresenta um exemplo dos quatro gráficos de saída do aplicativo para o cenário C25.
+Na versão atual do aplicativo (v1.0.0), são gerados gráficos de (a) \textit{Throughput} (kbps), (b) desempenho do hospedeiro do servidor OPC UA (RAM e CPU), (c) quantidade de pacotes OPC UA por segundo e (d) \textit{Round Trip Time} (RTT) normalizado, por pacote. A figura \autoref{fig:0-normal-local-server} apresenta um exemplo dos quatro gráficos de saída do aplicativo para o cenário C25.
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-normal-local-server}Gráficos de condição normal de operação - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-tput.png}
         \caption{\textit{Throughput}}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-tput.png}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-perf.png}
         \caption{Desempenho}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-perf.png}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-pack.png}
         \caption{Pacotes OPC UA}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-pack.png}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-rttp.png}
         \caption{RTT por pacote}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-rttp.png}
     \end{subfigure}%
-    \label{fig:0-normal_local_server}
-    \caption{Gráficos de condição normal de operação - nível de segurança: `None'.}
+    \legend{Fonte: elaborada pelo autor.}
 \end{figure}
 
 Os demais gráficos gerados para os outros cenários podem ser visualizados no \autoref{ap:graficos}.
@@ -142,11 +142,85 @@ Nesta seção, são apresentadas as análises dos resultados obtidos a partir do
 
 \subsection{\textit{Packet Sniffing}}
 
-Com o auxílio do Wireshar e do Ettercap, este primeiro ataque foi proferido com o objetivo de identificar a presença de vulnerabilidades na rede OPC UA que permitam a interceptação não autorizada de pacotes. Inicialmente, o Ettercap foi empregado para a captura unificada de pacotes, enquanto o Wireshark foi utilizado para a análise detalhada do tráfego de rede. Uma vez que o servidor e o cliente estão conectados, um canal seguro para comunicação é estabelecido. No entanto, o atacante pode explorar vulnerabilidades na rede para interceptar pacotes e obter informações confidenciais, como endereços IP e MAC de todos os dispositivos conectados. No início da captura para o cenário C22, C23 e C24, é possível observar a presença de pacotes de comunicação entre o servidor e o cliente, conforme ilustrado na \autoref{fig:packet-sniffing}.
+Com o auxílio do Wireshark e do Ettercap, este primeiro ataque foi proferido com o objetivo de identificar a presença de vulnerabilidades na rede OPC UA que permitam a interceptação não autorizada de pacotes. Inicialmente, o Ettercap foi empregado para a captura unificada de pacotes, enquanto o Wireshark foi utilizado para a análise detalhada do tráfego de rede. Uma vez que o servidor e o cliente estão conectados, um canal seguro para comunicação é estabelecido. No entanto, o atacante pode explorar vulnerabilidades na rede para interceptar pacotes e obter informações confidenciais, como endereços IP e MAC de todos os dispositivos conectados. No início da captura para o cenário C22, C23 e C24, é possível observar a presença de pacotes de comunicação entre o servidor e o cliente, conforme ilustrado na \autoref{fig:0-sniffing-wireshark}. Note que um filtro foi aplicado para exibir apenas os pacotes de comunicação OPC UA e todos os outros dados foram omitidos nesta visualização. Todo o tráfego relevante relacionado ao protocolo OPC UA apresentado pela \autoref{fig:seqConn} é exposto na análise pelo Wireshark.
+
+\begin{figure}[htbp!]
+    \caption{\label{fig:0-sniffing-wireshark}Comunicação interceptada entre o servidor e o cliente OPC UA com modo de segurança `None'}
+    \begin{center}
+        \includegraphics[width=0.972\textwidth]{USPSC-img/0-sniffing-wireshark-filtered-anon.png}
+    \end{center}
+    \legend{Fonte: elaborada pelo autor.}
+\end{figure}
+
+Vale ressaltar que o invasor possui endereço de IP 192.168.164.115, e que está apenas conectado à rede, sem interação física com o servidor (192.168.164.101) ou cliente (192.168.164.102). Para a configuração da comunicação com modo de segurança `None' e `Sign', é possível observar que a capacidade do invasor obter todos os dados sensíveis da comunicação entre o servidor e o cliente, conforme indicado na \autoref{fig:writeRequest}, que representa a coleta do pacote de requisição de escrita (\textit{UA Secure Conversation Message: WriteRequest}) do mesmo valor e nó, do cliente para o servidor.
+
+\begin{figure}[htbp!]
+    \centering
+    \caption{\label{fig:writeRequest}Informações obtidas pelo invasor com modo de segurança `None' e `Sign'}
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \caption{`None'}
+        \includegraphics[width=1\textwidth]{USPSC-img/0-sniffing-WriteRequest.png}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \caption{`Sign'}
+        \includegraphics[width=1\textwidth]{USPSC-img/1-sniffing-WriteRequest.png}
+    \end{subfigure}%
+    \legend{Fonte: elaborada pelo autor.}
+\end{figure}
+
+No entanto, ao configurar a comunicação com o modo de segurança `Sign \& Encrypt', o invasor não é capaz de obter informações sensíveis da comunicação entre o servidor e o cliente, pois os dados são, além de assinados, criptografados com políticas de segurança mais robustas, como Basic256Sha256. Assim, para C24, os dados da rede continuam sendo interceptados, mas a comunicação OPC UA não pode ser decifrada, uma vez que todos os pacotes do tipo MSG, com informação \textit{UA Secure Conversation Message: ServiceId [ID]}, possuem o campo de dados \texttt{NodeId EncodingMask} desconhecido.
+
+Portanto, este ataque possui potencial para comprometer a segurança da rede OPC UA ao quebrar a confidencialidade da comunicação, desde que a comunicação seja configurada com modos de segurança mais fracos, como `None' e `Sign'. Tais cenários de ataque evidenciam que, com a utilização de ferramentas simples e acesso ao componente principal da rede, um invasor pode facilmente realizar ataques de captura de pacotes na rede OPC UA, comprometendo dados confidenciais sobre toda a rede. O invasor é capaz de registrar todo o tráfego trocado na rede e, posteriormente, utilizá-lo para outros tipos de ataques, como inserção de pacotes maliciosos (do inglês \textit{packet injection}), DoS, MITM, DDoS, entre outros.
 
 \subsection{\textit{Man in the Middle (MITM)}}
 
+Depois de realizar com sucesso o ataque de \textit{Packet Sniffing}, o invasor terá acesso à uma lista de endereços de todos os dispositivos da rede, além de conhecer informações sensíveis do hospedeiro do servidor OPC UA, incluindo o \texttt{EndpointURI}. Logo, o ataque MITM, pode ser realizado para possibilitar, além da interceptação dos dados, também o controle total da comunicação.
+
+Ambas as técnicas utilizadas para empregar o ataque MITM foram realizadas com sucesso. A execução pela falsificação da tabela ARP, cenários C16, C17 e C18, demonstra que a comunicação é interceptada e redirecionada para o invasor, possibilitando a capturar e modificar os pacotes de dados. A \autoref{fig:0-mitm-wireshark} demonstra a captura de pacotes de comunicação entre o servidor e o cliente, com o invasor atuando como intermediário. Ao comparar com o tráfego apresentado pela \autoref{fig:0-sniffing-wireshark}, é possível observar que o fluxo normal de comunicação é interceptado e redirecionado para o invasor com o endereço MAC \texttt{00:09:5B:A0:5F:F0}.
+
+\begin{figure}[htbp!]
+    \centering
+    \caption{\label{fig:0-mitm-wireshark}Interceptação de pacotes no ataque MITM com modo de segurança `None'}
+    \begin{subfigure}[t]{1\textwidth}
+        \centering
+        \caption{\texttt{OpenSecureChannelRequest}}
+        \includegraphics[width=1\textwidth]{USPSC-img/0-mitm-arp_1.png}
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{1\textwidth}
+        \centering
+        \caption{\texttt{OpenSecureChannelResponse}}
+        \includegraphics[width=1\textwidth]{USPSC-img/0-mitm-arp_2.png}
+    \end{subfigure}%
+    \legend{Fonte: elaborada pelo autor.}
+\end{figure}
+
+Inicia-se com a etapa de hand-shake entre os agentes, com a saudação do cliente, seguida por um reconhecimento do servidor. Em seguida, o cliente envia uma solicitação \textit{OpenSecureChannelRequest}, à qual o servidor responde com uma \textit{OpenSecureChannelResponse}. Após essa etapa, é criado um \textit{SecureChannel}, e o cliente envia uma \textit{CreateSessionRequest}, que é respondida pelo servidor com uma \textit{CreateSessionResponse}. Uma vez que a sessão é criada, cliente e servidor se ativam usando \textit{ActivateSessionRequest} e \textit{ActivateSessionResponse}. A partir desse ponto, quando o cliente tenta acessar qualquer informação do servidor, observa-se as mensagens \textit{ReadRequest} e \textit{ReadResponse}.
+
+No ataque MITM pelo roubo de portas, cenários C19, C20 e C21, um aumento no \texttt{throughput} é observado, alcançando valores dez vezes maior que o executado pela falsificação da tabela ARP. Essa elevação ocorre devido ao processo de roubo de portas, cuja rede é inundada com pacotes ARP para saturar a tabela ARP do servidor, forçando-o a redirecionar o tráfego para o invasor. Em média, 99.3\% dos pacotes nesses cenários são provenientes do \textit{broadcast} ARP. No entanto, uma vez que esta técnica é empregada com sucesso e a interceptação efetuada, nota-se que a comunicação não é realizada através do invasor, mas sim diretamente entre o servidor e o cliente com a replicação desta para a porta roubada pelo invasor.
+
+A partir de ambas as tecnicas empregadas, nota-se algumas informações confidenciais são obtidas pelo invasor, como o \texttt{EndpointURI} do servidor, o \texttt{SecurityPolicy} e o \texttt{SecurityMode} utilizados na comunicação,  as informações que o servidor OPC UA obtém da rede do chão de fábrica em um ambiente industrial em tempo real. No entanto, vale ressaltar que o invasor não é capaz de decifrar os pacotes de comunicação para o ambiente configurado com o maior nível de segurança (`Sign \& Encrypt') e com políticas de segurança atualizadas. Supõe-se também que para execução deste ataque o invasor tenha acesso físico à rede, o que não deve ser comum em ambientes industriais.
+
 \subsection{\textit{Denial of Service (DoS)}}
+
+Nesta seção, são apresentados os resultados obtidos a partir dos cenários de ataques de negação de serviço (DoS) executados na bancada experimental utilizando cinco técnicas distintas. O objetivo desses ataques é avaliar a capacidade da rede industrial OPC UA de resistir a sobrecargas de tráfego e a variação no desempenho dos componentes ao serem submetidos a tais cenários.
+
+\subsubsection*{\underline{Inundação TCP/IP}}
+
+A execução do ataque pela inundação TCP/IP (cenários C7, C8 e C9) consistiu na varredura inicial da rede para identificar dispositivos e serviços ativos, utilizando Nmap. Os resultados revelaram a presença de um servidor OPC UA em execução e sua respectiva porta aberta para essa comunicação. Isso é suficiente para que o próximo passo seja executado: inundação de pacotes SYN pela comunicação TCP/IP.
+
+Os resultados obtidos para esses cenários indicam que a rede é altamente vulnerável a ataques de inundação TCP/IP, com um aumento significativo no \texttt{throughput} e na taxa de pacotes por segundo. O servidor OPC UA é sobrecarregado com a alta carga de tráfego, resultando em um aumento no uso da CPU e na degradação do desempenho do sistema. 
+
+\subsubsection*{\underline{Loop infinito na cadeia de certificados}}
+
+\subsubsection*{\underline{Chamada da função Dereference nula}}
+
+\subsubsection*{\underline{Abertura de múltiplos canais seguros}}
+
+\subsubsection*{\underline{Tradução do caminho de navegação}}
 
 \section{Propostas de Melhorias e Mitigações} \label{sec:melhorias-mitigacoes}
 
@@ -162,6 +236,23 @@ Como resultado de uma série de testes realizados em conformidade com os padrõe
     \item \textbf{Uso de Certificados}: Conexões que não fornecem certificados confiáveis não são permitidas. Certificados autoassinados requerem verificação adicional. Se os certificados não forem autoassinados, é necessário o estabelecimento de uma autoridade certificadora, e os certificados dessa autoridade devem ser assinados de forma independente ou por outra autoridade certificadora. As autoridades certificadoras podem ser multinível.
     \item \textbf{Gestão e Manutenção de Certificados}: Recomenda-se o uso de listas de confiança de certificados e listas de revogação de certificados para gerenciar apenas certificados válidos. Essas listas são criadas por usuários ou processos confiáveis e devem ser atualizadas regularmente.
 \end{itemize}
+
+\subsection{Na Rede}
+
+MITM:
+
+Port stealing Port stealing - countermeasures - countermeasures
+n YES - port security on the switch - port security on the switch
+n NO - static ARP - static ARP
+
+ARP poison - countermeasures - countermeasures
+n YES - passive monitoring (arpwatch) - passive monitoring (arpwatch)
+n YES - active monitoring (ettercap) - active monitoring (ettercap)
+n YES - IDS (detect but not avoid) - IDS (detect but not avoid)
+n YES - Static ARP entries entries (avoid it) (avoid it)
+n YES - Secure-ARP (public - Secure-ARP (public key auth)
+n NO - Port security security on the on the switch
+n NO - anticap anticap, antidote, , antidote, middleware middleware approach approach
 
 % \section{Resultados Esperados}
 

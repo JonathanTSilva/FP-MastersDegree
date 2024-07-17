@@ -24,8 +24,7 @@
     m{1.60cm}
     m{2.90cm}|
 }
-    \caption{Modelo de relatório de vulnerabilidades}
-    \label{tab:relatorio}
+    \caption{\label{tab:relatorio}Modelo de relatório de vulnerabilidades}
     \tabularnewline
     \hline
     \theadmulti{6}{gridgray}{1. Sumário executivo} \\
@@ -76,741 +75,720 @@
     \hline
 \end{longtable}
 
-\chapter{Gráficos de \textit{throughput}, desempenho e \textit{Round Trip Time} (RTT) em diferentes cenários da comunicação OPC UA}\label{ap:graficos}
+\chapter{Gráficos de ataques cibernéticos em diferentes cenários da comunicação OPC UA}\label{ap:graficos}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-dos_certificate_inf_chain_loop}Gráficos do ataque de DoS por loop infinito na cadeia de certificados - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_certificate_inf_chain_loop-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_certificate_inf_chain_loop-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_certificate_inf_chain_loop-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_certificate_inf_chain_loop-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_certificate_inf_chain_loop-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-dos_certificate_inf_chain_loop}
-    \caption{Gráficos do ataque de DoS por loop infinito na cadeia de certificados - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-dos_certificate_inf_chain_loop}Gráficos do ataque de DoS por loop infinito na cadeia de certificados - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_certificate_inf_chain_loop-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_certificate_inf_chain_loop-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_certificate_inf_chain_loop-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_certificate_inf_chain_loop-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_certificate_inf_chain_loop-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:1-dos_certificate_inf_chain_loop}
-    \caption{Gráficos do ataque de DoS por loop infinito na cadeia de certificados - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-dos_certificate_inf_chain_loop}Gráficos do ataque de DoS por loop infinito na cadeia de certificados - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:2-dos_certificate_inf_chain_loop}
-    \caption{Gráficos do ataque de DoS por loop infinito na cadeia de certificados - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-dos_function_call_null_deref}Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_function_call_null_deref-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_function_call_null_deref-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_function_call_null_deref-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_function_call_null_deref-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_function_call_null_deref-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-dos_function_call_null_deref}
-    \caption{Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-dos_function_call_null_deref}Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_function_call_null_deref-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_function_call_null_deref-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_function_call_null_deref-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_function_call_null_deref-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_function_call_null_deref-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:1-dos_function_call_null_deref}
-    \caption{Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-dos_function_call_null_deref}Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:2-dos_function_call_null_deref}
-    \caption{Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-dos_hping3}Gráficos do ataque de DoS por inundação TCP/IP - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_hping3-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_hping3-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_hping3-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_hping3-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_hping3-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-dos_hping3}
-    \caption{Gráficos do ataque de DoS por inundação TCP/IP - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-dos_hping3}Gráficos do ataque de DoS por inundação TCP/IP - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_hping3-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_hping3-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_hping3-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_hping3-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_hping3-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:1-dos_hping3}
-    \caption{Gráficos do ataque de DoS por inundação TCP/IP - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-dos_hping3}Gráficos do ataque de DoS por inundação TCP/IP - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
-    %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-pack.png}
     %     \caption{Pacotes OPC UA}
+    %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-pack.png}
     % \end{subfigure}%
     % ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-rtts.png}
         \caption{RTT por segundos}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_hping3-rtts.png}
     \end{subfigure}%
-    \label{fig:2-dos_hping3}
-    \caption{Gráficos do ataque de DoS por inundação TCP/IP - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-dos_open_multiple_secure_channels}Gráficos do ataque de DoS pela abertura de múltiplos canais seguros - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_open_multiple_secure_channels-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_open_multiple_secure_channels-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_open_multiple_secure_channels-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_open_multiple_secure_channels-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_open_multiple_secure_channels-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-dos_open_multiple_secure_channels}
-    \caption{Gráficos do ataque de DoS pela abertura de múltiplos canais seguros - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-dos_open_multiple_secure_channels}Gráficos do ataque de DoS pela abertura de múltiplos canais seguros - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_open_multiple_secure_channels-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_open_multiple_secure_channels-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_open_multiple_secure_channels-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_open_multiple_secure_channels-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_open_multiple_secure_channels-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:1-dos_open_multiple_secure_channels}
-    \caption{Gráficos do ataque de DoS pela abertura de múltiplos canais seguros - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-dos_open_multiple_secure_channels}Gráficos do ataque de DoS pela abertura de múltiplos canais seguros - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_open_multiple_secure_channels-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_open_multiple_secure_channels-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_open_multiple_secure_channels-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_open_multiple_secure_channels-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_open_multiple_secure_channels-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:2-dos_open_multiple_secure_channels}
-    \caption{Gráficos do ataque de DoS pela abertura de múltiplos canais seguros - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-dos_translate_browse_path_call_stack_overflow}Gráficos do ataque de DoS pela tradução do caminho de navegação - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_translate_browse_path_call_stack_overflow-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_translate_browse_path_call_stack_overflow-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_translate_browse_path_call_stack_overflow-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_translate_browse_path_call_stack_overflow-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-dos_translate_browse_path_call_stack_overflow-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-dos_translate_browse_path_call_stack_overflow}
-    \caption{Gráficos do ataque de DoS pela tradução do caminho de navegação - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-dos_translate_browse_path_call_stack_overflow}Gráficos do ataque de DoS pela tradução do caminho de navegação - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_translate_browse_path_call_stack_overflow-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_translate_browse_path_call_stack_overflow-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_translate_browse_path_call_stack_overflow-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_translate_browse_path_call_stack_overflow-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-dos_translate_browse_path_call_stack_overflow-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:1-dos_translate_browse_path_call_stack_overflow}
-    \caption{Gráficos do ataque de DoS pela tradução do caminho de navegação - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-dos_translate_browse_path_call_stack_overflow}Gráficos do ataque de DoS pela tradução do caminho de navegação - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_translate_browse_path_call_stack_overflow-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_translate_browse_path_call_stack_overflow-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_translate_browse_path_call_stack_overflow-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_translate_browse_path_call_stack_overflow-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_translate_browse_path_call_stack_overflow-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:2-dos_translate_browse_path_call_stack_overflow}
-    \caption{Gráficos do ataque de DoS pela tradução do caminho de navegação - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-mitm_arp}Gráficos do ataque de MITM pela falsificação da tabela ARP - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_arp-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_arp-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_arp-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_arp-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_arp-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-mitm_arp}
-    \caption{Gráficos do ataque de MiTM pela falsificação da tabela ARP - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-mitm_arp}Gráficos do ataque de MITM pela falsificação da tabela ARP - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_arp-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_arp-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_arp-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_arp-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_arp-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:1-mitm_arp}
-    \caption{Gráficos do ataque de MiTM pela falsificação da tabela ARP - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-mitm_arp}Gráficos do ataque de MITM pela falsificação da tabela ARP - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_arp-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_arp-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_arp-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_arp-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_arp-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:2-mitm_arp}
-    \caption{Gráficos do ataque de MiTM pela falsificação da tabela ARP - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:0-mitm_port}Gráficos do ataque de MITM pelo roubo de portas - nível de segurança: `None'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_port-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Desempenho}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_port-perf.png}
-        \caption{Desempenho}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{Pacotes OPC UA}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_port-pack.png}
-        \caption{Pacotes OPC UA}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{RTT por pacote}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_port-rttp.png}
-        \caption{RTT por pacote}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
+    %     \caption{RTT por segundos}
     %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-mitm_port-rtts.png}
-    %     \caption{RTT por segundos}
     % \end{subfigure}%
-    \label{fig:0-mitm_port}
-    \caption{Gráficos do ataque de MiTM pelo roubo de portas - nível de segurança: `None'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:1-mitm_port}Gráficos do ataque de MITM pelo roubo de portas - nível de segurança: `Sign'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
+        \caption{\textit{Throughput}}
         \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-tput.png}
-        \caption{\textit{Throughput}}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-perf.png}
         \caption{Desempenho}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-perf.png}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-pack.png}
         \caption{Pacotes OPC UA}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-pack.png}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-rttp.png}
         \caption{RTT por pacote}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-rttp.png}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
-    %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-rtts.png}
     %     \caption{RTT por segundos}
+    %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/1-mitm_port-rtts.png}
     % \end{subfigure}%
-    \label{fig:1-mitm_port}
-    \caption{Gráficos do ataque de MiTM pelo roubo de portas - nível de segurança: `Sign'.}
 \end{figure}
 
 \begin{figure}[htbp!]
     \centering
+    \caption{\label{fig:2-mitm_port}Gráficos do ataque de MITM pelo roubo de portas - nível de segurança: `Sign \& Encrypt'.}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-tput.png}
         \caption{\textit{Throughput}}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-tput.png}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-perf.png}
         \caption{Desempenho}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-perf.png}
     \end{subfigure}%
     \\
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-pack.png}
         \caption{Pacotes OPC UA}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-pack.png}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-rttp.png}
         \caption{RTT por pacote}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-rttp.png}
     \end{subfigure}%
     % ~
     % \begin{subfigure}[t]{0.5\textwidth}
     %     \centering
-    %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-rtts.png}
     %     \caption{RTT por segundos}
+    %     \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-mitm_port-rtts.png}
     % \end{subfigure}%
-    \label{fig:2-mitm_port}
-    \caption{Gráficos do ataque de MiTM pelo roubo de portas - nível de segurança: `Sign \& Encrypt'.}
 \end{figure}
 
 \end{apendicesenv}

@@ -83,7 +83,9 @@ Devido à importância do tema e ao raciocínio apresentado, um método para an�
     
     Após o término dessa operação de varredura, o Elemento Invasor pode selecionar o(s) alvo(s) nos quais receberam o ataque MITM e então, prosseguir com a falsificação da rede por ARP (do inglês \textit{ARP Spoofing}), um dos tipos mais comuns de efetuar esse ataque. O ARP (do ingês \textit{Address Resolution Protocol}) é um dos protocolos de comunicação mais importantes da camada de rede do modelo OSI, utilizado para determinar o endereço MAC (do inglês \textit{Media Access Control}) de um dispositivo com base no seu endereço IP. Com o \textit{ARP Spoofing}, o invasor é capaz de anunciar à rede que o seu endereço MAC é o correto para os endereços IP pertencentes ao roteador e à estação de trabalho. Assim, estes dois dispositivos atualizam as suas entradas de cache ARP, e, a partir desse ponto, comunicam-se com o invasor, em vez de diretamente entre si.
 
-    Enquanto a falsificação da tabela ARP é realizada pela ferramenta Ettercap, inicia-se a captura de pacotes pelo Wireshark. Para facilitar a visualização e a análise realizada neste estudo, o Wireshark é configurado para o protocolo OPC UA, permitindo um exame detalhado da comunicação entre os dispositivos na rede.
+    Além disso, realizou-se também o ataque MITM por roubo de portas (do inglês \textit{port stealing}) com a ferramenta Ettercap. Neste cenário, o invasor intercepta o tráfego de rede entre o cliente e o servidor OPC UA ao inundar a rede com pacotes ARP, cujo o endereço MAC de destino é o do próprio invasor e o endereço MAC de origem é o de uma vítima. Com isso, a porta do switch do alvo é ``roubado'', permitindo que os pacotes destinados a ela sejam recebidos pelo invasor. O invasor então interrompe a inundação, realiza uma solicitação ARP para o destino real do pacote e, ao receber a resposta, reenvia o pacote para o destino. O processo é repetido para interceptar continuamente o tráfego.
+
+    Enquanto os ataques MITM pela falsificação da tabela ARP e pelo roubo de portas são realizados pela ferramenta Ettercap, inicia-se a captura de pacotes pelo Wireshark. Para facilitar a visualização e a análise realizada neste estudo, o Wireshark é configurado para o protocolo OPC UA, permitindo um exame detalhado da comunicação entre os dispositivos na rede.
     
     \subsection{\textit{Denial of Service (DoS)}}
 
@@ -231,7 +233,7 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
             \midrule
             Sniffer  & 192.168.164.201 & C8:3A:35:49:FD:58 \\
             \midrule
-            Invasor  & 192.168.164.115 / 192.168.164.110 & 00:be:43:34:b8:54 \\
+            Invasor  & 192.168.164.115 & 00:be:43:34:b8:54/00:09:5B:a0:5F:F0 \\
             \bottomrule
         \end{tabular}
         \fonte{elaborada pelo autor.}%
@@ -242,36 +244,6 @@ python main.py [SERVER_TYPE] [IP_ADDR] [PORT] [ENDPOINT_ADDRESS] [FUNC_TYPE] [DI
     A fase de aquisição de dados fundamenta-se na captura do tráfego de pacotes transmitidos pela rede OPC UA durante a comunicação entre a aplicação servidora e o cliente da rede, enquanto ocorrem os ataques. Esse processo se baseia na utilização do software Wireshark, no qual permite a coleta de informações cruciais sobre a comunicação, incluindo detalhes como o tipo de protocolo empregado, a origem e o destino dos dados. As informações capturadas são armazenadas em ordem cronológica com a capacidade de serem salvas em arquivos no formato `.pcapng'. O software Wireshark foi configurado para finalizar a captura com sessenta segundos de coleta.
 
     Os alvos dos ataques é o servidor OPC UA, e em cada cenário, o elemento \textit{Sniffer} é configurado para realizar a captura do tráfego gerado por estes ataques. Para organizar os pacotes capturados, foi adotada a seguinte nomenclatura de arquivos: `[Modo de Segurança]-[Tipo do Ataque]-[Número da Captura].pcapng'. Aqui, o modo de segurança pode assumir os valores 0 (None), 1 (Sign) e 2 (Sign\&Encrypt). Os tipos de ataques correspondem àqueles detalhados na \autoref{sec:attacks} (`sniffing', `mitm' e `dos-[função]'), e o número da captura é representado por um dígito de 0 a 9. Por exemplo, para salvar a terceira captura obtida durante uma negação de serviço pelo ataque de chamada da função \textit{Dereference} nula, com a rede configurada no modo de segurança \textbf{Sign}, o arquivo seria nomeado como: `1-dos\_function\_call\_null\_deref.pcapng'. A \autoref{tab:attacks} apresenta os cenários e os arquivos de captura gerados durante os experimentos para cada tipo de ataque.
-
-    % \begin{table}[htbp]
-    %     \centering
-    %     \caption{Cenários e arquivos de captura gerados durante a fase de aquisição de dados}%
-	%     \label{tab:attacks}
-    %     \begin{tabular}{lp{4cm}}
-    %         \toprule
-    %         \thead{Arquivo} & \thead{Ataque} \\
-    %         \toprule
-    %         (0/1/2)-dos\_certificate\_inf\_chain\_loop.pcapng & DoS pelo loop infinito na cadeia de certificados \\
-    %         \midrule
-    %         (0/1/2)-dos\_function\_call\_null\_deref.pcapng & DoS pela chamada da função \textit{Dereference} nula \\
-    %         \midrule
-    %         (0/1/2)-dos\_hping3.pcapng & DoS pela inundação do TCP/IP \\
-    %         \midrule
-    %         (0/1/2)-dos\_open\_multiple\_secure\_channels.pcapng & DoS pela abertura de múltiplos canais seguros \\
-    %         \midrule 
-    %         (0/1/2)-dos\_translate\_browse\_path\_call.pcapng & DoS pela tradução do caminho de navegação \\
-    %         \midrule
-    %         (0/1/2)-mitm\_arp.pcapng & MITM pela falsificação da tabela ARP \\
-    %         \midrule
-    %         (0/1/2)-mitm\_port.pcapng & MITM pelo roubo de portas \\
-    %         \midrule
-    %         (0/1/2)-sniffing.pcapng & \textit{Packet Sniffing} \\
-    %         \midrule
-    %         (0/1/2)-normal\_local\_server.pcapng & Comunicação normal entre cliente e servidor \\
-    %         \bottomrule
-    %     \end{tabular}
-    %     \fonte{elaborada pelo autor.}%
-    % \end{table}
 
     \begin{table}[htbp]
         \centering
