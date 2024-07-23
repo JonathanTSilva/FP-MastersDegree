@@ -212,15 +212,102 @@ Nesta seção, são apresentados os resultados obtidos a partir dos cenários de
 
 A execução do ataque pela inundação TCP/IP (cenários C7, C8 e C9) consistiu na varredura inicial da rede para identificar dispositivos e serviços ativos, utilizando Nmap. Os resultados revelaram a presença de um servidor OPC UA em execução e sua respectiva porta aberta para essa comunicação. Isso é suficiente para que o próximo passo seja executado: inundação de pacotes SYN pela comunicação TCP/IP.
 
-Os resultados obtidos para esses cenários indicam que a rede é altamente vulnerável a ataques de inundação TCP/IP, com um aumento significativo no \texttt{throughput} e na taxa de pacotes por segundo. O servidor OPC UA é sobrecarregado com a alta carga de tráfego, resultando em um aumento no uso da CPU e na degradação do desempenho do sistema. 
+Os resultados obtidos para esses cenários indicam que a rede é altamente vulnerável a ataques de inundação TCP/IP, com um aumento significativo no \texttt{throughput} e na taxa de pacotes por segundo. O servidor OPC UA é sobrecarregado com a alta carga de tráfego, resultando em um aumento considerável no uso da CPU e na degradação do desempenho do sistema. O gráfico apresentado na \autoref{fig:perf-dos-tcp} ilustra a variação média no uso da CPU do hospedeiro do servidor OPC UA durante a execução do ataque de inundação TCP/IP. Para facilitar a visualização e análise dos dados, utilizou-se a média móvel para suavizar a série temporal dos dados, atenuando as flutuações de curto prazo e destacando a tendência de longo prazo.
+
+\begin{figure}[htbp!]
+    \centering
+    \caption{\label{fig:perf-dos-tcp}Variação média no processamento do hospedeiro do servidor OPC UA durante o ataque de inundação TCP/IP}
+    \begin{subfigure}[t]{1\textwidth}
+        \centering
+        \caption{`None'}
+        \includegraphics[width=1\textwidth]{USPSC-img/0-dos-hping-cpu.png}
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{1\textwidth}
+        \centering
+        \caption{`Sign'}
+        \includegraphics[width=1\textwidth]{USPSC-img/1-dos-hping-cpu.png}
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{1\textwidth}
+        \centering
+        \caption{`Sign \& Encrypt'}
+        \includegraphics[width=1\textwidth]{USPSC-img/2-dos-hping-cpu.png}
+    \end{subfigure}%
+    \legend{Fonte: elaborada pelo autor.}
+\end{figure}
+
+Em média, o aumento de 275\% no processamento ao início do ataque para qualquer cenário de configuração de segurança, indica que o servidor OPC UA é altamente vulnerável a ataques de inundação TCP/IP, visto que os ataques foram executados em um ambiente controlado e nenhuma outra tarefa estava sendo processada pelo controlador. A alta carga de tráfego gerada por esse tipo de ataque pode levar à degradação do serviço, à interrupção da comunicação e à perda de dados críticos. Portanto, é essencial implementar medidas de segurança robustas para proteger a rede contra esse tipo de ataque e garantir a disponibilidade e a integridade dos sistemas industriais.
+
+No entanto, vale ressaltar que este ataque não foi direcionado para o protocolo OPC UA, mas sim para a camada de transporte (quarta camada do modelo OSI). Portanto, embora a comunicação OPC UA não seja afetada diretamente, o corrompimento da infraestrutura de rede subjacente pode apresentar impactos significativos na comunicação OPC UA, especialmente em ambientes industriais, cuja a disponibilidade e a integridade dos sistemas são críticas.
 
 \subsubsection*{\underline{Loop infinito na cadeia de certificados}}
 
+A tecnologia OPC UA demonstrou uma resistência considerável ao ataque de negação de serviço pelo loop infinito na cadeia de certificados. Essa análise pode ser realizada com base nos gráficos de RTT da comunicação. A Figura \ref{fig:0-dos-cert-rttp} apresenta a variação média do RTT normalizado por pacote durante a execução do ataque para o cenário C3.
+
+\begin{figure}[htbp!]
+    \caption{\label{fig:0-dos-cert-rttp}Tempo de resposta normalizado por pacote durante o ataque de loop infinito na cadeia de certificados - nível de segurança: `Sign \& Encrypt'}
+    \begin{center}
+        \includegraphics[width=0.972\textwidth]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-rttp.png}
+    \end{center}
+    \legend{Fonte: elaborada pelo autor.}
+\end{figure}
+
+A análise dos resultados revela uma interação do invasor com o servidor OPC UA apenas no momento do início do ataque. A comunicação a partir desse ponto é encerrada, para todos os modos de segurança, como indicado pela linha vermelha pontilhada que marca o início do ataque. Antes do ataque, o RTT Cliente-Servidor se mantém constante e estável. Entretanto, após o início do ataque, observa-se um aumento no RTT Invasor-Servidor, indicando que o servidor está sendo inundado com solicitações que levam ao aumento do tempo de resposta.
+
+O gráfico também revela que, após o início do ataque, há uma dispersão significativa dos pontos de RTT Invasor-Servidor, o que sugere variações na capacidade do servidor de processar pacotes sob a carga do ataque. No entanto, o RTT Cliente-Servidor apresenta pouca variação, indicando que o servidor mantém a qualidade do serviço para comunicações legítimas, apesar da sobrecarga causada pelo ataque.
+
+Essa análise reforça a eficácia do OPC UA em manter a resiliência contra ataques de negação de serviço, especialmente em cenários onde são implementadas medidas de segurança robustas, como o uso de criptografia e autenticação adequada. Além disso, destaca a importância de monitorar continuamente o desempenho do servidor e implementar mecanismos de mitigação de ataques para garantir a continuidade do serviço e a integridade dos dados. 
+
 \subsubsection*{\underline{Chamada da função Dereference nula}}
+
+O ataque de DoS pela chamada da função Dereference nula revelou-se o único capaz de causar uma negação de serviço completa na rede OPC UA industrial, para todos os diferentes cenários (C4, C5 e C6). Este ataque explora uma vulnerabilidade crítica no servidor, na qual uma chamada de função é executada sem verificar a validade do ponteiro, resultando em uma falha que pode travar o servidor. A técnica aproveita de vulnerabilidades na desreferenciação de um ponteiro nulo, que ocorre quando um programa tenta acessar ou modificar um ponteiro que, em vez de apontar para uma localização válida na memória, possui um valor nulo. A consequência imediata é que o programa tenta ler ou escrever em uma área de memória inválida, levando a uma interrupção abrupta do funcionamento do sistema. A gravidade desta falha reside no fato de que, além de interromper o serviço, ela pode ser explorada por atacantes para comprometer a segurança e a integridade do sistema, explorando comportamentos indefinidos que podem permitir a execução de código malicioso, ou levar a negação de serviço, como neste caso.
+
+A análise dos gráficos fornecidos pela \autoref{fig:2-dos_null_deref} oferece uma compreensão detalhada do impacto deste ataque, especificamente para a rede configurada com modo de segurança `Sign \& Encrypt'.
+
+\begin{figure}[htbp!]
+    \centering
+    \caption{\label{fig:2-dos_null_deref}Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign \& Encrypt'.}
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \caption{\label{fig:2-dos_null_deref-tput}\textit{Throughput}}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-tput.png}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \caption{\label{fig:2-dos_null_deref-perf}Desempenho}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-perf.png}
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \caption{\label{fig:2-dos_null_deref-pack}Pacotes OPC UA}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-pack.png}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \caption{\label{fig:2-dos_null_deref-rttp}RTT por pacote}
+        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-rttp.png}
+    \end{subfigure}%
+\end{figure}
+
+O gráfico de taxa de transferência, representado na \autoref{fig:2-dos_null_deref-tput}, demonstra uma estabilidade em níveis baixos antes do ataque. Com o início do ataque, indicado pela linha vermelha, observa-se um aumento abrupto no throughput, atingindo um pico significativo antes de cair drasticamente a zero. Este comportamento indica que o servidor OPC UA foi sobrecarregado com solicitações inválidas, resultando em uma falha completa da comunicação, o que caracteriza uma negação de serviço.
+
+A análise do gráfico de tempo de resposta por pacote, ilustrado na \autoref{fig:2-dos_null_deref-rttp}, corrobora esses achados. Antes do ataque, o RTT entre cliente e servidor permanece relativamente constante, refletindo uma comunicação estável. No entanto, com o início do ataque, há um aumento significativo no RTT, especialmente na comunicação entre o invasor e o servidor. Essa elevação súbita no RTT sugere que o servidor está demorando mais para processar as solicitações devido à sobrecarga provocada pelo ataque, culminando em um colapso na comunicação.
+
+O impacto do ataque na performance do servidor é ainda mais evidente na \autoref{fig:2-dos_null_deref-perf}, que mostra o desempenho do host em termos de utilização de CPU e memória RAM. Antes do ataque, o uso da CPU se mantém em níveis baixos e constantes, indicando um funcionamento normal do servidor. No entanto, após o início do ataque, a utilização da CPU aumenta drasticamente, enquanto a utilização da RAM se mantém estável. Esta alta utilização da CPU é um indicativo claro de que o servidor está sobrecarregado tentando processar a grande quantidade de solicitações inválidas geradas pelo ataque, levando a uma queda de desempenho e, eventualmente, à falha do sistema.
+
+Esses resultados demonstram que o ataque de chamada da função dereference nula é altamente eficaz em explorar vulnerabilidades específicas do servidor OPC UA, resultando em uma negação de serviço completa. A incapacidade do servidor de verificar a validade dos ponteiros antes de executar chamadas de função crítica foi o fator chave que permitiu a execução bem-sucedida deste ataque. A rápida elevação na utilização da CPU e a subsequente falha na comunicação destacam a necessidade urgente de medidas de mitigação para proteger servidores OPC UA contra tais vulnerabilidades.
 
 \subsubsection*{\underline{Abertura de múltiplos canais seguros}}
 
+
+
 \subsubsection*{\underline{Tradução do caminho de navegação}}
+
+
 
 \section{Propostas de Melhorias e Mitigações} \label{sec:melhorias-mitigacoes}
 
