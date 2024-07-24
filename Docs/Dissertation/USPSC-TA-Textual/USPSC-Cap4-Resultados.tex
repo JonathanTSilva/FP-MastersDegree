@@ -303,10 +303,21 @@ Esses resultados demonstram que o ataque de chamada da função dereference nula
 
 \subsubsection*{\underline{Abertura de múltiplos canais seguros}}
 
+A análise dos ataques DoS por meio da abertura de múltiplos canais seguros na comunicação OPC UA revela a gravidade dessa vulnerabilidade e seu impacto potencial em redes industriais. O ataque DoS (Denial of Service) explora a capacidade limitada de um servidor OPC UA para gerenciar múltiplos canais seguros, sobrecarregando-o e resultando em degradação ou interrupção do serviço. Esse tipo de ataque é particularmente preocupante em ambientes industriais, onde a comunicação contínua e segura é vital para o funcionamento de sistemas críticos.
 
+Os resultados dos experimentos demonstram que a abertura simultânea de múltiplos canais seguros pode levar a um aumento significativo no throughput e no tempo de resposta, bem como na utilização da CPU. O gráfico de throughput mostra um aumento acentuado logo após o início do ataque, evidenciando que o servidor é incapaz de processar eficientemente a carga adicional de canais seguros. Esse aumento no throughput pode ser interpretado como uma tentativa do servidor de lidar com as múltiplas requisições, mas que acaba por sobrecarregar sua capacidade de processamento.
+
+No gráfico de Round Trip Time (RTT), observa-se um aumento substancial no tempo de resposta após o início do ataque. Os pacotes entre o cliente e o servidor apresentam um aumento considerável no RTT, indicando que o servidor está sobrecarregado e não consegue responder prontamente às requisições. Além disso, a presença de pacotes do invasor com altos RTTs reforça a ideia de que o servidor está sendo incapaz de manter a eficiência sob ataque.
+
+A análise do desempenho do host, especificamente da CPU e da RAM, também revela os efeitos adversos desse tipo de ataque. O gráfico de desempenho mostra um aumento considerável no uso da CPU após o início do ataque, enquanto o uso de RAM permanece estável. Isso sugere que a carga computacional imposta pela criação e manutenção de múltiplos canais seguros é a principal responsável pela degradação do desempenho do servidor.
+
+Em conclusão, o ataque DoS por abertura de múltiplos canais seguros na comunicação OPC UA é uma vulnerabilidade séria que pode comprometer a integridade e a disponibilidade de sistemas industriais. A capacidade do servidor de lidar com uma carga elevada de canais seguros é limitada, resultando em um aumento no throughput, tempo de resposta e utilização da CPU, o que pode levar à interrupção do serviço. Portanto, é crucial que medidas de mitigação sejam implementadas para proteger redes OPC UA contra esse tipo de ataque.
 
 \subsubsection*{\underline{Tradução do caminho de navegação}}
 
+Uma vulnerabilidade crítica que pode ser explorada para comprometer a estabilidade e a segurança da rede OPC UA é a exaustão da pilha de função que processa requisições de tradução de caminhos de navegação para \texttt{NodeIds} (\tetxtt{TranslateBrowsePathsToNodeIds}). A função \texttt{TranslateBrowsePath} é responsável por traduzir caminhos de navegação (do inglês \textit{browse paths}) em \texttt{NodeIds}. Durante esse processo, a função é chamada recursivamente para cada elemento no caminho relativo (\texttt{RelativePath}), sem um limite adequado para a profundidade da recursão. Como resultado, a tradução de um caminho de navegação excessivamente longo pode levar a uma exceção de estouro de pilha (\texttt{StackOverflowException}).
+
+No entanto, a análise dos resultados obtidos para estes cenários: C13, C14 e C15, revela que a rede OPC UA apresenta uma leve proteção contra ataques de negação de serviço por exaustão da pilha de função. A análise dos gráficos de dados do tráfego da rede, especificamente o tempo de resposta do servidor, revela uma degradação significativa no desempenho do sistema ao longo do tempo, no qual observa-se um aumento de forma acentuada à medida que o número de requisições maliciosas foi incrementado.
 
 
 \section{Propostas de Melhorias e Mitigações} \label{sec:melhorias-mitigacoes}
