@@ -346,51 +346,25 @@
         \item \underline{Análise Estática de Fluxo de Dados}: também referida como "Análise de Fluxo de Dados Contaminado", é uma abordagem de análise estática em que dados de entradas de fontes não confiáveis são classificados como contaminados. Seu fluxo em direção a instruções confidenciais do \textit{sofware} é rastreado como um possível indicador de vulnerabilidade.
     \end{itemize}
 
-    {\color{red}
     \section{Indicadores de Desempenho em Redes Industriais}
 
-    A análise do tráfego de rede em sistemas industriais, como aqueles baseados no protocolo OPC UA, requer a utilização de diversos indicadores de desempenho para avaliar a eficácia e a segurança da comunicação. Dois desses indicadores cruciais são o throughput e o round trip time (RTT). A seguir, são definidas e discutidas suas importâncias e aplicações no contexto de redes industriais.
+    A análise do tráfego de rede em sistemas industriais, como aqueles baseados no protocolo OPC UA, requer a utilização de diversos indicadores de desempenho para avaliar a eficácia e a segurança da comunicação. Dois desses indicadores cruciais são a taxa de transferência (do inglês \textit{throughput}) e o tempo de ida e volta (RTT, do inglês \textit{Round Trip Time}). A seguir, são definidas e discutidas suas importâncias e aplicações no contexto de redes industriais.
 
-    {\color{red}O throughput é uma medida crítica da capacidade de transmissão de dados da rede. A análise do throughput permite identificar como os ataques afetam a quantidade de dados que podem ser transmitidos em um determinado período. Reduções significativas no throughput indicam que o ataque está conseguindo interromper ou diminuir a eficiência da comunicação na rede. Este indicador é essencial para avaliar a degradação da performance da rede e a eficácia das políticas de segurança implementadas.
+    \subsection{Taxa de Transferência}
 
-    O desempenho da RAM e da CPU é um indicador direto da carga de trabalho imposta ao servidor OPC UA durante um ataque. Monitorar o uso desses recursos é crucial para identificar sobrecargas que podem levar à instabilidade ou falhas no sistema. Um aumento significativo no uso de CPU e RAM durante um ataque pode sugerir que o servidor está sendo sobrecarregado com solicitações maliciosas, o que pode comprometer sua capacidade de atender às solicitações legítimas. Analisar esses dados ajuda a entender a resistência do servidor sob diferentes tipos de ataques e políticas de segurança.
+    A taxa de transferência é um indicador fundamental para avaliar a eficiência e a capacidade de uma rede em transportar dados de um ponto a outro, pois se trata da quantidade real de dados que foi transmitida num período temporal específico e são geralmente medida em unidades de bits por segundo - bps. A análise do \textit{throughput} permite identificar possíveis gargalos na rede, avaliar a capacidade de transmissão de dados e detectar possíveis ataques cibernéticos que possam estar afetando a comunicação, uma vez que podem afetar a quantidade de dados transitando na rede.
 
-    A quantidade de pacotes OPC UA por segundo fornece uma visão detalhada do fluxo de dados na rede. Alterações abruptas na quantidade de pacotes podem indicar comportamentos anômalos ou interrupções causadas pelos ataques. Este indicador é especialmente útil para detectar atividades suspeitas, como tentativas de captura de dados (sniffing) ou interferências na comunicação (MITM). A análise desse gráfico ajuda a identificar padrões de tráfego anômalos que podem estar associados a atividades maliciosas.
+    Uma alta taxa de transferência pode ser um indicativo de que a rede está sendo inundada com pacotes e sofrendo de tentativas de negação de serviço, assim como um baixo \textit{throughput} pode indicar gargalos ou problemas de congestionamento na rede, que podem afetar a performance geral dos sistemas de controle e automação. Logo, analisar este indicador é essencial para identificar possíveis problemas na rede e avaliar a eficácia das políticas de segurança implementadas.
 
-    O RTT normalizado é uma medida da latência na comunicação entre cliente e servidor. A latência é um fator crítico para a eficiência e a responsividade das redes OPC UA. Aumentos no RTT durante um ataque indicam que a comunicação está sendo retardada, possivelmente devido a sobrecargas ou interferências. Analisar o RTT ajuda a entender como os ataques afetam a velocidade e a eficiência da comunicação na rede, e a normalização permite comparar o impacto em diferentes cenários de forma consistente.
+    Para medir a taxa de tranferência, são utilizados softwares de monitoramento de rede que capturam e analisam pacotes de dados transmitidos. No presente estudo, a taxa de transferência será calculada por um software desenvolvido para processar os dados de tráfego da rede capturados para diversos cenários de ataques.
 
-    A representação visual dos dados através dos gráficos permite uma interpretação mais intuitiva e imediata dos impactos dos ataques. Gráficos fornecem uma forma eficaz de identificar tendências, anomalias e padrões que podem não ser facilmente detectáveis através da análise de dados brutos. Além disso, eles facilitam a comparação entre diferentes cenários de ataque e políticas de segurança, permitindo uma avaliação clara da eficácia das medidas de proteção implementadas.
+    \subsection{Tempo de Ida e Volta}
 
-    Em resumo, a análise dos gráficos de throughput, desempenho de RAM e CPU, quantidade de pacotes por segundo e RTT normalizado oferece uma compreensão detalhada e multidimensional dos efeitos dos ataques cibernéticos em redes OPC UA. Essa abordagem é essencial para identificar vulnerabilidades, avaliar a eficácia das políticas de segurança e desenvolver estratégias de defesa mais robustas.}
+    O \textit{Round Trip Time} é um indicador crítico da latência na comunicação entre dois agentes, como cliente e servidor ou invasor e servidor, medindo o tempo que um pacote de dados leva para ir do ponto de origem ao destino e voltar ao ponto de origem, ou seja, o ciclo completo. Geralmente medido em milissegundos (ms), o RTT é um fator crítico para a eficiência e a responsividade das redes OPC UA, uma vez que um aumento no RTT durante um ataque pode indicar que a comunicação está sendo retardada, possivelmente devido a sobrecargas ou interferências.
 
-    \subsection{Throughput}
+    Em sistemas de controle industrial, uma latência baixa é essencial para o funcionamento em tempo real. Por outro lado, um RTT elevado pode indicar problemas na rede que impactam negativamente a qualidade do serviço, como roteamento ineficiente, problemas de congestionamento, ou ataques cibernéticos. Alterações neste indicador durante um ataque podem indicar comportamentos anômalos ou interrupções causadas pelos ataques. Analisar o RTT ajuda a entender como os ataques afetam a velocidade e a eficiência da comunicação na rede, e a normalização permite comparar o impacto em diferentes cenários de forma consistente.
 
-    O throughput é um indicador de desempenho que mede a quantidade de dados transmitidos através da rede em um período específico, geralmente expresso em kilobits por segundo (kbps) ou megabits por segundo (Mbps). Ele é um parâmetro fundamental para avaliar a capacidade e eficiência de uma rede em transportar dados.
-
-    A análise do throughput em redes OPC UA é vital por várias razões:
-
-    \begin{enumerate}
-        \item \textbf{Capacidade da Rede:} Avaliar o throughput permite determinar se a rede pode suportar a quantidade de dados necessária para a operação contínua e eficiente de sistemas industriais.
-        \item \textbf{Detecção de Gargalos:} Um throughput baixo pode indicar gargalos ou problemas de congestionamento na rede, que podem afetar a performance geral dos sistemas de controle e automação.
-        \item \textbf{Impacto de Ataques:} Durante ataques cibernéticos, como DoS, o throughput pode ser significativamente afetado. Analisar as mudanças no throughput pode ajudar a identificar a presença e a intensidade de tais ataques.
-    \end{enumerate}
-
-    Para medir o throughput, são utilizados softwares de monitoramento de rede que capturam e analisam pacotes de dados transmitidos. Em nosso estudo, o throughput foi calculado durante um período de 60 segundos para cada cenário de ataque, sob diferentes políticas de segurança do OPC UA.
-
-    \subsection{Round Trip Time (RTT)}
-
-    O round trip time (RTT) é o tempo que um pacote de dados leva para ir do ponto de origem ao destino e voltar ao ponto de origem. É um indicador crucial da latência de rede e é normalmente medido em milissegundos (ms).
-
-    A importância do RTT na análise de desempenho de redes industriais OPC UA inclui:
-
-    \begin{enumerate}
-        \item \textbf{Latência de Comunicação:} O RTT oferece uma medida direta da latência na comunicação entre dispositivos. Em sistemas de controle industrial, uma latência baixa é essencial para o funcionamento em tempo real.
-        \item \textbf{Qualidade de Serviço:} Um RTT elevado pode indicar problemas na rede que impactam negativamente a qualidade do serviço (QoS), como roteamento ineficiente, problemas de congestionamento, ou ataques cibernéticos.
-        \item \textbf{Detecção de Anomalias:} Análises de RTT podem ajudar a identificar anomalias na rede, como atrasos inesperados que podem ser causados por problemas de configuração ou atividades maliciosas.
-    \end{enumerate}
-
-    A medição do RTT envolve a análise do tempo de ida e volta de pacotes de dados utilizando ferramentas de rede. Em nossa pesquisa, o RTT foi normalizado em uma escala de 0 a 1 e analisado para cada cenário de ataque, proporcionando uma visão detalhada das variações na latência sob diferentes condições de segurança.
-    }
+    Componentes de infraestrutura, tráfego de rede e configurações de segurança são fatores potenciais que podem afetar o tempo de ida e volta na comunicação. A maneira como as conexões são feitas afeta diretamente o RTT, tanto por parte física, quanto pelos protocolos e configurações de rede. A quantidade de tráfego na rede também é um fator importante, pois quanto mais tráfego, maior a latência, bem como o tempo de processamento e resposta dos servidores, que ao ser sobrecarregado com solicitação, pode aumentar o RTT. Além disso, especificamente para comunicações OPC UA, a configuração de segurança, como a politica ou modo de segurança escolhido, pode impactar diretamente no tempo de resposta da comunicação.
 
     \section{Trabalhos Correlatos} \label{sec:trabCorrelatos}
 
