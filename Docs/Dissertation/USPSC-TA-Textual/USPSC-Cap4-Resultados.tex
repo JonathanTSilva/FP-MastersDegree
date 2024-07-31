@@ -322,20 +322,40 @@ No entanto, a análise dos resultados obtidos para estes cenários: C13, C14 e C
 
 \section{Propostas de Melhorias e Mitigações} \label{sec:melhorias-mitigacoes}
 
+A segurança das comunicações em redes industriais é de suma importância, especialmente no contexto do uso do protocolo OPC UA. A partir de uma série de testes realizados em conformidade com os padrões de segurança, foram identificadas diversas recomendações que visam mitigar vulnerabilidades e fortalecer tanto a integridade quanto a confidencialidade dos dados.
+
+Nesta seção, apresentaremos as propostas de melhorias e mitigações identificadas, dividindo-as em duas categorias principais. Primeiramente, discutiremos as Recomendações para Comunicações Seguras com o Protocolo OPC UA, abordando aspectos relacionados à configuração segura, escolha de algoritmos criptográficos, autenticação de usuários e gestão de certificados. Em seguida, a segunda subseção, intitulada Melhorias na Infraestrutura e Gestão de Redes, focará em estratégias para aprimorar a segurança da infraestrutura de rede, incluindo práticas de segmentação, monitoramento e atualização de sistemas.
+
+Ao implementar essas recomendações, espera-se não apenas aumentar a robustez das comunicações, mas também assegurar a continuidade das operações industriais de forma segura e eficiente.
+
 \subsection{Recomendações para Comunicações Seguras com o Protocolo OPC UA}
 
-Como resultado de uma série de testes realizados em conformidade com os padrões de segurança, foram identificadas e resumidas as seguintes recomendações para o uso de comunicações seguras com o protocolo OPC UA:
+Em primeiro lugar, a operação no "SecurityMode" adequado é fundamental. Deve-se sempre optar pelos modos Sign' ou Sign & Encrypt' para garantir que, no nível da aplicação, a autenticação seja obrigatória. O modo de segurança None' não oferece proteção e, portanto, não deve ser utilizado. O modo Sign & Encrypt' é particularmente importante, pois assegura tanto a integridade quanto a confidencialidade dos dados transmitidos, prevenindo a interceptação e modificação não autorizada das informações.
 
-\begin{itemize}
-    \item \textbf{Operação no "SecurityMode"}: É essencial selecionar os modos `Sign' ou `Sign \& Encrypt'. Esses modos garantem que, no nível da aplicação, a autenticação seja obrigatória. O modo de segurança `None' não oferece proteção alguma! O modo de segurança `Sign \& Encrypt' é utilizado para proteger a integridade dos dados e sua confidencialidade.
-    \item \textbf{Escolha dos Algoritmos Criptográficos}: Deve-se selecionar `Basic256Sha256' como a \textit{Security Policy}, desde que os clientes com os quais o servidor interage suportem essa política. Políticas de segurança que utilizam algoritmos obsoletos, como `SHA-1', não devem ser utilizadas.
-    \item \textbf{Autenticação de Usuários}: O login no servidor UA com um ID `anônimo' deve ser utilizado apenas ao acessar recursos não críticos, pois, nesse caso, não é possível rastrear quem está alterando os dados ou a configuração. Hackers podem explorar essas recomendações para usar o OPC UA com um ID seguro para ler ou escrever dados de maneira não autorizada. Isso pode ocorrer se a restrição dos direitos de trabalho com o identificador `anônimo' não for configurada adequadamente.
-    \item \textbf{Armazenamento de Certificados e Chaves Privadas}: As chaves privadas ou arquivos de certificado utilizados não devem ser armazenados em um sistema de arquivos não criptografado. Para esse propósito, devem ser usados armazenamentos especiais de certificados do sistema operacional e suas capacidades para definir direitos de acesso. Recomenda-se o uso de TPMs (\textit{Trusted Platform Modules}) ou hardware seguro externo, como tokens de autenticação USB, para armazenar certificados e/ou chaves privadas.
-    \item \textbf{Uso de Certificados}: Conexões que não fornecem certificados confiáveis não são permitidas. Certificados autoassinados requerem verificação adicional. Se os certificados não forem autoassinados, é necessário o estabelecimento de uma autoridade certificadora, e os certificados dessa autoridade devem ser assinados de forma independente ou por outra autoridade certificadora. As autoridades certificadoras podem ser multinível.
-    \item \textbf{Gestão e Manutenção de Certificados}: Recomenda-se o uso de listas de confiança de certificados e listas de revogação de certificados para gerenciar apenas certificados válidos. Essas listas são criadas por usuários ou processos confiáveis e devem ser atualizadas regularmente.
-\end{itemize}
+A escolha dos algoritmos criptográficos também desempenha um papel crucial na segurança das comunicações OPC UA. Recomenda-se a utilização da Security Policy Basic256Sha256, desde que compatível com os clientes interagentes. Políticas de segurança que utilizam algoritmos desatualizados, como o SHA-1, devem ser evitadas, pois não proporcionam um nível de segurança adequado para as atuais ameaças cibernéticas.
 
-\subsection{Na Rede}
+No que diz respeito à autenticação de usuários, é essencial evitar o uso de logins anônimos para acessar recursos críticos. Utilizar um ID anônimo impossibilita o rastreamento de alterações nos dados ou configurações, abrindo brechas para atividades não autorizadas. Hackers podem explorar esta vulnerabilidade, comprometendo a segurança dos dados. Portanto, deve-se configurar restrições rigorosas para o uso de identificadores anônimos, garantindo que apenas operações não críticas sejam realizadas sob tais condições.
+
+A proteção das chaves privadas e certificados é outro aspecto vital. Esses elementos não devem ser armazenados em sistemas de arquivos não criptografados. Devem-se utilizar os armazenamentos de certificados dos sistemas operacionais, que permitem definir direitos de acesso apropriados. Além disso, o uso de TPMs (Trusted Platform Modules) ou de hardware seguro externo, como tokens de autenticação USB, é altamente recomendado para o armazenamento seguro de certificados e chaves privadas, reduzindo o risco de comprometimento desses ativos.
+
+O uso de certificados confiáveis é imperativo. Conexões que não fornecem certificados confiáveis devem ser bloqueadas. Embora certificados autoassinados possam ser utilizados, eles requerem verificações adicionais. Preferencialmente, deve-se estabelecer uma autoridade certificadora (CA), cujos certificados devem ser assinados de forma independente ou por outra CA. Este modelo de confiança pode ser multinível, fortalecendo ainda mais a autenticidade das comunicações.
+
+Finalmente, a gestão e manutenção de certificados são essenciais para manter a segurança contínua. A utilização de listas de confiança de certificados e listas de revogação de certificados permite gerenciar apenas certificados válidos. Essas listas, criadas por usuários ou processos confiáveis, devem ser atualizadas regularmente para assegurar que somente certificados legítimos sejam aceitos, prevenindo possíveis ataques de falsificação de identidade.
+
+Essas medidas, quando implementadas de forma integrada, fornecem uma base robusta para a segurança das comunicações em redes industriais utilizando o protocolo OPC UA, mitigando riscos e assegurando a continuidade das operações críticas com integridade e confidencialidade.
+
+% Como resultado de uma série de testes realizados em conformidade com os padrões de segurança, foram identificadas e resumidas as seguintes recomendações para o uso de comunicações seguras com o protocolo OPC UA:
+
+% \begin{itemize}
+%     \item \textbf{Operação no "SecurityMode"}: É essencial selecionar os modos `Sign' ou `Sign \& Encrypt'. Esses modos garantem que, no nível da aplicação, a autenticação seja obrigatória. O modo de segurança `None' não oferece proteção alguma! O modo de segurança `Sign \& Encrypt' é utilizado para proteger a integridade dos dados e sua confidencialidade.
+%     \item \textbf{Escolha dos Algoritmos Criptográficos}: Deve-se selecionar `Basic256Sha256' como a \textit{Security Policy}, desde que os clientes com os quais o servidor interage suportem essa política. Políticas de segurança que utilizam algoritmos obsoletos, como `SHA-1', não devem ser utilizadas.
+%     \item \textbf{Autenticação de Usuários}: O login no servidor UA com um ID `anônimo' deve ser utilizado apenas ao acessar recursos não críticos, pois, nesse caso, não é possível rastrear quem está alterando os dados ou a configuração. Hackers podem explorar essas recomendações para usar o OPC UA com um ID seguro para ler ou escrever dados de maneira não autorizada. Isso pode ocorrer se a restrição dos direitos de trabalho com o identificador `anônimo' não for configurada adequadamente.
+%     \item \textbf{Armazenamento de Certificados e Chaves Privadas}: As chaves privadas ou arquivos de certificado utilizados não devem ser armazenados em um sistema de arquivos não criptografado. Para esse propósito, devem ser usados armazenamentos especiais de certificados do sistema operacional e suas capacidades para definir direitos de acesso. Recomenda-se o uso de TPMs (\textit{Trusted Platform Modules}) ou hardware seguro externo, como tokens de autenticação USB, para armazenar certificados e/ou chaves privadas.
+%     \item \textbf{Uso de Certificados}: Conexões que não fornecem certificados confiáveis não são permitidas. Certificados autoassinados requerem verificação adicional. Se os certificados não forem autoassinados, é necessário o estabelecimento de uma autoridade certificadora, e os certificados dessa autoridade devem ser assinados de forma independente ou por outra autoridade certificadora. As autoridades certificadoras podem ser multinível.
+%     \item \textbf{Gestão e Manutenção de Certificados}: Recomenda-se o uso de listas de confiança de certificados e listas de revogação de certificados para gerenciar apenas certificados válidos. Essas listas são criadas por usuários ou processos confiáveis e devem ser atualizadas regularmente.
+% \end{itemize}
+
+\subsection{Melhorias na Infraestrutura e Gestão de Redes}
 
 MITM:
 
