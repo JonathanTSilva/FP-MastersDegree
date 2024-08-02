@@ -322,11 +322,13 @@ No entanto, a análise dos resultados obtidos para estes cenários: C13, C14 e C
 
 \section{Propostas de Melhorias e Mitigações} \label{sec:melhorias-mitigacoes}
 
+A melhoria da resiliência cibernética de um IACS deve ser um dos muitos benefícios obtidos por meio da implementação de um programa de segurança industrial. Essa resiliência é alcançada quando os controles de segurança são selecionados de modo a abranger o processo contínuo de abordar a cibersegurança, que não apenas começa com a dissuasão e prevenção de ameaças, mas também equilibra de forma adequada a detecção e correção de ameaças. Isso é necessário para identificar eventos cibernéticos de maneira oportuna e responder adequadamente, a fim de minimizar as consequências do evento e devolver a instalação de manufatura à operação normal de forma segura e eficiente.
+
+As organizações frequentemente dedicam grandes partes de seu orçamento de segurança a mecanismos de prevenção de ataques. No entanto, muitas vezes, são notificadas por partes externas sobre a falta de investimento equilibrado em controles para detectar um evento de violação, muito tempo após o ataque ter ocorrido. A segurança deve ser considerada um investimento "estratégico" de longo prazo, em vez de uma despesa "tática" de curto prazo ou única. Aqueles que investem e constroem instalações de manufatura compreendem o ciclo de vida de longo prazo do investimento de capital, por isso faz sentido que a segurança industrial utilizada para proteger essas mesmas instalações seja tratada de maneira semelhante, recebendo atenção contínua (e orçamento) como outras despesas operacionais (manutenção, melhorias, treinamento, etc.).
+
 A segurança das comunicações em redes industriais é de suma importância, especialmente no contexto do uso do protocolo OPC UA. A partir de uma série de testes realizados em conformidade com os padrões de segurança, foram identificadas diversas recomendações que visam mitigar vulnerabilidades e fortalecer tanto a integridade quanto a confidencialidade dos dados.
 
-Nesta seção, apresentaremos as propostas de melhorias e mitigações identificadas, dividindo-as em duas categorias principais. Primeiramente, discutiremos as Recomendações para Comunicações Seguras com o Protocolo OPC UA, abordando aspectos relacionados à configuração segura, escolha de algoritmos criptográficos, autenticação de usuários e gestão de certificados. Em seguida, a segunda subseção, intitulada Melhorias na Infraestrutura e Gestão de Redes, focará em estratégias para aprimorar a segurança da infraestrutura de rede, incluindo práticas de segmentação, monitoramento e atualização de sistemas.
-
-Ao implementar essas recomendações, espera-se não apenas aumentar a robustez das comunicações, mas também assegurar a continuidade das operações industriais de forma segura e eficiente.
+Nesta seção, estão apresentadas as propostas de melhorias e mitigações identificadas, dividindo-as em duas categorias principais: as recomendações para comunicações seguras com o protocolo OPC UA e as melhorias na infraestrutura e destão de redes. Ao implementar essas recomendações, espera-se não apenas aumentar a robustez das comunicações, mas também assegurar a continuidade das operações industriais de forma segura e eficiente.
 
 \subsection{Recomendações para Comunicações Seguras com o Protocolo OPC UA}
 
@@ -344,33 +346,91 @@ Finalmente, a gestão e manutenção de certificados são essenciais para manter
 
 Essas medidas, quando implementadas de forma integrada, fornecem uma base robusta para a segurança das comunicações em redes industriais utilizando o protocolo OPC UA, mitigando riscos e assegurando a continuidade das operações críticas com integridade e confidencialidade.
 
-% Como resultado de uma série de testes realizados em conformidade com os padrões de segurança, foram identificadas e resumidas as seguintes recomendações para o uso de comunicações seguras com o protocolo OPC UA:
-
-% \begin{itemize}
-%     \item \textbf{Operação no "SecurityMode"}: É essencial selecionar os modos `Sign' ou `Sign \& Encrypt'. Esses modos garantem que, no nível da aplicação, a autenticação seja obrigatória. O modo de segurança `None' não oferece proteção alguma! O modo de segurança `Sign \& Encrypt' é utilizado para proteger a integridade dos dados e sua confidencialidade.
-%     \item \textbf{Escolha dos Algoritmos Criptográficos}: Deve-se selecionar `Basic256Sha256' como a \textit{Security Policy}, desde que os clientes com os quais o servidor interage suportem essa política. Políticas de segurança que utilizam algoritmos obsoletos, como `SHA-1', não devem ser utilizadas.
-%     \item \textbf{Autenticação de Usuários}: O login no servidor UA com um ID `anônimo' deve ser utilizado apenas ao acessar recursos não críticos, pois, nesse caso, não é possível rastrear quem está alterando os dados ou a configuração. Hackers podem explorar essas recomendações para usar o OPC UA com um ID seguro para ler ou escrever dados de maneira não autorizada. Isso pode ocorrer se a restrição dos direitos de trabalho com o identificador `anônimo' não for configurada adequadamente.
-%     \item \textbf{Armazenamento de Certificados e Chaves Privadas}: As chaves privadas ou arquivos de certificado utilizados não devem ser armazenados em um sistema de arquivos não criptografado. Para esse propósito, devem ser usados armazenamentos especiais de certificados do sistema operacional e suas capacidades para definir direitos de acesso. Recomenda-se o uso de TPMs (\textit{Trusted Platform Modules}) ou hardware seguro externo, como tokens de autenticação USB, para armazenar certificados e/ou chaves privadas.
-%     \item \textbf{Uso de Certificados}: Conexões que não fornecem certificados confiáveis não são permitidas. Certificados autoassinados requerem verificação adicional. Se os certificados não forem autoassinados, é necessário o estabelecimento de uma autoridade certificadora, e os certificados dessa autoridade devem ser assinados de forma independente ou por outra autoridade certificadora. As autoridades certificadoras podem ser multinível.
-%     \item \textbf{Gestão e Manutenção de Certificados}: Recomenda-se o uso de listas de confiança de certificados e listas de revogação de certificados para gerenciar apenas certificados válidos. Essas listas são criadas por usuários ou processos confiáveis e devem ser atualizadas regularmente.
-% \end{itemize}
-
 \subsection{Melhorias na Infraestrutura e Gestão de Redes}
 
-MITM:
+% MITM:
 
-Port stealing Port stealing - countermeasures - countermeasures
-n YES - port security on the switch - port security on the switch
-n NO - static ARP - static ARP
+% Port stealing Port stealing - countermeasures - countermeasures
+% n YES - port security on the switch - port security on the switch
+% n NO - static ARP - static ARP
 
-ARP poison - countermeasures - countermeasures
-n YES - passive monitoring (arpwatch) - passive monitoring (arpwatch)
-n YES - active monitoring (ettercap) - active monitoring (ettercap)
-n YES - IDS (detect but not avoid) - IDS (detect but not avoid)
-n YES - Static ARP entries entries (avoid it) (avoid it)
-n YES - Secure-ARP (public - Secure-ARP (public key auth)
-n NO - Port security security on the on the switch
-n NO - anticap anticap, antidote, , antidote, middleware middleware approach approach
+% ARP poison - countermeasures - countermeasures
+% n YES - passive monitoring (arpwatch) - passive monitoring (arpwatch)
+% n YES - active monitoring (ettercap) - active monitoring (ettercap)
+% n YES - IDS (detect but not avoid) - IDS (detect but not avoid)
+% n YES - Static ARP entries entries (avoid it) (avoid it)
+% n YES - Secure-ARP (public - Secure-ARP (public key auth)
+% n NO - Port security security on the on the switch
+% n NO - anticap anticap, antidote, , antidote, middleware middleware approach approach
+
+A segurança das redes de comunicação industrial é crucial para garantir a integridade, confidencialidade e disponibilidade dos dados. Ataques como Man-in-the-Middle (MITM), Sniffing e Denial of Service (DoS) representam ameaças significativas que podem comprometer a operação de sistemas críticos. A implementação de contramedidas eficazes e melhorias na infraestrutura e gestão de redes são essenciais para mitigar esses riscos e proteger os ativos de comunicação.
+
+Os ataques MITM, incluindo port stealing e ARP poisoning, podem ser mitigados por meio de várias abordagens. A segurança de porta nos switches é uma medida fundamental para impedir que dispositivos não autorizados roubem portas para interceptar o tráfego de rede. Esta técnica limita o número de endereços MAC que podem ser aprendidos em cada porta e pode desativar portas automaticamente ao detectar violações, aumentando a segurança da rede. Além disso, a utilização de entradas ARP estáticas impede que dispositivos maliciosos alterem as tabelas ARP para redirecionar o tráfego, sendo uma abordagem eficaz em redes onde a topologia e os endereços IP são conhecidos e estáveis.
+
+Para combater o ARP poisoning, várias técnicas de monitoramento são recomendadas. O monitoramento passivo com ferramentas como arpwatch permite a detecção de alterações suspeitas nas tabelas ARP, alertando os administradores sobre possíveis ataques. Ferramentas de monitoramento ativo, como o ettercap, são usadas para identificar e neutralizar atividades de ARP poisoning em tempo real. Além disso, a implementação de sistemas de detecção de intrusão (IDS) é crucial, pois esses sistemas monitoram o tráfego de rede em busca de padrões anômalos que indicam a presença de ataques MITM. No entanto, embora os IDS detectem ataques, eles não os impedem diretamente.
+
+A adoção de Secure-ARP, que utiliza autenticação por chave pública, oferece uma solução robusta contra ARP poisoning, garantindo a integridade das entradas ARP. Essa abordagem é complementada pela definição de entradas ARP estáticas, embora esta possa ser uma tarefa administrativamente onerosa.
+
+O sniffing, que envolve a captura não autorizada de tráfego de rede, pode ser mitigado através de várias técnicas. A criptografia de dados em trânsito utilizando protocolos seguros como TLS/SSL é fundamental para impedir que atacantes obtenham informações sensíveis, mesmo que consigam capturar o tráfego. A segmentação de rede, implementando VLANs, limita a exposição de dados a apenas os segmentos necessários, dificultando o acesso não autorizado ao tráfego de rede. A segurança de porta nos switches também desempenha um papel crucial aqui, impedindo que dispositivos não autorizados se conectem à rede e capturem tráfego.
+
+Para mitigar ataques DoS, que visam interromper a disponibilidade dos serviços, diversas contramedidas são recomendadas. A implementação de filtros de tráfego nos roteadores e switches pode bloquear pacotes maliciosos antes que atinjam os servidores e dispositivos críticos. Sistemas de prevenção de intrusão (IPS) são igualmente importantes, pois, além de detectar, podem bloquear automaticamente o tráfego malicioso, impedindo que os ataques DoS atinjam seus objetivos. A capacidade de escalabilidade da infraestrutura de rede, com redundância e capacidade de absorção de picos de tráfego malicioso, é crucial para garantir a continuidade dos serviços.
+
+O monitoramento contínuo da rede é essencial para identificar e responder rapidamente a padrões de tráfego anômalos, ajudando a mitigar os efeitos de um ataque DoS. A adoção de uma abordagem abrangente, que inclui medidas técnicas e boas práticas de gestão, é essencial para enfrentar as ameaças cibernéticas de forma eficaz e assegurar a resiliência das infraestruturas industriais.
+
+Eric D. Knapp - Industrial Network Security_ Securing Critical Infrastructure Networks for Smart Grid, SCADA, and Other Industrial Control Systems-Syngress (2024)
+
+De acordo com o Princípio da Menor Rota (veja o Capítulo 5, “Design e Arquitetura de Redes Industriais”), um dispositivo que não pertence fisicamente a uma zona não deve ser autorizado a conectar-se diretamente a essa zona ou a qualquer dispositivo dentro dela. Esta é a razão principal pela qual as redes consistem em uma ou mais “DMZs” semiconfiáveis, que atuam como uma conexão intermediária entre dispositivos que possuem objetivos funcionais tanto semelhantes quanto diferentes, enquanto residem em duas zonas distintas (por exemplo, um usuário empresarial que necessita de dados históricos do ICS).
+
+Em muitos casos, haverá dispositivos secundários identificados que têm acesso ou estão conectados a uma zona, como uma impressora ou dispositivo de armazenamento que pode fornecer conectividade de rede. Um exemplo é uma impressora de rede com interface Wi-Fi, que pode estar ativada por padrão. Essas aberrações são fáceis de ignorar, mas devem ser abordadas para que a zona seja segura. Esta é uma das razões pelas quais avaliações minuciosas de risco e vulnerabilidade de segurança precisam ser realizadas (veja o Capítulo 8, “Avaliações de Risco e Vulnerabilidade”).
+
+Pode não ser possível, em outros casos, identificar claramente os limites de uma zona em termos de design de rede. Por exemplo, se sistemas de supervisão, controle e empresariais estiverem todos interconectados por uma rede plana (uma rede comutada puramente na Camada 2, sem roteamento de rede) ou uma rede sem fio, não será possível isolar zonas através de sub-redes. Nesses casos, algum outro meio de segmentação lógica de rede deve ser utilizado. Por exemplo, VLANs podem ser usadas para separar dispositivos que estão em diferentes zonas, segmentando a rede na Camada 2 do modelo OSI. Outra abordagem poderia ser implementar uma tecnologia conhecida como "máscara de sub-rede de comprimento variável" (VLSM), que manipula os parâmetros de Máscara de Sub-rede e Gateway Padrão de uma interface de rede, restringindo os dispositivos que podem realmente se comunicar na camada de rede (Camada 3 do OSI) sem introduzir novos dispositivos na Camada 3. Alternativamente, um firewall de última geração poderia ser utilizado no conduto entre zonas para segmentar os dispositivos na Camada 7 do modelo OSI. Cada abordagem tem seus pontos fortes e, idealmente, a separação de zonas deveria ser aplicada em todas as sete camadas; se não houvesse restrições de orçamento e sobrecarga operacional, isso seria possível. Vale notar que o uso de VLANs e VLSM fornece apenas níveis moderados de defesa cibernética, conforme descrito no Capítulo 5, “Design e Arquitetura de Redes Industriais”, e não é recomendado para redes que exigem níveis mais altos de segurança, tipicamente alcançados por meio de mecanismos de segmentação física.
+
+O método a seguir é eficaz para a separação de zonas:
+
+\begin{itemize}
+    \item Identificação e documentação: Identificar e documentar todas as conexões de rede que entram ou saem de cada zona (ou seja, identificar pontos de entrada/saída que formam condutos).
+    \item Avaliação por camadas: Para cada conduto, começar na Camada 1 (física) e trabalhar até a Camada 7 (aplicação). Para cada camada, avaliar se a segmentação de rede nessa camada é viável para aquele conduto (veja o Capítulo 5, “Design e Arquitetura de Redes Industriais” para detalhes sobre segmentação de redes em diferentes camadas).
+    \item Segmentação crítica: Para condutos mais críticos, buscar uma segmentação maior—implementar segmentação de rede por meio do uso de uma mistura de diodo de dados ou gateway unidirecional na Camada 1, comutação e segmentação de aplicação nas Camadas 3–4, e firewalls de última geração nas Camadas 5–7.
+    \item Implementação de controles de segurança: Para cada camada desejada de segmentação, implementar controles de segurança de rede e de acesso apropriados para reforçar essa segmentação.
+    \item Monitoramento: Prover capacidades de monitoramento suficientes com cada controle de segurança implantado para suportar mecanismos de consolidação de eventos e relatórios que auxiliem em potenciais violações de segurança.
+\end{itemize}
+
+Estabelecer a segurança de rede para proteger o acesso a uma zona definida envolve, essencialmente, a imposição de condutos. As regras aplicadas estão alinhadas com os canais de comunicação contidos dentro desses condutos. Os controles de segurança de rede protegem contra acesso não autorizado aos sistemas internos e também impedem que esses sistemas acessem sistemas externos de dentro para fora. Para garantir a segurança efetiva do tráfego de entrada e saída, duas ações são necessárias:
+
+\begin{enumerate}
+    \item Todo o tráfego de entrada e saída deve ser direcionado através de uma ou mais conexões de rede conhecidas que sejam monitoradas e controladas.
+    \item Um ou mais dispositivos de segurança devem ser colocados em linha em cada uma dessas conexões (isso pode ser uma capacidade de segurança incorporada em switches e roteadores de comunicação de rede).
+    \item Para cada zona, os dispositivos de segurança apropriados devem ser selecionados e implementados de acordo com as recomendações a seguir.
+\end{enumerate}
+
+Seleção de Dispositivos de Segurança de Rede
+No mínimo, algum tipo de firewall de rede é geralmente necessário. Segurança adicional, fornecida por IDS, IPS e uma variedade de dispositivos especializados e híbridos, como dispositivos de Gerenciamento Unificado de Ameaças (UTM), dispositivos de Lista Branca de Rede, Monitores de Aplicações e Filtros de Protocolos Industriais, pode ser desejável dependendo da situação específica. Tipicamente, o nível de segurança ou criticidade da zona (ver “Criticidade”) dita o grau de segurança necessário. A Tabela 11.1 mapeia a criticidade de uma zona para as medidas de segurança exigidas pelo NERC CIP e NRC CFR 73.54, bem como melhorias recomendadas para melhorar a segurança além dos requisitos regulamentares.
+
+A Tabela 11.1 recomenda o uso de um firewall e um IPS em cada perímetro de segurança. Isso porque firewalls e dispositivos IPS têm funções diferentes. Firewalls impõem quais tipos de tráfego são permitidos passar pelo perímetro através do que é chamado de "inspeção superficial de pacotes". Sistemas de prevenção de intrusão, por outro lado, realizam "inspeção profunda de pacotes" (DPI) examinando de perto o tráfego permitido para detectar tráfego "legítimo" com intenções maliciosas—como código de exploração, malware, etc.—que é transferido por caminhos permitidos. O uso conjunto de ambos os dispositivos proporciona dois benefícios mútuos: primeiro, permite que o IPS inspecione o "conteúdo" de todo o tráfego permitido pelo firewall; segundo, o firewall limita o tráfego permitido com base nos parâmetros definidos da zona de segurança, liberando o IPS para focar seus recursos apenas nesse tráfego, permitindo assim a aplicação de um conjunto mais abrangente e robusto de regras do IPS.
+
+Além disso, se a infraestrutura de rede suporta microsegmentação, esse processo é grandemente simplificado. A microsegmentação possibilita um controle mais granular sobre como dispositivos, aplicações e usuários podem se comunicar, tornando a agrupamento lógico de dispositivos em zonas e condutos uma questão de configuração de dispositivos. Além disso, muitos dispositivos de rede que suportam microsegmentação são capazes de tanto microsegmentar o tráfego quanto implementar controles de segurança específicos dentro e entre cada microsegmento, facilitando o estabelecimento e aplicação de políticas.
+
+É importante compreender a distinção entre "detecção" e "prevenção" no contexto dos sistemas de prevenção de intrusão. Lembre-se que as prioridades mais importantes das redes industriais são disponibilidade e desempenho. Em outras palavras, a rede não pode tolerar a perda acidental de pacotes entre hosts localizados nos níveis inferiores do modelo ISA 95 (i.e., Níveis 1-3). Isso ocorreria se o dispositivo de segurança gerasse um "falso positivo" e interpretasse erroneamente um pacote válido como inválido, bloqueando-o de alcançar seu destino. No entanto, isso pode não ser necessariamente o caso entre zonas industriais e empresariais (i.e., Níveis 3 e 4). Por essa razão, IDS é o dispositivo de segurança preferido dentro das zonas industriais (colocado "fora de banda" ao tráfego de rede) e IPS é utilizado entre zonas industriais e empresariais, ou entre DMZs semiconfiáveis e zonas empresariais não confiáveis (colocado "em linha" com todo o tráfego de rede).
+
+Segurança dos Dispositivos em Zonas Definidas
+Todas as zonas consistem essencialmente em grupos lógicos de ativos, que incluem uma variedade de dispositivos potencialmente vulneráveis a ataques cibernéticos.
+
+Atenção
+Nem todos os ataques cibernéticos ocorrem através da rede! Dispositivos, conectados à rede ou não, podem ser suscetíveis a vírus ou outras ameaças. Isso é verdade não apenas para dispositivos como estações de trabalho e servidores que utilizam sistemas operacionais comerciais, mas também para dispositivos especializados "embarcados", como CLPs, IHMs e similares. Mesmo que o dispositivo utilize um sistema operacional embarcado ou em tempo real, ele pode ser vulnerável a infecções. Se o dispositivo estiver conectado à rede, pode estar em risco proveniente da rede; se não estiver, ele possui interfaces USB? Interfaces de diagnóstico infravermelho ou sem fio? Comunicações seriais com um servidor mestre ou dispositivo? Capacidade de atualização de firmware? Alguma outra interface ou dependência que possa ser utilizada como vetor de ataque? Se possui, é importante proteger esse dispositivo da melhor forma possível. Também é importante compreender que "a melhor forma possível" pode significar "nada" para muitos dispositivos embarcados. No entanto, se um dispositivo pode ser protegido, ele deve ser!
+
+Dispositivos que não podem ser protegidos ou seguros através de meios tradicionais devem ser considerados para inclusão em subzonas de segurança dedicadas, de modo que o conduto que conecta a essa zona possa ser rigorosamente controlado e protegido usando técnicas previamente descritas (ver Capítulo 9, "Estabelecimento de Zonas e Condutos"). Pode não ser possível implantar controles de prevenção de malware diretamente em um CLP, mas esses controles podem ser facilmente implantados no conduto que atua como o único ponto de entrada nessa zona. Essa abordagem utiliza controles de segurança compensatórios para estabelecer uma "política de segurança baseada em zonas".
+
+As zonas consistem em dispositivos e aplicativos específicos, e os condutos consistem em uma variedade de canais de comunicação entre esses dispositivos e aplicativos. Isso significa que todas as zonas conterão pelo menos um dispositivo com uma interface de rede. Portanto, é importante proteger o dispositivo (incluindo o sistema operacional e aplicativos) e o acesso a esse dispositivo (incluindo autenticação de usuários, controles de acesso à rede e manutenção pelo fornecedor). Controles de segurança de host abordam questões como quem tem permissão para usar um dispositivo, como um dispositivo se comunica na rede, quais arquivos são acessíveis por esse dispositivo, quais aplicativos podem ser executados por ele, e assim por diante. O monitoramento das atividades do host, como as comunicações entre hosts dentro de uma zona, também é útil para detectar ameaças. Isso foi discutido no Capítulo 9, "Estabelecimento de Zonas e Condutos" e será aprofundado no Capítulo 13, "Monitoramento de Segurança de Sistemas de Controle Industrial", portanto, não será discutido mais detalhadamente neste capítulo.
+
+Esta seção discute três áreas distintas de segurança de host, incluindo:
+
+Controle de acesso, incluindo autenticação de usuários e disponibilidade de serviços.
+Segurança de rede baseada em host, incluindo firewalls de host e sistemas de detecção de intrusão baseados em host (HIDS).
+Sistemas antimalware, como antivírus (AV) e listas de permissão de aplicativos.
+
+\subsection{Normas e Regulamentos}
+
+
 
 % \section{Resultados Esperados}
 
