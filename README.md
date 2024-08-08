@@ -49,7 +49,7 @@
 <table>
   <tr>
     <td>
-    Resumo. [EMOJI]
+    All the projects, documents, and presentations from my Master's degree.
       <details open>
       <summary>Informações adicionais</summary>
       <br>
