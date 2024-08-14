@@ -1,305 +1,305 @@
 \chapter{Resultados e Discussões} \label{cap:resultados}
 
-Neste capítulo são apresentados os resultados obtidos pela execução da metodologia proposta no \autoref{cap:desenvolvimento} e as discussões acerca dos mesmos. A análise dos resultados é realizada com base nos cenários de ataques cibernéticos apresentados na \autoref{sec:attacks}, com o intuito de avaliar a robustez das redes industriais OPC UA e a variação no desempenho dos componentes ao serem submetidos a tais cenários. Para organização das informações, os resultados são divididos em seções que correspondem a cada etapa da metodologia apresentada.
+Neste capítulo, são apresentados os resultados obtidos pela execução da metodologia proposta no \autoref{cap:desenvolvimento}, acompanhados de discussões sobre os mesmos. A análise dos resultados é realizada com base nos cenários de ataques cibernéticos descritos na \autoref{sec:attacks}, com o objetivo de avaliar a robustez das redes industriais OPC UA e a variação no desempenho dos componentes quando submetidos a esses cenários. Para melhor organização das informações, os resultados são divididos em seções correspondentes a cada etapa da metodologia apresentada.
 
-Como regra geral, espera-se fornecer informações valiosas sobre vulnerabilidades potenciais que podem ser expostas durante o processo de experimentação. Estas prospecções, caso confirmadas, auxiliam em avanços futuros do protocolo OPC UA e de sistemas IACS, fortalecendo ainda mais a robustez destes e resistência contra ameaças cibernéticas em constante evolução.
+De modo geral, espera-se fornecer informações valiosas sobre as vulnerabilidades potenciais que podem ser expostas durante o processo de experimentação. Caso essas prospecções sejam confirmadas, elas podem contribuir para avanços futuros no protocolo OPC UA e nos sistemas IACS, fortalecendo ainda mais a robustez e a resistência destes contra ameaças cibernéticas em constante evolução.
 
 \section{Implementação da Bancada Experimental} \label{sec:impl-bancada}
 
-A \autoref{fig:banc} apresenta a bancada experimental para ensaios de segurança cibernética, composta por um servidor OPC UA, um cliente OPC UA e um \textit{firewall} industrial. O servidor OPC UA é responsável por disponibilizar os dados de processo e controlar o sistema de automação industrial, enquanto o cliente OPC UA é responsável por acessar e visualizar esses dados. O \textit{firewall} industrial é utilizado para monitorar e controlar o tráfego de dados entre o servidor e o cliente, garantindo a segurança da rede.
+    A \autoref{fig:banc} apresenta a bancada experimental utilizada para ensaios de segurança cibernética, composta por um servidor OPC UA, um cliente OPC UA e um \textit{firewall} industrial. O servidor OPC UA é responsável por disponibilizar os dados de processo e controlar o sistema de automação industrial, enquanto o cliente OPC UA acessa e visualiza esses dados. O \textit{firewall} industrial é utilizado para monitorar e controlar o tráfego de dados entre o servidor e o cliente, assegurando a segurança da rede.
 
-\begin{figure}[htbp!]
-    \caption{\label{fig:banc}Bancada experimental para ensaios de segurança cibernética}
-    \begin{center}
-        \includegraphics[width=0.5\textwidth]{USPSC-img/cyberkit2.png}
-    \end{center}
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+    \begin{figure}[htbp!]
+        \caption{\label{fig:banc}Bancada experimental para ensaios de segurança cibernética}
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{USPSC-img/cyberkit2.png}
+        \end{center}
+        \legend{Fonte: elaborada pelo autor.}
+    \end{figure}
 
 \section{Aquisição dos Dados nos Cenários de Ataques Cibernéticos} \label{sec:exec-attacks}
 
-No passo da metodologia apresentado pela \autoref{sec:aquisicao}, coloca-se a bancada em operação de acordo com os cenários especificados (\autoref{tab:attacks}), aciona-se o sistema de medição, nas quais são realizadas aquisição do tráfego da rede e do desempenho do hospedeiro do servidor OPC UA, e efetua-se os respectivos ataques. Os dados de processa da rede OPC UA são coletados por 60 segundos para cada cenário.
+    No passo da metodologia apresentado na \autoref{sec:aquisicao}, a bancada é colocada em operação de acordo com os cenários especificados (\autoref{tab:attacks}), aciona-se o sistema de medição, no qual são realizados a aquisição do tráfego da rede e o monitoramento do desempenho do hospedeiro do servidor OPC UA, e executam-se os respectivos ataques. Os dados de tráfego da rede OPC UA são coletados por 60 segundos para cada cenário.
 
-A \autoref{tab:carac-cenarios} apresenta um resumo detalhado das características do tráfego da rede e desempenho em cada cenário de ataque e comunicação normal em redes OPC UA industriais.
+    A \autoref{tab:carac-cenarios} apresenta um resumo detalhado das características do tráfego da rede e do desempenho em cada cenário de ataque e durante a comunicação normal em redes OPC UA industriais.
 
-\begin{table}[htbp!]
-    \centering
-    \caption{Informações do tráfego da rede e desempenho do hospedeiro em cada cenário}%
-    \label{tab:carac-cenarios}
-    \begin{tabular}{M{1.5cm}M{3cm}M{2.5cm}M{2.5cm}M{2cm}M{2cm}}
-        \toprule
-        \textbf{Cenário} & \textbf{\textit{Throughput} médio (kbits/s)} & \textbf{TP\textsuperscript{1} médio (Bytes)} & \textbf{PPS\textsuperscript{2} médio (pacotes/s)} & \textbf{Tráfego OPC UA (\%)} & \textbf{CPU\textsuperscript{3} (\%)} \\
-        \toprule
-        C1 & 130 & 127 & 128.4 & 28.7 & 7.31 \\
-        \midrule
-        C2 & 175 & 153 & 142.9 & 34.4 & 8.91 \\
-        \midrule
-        C3 & 179 & 162 & 138.3 & 31.8 & 9.01 \\
-        \midrule
-        C4 & 1166 & 965 & 151.1 & 9.2 & 17.16 \\
-        \midrule
-        C5 & 6824 & 972 & 877.9 & 5.3 & 10.64 \\
-        \midrule
-        C6 & 6894 & 973 & 885.9 & 8.2 & 10.78 \\
-        \midrule
-        C7 & 18000 & 60 & 38438.9 & 0.1 & 14.68 \\
-        \midrule
-        C8 & 12000 & 60 & 26788.9 & 0.1 & 13.23 \\
-        \midrule
-        C9 & 15000 & 60 & 31278.5 & 0.1 & 14.81 \\
-        \midrule
-        C10 & 462 & 171 & 337.3 & 72.9 & 9.86 \\
-        \midrule
-        C11 & 501 & 180 & 348.0 & 71.9 & 11.27 \\
-        \midrule
-        C12 & 491 & 184 & 334.1 & 69.8 & 11.36 \\
-        \midrule
-        C13 & 196 & 173 & 141.4 & 33.0 & 7.52 \\
-        \midrule
-        C14 & 235 & 195 & 151.3 & 35.2 & 9.03 \\
-        \midrule
-        C15 & 247 & 203 & 152.6 & 32.3 & 9.09 \\
-        \midrule
-        C16 & 105 & 125 & 105.3 & 33.1 & 6.80 \\
-        \midrule
-        C17 & 146 & 148 & 123.4 & 33.1 & 7.84 \\
-        \midrule
-        C18 & 137 & 159 & 107.9 & 33.2 & 7.96 \\
-        \midrule
-        C19 & 3410 & 43 & 10012.0 & 0.2 & 7.36 \\
-        \midrule
-        C20 & 3433 & 43 & 9896.4 & 0.2 & 7.97 \\
-        \midrule
-        C21 & 3432 & 44 & 9854.8 & 0.2 & 7.97 \\
-        \midrule
-        C22 & 168 & 127 & 166.1 & 32.1 & N/A \\
-        \midrule
-        C23 & 223 & 154 & 182.4 & 34.5 & N/A \\
-        \midrule
-        C24 & 219 & 162 & 169.7 & 32.5 & N/A \\
-        \midrule
-        C25 & 95 & 121 & 98.5 & 28.3 & 7.01 \\
-        \midrule
-        C26 & 253 & 142 & 222.7 & 17.9 & 7.95 \\
-        \midrule
-        C27 & 234 & 147 & 199.8 & 17.1 & 8.25 \\
-        \bottomrule
-        \multicolumn{6}{>{\tiny}l}{\textsuperscript{1} Tamanho do pacote.} \\
-        \multicolumn{6}{>{\tiny}l}{\textsuperscript{2} Taxa de pacotes por segundo.} \\
-        \multicolumn{6}{>{\tiny}l}{\textsuperscript{3} Processamento do hospedeiro do servidor OPC UA.} \\
-    \end{tabular}
-    \fonte{elaborada pelo autor.}%
-\end{table}
+    \begin{table}[htbp!]
+        \centering
+        \caption{Informações do tráfego da rede e desempenho do hospedeiro em cada cenário}%
+        \label{tab:carac-cenarios}
+        \begin{tabular}{M{1.5cm}M{3cm}M{2.5cm}M{2.5cm}M{2cm}M{2cm}}
+            \toprule
+            \textbf{Cenário} & \textbf{\textit{Throughput} médio (kbits/s)} & \textbf{TP\textsuperscript{1} médio (Bytes)} & \textbf{PPS\textsuperscript{2} médio (pacotes/s)} & \textbf{Tráfego OPC UA (\%)} & \textbf{CPU\textsuperscript{3} (\%)} \\
+            \toprule
+            C1 & 130 & 127 & 128.4 & 28.7 & 7.31 \\
+            \midrule
+            C2 & 175 & 153 & 142.9 & 34.4 & 8.91 \\
+            \midrule
+            C3 & 179 & 162 & 138.3 & 31.8 & 9.01 \\
+            \midrule
+            C4 & 1166 & 965 & 151.1 & 9.2 & 17.16 \\
+            \midrule
+            C5 & 6824 & 972 & 877.9 & 5.3 & 10.64 \\
+            \midrule
+            C6 & 6894 & 973 & 885.9 & 8.2 & 10.78 \\
+            \midrule
+            C7 & 18000 & 60 & 38438.9 & 0.1 & 14.68 \\
+            \midrule
+            C8 & 12000 & 60 & 26788.9 & 0.1 & 13.23 \\
+            \midrule
+            C9 & 15000 & 60 & 31278.5 & 0.1 & 14.81 \\
+            \midrule
+            C10 & 462 & 171 & 337.3 & 72.9 & 9.86 \\
+            \midrule
+            C11 & 501 & 180 & 348.0 & 71.9 & 11.27 \\
+            \midrule
+            C12 & 491 & 184 & 334.1 & 69.8 & 11.36 \\
+            \midrule
+            C13 & 196 & 173 & 141.4 & 33.0 & 7.52 \\
+            \midrule
+            C14 & 235 & 195 & 151.3 & 35.2 & 9.03 \\
+            \midrule
+            C15 & 247 & 203 & 152.6 & 32.3 & 9.09 \\
+            \midrule
+            C16 & 105 & 125 & 105.3 & 33.1 & 6.80 \\
+            \midrule
+            C17 & 146 & 148 & 123.4 & 33.1 & 7.84 \\
+            \midrule
+            C18 & 137 & 159 & 107.9 & 33.2 & 7.96 \\
+            \midrule
+            C19 & 3410 & 43 & 10012.0 & 0.2 & 7.36 \\
+            \midrule
+            C20 & 3433 & 43 & 9896.4 & 0.2 & 7.97 \\
+            \midrule
+            C21 & 3432 & 44 & 9854.8 & 0.2 & 7.97 \\
+            \midrule
+            C22 & 168 & 127 & 166.1 & 32.1 & N/A \\
+            \midrule
+            C23 & 223 & 154 & 182.4 & 34.5 & N/A \\
+            \midrule
+            C24 & 219 & 162 & 169.7 & 32.5 & N/A \\
+            \midrule
+            C25 & 95 & 121 & 98.5 & 28.3 & 7.01 \\
+            \midrule
+            C26 & 253 & 142 & 222.7 & 17.9 & 7.95 \\
+            \midrule
+            C27 & 234 & 147 & 199.8 & 17.1 & 8.25 \\
+            \bottomrule
+            \multicolumn{6}{>{\tiny}l}{\textsuperscript{1} Tamanho do pacote.} \\
+            \multicolumn{6}{>{\tiny}l}{\textsuperscript{2} Taxa de pacotes por segundo.} \\
+            \multicolumn{6}{>{\tiny}l}{\textsuperscript{3} Processamento do hospedeiro do servidor OPC UA.} \\
+        \end{tabular}
+        \fonte{elaborada pelo autor.}%
+    \end{table}
 
-O \textit{throughput} médio e a média do tamanho dos pacotes dos cenários variam consideravelmente, indicando a intensidade do tráfego gerado em cada situação. Os diferentes cenários de ataques de DoS pelo loop infinito na cadeia de certificados, como C1, C2 e C3, apresentam uma taxa de transferência de dados relativamente baixa. Em contraste, cenários como C7, C8 e C9, que envolvem DoS pela inundação do TCP/IP, mostram \textit extremamente alto, refletindo a alta carga gerada por esses ataques. Essa carga é demonstrada pelo indicador crítico da intensidade do tráfego, PPS (taxa de pacotes por segundo), que atinge valores elevados nesses cenários.
+    O \textit{throughput} médio e a média do tamanho dos pacotes variam consideravelmente entre os cenários, indicando a intensidade do tráfego gerado em cada situação. Os diferentes cenários de ataques de DoS pelo loop infinito na cadeia de certificados, como C1, C2 e C3, apresentam uma taxa de transferência de dados relativamente baixa. Em contraste, cenários como C7, C8 e C9, que envolvem DoS pela inundação do TCP/IP, mostram um \textit{throughput} extremamente alto, refletindo a intensa carga imposta por esses ataques. Essa carga é evidenciada pelo indicador crítico da intensidade do tráfego, PPS (taxa de pacotes por segundo), que registra valores elevados nesses contextos.
 
-Já o percentual de tráfego OPC UA, apesar de variar drasticamente entre os cenários, não é considerado isoladamente um fator determinante para a severidade do ataque. Por exemplo, cenários com baixa porcentagem de tráfego OPC UA, como C7, C8 e C9, ainda podem gerar uma carga considerável na rede devido ao alto PPS. Por outro lado, cenários como C10, C11 e C12, que apresentam uma alta porcentagem de tráfego OPC UA, podem não necessariamente implicar em uma alta taxa de pacotes por segundo, mas indicam que o ataque está especificamente direcionado aos protocolos de comunicação OPC UA.
+    Já o percentual de tráfego OPC UA, apesar de variar drasticamente entre os cenários, não é considerado isoladamente um fator determinante para a severidade do ataque. Por exemplo, cenários com baixa porcentagem de tráfego OPC UA, como C7, C8 e C9, ainda podem gerar uma carga considerável na rede devido ao alto PPS. Por outro lado, cenários como C10, C11 e C12, que apresentam uma alta porcentagem de tráfego OPC UA, podem não necessariamente implicar em uma alta taxa de pacotes por segundo, mas indicam que o ataque está especificamente direcionado aos protocolos de comunicação OPC UA.
 
-Adicionalmente, o percentual do uso de processamento do controlador industrial (hospedeiro do servidor UA), é um indicador importante da carga imposta ao sistema durante os ataques. Cenários como C4, C5 e C6, que envolvem ataques de DoS pela chamada de vários métodos OPC UA nulos, mostram um aumento significativo no uso da CPU, indicando que esses ataques conseguem sobrecarregar o processamento do controlador, potencialmente levando à degradação do serviço ou à sua interrupção.
+    Adicionalmente, o percentual de uso de processamento do controlador industrial (hospedeiro do servidor UA) é um indicador importante da carga imposta ao sistema durante os ataques. Cenários como C4, C5 e C6, que envolvem ataques de DoS pela chamada de vários métodos OPC UA nulos, mostram um aumento significativo no uso da CPU, indicando que esses ataques conseguem sobrecarregar o processamento do controlador, potencialmente levando à degradação do serviço ou à sua interrupção.
 
-Essa análise destaca a importância de considerar múltiplas métricas ao avaliar o impacto dos diferentes tipos de ataques na rede OPC UA. Além da taxa de transferência e de pacotes por segundo, o tamanho dos pacotes e o percentual de tráfego OPC UA são essenciais para uma compreensão abrangente do comportamento da rede sob diferentes condições de ataque. A análise detalhada dessas variáveis pode fornecer insights valiosos para o desenvolvimento de estratégias de mitigação e a implementação de medidas de segurança mais eficazes em ambientes industriais.
+    Essa análise destaca a importância de considerar múltiplas métricas ao avaliar o impacto dos diferentes tipos de ataques na rede OPC UA. Além da taxa de transferência e de pacotes por segundo, o tamanho dos pacotes e o percentual de tráfego OPC UA são essenciais para uma compreensão abrangente do comportamento da rede sob diferentes condições de ataque. A análise detalhada dessas variáveis pode fornecer percepções valiosas para o desenvolvimento de estratégias de mitigação e a implementação de medidas de segurança mais eficazes em ambientes industriais.
 
 \section{Processamento dos Dados} \label{sec:processamento-dados}
 
-Uma vez que os dados de tráfego da rede e desempenho do hospedeiro do servidor OPC UA foram coletados para cada cenário de ataque, o próximo passo é processar esses dados para análise e interpretação. Este processamento é realizado pelo aplicativo \textbf{uanalyser}, que é responsável por extrair informações relevantes dos dados brutos e gerar métricas de desempenho para cada cenário.
+    Após a coleta dos dados de tráfego da rede e do desempenho do hospedeiro do servidor OPC UA para cada cenário de ataque, o passo seguinte é processar essas informações para posterior análise e interpretação. Esse processamento é realizado pelo aplicativo \textbf{uanalyser}, que tem a função de extrair dados relevantes dos valores brutos e gerar métricas de desempenho específicas para cada situação.
 
-Na versão atual do aplicativo (v1.0.0), são gerados gráficos de (a) \textit{Throughput} (kbps), (b) desempenho do hospedeiro do servidor OPC UA (RAM e CPU), (c) quantidade de pacotes OPC UA por segundo e (d) \textit{Round Trip Time} (RTT) normalizado, por pacote. A figura \autoref{fig:0-normal-local-server} apresenta um exemplo dos quatro gráficos de saída do aplicativo para o cenário C25.
+    Na versão atual do aplicativo (v1.0.0), são gerados gráficos de (a) \textit{Throughput} (kbps), (b) desempenho do hospedeiro do servidor OPC UA (RAM e CPU), (c) quantidade de pacotes OPC UA por segundo e (d) \textit{Round Trip Time} (RTT) normalizado por pacote. A figura \autoref{fig:0-normal-local-server} apresenta um exemplo dos quatro gráficos de saída do aplicativo para o cenário C25.
 
-\begin{figure}[htbp!]
-    \centering
-    \caption{\label{fig:0-normal-local-server}Gráficos de condição normal de operação - nível de segurança: `None'.}
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{figure}[htbp!]
         \centering
-        \caption{\textit{Throughput}}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-tput.png}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{Desempenho}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-perf.png}
-    \end{subfigure}%
-    \\
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{Pacotes OPC UA}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-pack.png}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{RTT por pacote}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-rttp.png}
-    \end{subfigure}%
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+        \caption{\label{fig:0-normal-local-server}Gráficos de condição normal de operação - nível de segurança: `None'.}
+        \begin{subfigure}[t]{0.5\textwidth}
+            \centering
+            \caption{\textit{Throughput}}
+            \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-tput.png}
+        \end{subfigure}%
+        ~ 
+        \begin{subfigure}[t]{0.5\textwidth}
+            \centering
+            \caption{Desempenho}
+            \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-perf.png}
+        \end{subfigure}%
+        \\
+        \begin{subfigure}[t]{0.5\textwidth}
+            \centering
+            \caption{Pacotes OPC UA}
+            \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-pack.png}
+        \end{subfigure}%
+        ~
+        \begin{subfigure}[t]{0.5\textwidth}
+            \centering
+            \caption{RTT por pacote}
+            \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/0-normal_local_server-rttp.png}
+        \end{subfigure}%
+        \legend{Fonte: elaborada pelo autor.}
+    \end{figure}
 
-Os demais gráficos gerados para os outros cenários podem ser visualizados no \autoref{ap:graficos}.
+    Os gráficos gerados para os demais cenários podem ser visualizados no \autoref{ap:graficos}.
 
 \section{Análise dos Resultados} \label{sec:analise-resultados}
 
-Nesta seção, são apresentadas as análises dos resultados obtidos a partir dos cenários de ataques cibernéticos executados na bancada experimental. A análise é realizada com base nas métricas de desempenho extraídas dos dados brutos coletados, com o objetivo de avaliar a robustez das redes industriais OPC UA e a variação no desempenho dos componentes ao serem submetidos a tais cenários. Com isso, para organizar melhor as informações, os resultados são divididos em seções que correspondem a cada tipo de ataque
+    Nesta seção, são apresentadas as análises dos resultados obtidos a partir dos cenários de ataques cibernéticos executados na bancada experimental. A análise é realizada com base nas métricas de desempenho obtidas dos dados coletados, com o objetivo de avaliar a robustez das redes industriais OPC UA e a variação no desempenho dos componentes ao serem submetidos a tais cenários. Para uma melhor organização das informações, os resultados são divididos em seções correspondentes a cada tipo de ataque.
 
-\subsection{\textit{Packet Sniffing}}
+    \subsection{\textit{Packet Sniffing}}
 
-Com o auxílio do Wireshark e do Ettercap, este primeiro ataque foi proferido com o objetivo de identificar a presença de vulnerabilidades na rede OPC UA que permitam a interceptação não autorizada de pacotes. Inicialmente, o Ettercap foi empregado para a captura unificada de pacotes, enquanto o Wireshark foi utilizado para a análise detalhada do tráfego de rede. Uma vez que o servidor e o cliente estão conectados, um canal seguro para comunicação é estabelecido. No entanto, o atacante pode explorar vulnerabilidades na rede para interceptar pacotes e obter informações confidenciais, como endereços IP e MAC de todos os dispositivos conectados. No início da captura para o cenário C22, C23 e C24, é possível observar a presença de pacotes de comunicação entre o servidor e o cliente, conforme ilustrado na \autoref{fig:0-sniffing-wireshark}. Note que um filtro foi aplicado para exibir apenas os pacotes de comunicação OPC UA e todos os outros dados foram omitidos nesta visualização. Todo o tráfego relevante relacionado ao protocolo OPC UA apresentado pela \autoref{fig:seqConn} é exposto na análise pelo Wireshark.
+        Com o auxílio do Wireshark e do Ettercap, este primeiro ataque foi realizado com o objetivo de identificar a presença de vulnerabilidades na rede OPC UA que permitam a interceptação não autorizada de pacotes. Inicialmente, o Ettercap foi utilizado para a captura unificada de pacotes, enquanto o Wireshark se encarregou da análise detalhada do tráfego de rede. Uma vez que o servidor e o cliente estão conectados, estabelece-se um canal seguro para comunicação. No entanto, o atacante pode explorar vulnerabilidades na rede para interceptar pacotes e obter informações confidenciais, como os endereços IP e MAC de todos os dispositivos conectados. No início da captura para os cenários C22, C23 e C24, é possível observar a presença de pacotes de comunicação entre o servidor e o cliente, conforme ilustrado na \autoref{fig:0-sniffing-wireshark}. Note que foi aplicado um filtro para exibir apenas os pacotes de comunicação OPC UA, omitindo todos os outros dados nesta visualização. Todo o tráfego relevante relacionado ao protocolo OPC UA, apresentado na \autoref{fig:seqConn}, é analisado pelo Wireshark.
 
-\begin{figure}[htbp!]
-    \caption{\label{fig:0-sniffing-wireshark}Comunicação interceptada entre o servidor e o cliente OPC UA com modo de segurança `None'}
-    \begin{center}
-        \includegraphics[width=0.972\textwidth]{USPSC-img/0-sniffing-wireshark-filtered-anon.png}
-    \end{center}
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+        \begin{figure}[htbp!]
+            \caption{\label{fig:0-sniffing-wireshark}Comunicação interceptada entre o servidor e o cliente OPC UA com modo de segurança `None'}
+            \begin{center}
+                \includegraphics[width=0.972\textwidth]{USPSC-img/0-sniffing-wireshark-filtered-anon.png}
+            \end{center}
+            \legend{Fonte: elaborada pelo autor.}
+        \end{figure}
 
-Vale ressaltar que o invasor possui endereço de IP 192.168.164.115, e que está apenas conectado à rede, sem interação física com o servidor (192.168.164.101) ou cliente (192.168.164.102). Para a configuração da comunicação com modo de segurança `None' e `Sign', é possível observar que a capacidade do invasor obter todos os dados sensíveis da comunicação entre o servidor e o cliente, conforme indicado na \autoref{fig:writeRequest}, que representa a coleta do pacote de requisição de escrita (\textit{UA Secure Conversation Message: WriteRequest}) do mesmo valor e nó, do cliente para o servidor.
+        Vale ressaltar que o invasor possui o endereço IP 192.168.164.115 e está apenas conectado à rede, sem interação física com o servidor (192.168.164.101) ou cliente (192.168.164.102). Na configuração da comunicação com os modos de segurança `None' e `Sign', é possível observar que o invasor consegue obter todos os dados sensíveis da comunicação entre o servidor e o cliente, conforme indicado na \autoref{fig:writeRequest}, que representa a coleta do pacote de requisição de escrita (\textit{UA Secure Conversation Message: WriteRequest}) do mesmo valor e nó, do cliente para o servidor.
 
-\begin{figure}[htbp!]
-    \centering
-    \caption{\label{fig:writeRequest}Informações obtidas pelo invasor com modo de segurança `None' e `Sign'}
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{`None'}
-        \includegraphics[width=1\textwidth]{USPSC-img/0-sniffing-WriteRequest.png}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{`Sign'}
-        \includegraphics[width=1\textwidth]{USPSC-img/1-sniffing-WriteRequest.png}
-    \end{subfigure}%
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+        \begin{figure}[htbp!]
+            \centering
+            \caption{\label{fig:writeRequest}Informações obtidas pelo invasor com modo de segurança `None' e `Sign'}
+            \begin{subfigure}[t]{0.5\textwidth}
+                \centering
+                \caption{`None'}
+                \includegraphics[width=1\textwidth]{USPSC-img/0-sniffing-WriteRequest.png}
+            \end{subfigure}%
+            ~ 
+            \begin{subfigure}[t]{0.5\textwidth}
+                \centering
+                \caption{`Sign'}
+                \includegraphics[width=1\textwidth]{USPSC-img/1-sniffing-WriteRequest.png}
+            \end{subfigure}%
+            \legend{Fonte: elaborada pelo autor.}
+        \end{figure}
 
-No entanto, ao configurar a comunicação com o modo de segurança `Sign \& Encrypt', o invasor não é capaz de obter informações sensíveis da comunicação entre o servidor e o cliente, pois os dados são, além de assinados, criptografados com políticas de segurança mais robustas, como Basic256Sha256. Assim, para C24, os dados da rede continuam sendo interceptados, mas a comunicação OPC UA não pode ser decifrada, uma vez que todos os pacotes do tipo MSG, com informação \textit{UA Secure Conversation Message: ServiceId [ID]}, possuem o campo de dados \texttt{NodeId EncodingMask} desconhecido.
+        No entanto, ao configurar a comunicação no modo de segurança `Sign \& Encrypt', o invasor não é capaz de obter informações sensíveis da comunicação entre o servidor e o cliente, pois os dados, além de assinados, são criptografados com políticas mais robustas, como a Basic256Sha256. Assim, no cenário C24, embora os dados da rede continuem sendo interceptados, a comunicação OPC UA não pode ser decifrada, uma vez que todos os pacotes do tipo MSG, com a informação \textit{UA Secure Conversation Message: ServiceId [ID]}, possuem o campo de dados \texttt{NodeId EncodingMask} desconhecido.
 
-Portanto, este ataque possui potencial para comprometer a segurança da rede OPC UA ao quebrar a confidencialidade da comunicação, desde que a comunicação seja configurada com modos de segurança mais fracos, como `None' e `Sign'. Tais cenários de ataque evidenciam que, com a utilização de ferramentas simples e acesso ao componente principal da rede, um invasor pode facilmente realizar ataques de captura de pacotes na rede OPC UA, comprometendo dados confidenciais sobre toda a rede. O invasor é capaz de registrar todo o tráfego trocado na rede e, posteriormente, utilizá-lo para outros tipos de ataques, como inserção de pacotes maliciosos (do inglês \textit{packet injection}), DoS, MITM, DDoS, entre outros.
+        Portanto, este ataque tem o potencial de comprometer a segurança da rede OPC UA ao quebrar a confidencialidade da comunicação, desde que esta seja configurada com modos de segurança mais fracos, como `None' e `Sign'. Tais cenários de ataque evidenciam que, utilizando ferramentas simples e tendo acesso ao componente principal da rede, um invasor pode facilmente realizar ataques de captura de pacotes na rede OPC UA, comprometendo dados confidenciais de toda a rede. O invasor é capaz de registrar todo o tráfego trocado e, posteriormente, utilizá-lo para outros tipos de ataques, como inserção de pacotes maliciosos (\textit{packet injection}), DoS, MITM, DDoS, entre outros.
 
-\subsection{\textit{Man in the Middle (MITM)}}
+    \subsection{\textit{Man in the Middle (MITM)}}
 
-Depois de realizar com sucesso o ataque de \textit{Packet Sniffing}, o invasor terá acesso à uma lista de endereços de todos os dispositivos da rede, além de conhecer informações sensíveis do hospedeiro do servidor OPC UA, incluindo o \texttt{EndpointURI}. Logo, o ataque MITM, pode ser realizado para possibilitar, além da interceptação dos dados, também o controle total da comunicação.
+        Depois de realizar com sucesso o ataque de \textit{Packet Sniffing}, o invasor terá acesso a uma lista de endereços de todos os dispositivos da rede, além de obter informações sensíveis do hospedeiro do servidor OPC UA, incluindo o \texttt{EndpointURI}. Assim, o ataque MITM pode ser realizado, permitindo não apenas a interceptação dos dados, mas também o controle total da comunicação.
 
-Ambas as técnicas utilizadas para empregar o ataque MITM foram realizadas com sucesso. A execução pela falsificação da tabela ARP, cenários C16, C17 e C18, demonstra que a comunicação é interceptada e redirecionada para o invasor, possibilitando a capturar e modificar os pacotes de dados. A \autoref{fig:0-mitm-wireshark} demonstra a captura de pacotes de comunicação entre o servidor e o cliente, com o invasor atuando como intermediário. Ao comparar com o tráfego apresentado pela \autoref{fig:0-sniffing-wireshark}, é possível observar que o fluxo normal de comunicação é interceptado e redirecionado para o invasor com o endereço MAC \texttt{00:09:5B:A0:5F:F0}.
+        Ambas as técnicas utilizadas para executar o ataque MITM foram realizadas com êxito. A execução por meio da falsificação da tabela ARP, nos cenários C16, C17 e C18, demonstra que a comunicação é interceptada e redirecionada para o invasor, possibilitando a captura e modificação dos pacotes de dados. A \autoref{fig:0-mitm-wireshark} demonstra a captura de pacotes de comunicação entre o servidor e o cliente, com o invasor atuando como intermediário. Ao comparar com o tráfego apresentado na \autoref{fig:0-sniffing-wireshark}, é possível observar que o fluxo normal de comunicação é interceptado e redirecionado para o invasor, identificado pelo endereço MAC \texttt{00:09:5B:A0:5F:F0}.
 
-\begin{figure}[htbp!]
-    \centering
-    \caption{\label{fig:0-mitm-wireshark}Interceptação de pacotes no ataque MITM com modo de segurança `None'}
-    \begin{subfigure}[t]{1\textwidth}
-        \centering
-        \caption{\texttt{OpenSecureChannelRequest}}
-        \includegraphics[width=1\textwidth]{USPSC-img/0-mitm-arp_1.png}
-    \end{subfigure}%
-    \\
-    \begin{subfigure}[t]{1\textwidth}
-        \centering
-        \caption{\texttt{OpenSecureChannelResponse}}
-        \includegraphics[width=1\textwidth]{USPSC-img/0-mitm-arp_2.png}
-    \end{subfigure}%
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+        \begin{figure}[htbp!]
+            \centering
+            \caption{\label{fig:0-mitm-wireshark}Interceptação de pacotes no ataque MITM com modo de segurança `None'}
+            \begin{subfigure}[t]{1\textwidth}
+                \centering
+                \caption{\texttt{OpenSecureChannelRequest}}
+                \includegraphics[width=1\textwidth]{USPSC-img/0-mitm-arp_1.png}
+            \end{subfigure}%
+            \\
+            \begin{subfigure}[t]{1\textwidth}
+                \centering
+                \caption{\texttt{OpenSecureChannelResponse}}
+                \includegraphics[width=1\textwidth]{USPSC-img/0-mitm-arp_2.png}
+            \end{subfigure}%
+            \legend{Fonte: elaborada pelo autor.}
+        \end{figure}
 
-Inicia-se com a etapa de hand-shake entre os agentes, com a saudação do cliente, seguida por um reconhecimento do servidor. Em seguida, o cliente envia uma solicitação \textit{OpenSecureChannelRequest}, à qual o servidor responde com uma \textit{OpenSecureChannelResponse}. Após essa etapa, é criado um \textit{SecureChannel}, e o cliente envia uma \textit{CreateSessionRequest}, que é respondida pelo servidor com uma \textit{CreateSessionResponse}. Uma vez que a sessão é criada, cliente e servidor se ativam usando \textit{ActivateSessionRequest} e \textit{ActivateSessionResponse}. A partir desse ponto, quando o cliente tenta acessar qualquer informação do servidor, observa-se as mensagens \textit{ReadRequest} e \textit{ReadResponse}.
+        O processo começa com a etapa de handshake entre os agentes, onde o cliente inicia a comunicação, seguida pelo reconhecimento do servidor. Em seguida, o cliente envia uma solicitação \textit{OpenSecureChannelRequest}, à qual o servidor responde com uma \textit{OpenSecureChannelResponse}. Após essa etapa, é criado um \textit{SecureChannel}, e o cliente envia uma \textit{CreateSessionRequest}, que é respondida pelo servidor com uma \textit{CreateSessionResponse}. Uma vez que a sessão é criada, cliente e servidor se ativam usando \textit{ActivateSessionRequest} e \textit{ActivateSessionResponse}. A partir desse ponto, quando o cliente tenta acessar qualquer informação do servidor, observam-se as mensagens \textit{ReadRequest} e \textit{ReadResponse}.
 
-No ataque MITM pelo roubo de portas, cenários C19, C20 e C21, um aumento no \texttt{throughput} é observado, alcançando valores dez vezes maior que o executado pela falsificação da tabela ARP. Essa elevação ocorre devido ao processo de roubo de portas, cuja rede é inundada com pacotes ARP para saturar a tabela ARP do servidor, forçando-o a redirecionar o tráfego para o invasor. Em média, 99.3\% dos pacotes nesses cenários são provenientes do \textit{broadcast} ARP. No entanto, uma vez que esta técnica é empregada com sucesso e a interceptação efetuada, nota-se que a comunicação não é realizada através do invasor, mas sim diretamente entre o servidor e o cliente com a replicação desta para a porta roubada pelo invasor.
+        No ataque MITM pelo roubo de portas, nos cenários C19, C20 e C21, observa-se um aumento significativo no \texttt{throughput}, alcançando valores dez vezes maiores que os registrados na falsificação da tabela ARP. Essa elevação ocorre devido ao processo de roubo de portas, no qual a rede é inundada com pacotes ARP para saturar a tabela ARP do servidor, forçando-o a redirecionar o tráfego para o invasor. Em média, 99,3\% dos pacotes nesses cenários são provenientes do \textit{broadcast} ARP. No entanto, mesmo quando essa técnica é empregada com sucesso e a interceptação é efetuada, nota-se que a comunicação não ocorre diretamente através do invasor, mas sim entre o servidor e o cliente, com o redirecionamento dessa comunicação para a porta roubada pelo invasor.
+        
+        Com ambas as técnicas empregadas, nota-se que algumas informações confidenciais são obtidas pelo invasor, como o \texttt{EndpointURI} do servidor, a \texttt{SecurityPolicy} e o \texttt{SecurityMode} utilizados na comunicação, além das informações que o servidor OPC UA obtém da rede do chão de fábrica em um ambiente industrial em tempo real. No entanto, vale ressaltar que o invasor não é capaz de decifrar os pacotes de comunicação quando o ambiente está configurado com o maior nível de segurança (`Sign \& Encrypt') e com políticas de segurança atualizadas. Supõe-se também que, para a execução deste ataque, o invasor precise de acesso físico à rede, o que não é comum em ambientes industriais.
 
-A partir de ambas as tecnicas empregadas, nota-se algumas informações confidenciais são obtidas pelo invasor, como o \texttt{EndpointURI} do servidor, o \texttt{SecurityPolicy} e o \texttt{SecurityMode} utilizados na comunicação,  as informações que o servidor OPC UA obtém da rede do chão de fábrica em um ambiente industrial em tempo real. No entanto, vale ressaltar que o invasor não é capaz de decifrar os pacotes de comunicação para o ambiente configurado com o maior nível de segurança (`Sign \& Encrypt') e com políticas de segurança atualizadas. Supõe-se também que para execução deste ataque o invasor tenha acesso físico à rede, o que não deve ser comum em ambientes industriais.
+    \subsection{\textit{Denial of Service (DoS)}}
 
-\subsection{\textit{Denial of Service (DoS)}}
+        Nesta seção, são apresentados os resultados obtidos a partir dos cenários de ataques de negação de serviço (DoS) executados na bancada experimental, utilizando cinco técnicas distintas. O objetivo desses ataques é avaliar a capacidade da rede industrial OPC UA de resistir a sobrecargas de tráfego e a variação no comportamento dos componentes ao serem submetidos a esses cenários.
 
-Nesta seção, são apresentados os resultados obtidos a partir dos cenários de ataques de negação de serviço (DoS) executados na bancada experimental utilizando cinco técnicas distintas. O objetivo desses ataques é avaliar a capacidade da rede industrial OPC UA de resistir a sobrecargas de tráfego e a variação no desempenho dos componentes ao serem submetidos a tais cenários.
+        \subsubsection*{\underline{Inundação TCP/IP}}
 
-\subsubsection*{\underline{Inundação TCP/IP}}
+            A execução do ataque por inundação TCP/IP (cenários C7, C8 e C9) começou com uma varredura inicial da rede para identificar dispositivos e serviços ativos, utilizando o Nmap. Os resultados revelaram a presença de um servidor OPC UA em execução, com a respectiva porta aberta para essa comunicação. Isso foi suficiente para que o próximo passo fosse a inundação de pacotes SYN pela comunicação TCP/IP.
 
-A execução do ataque pela inundação TCP/IP (cenários C7, C8 e C9) consistiu na varredura inicial da rede para identificar dispositivos e serviços ativos, utilizando Nmap. Os resultados revelaram a presença de um servidor OPC UA em execução e sua respectiva porta aberta para essa comunicação. Isso é suficiente para que o próximo passo seja executado: inundação de pacotes SYN pela comunicação TCP/IP.
+            Os resultados obtidos para esses cenários indicam que a rede é altamente vulnerável a ataques de inundação TCP/IP, com um aumento significativo no \texttt{throughput} e na taxa de pacotes por segundo. O servidor OPC UA foi sobrecarregado pela alta carga de tráfego, levando a um aumento considerável no uso da CPU e à degradação do desempenho do sistema. O gráfico apresentado na \autoref{fig:perf-dos-tcp} ilustra a variação média no uso da CPU do hospedeiro do servidor OPC UA durante a execução do ataque de inundação TCP/IP. Para facilitar a visualização e análise dos dados, utilizou-se a média móvel, que suaviza a série temporal dos dados, atenuando as flutuações de curto prazo e destacando a tendência de longo prazo.
 
-Os resultados obtidos para esses cenários indicam que a rede é altamente vulnerável a ataques de inundação TCP/IP, com um aumento significativo no \texttt{throughput} e na taxa de pacotes por segundo. O servidor OPC UA é sobrecarregado com a alta carga de tráfego, resultando em um aumento considerável no uso da CPU e na degradação do desempenho do sistema. O gráfico apresentado na \autoref{fig:perf-dos-tcp} ilustra a variação média no uso da CPU do hospedeiro do servidor OPC UA durante a execução do ataque de inundação TCP/IP. Para facilitar a visualização e análise dos dados, utilizou-se a média móvel para suavizar a série temporal dos dados, atenuando as flutuações de curto prazo e destacando a tendência de longo prazo.
+            \begin{figure}[htbp!]
+                \centering
+                \caption{\label{fig:perf-dos-tcp}Variação média no processamento do hospedeiro do servidor OPC UA durante o ataque de inundação TCP/IP}
+                \begin{subfigure}[t]{1\textwidth}
+                    \centering
+                    \caption{`None'}
+                    \includegraphics[width=1\textwidth]{USPSC-img/0-dos-hping-cpu.png}
+                \end{subfigure}%
+                \\
+                \begin{subfigure}[t]{1\textwidth}
+                    \centering
+                    \caption{`Sign'}
+                    \includegraphics[width=1\textwidth]{USPSC-img/1-dos-hping-cpu.png}
+                \end{subfigure}%
+                \\
+                \begin{subfigure}[t]{1\textwidth}
+                    \centering
+                    \caption{`Sign \& Encrypt'}
+                    \includegraphics[width=1\textwidth]{USPSC-img/2-dos-hping-cpu.png}
+                \end{subfigure}%
+                \legend{Fonte: elaborada pelo autor.}
+            \end{figure}
 
-\begin{figure}[htbp!]
-    \centering
-    \caption{\label{fig:perf-dos-tcp}Variação média no processamento do hospedeiro do servidor OPC UA durante o ataque de inundação TCP/IP}
-    \begin{subfigure}[t]{1\textwidth}
-        \centering
-        \caption{`None'}
-        \includegraphics[width=1\textwidth]{USPSC-img/0-dos-hping-cpu.png}
-    \end{subfigure}%
-    \\
-    \begin{subfigure}[t]{1\textwidth}
-        \centering
-        \caption{`Sign'}
-        \includegraphics[width=1\textwidth]{USPSC-img/1-dos-hping-cpu.png}
-    \end{subfigure}%
-    \\
-    \begin{subfigure}[t]{1\textwidth}
-        \centering
-        \caption{`Sign \& Encrypt'}
-        \includegraphics[width=1\textwidth]{USPSC-img/2-dos-hping-cpu.png}
-    \end{subfigure}%
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+            Em média, o aumento de 275\% no uso do processamento no início do ataque, independentemente da configuração de segurança, indica que o servidor OPC UA é altamente vulnerável a ataques de inundação TCP/IP. Isso é evidenciado pelo fato de que os ataques foram executados em um ambiente controlado, onde nenhuma outra tarefa estava sendo processada pelo controlador. A alta carga de tráfego gerada por esse tipo de ataque pode levar à degradação do serviço, interrupção da comunicação e perda de dados críticos. Portanto, é essencial implementar medidas de segurança robustas para proteger a rede contra esse tipo de ataque, garantindo a disponibilidade e a integridade dos sistemas industriais.
 
-Em média, o aumento de 275\% no processamento ao início do ataque para qualquer cenário de configuração de segurança, indica que o servidor OPC UA é altamente vulnerável a ataques de inundação TCP/IP, visto que os ataques foram executados em um ambiente controlado e nenhuma outra tarefa estava sendo processada pelo controlador. A alta carga de tráfego gerada por esse tipo de ataque pode levar à degradação do serviço, à interrupção da comunicação e à perda de dados críticos. Portanto, é essencial implementar medidas de segurança robustas para proteger a rede contra esse tipo de ataque e garantir a disponibilidade e a integridade dos sistemas industriais.
+            No entanto, é importante destacar que este ataque não foi direcionado especificamente ao protocolo OPC UA, mas sim à camada de transporte (quarta camada do modelo OSI). Embora a comunicação OPC UA não seja diretamente afetada, a corrupção da infraestrutura de rede subjacente pode ter impactos significativos na comunicação OPC UA, especialmente em ambientes industriais, onde a disponibilidade e a integridade dos sistemas são essenciais.
 
-No entanto, vale ressaltar que este ataque não foi direcionado para o protocolo OPC UA, mas sim para a camada de transporte (quarta camada do modelo OSI). Portanto, embora a comunicação OPC UA não seja afetada diretamente, o corrompimento da infraestrutura de rede subjacente pode apresentar impactos significativos na comunicação OPC UA, especialmente em ambientes industriais, cuja a disponibilidade e a integridade dos sistemas são críticas.
+        \subsubsection*{\underline{Loop infinito na cadeia de certificados}}
 
-\subsubsection*{\underline{Loop infinito na cadeia de certificados}}
+            A tecnologia OPC UA demonstrou considerável resistência ao ataque de negação de serviço por loop infinito na cadeia de certificados. Essa análise pode ser realizada com base nos gráficos de RTT da comunicação. A Figura \ref{fig:0-dos-cert-rttp} apresenta a variação média do RTT normalizado por pacote durante a execução do ataque para o cenário C3.
 
-A tecnologia OPC UA demonstrou uma resistência considerável ao ataque de negação de serviço pelo loop infinito na cadeia de certificados. Essa análise pode ser realizada com base nos gráficos de RTT da comunicação. A Figura \ref{fig:0-dos-cert-rttp} apresenta a variação média do RTT normalizado por pacote durante a execução do ataque para o cenário C3.
+            \begin{figure}[htbp!]
+                \caption{\label{fig:0-dos-cert-rttp}Tempo de resposta normalizado por pacote durante o ataque de loop infinito na cadeia de certificados - nível de segurança: `Sign \& Encrypt'}
+                \begin{center}
+                    \includegraphics[width=0.972\textwidth]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-rttp.png}
+                \end{center}
+                \legend{Fonte: elaborada pelo autor.}
+            \end{figure}
 
-\begin{figure}[htbp!]
-    \caption{\label{fig:0-dos-cert-rttp}Tempo de resposta normalizado por pacote durante o ataque de loop infinito na cadeia de certificados - nível de segurança: `Sign \& Encrypt'}
-    \begin{center}
-        \includegraphics[width=0.972\textwidth]{USPSC-img/output/cropped/2-dos_certificate_inf_chain_loop-rttp.png}
-    \end{center}
-    \legend{Fonte: elaborada pelo autor.}
-\end{figure}
+            A análise dos resultados revela que o invasor interage com o servidor OPC UA apenas no início do ataque. A comunicação é encerrada a partir desse ponto para todos os modos de segurança, conforme indicado pela linha vermelha pontilhada que marca o início do ataque. Antes do ataque, o RTT Cliente-Servidor se mantém constante e estável. No entanto, após o início do ataque, observa-se um aumento no RTT Invasor-Servidor, indicando que o servidor está sendo inundado com solicitações, o que resulta no aumento do tempo de resposta.
 
-A análise dos resultados revela uma interação do invasor com o servidor OPC UA apenas no momento do início do ataque. A comunicação a partir desse ponto é encerrada, para todos os modos de segurança, como indicado pela linha vermelha pontilhada que marca o início do ataque. Antes do ataque, o RTT Cliente-Servidor se mantém constante e estável. Entretanto, após o início do ataque, observa-se um aumento no RTT Invasor-Servidor, indicando que o servidor está sendo inundado com solicitações que levam ao aumento do tempo de resposta.
+            O gráfico também revela que, após o início do ataque, há uma dispersão significativa dos valores de RTT Invasor-Servidor, sugerindo variações na capacidade do servidor de processar pacotes sob a carga do ataque. Entretanto, o RTT Cliente-Servidor apresenta pouca variação, indicando que o servidor consegue manter a qualidade do serviço para comunicações legítimas, apesar da sobrecarga causada pelo ataque.
 
-O gráfico também revela que, após o início do ataque, há uma dispersão significativa dos pontos de RTT Invasor-Servidor, o que sugere variações na capacidade do servidor de processar pacotes sob a carga do ataque. No entanto, o RTT Cliente-Servidor apresenta pouca variação, indicando que o servidor mantém a qualidade do serviço para comunicações legítimas, apesar da sobrecarga causada pelo ataque.
+            Essa análise reforça a eficácia do OPC UA em manter a resiliência contra ataques de negação de serviço, especialmente em cenários onde são implementadas medidas de segurança robustas, como o uso de criptografia e autenticação adequadas. Além disso, destaca a importância de monitorar continuamente o desempenho do servidor e de implementar mecanismos de mitigação de ataques para garantir a continuidade do serviço e a integridade dos dados.
 
-Essa análise reforça a eficácia do OPC UA em manter a resiliência contra ataques de negação de serviço, especialmente em cenários onde são implementadas medidas de segurança robustas, como o uso de criptografia e autenticação adequada. Além disso, destaca a importância de monitorar continuamente o desempenho do servidor e implementar mecanismos de mitigação de ataques para garantir a continuidade do serviço e a integridade dos dados. 
+        \subsubsection*{\underline{Chamada da função Dereference nula}}
 
-\subsubsection*{\underline{Chamada da função Dereference nula}}
+            O ataque de DoS pela chamada da função Dereference nula revelou-se o único capaz de causar uma negação de serviço completa na rede OPC UA industrial, em todos os diferentes cenários (C4, C5 e C6). Esse ataque explora uma vulnerabilidade crítica no servidor, na qual uma chamada de função é executada sem verificar a validade do ponteiro, resultando em uma falha que pode travar o servidor. A técnica aproveita vulnerabilidades na desreferenciação de um ponteiro nulo, que ocorre quando um programa tenta acessar ou modificar um ponteiro que, em vez de apontar para uma localização válida na memória, possui um valor nulo. A consequência imediata é que o programa tenta ler ou escrever em uma área de memória inválida, levando a uma interrupção abrupta do funcionamento do sistema. A gravidade dessa falha reside no fato de que, além de interromper o serviço, ela pode ser explorada por atacantes para comprometer a segurança e a integridade do sistema, explorando comportamentos indefinidos que podem permitir a execução de código malicioso ou levar à negação de serviço, como neste caso.
 
-O ataque de DoS pela chamada da função Dereference nula revelou-se o único capaz de causar uma negação de serviço completa na rede OPC UA industrial, para todos os diferentes cenários (C4, C5 e C6). Este ataque explora uma vulnerabilidade crítica no servidor, na qual uma chamada de função é executada sem verificar a validade do ponteiro, resultando em uma falha que pode travar o servidor. A técnica aproveita de vulnerabilidades na desreferenciação de um ponteiro nulo, que ocorre quando um programa tenta acessar ou modificar um ponteiro que, em vez de apontar para uma localização válida na memória, possui um valor nulo. A consequência imediata é que o programa tenta ler ou escrever em uma área de memória inválida, levando a uma interrupção abrupta do funcionamento do sistema. A gravidade desta falha reside no fato de que, além de interromper o serviço, ela pode ser explorada por atacantes para comprometer a segurança e a integridade do sistema, explorando comportamentos indefinidos que podem permitir a execução de código malicioso, ou levar a negação de serviço, como neste caso.
+            A análise dos gráficos fornecidos pela \autoref{fig:2-dos_null_deref} oferece uma compreensão detalhada do impacto desse ataque, especificamente para a rede configurada com modo de segurança `Sign \& Encrypt'.
 
-A análise dos gráficos fornecidos pela \autoref{fig:2-dos_null_deref} oferece uma compreensão detalhada do impacto deste ataque, especificamente para a rede configurada com modo de segurança `Sign \& Encrypt'.
+            \begin{figure}[htbp!]
+                \centering
+                \caption{\label{fig:2-dos_null_deref}Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign \& Encrypt'.}
+                \begin{subfigure}[t]{0.5\textwidth}
+                    \centering
+                    \caption{\label{fig:2-dos_null_deref-tput}\textit{Throughput}}
+                    \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-tput.png}
+                \end{subfigure}%
+                ~ 
+                \begin{subfigure}[t]{0.5\textwidth}
+                    \centering
+                    \caption{\label{fig:2-dos_null_deref-perf}Desempenho}
+                    \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-perf.png}
+                \end{subfigure}%
+                \\
+                \begin{subfigure}[t]{0.5\textwidth}
+                    \centering
+                    \caption{\label{fig:2-dos_null_deref-pack}Pacotes OPC UA}
+                    \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-pack.png}
+                \end{subfigure}%
+                ~
+                \begin{subfigure}[t]{0.5\textwidth}
+                    \centering
+                    \caption{\label{fig:2-dos_null_deref-rttp}RTT por pacote}
+                    \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-rttp.png}
+                \end{subfigure}%
+            \end{figure}
 
-\begin{figure}[htbp!]
-    \centering
-    \caption{\label{fig:2-dos_null_deref}Gráficos do ataque de DoS pela chamada da função \textit{Dereference} nula - nível de segurança: `Sign \& Encrypt'.}
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{\label{fig:2-dos_null_deref-tput}\textit{Throughput}}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-tput.png}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{\label{fig:2-dos_null_deref-perf}Desempenho}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-perf.png}
-    \end{subfigure}%
-    \\
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{\label{fig:2-dos_null_deref-pack}Pacotes OPC UA}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-pack.png}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \caption{\label{fig:2-dos_null_deref-rttp}RTT por pacote}
-        \includegraphics[width=1\textwidth, height=120pt]{USPSC-img/output/cropped/2-dos_function_call_null_deref-rttp.png}
-    \end{subfigure}%
-\end{figure}
+            O gráfico de taxa de transferência, representado na \autoref{fig:2-dos_null_deref-tput}, demonstra uma estabilidade em níveis baixos antes do ataque. Com o início do ataque, indicado pela linha vermelha, observa-se um aumento abrupto no \textit{throughput}, atingindo um pico significativo antes de cair drasticamente a zero. Esse comportamento indica que o servidor OPC UA foi sobrecarregado com solicitações inválidas, resultando em uma falha completa da comunicação, o que caracteriza uma negação de serviço.
 
-O gráfico de taxa de transferência, representado na \autoref{fig:2-dos_null_deref-tput}, demonstra uma estabilidade em níveis baixos antes do ataque. Com o início do ataque, indicado pela linha vermelha, observa-se um aumento abrupto no throughput, atingindo um pico significativo antes de cair drasticamente a zero. Este comportamento indica que o servidor OPC UA foi sobrecarregado com solicitações inválidas, resultando em uma falha completa da comunicação, o que caracteriza uma negação de serviço.
+            A análise do gráfico de tempo de resposta por pacote, ilustrado na \autoref{fig:2-dos_null_deref-rttp}, corrobora esses achados. Antes do ataque, o RTT entre cliente e servidor permanece relativamente constante, refletindo uma comunicação estável. No entanto, com o início do ataque, há um aumento significativo no RTT, especialmente na comunicação entre o invasor e o servidor. Essa elevação súbita no RTT sugere que o servidor está demorando mais para processar as solicitações devido à sobrecarga provocada pelo ataque, culminando em um colapso na comunicação.
 
-A análise do gráfico de tempo de resposta por pacote, ilustrado na \autoref{fig:2-dos_null_deref-rttp}, corrobora esses achados. Antes do ataque, o RTT entre cliente e servidor permanece relativamente constante, refletindo uma comunicação estável. No entanto, com o início do ataque, há um aumento significativo no RTT, especialmente na comunicação entre o invasor e o servidor. Essa elevação súbita no RTT sugere que o servidor está demorando mais para processar as solicitações devido à sobrecarga provocada pelo ataque, culminando em um colapso na comunicação.
+            O impacto do ataque na performance do servidor é ainda mais evidente na \autoref{fig:2-dos_null_deref-perf}, que mostra o desempenho do host em termos de utilização de CPU e memória RAM. Antes do ataque, o uso da CPU se mantém em níveis baixos e constantes, indicando um funcionamento normal do servidor. No entanto, após o início do ataque, a utilização da CPU aumenta drasticamente, enquanto a utilização da RAM permanece estável. Essa alta utilização da CPU é um indicativo claro de que o servidor está sobrecarregado tentando processar a grande quantidade de solicitações inválidas geradas pelo ataque, levando a uma queda de desempenho e, eventualmente, à falha do sistema.
 
-O impacto do ataque na performance do servidor é ainda mais evidente na \autoref{fig:2-dos_null_deref-perf}, que mostra o desempenho do host em termos de utilização de CPU e memória RAM. Antes do ataque, o uso da CPU se mantém em níveis baixos e constantes, indicando um funcionamento normal do servidor. No entanto, após o início do ataque, a utilização da CPU aumenta drasticamente, enquanto a utilização da RAM se mantém estável. Esta alta utilização da CPU é um indicativo claro de que o servidor está sobrecarregado tentando processar a grande quantidade de solicitações inválidas geradas pelo ataque, levando a uma queda de desempenho e, eventualmente, à falha do sistema.
-
-Esses resultados demonstram que o ataque de chamada da função dereference nula é altamente eficaz em explorar vulnerabilidades específicas do servidor OPC UA, resultando em uma negação de serviço completa. A incapacidade do servidor de verificar a validade dos ponteiros antes de executar chamadas de função crítica foi o fator chave que permitiu a execução bem-sucedida deste ataque. A rápida elevação na utilização da CPU e a subsequente falha na comunicação destacam a necessidade urgente de medidas de mitigação para proteger servidores OPC UA contra tais vulnerabilidades.
+            Esses resultados demonstram que o ataque de chamada da função de desreferenciação nula é altamente eficaz em explorar vulnerabilidades específicas do servidor OPC UA, resultando em uma negação de serviço completa. A incapacidade do servidor de verificar a validade dos ponteiros antes de executar chamadas de funções críticas foi o fator chave que permitiu a execução bem-sucedida desse ataque. A rápida elevação na utilização da CPU e a subsequente falha na comunicação destacam a necessidade urgente de medidas de mitigação para proteger servidores OPC UA contra tais vulnerabilidades.
 
 \subsubsection*{\underline{Abertura de múltiplos canais seguros}}
 
@@ -318,7 +318,6 @@ Em conclusão, o ataque DoS por abertura de múltiplos canais seguros na comunic
 Uma vulnerabilidade crítica que pode ser explorada para comprometer a estabilidade e a segurança da rede OPC UA é a exaustão da pilha de função que processa requisições de tradução de caminhos de navegação para \texttt{NodeIds} (\texttt{TranslateBrowsePathsToNodeIds}). A função \texttt{TranslateBrowsePath} é responsável por traduzir caminhos de navegação (do inglês \textit{browse paths}) em \texttt{NodeIds}. Durante esse processo, a função é chamada recursivamente para cada elemento no caminho relativo (\texttt{RelativePath}), sem um limite adequado para a profundidade da recursão. Como resultado, a tradução de um caminho de navegação excessivamente longo pode levar a uma exceção de estouro de pilha (\texttt{StackOverflowException}).
 
 No entanto, a análise dos resultados obtidos para estes cenários: C13, C14 e C15, revela que a rede OPC UA apresenta uma leve proteção contra ataques de negação de serviço por exaustão da pilha de função. A análise dos gráficos de dados do tráfego da rede, especificamente o tempo de resposta do servidor, revela uma degradação significativa no desempenho do sistema ao longo do tempo, no qual observa-se um aumento de forma acentuada à medida que o número de requisições maliciosas foi incrementado.
-
 
 \section{Propostas de Melhorias e Mitigações} \label{sec:melhorias-mitigacoes}
 
