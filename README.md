@@ -9,7 +9,7 @@
 
 <h4 align="center">
   
-[EMOJI] Descrição.
+[EMOJI] This repo groups all the projects for my Master's.
   
 </h4>
 
