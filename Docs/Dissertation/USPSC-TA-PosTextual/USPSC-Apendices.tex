@@ -8,7 +8,7 @@
 
 \partapendices
 
-\chapter{Modelo de relatório de vulnerabilidades}\label{ap:relatorio}
+\chapter{Modelo de Relatório de Vulnerabilidades}\label{ap:relatorio}
 
 \newcommand{\theadmulti}[3]{
     \multicolumn{#1}{|>{\bfseries\normalsize\columncolor{#2}}l|}{\Gape[0.2em][0.2em]{#3}}
@@ -29,7 +29,7 @@
     \hline
     \theadmulti{6}{gridgray}{1. Sumário executivo} \\
     \hline
-    \bodymulti{Uma visão geral de alto nível da avaliação, destinada a executivos não técnicos.} \\
+    \bodymulti{Apresenta um resumo conciso da avaliação de segurança, elaborado em linguagem acessível para gestores e outros públicos não especializados em segurança cibernética. Destaca as principais descobertas, o risco associado e as recomendações cruciais.} \\
     \hline
     \textbf{Classe:} & & \textbf{Tipo:} & & \textbf{Alvo:} & \\
     \hline
@@ -39,33 +39,33 @@
     \hline
     \multicolumn{6}{|l|}{\textbf{Visão geral:}} \\
     \hline
-    \bodymulti{Uma vulnerabilidade é uma fraqueza em uma aplicação (frequentemente um controle quebrado ou ausente) que permite que um ataque seja bem-sucedido. Certifique-se de não colocar [ataques] ou [controles] nesta categoria. \newline Comece com uma descrição de uma frase da vulnerabilidade. Prossiga respondendo as seguintes perguntas: \newline (1) Qual é o problema que cria a vulnerabilidade? (2) Quais são os ataques que têm como alvo essa vulnerabilidade? (3) Quais são os impactos técnicos dessa vulnerabilidade?} \\
+    \bodymulti{Inicie com uma descrição sucinta da vulnerabilidade. Em seguida, responda às seguintes questões: (1) Qual a natureza ou causa raiz do problema que origina a vulnerabilidade? (2) Quais os tipos de ataques que podem explorar essa vulnerabilidade? (3) Quais as consequências técnicas diretas da exploração desta vulnerabilidade?} \\
     \hline
     \multicolumn{6}{|l|}{\textbf{Detalhes técnicos:}} \\
     \hline
-    \bodymulti{Forneça detalhes técnicos da vulnerabilidade, incluindo o seguinte: (1) Descrição detalhada dos detalhes técnicos da vulnerabilidade. (2) Passos detalhados para reproduzir a vulnerabilidade (crucial para que seja possível reproduzir as descobertas). (3) Se disponível, um PoC (do inglês \textit{Prof of Concept}) pode ser anexado como um arquivo adicional a este relatório.} \\
+    \bodymulti{Forneça informações técnicas aprofundadas sobre a vulnerabilidade, incluindo: (1) Descrição técnica pormenorizada da vulnerabilidade, abrangendo componentes afetados, versões e configurações relevantes. (2) Passos detalhados e precisos para a reprodução da vulnerabilidade (essenciais para a validação e verificação das descobertas). (3) Prova de Conceito (PoC), se desenvolvida e disponível, podendo ser anexada como um artefato complementar a este relatório ou descrita textualmente.} \\
     \hline
-    \multicolumn{6}{|l|}{\textbf{Descrição do cenário de exploração da vulnerabilidade:}} \\
+    \multicolumn{6}{|l|}{\textbf{Descrição do cenário de exploração:}} \\
     \hline
-    \bodymulti{O cenário de ataque da vulnerabilidade é diferente dos passos para reproduzir a vulnerabilidade. Ele descreve como um atacante explora com sucesso a vulnerabilidade, incluindo as condições pré-requisitas para o atacante lançar o ataque, as limitações de disparo da vulnerabilidade e se é necessária a interação com a vítima.} \\
+    \bodymulti{Descreva um cenário de exploração plausível da vulnerabilidade, diferenciando-o dos passos de reprodução. O foco deve ser na perspectiva do atacante, detalhando: (1) As condições prévias ou pré-requisitos para que o ataque seja exequível. (2) As possíveis limitações ou dificuldades para a exploração efetiva da vulnerabilidade. (3) A necessidade, ou não, de interação da vítima para o sucesso do ataque.} \\
     \hline
     \multicolumn{6}{|l|}{\textbf{Fatores de risco:}} \\
     \hline
-    \bodymulti{Discuta os fatores que tornam essa vulnerabilidade mais ou menos provável de realmente ocorrer. Além disso, Aborde o impacto técnico de uma exploração bem-sucedida dessa vulnerabilidade e considere os possíveis [impactos nos negócios] de um ataque bem-sucedido.} \\
+    \bodymulti{Analise os fatores que influenciam a probabilidade de exploração desta vulnerabilidade. Adicionalmente, descreva o impacto técnico detalhado resultante de uma exploração bem-sucedida e pondere os potenciais impactos para o negócio ou para as operações da organização.} \\
     \hline
-    \theadmulti{6}{gridgray}{3. Mitigações} \\
+    \theadmulti{6}{gridgray}{3. Recomendações de correção e mitigação} \\
     \hline
-    \multicolumn{6}{|l|}{\textbf{Sugestões para medidas de remediação e mitigação:}} \\
+    \multicolumn{6}{|l|}{\textbf{Medidas de remediação específicas:}} \\
     \hline
-    \bodymulti{Inclua recomedações de ações específicas para corrigir a vulnerabilidade. Pode conter implementações de políticas de segurança rigorosas, execução de auditorias e testes de penetração regularmente ou treinamento de funcionários sobre práticas de segurança cibernética.} \\
+    \bodymulti{Apresente recomendações claras, específicas e acionáveis para corrigir a vulnerabilidade identificada. As soluções devem ser priorizadas com base na criticidade e viabilidade. Exemplos: aplicação de patches de segurança, alterações de configuração, correções no código-fonte, ou implementação de controles compensatórios diretos.} \\
     \hline
     \multicolumn{6}{|l|}{\textbf{Boas práticas:}} \\
     \hline
-    \bodymulti{Recomendações adicionais para evitar vulnerabilidades semelhantes no futuro, incluindo práticas de desenvolvimento seguro e estratégias de defesa em profundidade.} \\
+    \bodymulti{Proponha recomendações mais amplas para prevenir a ocorrência de vulnerabilidades análogas no futuro. Estas podem incluir: adoção de práticas de desenvolvimento seguro de \textit{software}, fortalecimento de políticas de segurança, implementação de estratégias de defesa em profundidade, realização periódica de auditorias de segurança e testes de penetração, e investimento em programas de treinamento e conscientização para equipes técnicas e demais colaboradores sobre segurança cibernética.} \\
     \hline
     \theadmulti{6}{gridgray}{4. Referências} \\
     \hline
-    \bodymulti{Documentos técnicos, artigos, e outros recursos que fornecem informações adicionais sobre a vulnerabilidade, ou, se aplicável, referência ao CVE correspondente.} \\
+    \bodymulti{Liste aqui documentos técnicos, artigos científicos, boletins de segurança, documentação de fornecedores, e outros recursos relevantes que fornecem informações adicionais ou fundamentam a análise da vulnerabilidade. Inclua, sempre que aplicável, o identificador CVE correspondente e links para bases de dados de vulnerabilidades.} \\
     \hline
     \theadmulti{6}{gridgray}{5. Histórico de alterações} \\
     \hline
