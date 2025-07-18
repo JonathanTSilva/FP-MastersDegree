@@ -34,7 +34,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
 
     Tanto a \index{IoT}IoT quanto a \index{IIoT}IIoT dependem de protocolos robustos para garantir canais de comunicação confiáveis e seguros. Esses protocolos permitem o monitoramento, controle e gerenciamento em tempo real das infraestruturas implantadas. A compreensão de seus princípios fundamentais e características é indispensável para implementar e explorar plenamente o potencial das tecnologias da (I)IoT.
 
-    De acordo com \cite{persson2015}, o termo protocolo refere-se ao conjunto de regras e diretrizes que regulam a comunicação e a interação entre diferentes entidades ou sistemas, definindo o formato, a sequência e o significado das mensagens trocadas. Projetado principalmente para garantir a interoperabilidade entre sistemas de fornecedores distintos, um protocolo também facilita a integração e o comissionamento de redes de comunicação de dados. Esse fator contribui para a redução dos custos de instalação e possibilita testes e validações independentes, resultando em projetos mais eficientes \cite{mohagheghi2009}.
+    De acordo com \citeonline{persson2015}, o termo protocolo refere-se ao conjunto de regras e diretrizes que regulam a comunicação e a interação entre diferentes entidades ou sistemas, definindo o formato, a sequência e o significado das mensagens trocadas. Projetado principalmente para garantir a interoperabilidade entre sistemas de fornecedores distintos, um protocolo também facilita a integração e o comissionamento de redes de comunicação de dados. Esse fator contribui para a redução dos custos de instalação e possibilita testes e validações independentes, resultando em projetos mais eficientes \cite{mohagheghi2009}.
 
     Grande parte dos protocolos de comunicação atualmente disponíveis, tanto aqueles originalmente desenvolvidos para ambientes industriais quanto os voltados para a \index{IoT}IoT, não atendem plenamente às demandas impostas pelo crescimento exponencial do número de dispositivos conectados \cite{markel2017}. Em resposta a essa limitação, surgiram protocolos escaláveis e leves, entre os quais se destacam o \index{OPC UA}OPC UA, MQTT e CoAP. Entretanto, no escopo deste trabalho, o protocolo \index{OPC UA}OPC UA será o único abordado, uma vez que constitui o foco central desta investigação.
         
@@ -81,7 +81,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
             \begin{center}
                 \includegraphics[width=1\linewidth]{USPSC-img/opcuaClientServerArc1.png}
             \end{center}
-            \fonte{adaptada de \cite[Parte 6]{opc2024} e \cite{huang2010}.}
+            \fonte{adaptada de \citeonline[Parte 6]{opc2024} e \citeonline{huang2010}.}
         \end{figure}
 
         O modelo de informação é composto principalmente por nós e referências, permitindo a representação de informações estruturadas e hierárquicas. Com funcionalidades abrangentes orientadas a objetos, até mesmo estruturas complexas de múltiplas camadas podem ser modeladas e expandidas. O \index{OPC UA}OPC UA oferece um modelo base de informação, além da possibilidade de criação de modelos complementares para aplicações específicas, visando aprimorar a flexibilidade e a eficiência do sistema.
@@ -95,7 +95,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
             \begin{center}
                 \includegraphics[width=0.9\linewidth]{USPSC-img/opcuaArq-imp.png}
             \end{center}
-            \fonte{adaptada de \cite{opc2019}.}
+            \fonte{adaptada de \citeonline{opc2019}.}
         \end{figure}
 
     \subsubsection{Métodos de Comunicação}
@@ -112,7 +112,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
             \begin{center}
                 \includegraphics[width=0.9\linewidth]{USPSC-img/ua-osi.png}
             \end{center}
-            \fonte{adaptada de \cite{neumann2015}.}
+            \fonte{adaptada de \citeonline{neumann2015}.}
         \end{figure}
 
     \subsubsection{Escopo de Proteção}
@@ -123,7 +123,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
         
         Na camada de aplicação, a autenticação e a autorização dos usuários desempenham um papel central. O processo de autenticação verifica a identidade do cliente por meio de métodos como senhas, certificados X.509V3 ou \textit{tokens} de segurança, conforme discutido anteriormente. A autorização, por sua vez, define se um usuário pode ou não acessar determinados serviços. Embora a especificação do protocolo não imponha um método específico para autenticação ou autorização, ela fornece mecanismos para sua implementação. Além disso, as aplicações \index{OPC UA}OPC UA, tanto clientes quanto servidoras, devem se identificar mutuamente durante o estabelecimento da comunicação segura por meio de certificados digitais, permitindo a aceitação ou rejeição da conexão.
         
-        A camada de comunicação assegura a transmissão segura de dados entre cliente e servidor. Para garantir a confidencialidade, um canal seguro é estabelecido, utilizando uma mensagem secreta para derivar as chaves simetricas (do inglês \textit{Symmetric Keys}), que são empregadas no processo de criptografia dos dados, impedindo acessos não autorizados. A integridade das informações é assegurada por meio de assinaturas digitais, que permitem verificar se os dados recebidos pelo cliente correspondem fielmente ao que foi enviado pelo servidor. A \autoref{subsubsec:conn} detalha o procedimento para o estabelecimento do canal seguro entre os componentes \index{OPC UA}OPC UA.
+        A camada de comunicação assegura a transmissão segura de dados entre cliente e servidor. Para garantir a confidencialidade, um canal seguro é estabelecido, utilizando uma mensagem secreta para derivar as chaves simétricas (do inglês \textit{Symmetric Keys}), que são empregadas no processo de criptografia dos dados, impedindo acessos não autorizados. A integridade das informações é assegurada por meio de assinaturas digitais, que permitem verificar se os dados recebidos pelo cliente correspondem fielmente ao que foi enviado pelo servidor. A \autoref{subsubsec:conn} detalha o procedimento para o estabelecimento do canal seguro entre os componentes \index{OPC UA}OPC UA.
 
         Além dessas camadas, as aplicações geram registros de auditoria que documentam eventos relevantes, como tentativas de conexão, negociações de segurança, modificações de configuração, interações dos usuários e rejeições de sessão. O suporte a essas trilhas de auditoria é implementado por meio de dois mecanismos: (I) a garantia da rastreabilidade dos \textit{logs} por meio de identificadores locais nas solicitações; e (II) a definição de parâmetros específicos para inclusão nos registros de auditoria, conforme descrito na Parte 5 das especificações \cite{opc2024}.
 
@@ -140,7 +140,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
             \begin{center}
                 \includegraphics[width=0.972\linewidth]{USPSC-img/seqConn.png}
             \end{center}
-            \fonte{adaptada de \cite{mahnke2009}.}
+            \fonte{adaptada de \citeonline{mahnke2009}.}
         \end{figure}
 
         Na fase inicial da conexão, o cliente coleta as opções de configuração do servidor, caso não esteja pré-configurado. Para isso, ele envia uma solicitação \textbf{GetEndpoints} ao \textbf{DiscoveryEndpoint} do servidor, de forma não segura, a fim de obter a lista de \textit{endpoints} disponíveis e suas respectivas configurações de segurança. Com essas informações, o cliente seleciona o \textit{endpoint} adequado e valida o certificado da instância de aplicação do servidor.
@@ -168,7 +168,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
                 \hline
     	\end{tabular}
     	\begin{flushleft}
-    		\fonte{adaptado de \cite{neu2019}.}
+    		\fonte{adaptado de \citeonline{neu2019}.}
     	\end{flushleft}
         \end{quadro}
 
@@ -178,8 +178,8 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
 
         Assim, uma sessão é instaurada com base no canal seguro criado pela conexão, mediante uma solicitação \textbf{CreateSession} devidamente protegida pelo cliente. Na resposta dos servidores, são fornecidos os certificados de \textit{software}. A fase final do estabelecimento da comunicação é iniciada após a validação bem-sucedida desses certificados por parte do cliente. Essa fase envolve a ativação da sessão criada através da solicitação \textbf{ActivateSession} ao servidor, contendo informações adicionais de credenciais do usuário e do \textit{software}. A validação desses dados complementares representa o encerramento desse processo de conexão, permitindo que o cliente acesse e se comunique com o servidor com sucesso.
 
-        O encerramento de uma conexão \index{OPC UA}OPC UA ocorre por meio das solicitações \textbf{CloseSession} e \textbf{CloseSecureChannel}. A especificação do \index{OPC UA}OPC UA \cite{opc2024} afirma que as mensagens de encerramento devem ser apenas assinadas, pois nenhuma informação secreta é transmitida nessa etapa.
-        
+        O encerramento de uma conexão \index{OPC UA}OPC UA ocorre por meio das solicitações \textbf{CloseSession} e \textbf{CloseSecureChannel}. A especificação do \index{OPC UA}OPC UA afirma que as mensagens de encerramento devem ser apenas assinadas, pois nenhuma informação secreta é transmitida nessa etapa \cite{opc2024}.
+
 \section{Segurança Cibernética} \label{sec:cybersecurity}
 
     No passado, os setores de \index{Tecnologia da Informação}TI e \index{Tecnologia Operacional}TO eram organizacionalmente separados. No entanto, a transformação digital tem impulsionado a indústria a reconsiderar esse paradigma, promovendo iniciativas de \index{Convergência TI/TO}convergência entre a Tecnologia da Informação e Operacional. A \autoref{fig:convIT/OT} ilustra os principais aspectos dessa convergência, que não apenas representa um desafio significativo em termos de comunicação de dados, mas também impõe preocupações crescentes relacionadas à \index{Segurança Cibernética}segurança cibernética \cite{wiboonrat2022}.
@@ -189,7 +189,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
         \begin{center}
             \includegraphics[width=1\textwidth]{USPSC-img/convergenceITOT.png}
         \end{center}
-        \legend{Fonte: adaptado de \cite{yassine2021}.}
+        \legend{Fonte: adaptado de \citeonline{yassine2021}.}
     \end{figure}
 
     Os \index{Sistemas de Automação e Controle Industrial}Sistemas de Automação e Controle Industrial englobam diversas tecnologias, incluindo \index{SCADA}SCADA, \index{DCS}DCS, \index{CLP}CLPs (Controladores Lógicos Programáveis) e sistemas de monitoramento. A \index{Convergência TI/TO}convergência TI/TO tornou os \index{IACS}IACS mais sofisticados, eficientes e produtivos. Entretanto, essa evolução também introduziu novas \index{Vulnerabilidade}vulnerabilidades, aumentando significativamente os riscos de falhas operacionais e ataques cibernéticos. Esses sistemas são alvos cada vez mais frequentes de ameaças, devido ao alto valor das informações processadas e à sua criticidade para a economia. O \autoref{qdr:it-iacs} apresenta uma comparação entre as principais características e objetivos de segurança dos sistemas de TI e IACS.
@@ -214,7 +214,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
             \hline
 	\end{tabular}
 	\begin{flushleft}
-		\fonte{adaptado de \cite{shin2022}.}
+		\fonte{adaptado de \citeonline{shin2022}.}
 	\end{flushleft}
     \end{quadro}
 
@@ -238,11 +238,11 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
 
     \subsection{Ataques em Redes Industriais} \label{subsec:tiposAtaques}
 
-        A introdução de redes de comunicação em \index{IACS}IACS amplia a superfície de exposição desses sistemas a \index{Vulnerabilidade}vulnerabilidades, possibilitando a ocorrência de \index{Ataque Cibernético}ataques cibernéticos que podem, em alguns casos, comprometer os processos físicos envolvidos. Segundo \cite{turcato2020}, tais ataques podem ser classificados como \index{Anomalia}anomalias na rede, sendo passíveis de detecção principalmente por meio da análise do fluxo de tráfego de dados. De maneira geral, um ataque cibernético pode ser definido como um ``conjunto de ações ilícitas que tentam comprometer a integridade, confidencialidade ou disponibilidade de recursos na rede''. 
+        A introdução de redes de comunicação em \index{IACS}IACS amplia a superfície de exposição desses sistemas a \index{Vulnerabilidade}vulnerabilidades, possibilitando a ocorrência de \index{Ataque Cibernético}ataques cibernéticos que podem, em alguns casos, comprometer os processos físicos envolvidos. Segundo \citeonline{turcato2020}, tais ataques podem ser classificados como \index{Anomalia}anomalias na rede, sendo passíveis de detecção principalmente por meio da análise do fluxo de tráfego de dados. De maneira geral, um ataque cibernético pode ser definido como um ``conjunto de ações ilícitas que tentam comprometer a integridade, confidencialidade ou disponibilidade de recursos na rede''. 
 
         Para a adequada compreensão dos ataques em redes industriais, torna-se necessário contextualizar o termo. Os \index{Ataque Cibernético}ataques cibernéticos geram \index{Anomalia}anomalias no comportamento dos processos monitorados, refletindo-se, por exemplo, em alterações na dinâmica das séries temporais de dados durante a operação do \index{IACS}IACS. Em termos gerais, tais \index{Anomalia}anomalias correspondem a desvios do comportamento esperado do tráfego da rede.
         
-        As \index{Anomalia}anomalias podem ser de natureza maliciosa ou não intencional, mas, independentemente da origem, seu monitoramento e análise são fundamentais, uma vez que podem causar congestionamentos e impactar o funcionamento do processo industrial. É importante ressaltar que, embora nem toda \index{Anomalia}anomalia represente um \index{Ataque Cibernético}ataque cibernético, todo ataque cibernético se manifesta como uma anomalia. Segundo \cite{barford2002}, as \index{Anomalia}anomalias podem ser classificadas em quatro categorias principais:
+        As \index{Anomalia}anomalias podem ser de natureza maliciosa ou não intencional, mas, independentemente da origem, seu monitoramento e análise são fundamentais, uma vez que podem causar congestionamentos e impactar o funcionamento do processo industrial. É importante ressaltar que, embora nem toda \index{Anomalia}anomalia represente um \index{Ataque Cibernético}ataque cibernético, todo ataque cibernético se manifesta como uma anomalia. Segundo \citeonline{barford2002}, as \index{Anomalia}anomalias podem ser classificadas em quatro categorias principais:
             
         \begin{itemize}
             \item \underline{\index{Anomalia}Anomalias na operação}: decorrem de falhas ou problemas operacionais na rede, como interrupções inesperadas, congestionamentos, indisponibilidade de dispositivos, configurações inadequadas ou a adição não programada de componentes;
@@ -292,7 +292,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
             \begin{center}
                 \includegraphics[width=1\textwidth]{USPSC-img/certbr.png}
             \end{center}
-            \legend{Fonte: \cite{cert2023}}
+            \legend{Fonte: \citeonline{cert2023}}
         \end{figure}
 
         Os ataques podem ser categorizados sob diferentes perspectivas. A classificação fundamental, conforme o glossário de \citeonline{shirey2007}, baseia-se na origem, no alvo e nos objetivos do ataque. Entretanto, algumas taxonomias foram propostas para refinar essa abordagem, como o modelo AVOIDIT \cite{simmons2009}, que considera vetores de ataque, impacto operacional, mecanismos de defesa, impacto informativo e alvo, e o modelo TAVI \cite{drias2015}, que estrutura a classificação segundo a \index{Ameaça Cibernética}ameaça, o objetivo, a \index{Vulnerabilidade}vulnerabilidade e o impacto do ataque.
@@ -318,7 +318,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
 
         % As características, a complexidade e a crescente sofisticação dos ataques faz com que aumente a demanda por técnicas de detecção mais precisas para o monitoramento contínuo da rede de comunicação industrial. Tais técnicas devem ser capazes de lidar com novos tipos de ataques e integrar-se facilmente aos demais mecanismos de proteção da rede sem sobrecarregar a comunicação \cite{maglaras2014}.
 
-        De acordo com \cite{cekerevac2017}, os ataques MitM e DoS estão entre os mais frequentes enfrentados pela \index{IIoT}IIoT, sendo responsáveis por aproximadamente 64\% das ocorrências registradas. O crescimento da interconectividade industrial tem tornado o MitM um desafio cada vez mais crítico, pois facilita o acesso não autorizado a informações confidenciais. Já o ataque DoS, além de sua elevada frequência de ocorrência, pode afetar a disponibilidade de sistemas essenciais, resultando em prejuízos significativos para o setor industrial. 
+        De acordo com \citeonline{cekerevac2017}, os ataques MitM e DoS estão entre os mais frequentes enfrentados pela \index{IIoT}IIoT, sendo responsáveis por aproximadamente 64\% das ocorrências registradas. O crescimento da interconectividade industrial tem tornado o MitM um desafio cada vez mais crítico, pois facilita o acesso não autorizado a informações confidenciais. Já o ataque DoS, além de sua elevada frequência de ocorrência, pode afetar a disponibilidade de sistemas essenciais, resultando em prejuízos significativos para o setor industrial. 
 
         Neste projeto, são avaliados três ataques em uma rede industrial \index{OPC UA}OPC UA: \textit{sniffing} de pacotes, MitM e DoS. Esses ataques foram selecionados devido à sua relevância no contexto da \index{Segurança Cibernética}segurança cibernética industrial, permitindo uma análise de seus impactos e das possíveis estratégias de mitigação.
 
@@ -354,7 +354,7 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
                 \hline
             \end{tabular}
             \begin{flushleft}
-                \fonte{adaptada de \cite{knapp2024}}
+                \fonte{adaptada de \citeonline{knapp2024}}
             \end{flushleft}
         \end{quadro}
 
@@ -439,15 +439,15 @@ Este capítulo estabelece a base para a compreensão dos fundamentos teóricos e
 
     \citeonline{matrikon2019} ressaltam a importância crescente de estabelecer uma segurança robusta entre \index{TI}TI e \index{TO}TO à medida que a digitalização se expande. Embora ambas as áreas busquem garantir uma comunicação segura, suas abordagens diferem significativamente. Enquanto a \index{TO}TO prioriza eficiência, consistência e continuidade operacional, a \index{TI}TI foca na segurança e flexibilidade. Nesse contexto, o protocolo \index{OPC UA}OPC UA emerge como uma solução originada no setor de \index{TO}TO, mas que abrange integralmente os requisitos de segurança típicos da \index{TI}TI. Destaca-se, ainda, o foco do \index{OPC UA}OPC UA na proteção do canal de comunicação, essencial para garantir a integridade das informações transmitidas, com ênfase no conceito de Dados em Movimento (do inglês \textit{Data in Motion}). Adicionalmente, a segurança das implementações \index{OPC UA}OPC UA foi analisada por \citeonline{roepert2020} e \citeonline{polge2019}, que confirmam um alto nível de proteção do protocolo, desde que as configurações de segurança adequadas sejam aplicadas.
     
-    A revisão bibliográfica conduzida nesta dissertação identificou diversas publicações relevantes sobre a segurança do protocolo \index{OPC UA}OPC UA. Em \cite{luo2020}, discute-se a importância da segurança na automação industrial e as \index{Vulnerabilidade}vulnerabilidades das redes de comunicação baseadas nesse protocolo, propondo-se um método de criptografia fundamentado no algoritmo \textit{Advanced Encryption Standard} (AES). Complementando essa abordagem, \citeonline{kohnhauser2021} enfatizam a relevância do provisionamento seguro no \index{IIoT}IIoT, enquanto \cite{kohnhauser2022} aprofundam a discussão sobre a segurança de dispositivos \index{IIoT}IIoT utilizando o protocolo \index{OPC UA}OPC UA. Por sua vez, \citeonline{muhlbauer2020} propõem uma implementação de código aberto do \index{OPC UA}OPC UA, visando aprimorar tanto a segurança quanto a escalabilidade em ambientes de automação industrial.
+    A revisão bibliográfica conduzida nesta dissertação identificou diversas publicações relevantes sobre a segurança do protocolo \index{OPC UA}OPC UA. Em \citeonline{luo2020}, discute-se a importância da segurança na automação industrial e as \index{Vulnerabilidade}vulnerabilidades das redes de comunicação baseadas nesse protocolo, propondo-se um método de criptografia fundamentado no algoritmo \textit{Advanced Encryption Standard} (AES). Complementando essa abordagem, \citeonline{kohnhauser2021} enfatizam a relevância do provisionamento seguro no \index{IIoT}IIoT, enquanto \citeonline{kohnhauser2022} aprofundam a discussão sobre a segurança de dispositivos \index{IIoT}IIoT utilizando o protocolo \index{OPC UA}OPC UA. Por sua vez, \citeonline{muhlbauer2020} propõem uma implementação de código aberto do \index{OPC UA}OPC UA, visando aprimorar tanto a segurança quanto a escalabilidade em ambientes de automação industrial.
     
     O estudo conduzido pelo Escritório Federal Alemão para Segurança da Informação \cite{bsi2017} investiga as principais vulnerabilidades e ameaças às redes baseadas no protocolo \index{OPC UA}OPC UA, analisando como diferentes tipos de mensagens e modos de segurança influenciam a proteção da comunicação. Entretanto, destaca-se que a maioria dos ataques documentados ocorre nos modos de segurança `None' e `Sign', ao passo que o presente estudo inclui avaliações considerando também o modo `Sign\&Encrypt'.
     
     No contexto dos ataques de \index{DoS}negação de serviço, \citeonline{neu2019} apresentam uma análise detalhada desse tipo de ameaça em redes \index{OPC UA}OPC UA, demonstrando que tais ataques podem comprometer significativamente o consumo de \index{CPU}CPU dos servidores. O impacto é potencialmente mais severo quando um grande número de dispositivos comprometidos participa simultaneamente do ataque. 
     
-    A pesquisa de \cite{kaspersky2018} revela que a maior parte das vulnerabilidades de segurança do protocolo \index{OPC UA}OPC UA, identificadas por meio de testes de \textit{fuzzing}, decorre do uso de produtos e bibliotecas que não seguem rigorosamente as especificações do protocolo. Nesse estudo, foram detectadas $17$ vulnerabilidades em diferentes implementações. De maneira complementar, \citeonline{puys2016} revisam as propriedades de confidencialidade e autenticação do protocolo utilizando a ferramenta de verificação criptográfica ProVerif, concluindo que esses requisitos são adequadamente atendidos quando o modo `Sign\&Encrypt' é empregado.
+    A pesquisa de \citeonline{kaspersky2018} revela que a maior parte das vulnerabilidades de segurança do protocolo \index{OPC UA}OPC UA, identificadas por meio de testes de \textit{fuzzing}, decorre do uso de produtos e bibliotecas que não seguem rigorosamente as especificações do protocolo. Nesse estudo, foram detectadas $17$ vulnerabilidades em diferentes implementações. De maneira complementar, \citeonline{puys2016} revisam as propriedades de confidencialidade e autenticação do protocolo utilizando a ferramenta de verificação criptográfica ProVerif, concluindo que esses requisitos são adequadamente atendidos quando o modo `Sign\&Encrypt' é empregado.
     
-    Em \cite{varadarajan2022}, são analisados três ciberataques predominantes na \index{IIoT}IIoT que afetam redes \index{OPC UA}OPC UA: \textit{sniffing} de pacotes, \index{MitM}MitM e \index{DoS}DoS. O estudo baseia-se em testes de penetração, conduzidos por meio da simulação de ataques cibernéticos em um ambiente configurado com medidas de segurança inadequadas.
+    Em \citeonline{varadarajan2022}, são analisados três ciberataques predominantes na \index{IIoT}IIoT que afetam redes \index{OPC UA}OPC UA: \textit{sniffing} de pacotes, \index{MitM}MitM e \index{DoS}DoS. O estudo baseia-se em testes de penetração, conduzidos por meio da simulação de ataques cibernéticos em um ambiente configurado com medidas de segurança inadequadas.
     
     Além disso, \citeonline{hildebrandt2020} demonstram que um ataque de injeção de comando pode ser realizado por meio de um canal oculto em pacotes transmitidos de um servidor para um cliente em redes baseadas no protocolo \index{OPC UA}OPC UA. Essa vulnerabilidade representa uma ameaça significativa à integridade da cadeia de suprimentos industrial.
     
