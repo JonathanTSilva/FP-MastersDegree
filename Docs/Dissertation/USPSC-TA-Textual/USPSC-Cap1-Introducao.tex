@@ -36,9 +36,9 @@
 
     A investigação de trabalhos na comunidade científica serviu como base para justificar esta dissertação e motivar a escolha do tema proposto. Para definir o escopo deste estudo, foram conduzidas duas buscas principais: a primeira (I), voltada para a análise do panorama, desafios e oportunidades do protocolo \index{OPC UA}OPC UA no contexto atual; e a segunda (II), focada na identificação do principal gargalo do protocolo, conforme apontado na etapa anterior.
     
-    Por meio de uma pesquisa sistemática na base de dados \texttt{IEEE Xplore}, foram analisadas publicações relacionadas ao protocolo \index{OPC UA}OPC UA no período de $2018$ a $2022$, escritas em inglês e filtradas por critérios de exclusão. Como resultado, $238$ publicações (incluindo artigos, periódicos, revistas e anais de conferências) foram classificadas em categorias, e seus achados foram apresentados e discutidos para fornecer uma visão abrangente do protocolo, bem como investigar seus desafios e oportunidades na aplicação em ambientes industriais modernos.
+    Por meio de uma pesquisa sistemática na base de dados \texttt{IEEE Xplore}, foram analisadas publicações relacionadas ao protocolo \index{OPC UA}OPC UA no período de $2018$ a $2024$, escritas em inglês e filtradas por critérios de exclusão. Como resultado, $339$ publicações (incluindo artigos, periódicos, revistas e anais de conferências) foram classificadas em categorias, e seus achados foram apresentados e discutidos para fornecer uma visão abrangente do protocolo, bem como investigar seus desafios e oportunidades na aplicação em ambientes industriais modernos.
 
-    Inicialmente, diferentes variações do termo \index{OPC UA}`OPC UA' foram consideradas, incluindo `OPC-UA', `OPC:UA' e `OPC \textit{Unified Architecture}', resultando em um total de $263$ publicações. Para garantir a relevância do material selecionado, aplicaram-se os seguintes critérios de exclusão:
+    Inicialmente, diferentes variações do termo \index{OPC UA}`OPC UA' foram consideradas, incluindo `OPC-UA', `OPC:UA' e `OPC \textit{Unified Architecture}', resultando em um total de $502$ publicações. Para garantir a relevância do material selecionado, aplicaram-se os seguintes critérios de exclusão:
 
     \begin{itemize}
         \item A publicação não aborda redes de comunicação industrial ou Internet das Coisas (\index{IoT}IoT, do inglês \textit{Internet of Things}) como foco principal, apesar de mencionar o \index{OPC UA}OPC UA;
@@ -46,7 +46,7 @@
         \item Publicações com viés comercial ou de \textit{marketing}, nas quais o \index{OPC UA}OPC UA é tratado apenas como um recurso secundário e não como objeto de análise técnica aprofundada.
     \end{itemize}
 
-    Após a aplicação desses critérios, $238$ publicações foram selecionadas e submetidas a uma análise quantitativa. Entre elas, $227$ ($95\%$) foram publicadas em anais de conferências, enquanto $11$ ($5\%$) apareceram em revistas científicas. A distribuição dessas publicações por periódicos e conferências ao longo dos anos é ilustrada na \autoref{fig:pubPorAno}.
+    Após a aplicação desses critérios, $339$ publicações foram selecionadas e submetidas a uma análise quantitativa. Entre elas, $323$ ($95\%$) foram publicadas em anais de conferências, enquanto $15$ ($5\%$) apareceram em revistas científicas. A distribuição dessas publicações por periódicos e conferências ao longo dos anos é ilustrada na \autoref{fig:pubPorAno}.
 
     % {\color{red}
     % A principal revista científica que apresenta artigos relacionados ao OPC UA é `\textit{IEEE Access}', com um total de seis publicações. O \textit{IEEE Access} é uma revista arquivística multidisciplinar, de acesso aberto (OA, do inglês \textit{Open Access}), orientada para aplicações, completamente eletrônica, que apresenta continuamente os resultados de pesquisas ou desenvolvimentos originais em todos os campos de interesse do IEEE \cite{access2023}. 
@@ -88,17 +88,21 @@
             \toprule
             \thead{Ano} & \thead{IT} & \thead{PD} & \thead{S} & \thead{PA} & \thead{PC} & \thead{DM} & \thead{W} & \thead{O} \\
             \toprule
-            2018 & 14 & 12 & 4 & 5  & 2  & 2  & 2 & 6 \\
+            2018 & 12 & 22 & 3 & 6  & 3  & 5  & 1 & 8 \\
             \midrule
-            2019 & 21 & 20 & 6 & 10 & 10 & 10 & 8 & 10 \\
+            2019 & 19 & 33 & 6 & 10 & 10 & 10 & 8 & 16 \\
             \midrule
-            2020 & 22 & 13 & 6 & 8  & 10 & 13 & 6 & 15 \\
+            2020 & 22 & 26 & 5 & 8  & 12 & 15 & 7 & 20 \\
             \midrule
-            2021 & 17 & 16 & 4 & 12 & 6  & 3  & 7 & 3 \\
+            2021 & 16 & 25 & 4 & 12 & 7  & 3  & 7 & 3 \\
             \midrule
-            2022 & 12 & 18 & 5 & 7  & 7  & 5  & 3 & 10 \\
+            2022 & 13 & 28 & 5 & 8  & 8  & 5  & 4 & 10 \\
+            \midrule
+            2023 & 34 & 24 & 1 & 9  & 2  & 10 & 5 & 16 \\
+            \midrule
+            2024 & 17 & 13 & 4 & 6  & 6  & 2  & 1 & 9 \\
             \bottomrule
-            \textbf{Total} & 86 & 79 & 25 & 42 & 35 & 33 & 26 & 44 \\
+            \textbf{Total} & \textbf{133} & \textbf{171} & \textbf{28} & \textbf{59} & \textbf{48} & \textbf{50} & \textbf{33} & \textbf{82} \\
             \bottomrule
         \end{tabular}
         \fonte{elaborada pelo autor.}%
@@ -122,7 +126,7 @@
 
     As descobertas deste estudo inicial foram relevantes ao fornecer uma visão atualizada e abrangente do protocolo \index{OPC UA}OPC UA, ressaltando a importância de manter um monitoramento da segurança para assegurar a resiliência do protocolo diante das ameaças emergentes nesses sistemas. Diante dessa necessidade, realizou-se uma nova análise quantitativa com foco específico nos trabalhos voltados à \index{Segurança Cibernética}segurança cibernética em redes industriais baseadas no \index{OPC UA}OPC UA. Para tanto, foram utilizadas as bases de dados \texttt{IEEE Xplore}, \texttt{Web of Science} e \texttt{Scopus}.
 
-    Na etapa inicial da pesquisa, os termos \index{OPC UA}`OPC UA' e `\textit{Security}' foram empregados como palavras-chave, seguindo os mesmos critérios de inclusão estabelecidos na análise anterior. No entanto, nesta fase, não foram aplicados critérios de exclusão. A \autoref{fig:pubAmount} apresenta a distribuição dos estudos identificados ao longo dos anos, abrangendo o período de $2013$ a $2022$.
+    Na etapa inicial da pesquisa, os termos \index{OPC UA}`OPC UA' e `\textit{Security}' foram empregados como palavras-chave, seguindo os mesmos critérios de inclusão estabelecidos na análise anterior. No entanto, nesta fase, não foram aplicados critérios de exclusão. A \autoref{fig:pubAmount} apresenta a distribuição dos estudos identificados ao longo dos anos, abrangendo o período de $2013$ a $2024$.
 
     \begin{figure}[htbp]
         \caption{Quantidade de publicações sobre a segurança em redes OPC UA nos últimos anos}

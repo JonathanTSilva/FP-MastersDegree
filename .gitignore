@@ -1,6 +1,5 @@
 .venv
 Data/
-*.pdf
 
 # LaTeX
 ## Core latex/pdflatex auxiliary files:

@@ -21,65 +21,123 @@
 ]{python}
 import csv
 import time
-import os
+from typing import Tuple
 
-def get_cpu_usage():
-    """
-    Calcula a utilização da CPU em percentual.
-    """
-    with open('/proc/stat') as stat_file:
-        lines = stat_file.readlines()
-    # Obtém os valores de CPU da primeira linha
-    cpu_values = [int(val) for val in lines[0].split()[1:8]]
-    # Soma os valores da CPU para obter o total de utilização da CPU
-    total_cpu_time = sum(cpu_values)
-    # Calcula a diferença entre a utilização da CPU atual e anterior
-    delta_total_cpu_time = total_cpu_time - get_cpu_usage.previous_total_cpu_time
-    delta_idle_cpu_time = cpu_values[3] - get_cpu_usage.previous_idle_cpu_time  # 4º valor é o tempo ocioso
-    # Calcula a taxa de utilização da CPU em percentual
-    cpu_percent = 100 * (1 - delta_idle_cpu_time / delta_total_cpu_time)
-    # Atualiza os valores anteriores para a próxima iteração
-    get_cpu_usage.previous_total_cpu_time = total_cpu_time
-    get_cpu_usage.previous_idle_cpu_time = cpu_values[3]
+# --- Constantes de Configuração ---
+DURACAO_MONITORAMENTO_S = 60
+INTERVALO_CAPTURA_S = 1
+NOME_ARQUIVO_SAIDA = 'dados_recursos_hping3.csv'
 
-    return cpu_percent
 
-# Inicializa os valores anteriores
-get_cpu_usage.previous_total_cpu_time = 0
-get_cpu_usage.previous_idle_cpu_time = 0
+class CPUTracker:
+    """
+    Uma classe para encapsular a lógica e o estado do monitoramento da CPU.
 
-def get_memory_usage():
+    Isso evita o uso de atributos de função, que é uma prática não padrão
+    e torna o código mais difícil de entender e testar.
     """
-    Calcula a utilização da memória em percentual.
+    def __init__(self):
+        """Inicializa o tracker lendo os valores iniciais da CPU."""
+        self._prev_idle, self._prev_total = self._get_cpu_times()
+
+    def _get_cpu_times(self) -> Tuple[int, int]:
+        """
+        Lê e processa o arquivo /proc/stat para obter os tempos da CPU.
+        Retorna uma tupla com (tempo_ocioso, tempo_total).
+        """
+        with open('/proc/stat') as f:
+            # A primeira linha contém os dados agregados da CPU ('cpu ...')
+            fields = [int(v) for v in f.readline().split()[1:8]]
+        
+        idle_time = fields[3]
+        total_time = sum(fields)
+        return idle_time, total_time
+
+    def get_usage_percent(self) -> float:
+        """
+        Calcula a utilização da CPU desde a última chamada.
+        Retorna o uso em percentual.
+        """
+        current_idle, current_total = self._get_cpu_times()
+
+        delta_total = current_total - self._prev_total
+        delta_idle = current_idle - self._prev_idle
+
+        # Atualiza o estado para a próxima chamada
+        self._prev_idle, self._prev_total = current_idle, current_total
+        
+        # Evita divisão por zero se o intervalo for muito rápido
+        if delta_total == 0:
+            return 0.0
+
+        cpu_usage = (1.0 - delta_idle / delta_total) * 100
+        return cpu_usage
+
+
+def get_memory_usage_percent() -> float:
     """
-    total_memory = float(os.popen("grep 'MemTotal' /proc/meminfo | awk '{print $2}'").read().strip())
-    available_memory = float(os.popen("grep 'MemAvailable' /proc/meminfo | awk '{print $2}'").read().strip())
-    used_memory = total_memory - available_memory
-    memory_percent = (used_memory / total_memory) * 100
-    return memory_percent
+    Calcula a utilização da memória em percentual lendo /proc/meminfo.
+
+    Essa abordagem é mais eficiente e segura do que usar os.popen com grep/awk,
+    pois não cria processos de shell externos.
+    """
+    mem_total, mem_available = 0, 0
+    with open('/proc/meminfo') as f:
+        for line in f:
+            if line.startswith('MemTotal:'):
+                mem_total = int(line.split()[1])
+            elif line.startswith('MemAvailable:'):
+                mem_available = int(line.split()[1])
+            # Otimização: para de ler o arquivo assim que encontra os dois valores
+            if mem_total and mem_available:
+                break
+    
+    if mem_total == 0:
+        return 0.0
+        
+    mem_used = mem_total - mem_available
+    return (mem_used / mem_total) * 100
+
 
 def main():
     """
-    Função principal que realiza a coleta de dados de utilização da CPU e memória, e salva em um arquivo CSV.
+    Função principal que orquestra o monitoramento e a gravação em CSV.
     """
-    output_file = '1-dos_hping3.csv'
-    duration = 60  # Tempo de execução em segundos
+    print(f"Iniciando monitoramento por {DURACAO_MONITORAMENTO_S} segundos...")
+    
+    # Prepara o tracker de CPU antes do loop
+    cpu_tracker = CPUTracker()
+    # A primeira chamada à CPU pode ter um valor impreciso, então a "aquecemos"
+    time.sleep(INTERVALO_CAPTURA_S) 
 
-    # Abre o arquivo CSV para escrita
-    with open(output_file, mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(['Timestamp', 'CPU (%)', 'Memory (%)'])
+    start_time = time.time()
+    
+    try:
+        with open(NOME_ARQUIVO_SAIDA, 'w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Timestamp (s)', 'CPU (%)', 'Memory (%)'])
 
-        start_time = time.time()
+            while (time.time() - start_time) < DURACAO_MONITORAMENTO_S:
+                # Calcula o tempo decorrido
+                timestamp = time.time() - start_time
+                
+                # Coleta os dados
+                cpu_usage = round(cpu_tracker.get_usage_percent(), 2)
+                memory_usage = round(get_memory_usage_percent(), 2)
 
-        while time.time() - start_time <= duration:
-            timestamp = time.time() - start_time
-            timestamp_str = '{:.6f}'.format(timestamp)
-            cpu_usage = round(get_cpu_usage(), 2)
-            memory_usage = round(get_memory_usage(), 2)
+                # Escreve no arquivo
+                writer.writerow([f'{timestamp:.6f}', cpu_usage, memory_usage])
+                
+                # Aguarda o próximo intervalo
+                time.sleep(INTERVALO_CAPTURA_S)
 
-            writer.writerow([timestamp_str, cpu_usage, memory_usage])
-            time.sleep(1)  # Captura de dados a cada segundo
+    except FileNotFoundError:
+        print(f"Erro: Não foi possível encontrar o diretório /proc. Este script é para sistemas Linux.")
+    except Exception as e:
+        print(f"Ocorreu um erro inesperado: {e}")
+        
+    print(f"Monitoramento concluído. Dados salvos em '{NOME_ARQUIVO_SAIDA}'.")
+
 
 if __name__ == "__main__":
     main()

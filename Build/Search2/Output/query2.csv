@@ -1,28 +1,27 @@
 ,Title,Authors,Year,DOI,Document Type
-0,A Meta Model for a Comprehensive Description of Network Protocols Improving Security Tests,"Pfrang, S; Meier, D; Heig, A; Beyerer, J",2020,10.5220/0009150206710682,C
-1,A Unified Architecture for Industrial IoT Security Requirements in Open Platform Communications,G. Hansch; P. Schneider; K. Fischer; K. Böttinger,2019,10.1109/ETFA.2019.8869524,IEEE Conferences
-2,A review of PROFIBUS protocol vulnerabilities: Considerations for implementing authentication and authorization controls,Watson V.; Lou X.; Gao Y.,2017,10.5220/0006426504440449,Conference paper
-3,An Implementation of Convergence Security Solution for Overcoming of Security Vulnerabilities in Industrial Control Communication Network,"Lee, JK; Lee, SW; Lee, KH",2019,10.1007/s11277-018-5970-4,J
-4,Application Study of Hardware-Based Security for Future Industrial IoT,R. Matischek; B. Bara,2019,10.1109/DSD.2019.00044,IEEE Conferences
-5,Case Optimization Using Improved Genetic Algorithm for Industrial Fuzzing Test,"Wan, M; Zhang, SY; Song, Y; Yao, JY; Luo, H; Cao, XC",2021,10.32604/iasc.2021.017214,J
-6,Cryptographic Considerations for Automation and SCADA Systems Using Trusted Platform Modules,"Tidrea, A; Korodi, A; Silea, I",2019,10.3390/s19194191,J
-7,Cyber Security Risks of Technical Components in Industry 4.0,W. Matsuda; M. Fujimoto; Y. Hashimoto; T. Mitsunaga,2021,10.1109/COINS51742.2021.9524088,IEEE Conferences
-8,Design and Implementation of the Substation Intelligent Auxiliary Control System Based on OPC UA,C. Zhu; B. Li; Z. Lv; X. Zhao,2022,10.1109/REPE55559.2022.9949983,IEEE Conferences
-9,Design of Multi-Protocol Industrial Ethernet Security Monitor,D. Han; Y. Zhao; Y. Gong,2021,10.1109/ICPECA51329.2021.9362589,IEEE Conferences
-10,Design of an Example Network Protocol for Security Tests Targeting Industrial Automation Systems,"Pfrang, S; Giraud, M; Borcherding, A; Meier, D; Beyerer, J",2019,10.5220/0007704907270738,C
-11,Design of unidirectional security gateway system for secure monitoring of OPC-UA data,B. -K. Kim; Y. -J. Heo; J. -C. Na,2017,10.1109/ICTC.2017.8190923,IEEE Conferences
-12,Development of a monitoring system for encrypted data by OPC UA,T. Honda; Y. Shimazawa; T. Hamaguchi; Y. Hashimoto,2021,10.1109/IIAI-AAI53430.2021.00129,IEEE Conferences
-13,Evaluating and improving the internal security of OPC-UA based software applications,Jankovic M.; Siavvas M.; Tsoukalas D.; Kehagias D.,2020,,Conference paper
-14,Honeypot inside an OPC UA wrapper for water pumping stations,"Petre, CA; Korodi, A",2019,10.1109/CSCS.2019.00020,C
-15,Multi-level user and role concept for a secure plug-and-work based on OPC UA and AutomationML,M. Schleipen; E. Selyansky; R. Henssen; T. Bischoff,2015,10.1109/ETFA.2015.7301640,IEEE Conferences
-16,OPC UA security for protecting substation and control center data communication in the distribution domain of the smart grid,P. Jafary; S. Repo; M. Salmenpera; H. Koivisto,2015,10.1109/INDIN.2015.7281811,IEEE Conferences
-17,On the Security of IIoT Deployments: An Investigation of Secure Provisioning Solutions for OPC UA,F. Kohnhäuser; D. Meier; F. Patzer; S. Finster,2021,10.1109/ACCESS.2021.3096062,IEEE Journals
-18,Open-Source OPC UA Security and Scalability,N. Mühlbauer; E. Kirdan; M. -O. Pahl; G. Carle,2020,10.1109/ETFA46521.2020.9212091,IEEE Conferences
-19,Portable Trust Anchor for OPC UA Using Auto-Configuration,D. Meier; F. Patzer; M. Drexler; J. Beyerer,2020,10.1109/ETFA46521.2020.9211904,IEEE Conferences
-20,Reasoning on Adopting OPC UA for an IoT-Enhanced Smart Energy System from a Security Perspective,S. Marksteiner,2018,10.1109/CBI.2018.10060,IEEE Conferences
-21,Rent'n'Produce: A Secure Cloud Manufacturing Platform for Small and Medium Enterprises,C. Ellwein; O. Riedel; O. Meyer; D. Schel,2018,10.1109/ICE.2018.8436332,IEEE Conferences
-22,Research on OPC UA Security Encryption Method,Z. Luo; X. Zhang,2020,10.1109/ICIBA50161.2020.9276932,IEEE Conferences
-23,"SCADA System Framework for Monitoring, Controlling and Data Logging of Industrial Processing Plants",S. S. Mohani; M. Khalid; S. S. Hussain; S. Ghori; H. Akbar,2020,10.1109/ICCI51257.2020.9247645,IEEE Conferences
-24,Security Challenges in Control Network Protocols: A Survey,"Volkova, A; Niedermeier, M; Basmadjian, R; de Meer, H",2019,10.1109/COMST.2018.2872114,J
-25,The Industrie 4.0 Asset Administration Shell as Information Source for Security Analysis,F. Patzer; F. Volz; T. Usländer; I. Blöcher; J. Beyerer,2019,10.1109/ETFA.2019.8869059,IEEE Conferences
-26,Towards post-quantum security for cyber-physical systems: Integrating PQC into industrial M2M communication,"Paul, S; Scheible, P; Wiemer, F",2022,10.3233/JCS-210037,J
+0,A Hardware -in -the -Loop Framework for Remote Monitoring of Safety Critical Systems,"Ahmed, A; Comert, M; Ahmed, H",2024,10.1145/3703790.3703823,C
+1,A Meta Model for a Comprehensive Description of Network Protocols Improving Security Tests,Pfrang S.; Meier D.; Fleig A.; Beyerer J.,2020,10.5220/0009150206710682,Conference paper
+2,"A New ICT Architecture of Smart Water Network Platform for Improving Management Performance: Maintenance, Security, and Deployment Cost",C. -H. Li; H. -T. Chou; C. -I. Wu; P. -T. Tseng,2024,10.1109/ICASI60819.2024.10547855,IEEE Conferences
+3,A meta model for a comprehensive description of network protocols improving security tests,Pfrang S.; Meier D.; Fleig A.; Beyerer J.,2020,,Conference paper
+4,A review of PROFIBUS protocol vulnerabilities: Considerations for implementing authentication and authorization controls,Watson V.; Lou X.; Gao Y.,2017,10.5220/0006426504440449,Conference paper
+5,Adopting OPC UA for Efficient and Secure Firmware Transmission in Industry 4.0 Scenarios,F. Biondani; D. S. Cheng; F. Fummi,2024,10.1109/ISIE54533.2024.10595820,IEEE Conferences
+6,An Implementation of Convergence Security Solution for Overcoming of Security Vulnerabilities in Industrial Control Communication Network,Lee J.-K.; Lee S.-W.; Lee K.-H.,2019,10.1007/s11277-018-5970-4,Article
+7,Analysis of security vulnerability and measures for safe smart factory,Lee J.-K.; Shim J.-Y.; Lee K.-H.,2018,,Article
+8,Architecture for Enhancing Communication Security with RBAC IoT Protocol-Based Microgrids,Shin S.; Park M.; Kim T.; Yang H.,2024,10.3390/s24186000,Article
+9,Combining System Integrity Verification With Identity and Access Management,Kylänpää M.; Salonen J.,2022,,Conference paper
+10,Cryptographic Considerations for Automation and SCADA Systems Using Trusted Platform Modules,"Tidrea, A; Korodi, A; Silea, I",2019,10.3390/s19194191,J
+11,Design of Multi-Protocol Industrial Ethernet Security Monitor,D. Han; Y. Zhao; Y. Gong,2021,10.1109/ICPECA51329.2021.9362589,IEEE Conferences
+12,Design of an example network protocol for security tests targeting industrial automation systems,Pfrang S.; Giraud M.; Borcherding A.; Meier D.; Beyerer J.,2019,10.5220/0007704907270738,Conference paper
+13,Development and implementation of a secure production network,Reithner I.; Papa M.; Lueger B.; Ćato M.; Hollerer S.; Seemann R.,2020,10.2507/31st.daaam.proceedings.102,Conference paper
+14,Evaluating and improving the internal security of OPC-UA based software applications,Jankovic M.; Siavvas M.; Tsoukalas D.; Kehagias D.,2020,,Conference paper
+15,I Know Who You Scanned Last Summer: Mapping the Landscape of Internet-Wide Scanners,J. Mayer; M. Schramm; L. Bechtel; N. Lohmiller; S. Kaniewski; M. Menth; T. Heer,2024,10.23919/IFIPNetworking62109.2024.10619808,IEEE Conferences
+16,Incremental Dendritic Cell Algorithm for Intrusion Detection in Cyber-Physical Production Systems,Pinto R.; Gonçalves G.; Delsing J.; Tovar E.,2021,10.1007/978-3-030-80129-8_47,Conference paper
+17,Industrial Protocol Security and Control System Performance: How Hardware Techniques Can Mitigate Performance Impacts of Cryptography,Visoky J.; Johnson W.,2022,10.24868/10711,Conference paper
+18,"Mealy Verifier: An Automated, Exhaustive, and Explainable Methodology for Analyzing State Machines in Protocol Implementations",Tran Van A.; Levillain O.; Debar H.,2024,10.1145/3664476.3664506,Conference paper
+19,Multi Agent Systems Based CPPS – An Industry 4.0 Test Case,Bendjelloul A.; Gaham M.; Bouzouia B.; Moufid M.; Mihoubi B.,2022,10.1007/978-3-030-96311-8_18,Conference paper
+20,Secure framework and key agreement mechanism for OPC-UA in industrial IoT,Wei M.; Mo L.; Zhuang Y.; Kim K.,2018,10.1145/3164541.3164568,Conference paper
+21,Security Challenges in Control Network Protocols: A Survey,A. Volkova; M. Niedermeier; R. Basmadjian; H. de Meer,2019,10.1109/COMST.2018.2872114,IEEE Journals
+22,Throttled service calls in OPC UA,A. Ismail; W. Kastner,2018,10.1109/ICIT.2018.8352430,IEEE Conferences
+23,"Towards Identifying Neglected, Obsolete, and Abandoned IoT and OT Devices",R. Yaben; N. Lundsgaard; J. August; E. Vasilomanolakis,2024,10.23919/TMA62044.2024.10558996,IEEE Conferences
+24,Universal protection for industrial control systems,Ono T.,2013,,Conference paper
+25,Using Solana Blockchain and OPC UA for Trusted Third Party Industrial Robot Control Services,A. Vick; W. Chen; J. Krueger,2023,978-3-8007-6140-1,VDE Conferences
