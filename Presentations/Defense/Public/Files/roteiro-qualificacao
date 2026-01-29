@@ -1,0 +1,339 @@
+Boa tarde a todos, como os senhores estão?
+
+Bom, eu me chamo Jonathan Tobias da Silva, sou Engenheiro Eletricista formado pelo Instituto Federal de Educação Ciência e Tecnologia de São Paulo, campus Sertãozinho e atuo hoje no departamento de pesquisa e desenvolvimento de uma empresa de técnologia de automação industrial, daqui mesmo de sertãozinho.
+
+==============
+Mudar slide
+==============
+
+Hoje vou apresentar para vocês o andamento deste projeto de mestrado realizado na Escola de Engenharia de São Carlos, com o título Análise de vulnerabilidades em redes industriais OPC UA, no qual sou orientado pelo professor ivan nunes
+
+==============
+Mudar slide
+==============
+
+Essa é a agenda para a apresentação de hoje. Vamos começar apresentando uma intrudução sobre o tema, juntamente com a motivação e os objetivos do trabalho, seguido pelo referencial teórico adotado como base para o desenvolvimento do projeto, que é o próximo tópico. Em seguida, detalho um pouco dos resultados esperados, e por ultimo sobre o cronograma proposto.
+
+==============
+Mudar slide - Resumo
+==============
+
+Bom, este projeto engloba diversos conceitos atuais do mundo industrial. Devido ao crescimento avançado da transformação digital imposta pela quarta revolução industrial, a interconexão entre máquinas e humanos tem gerado quantidades absurdas de dados trafegando nestes tipos de redes, e isso tem exigido por consequencia, novas medidas de proteção destess dados e sistemas criticos.
+
+Uma vez que estes sistemas de controle e automação industriais desempenham um grande papel nos sitemas ciber-phisicos de produção, eles são alvos frequentes de hackers, que desenvolvem e incorporam componentes maliciosos nessas redes a medida que as tecnologias se desenvolvem também.
+
+O nosso estudo foca no protocolo OPC UA, aplicado em redes industriais, e busca-se obter percepções valiosas para a proteção destes sistemas utilizando conceitos de análise de vulnerabilidades nesse protocolo.
+
+==============
+Mudar slide - Proposta inciail
+==============
+
+Fazendo aqui um parenteses para enfatizar a amplitude desta linha de pesquisa, o mestrado surgiu com uma proposta inicial de desenvolver um método de detecção de intrusão em redes OPC uA baseado em técnicas de aprendizagem de máquinas, como RNAs e SVM. Porém, ao longo deste desenvolvimento decidimos dividir este projeto em duas etapas, sendo a primeira proposta neste trabalho, com um estudo voltado mais para a segurança do protocolo, e a segunda, como um projeto de doutorado, focando na parte de detecção ou até prevenção inteligente das ameaças levantadas neste projeto de mestrado.
+
+==============
+Mudar slide - Motivação
+==============
+
+Dito isso, a motivação deste trabalho surge devido a importância da discussão acerca do aumento nos casos de ataques cibernéticos em sistemas de produção ciber-fisicos. Separei alguns mais importantes ao longo da história.
+
+Os primeiros ataques deste tipo surgiram no inicio dos anos 2000, e um deles foi este da australia, a um sistema de controle da estação de tratamento de água, inundando o terreno do hotel com esgoto bruto.
+
+Depois tivemos um ao sistema nuclear do Iran que ficou muito famoso como o worm Stuxnet.
+
+E mais recentemente, vivenciamos um ataque, já nos conflitos entre ucrania e russia, que 30 subsestações de energia foram afetadas, comprometendo cerca de 80000 pessoas.
+
+==============
+Mudar slide - Motivação
+==============
+
+Este primeiro tópico, juntamente com os demais temas que envolvem a Internet das Coisas Industrial e o boom que o protocolo OPC UA está tendo no setor industrial, isso fomenta este projeto e demonstra a importância deste estudo.
+
+Importante citar que este tema está sendo muito discutido pelo OPAS, Open Process Automation Standards, que é um padrão que está sendo desenvolvido pelo forum internacional OPAF, e visa agrupar todos os padrões necessários para a aplicação de processos industriais com interoperabilidade e segurança. Este padrão adota o protocolo OPC UA como o princiapl utilizado nestes sistemas.
+
+==============
+Mudar slide - Pesquisa
+==============
+
+A primeira fase do trabalho se deu com uma pesquisa bibliográfica extensa para fornecer um overview do protocolo OPC UA juntamente com os desafios e oportunidades da sua aplicação.
+
+Para isso, a base de dados utilizada foi a IEEEXplore, e o termo de pesquisa empregado foi o OPC UA, mais as suas derivações, como OPC Unified Architecture, e outras formas de escrever OPC UA.
+
+Além disso, foram aplicados os seguintes filtros de pesquisa:
+- As publicações escritas em ingles
+- Publicadas dentro de 5 anos
+
+E estes critérios de exclusão foram aplicados:
+LER OS CRITÉRIOS NO SLIDE
+
+Essa pesquisa inicial resultou no artigo publicado no INDUSCON 2023 com o seguinte titulo: A survey on OPC UA protocol: overview, challanges and opportunities
+
+e foi bem aceito pelos avaliadores.
+
+Vale ressaltar que como resultado desta pesquisa, o protocolo OPC UA carece um pouco de publicações na area de segurança. Talvez pelo protocolo já ter sido desenvolvido com a segurança como base, ou devido a outros fatores que eu comento melhor no documento.
+
+Mas este resultado foi importante para orientar o foco deste trabalho, especificamente orientar para uma segunda pesquisa:
+
+==============
+Mudar slide - Pesquisa 2
+==============
+
+na qual agora foi realizada nestas outras bases de dados, pesquisando pelos termos: OPC UA em junção com análise de vulnerabilidades.
+
+Os filtros aplicados nesta foram para as publicações escritas em ingles, mas com a data de até 10 anos.
+
+Algumas das principais referencias descobertas nessa pesquisa foram essas três, como a primeira, que os autores simularam e detectaram ataques de clientes não autorizados em redes OPC UA. A segunda publicação apresenta as principais vulnerabilidades do protocolo OPC UA nas operações de IIoT e o terceiro que apresenta uma análise de segurança do protocolo em sistemas de automação para IIoT.
+
+E realmente, esta pesquisa confirmou a crencia das publicações neste assunto em questão, justificando ainda mais o desenvolvimento deste projeto.
+
+==============
+Mudar slide - Objetivos
+==============
+
+Assim, uma invertigação detalhada de ataques cibernéticos em redes industriais OPC UA constitue o objetivo geral deste trabalho.
+
+E os específicos são:
+- A Investigação e compreenção dos princípios e conceitos fundamentais das redes OPC UA, para identificar os principais desafios e ameaças relacionados à segurança nestas redes;
+- Propor e desenvolver uma bancada experimental como ambiente industrial de simulação de ataques cibernéticos;
+- Investigar, selecionar e aplicar alguns ataques comuns para IIoT e demonstrar a reação do protocolo OPC UA às intrusões na rede;
+- Analisar o cenário de ataque do ponto de vista do invasor, a fim de identificar os desafios da segurança, encontrar possíveis novas vulnerabilidades e propor contramedidas para mitigação.
+
+==============
+Mudar slide - Principais aspeco
+==============
+
+Seguindo para o Referencial Teorico adotado neste mertrado, expliquei no documento um pouco sobre o panorama dos protocolos IoT e IIoT, com o foco no protocolo OPC UA, que é o utilizado neste projeto como já mencionado.
+
+Bom, o protocolo OPC UA é um padrão de comunicação industrial interoperável, que é desenvolvido pela OPC Foundation, e é muito utilizado por vários anos nos mais diversificados setores da tecnologia da informação e automação industrial.
+
+Ele surgiu com o protocolo conhecido como OPC Classic, que fornecia padrões de interface de comunicação neutros para controlar processos e sistemas de automação, O OPC Classic fazia isso através do acesso aos dados (OPC DA), alarmes e eventos (que é o OPC AE), e acesso a dados históricos (o OPC HDA). Mas, por mais que fosse muito aceito e muito utilizado por todos desde sua criação, ele era muito limitado em realação a interoperabilidade global e continha diversas falhas de segurança.
+
+Devido a isso, e devido também a a cobrança da cibersegurança advinda daquela transformação digital que falei no começo, a industria necessitava de  alguam coisa mais escalável, segura e interoperavel. Foi ai que surgiu o OPC UA.
+
+Ele aproveita das tecnologias de Web Sevices, XML e .NET e se caracteriza pela sua definição de objeto unificado em unico AddressSpace, quebrando aquela divisão realizada entre OPC DA, AE e HDA do Classic, e também se destaca pela sua arquitetura completamente orientada a serviços. Além de dlee ser mais robusto, confiável e independente de plataforma, como mostra a imagem.
+
+==============
+Mudar slide - AddressSpace
+==============
+
+Tá, mas o que seria este AdressSpace que engloba todos estes objetos unificado que eu falei?
+
+Bom, Pra começar, a arquitetura básica de uma comunicação UA apresenta o modelo Client/Server, certo? Embora hoje está sendo dada muita atenção para o OPC UA Pub/Sub. Mas enfim, tudo dentro do OPC UA são nós: uma variável é um nó, o tipo daquela variavel é outro nó. A unidade de engenharia daquela medida é outro nó. E por aí vai. Esses nós são concentrados em um container dentro do addressSpace que podemos chamar de namespace. E eesse addressspace padroniza a forma de como os objetos no servidor são representados para o cliente. Até aqui beleza, né?
+
+Daí, por ser desenvolvido com sua arquitetura SOA, todos os retangulos que vemos são serviços para a comunicação destes dados, mas a gente não precisa entrar muito em detalhes. O que imoprta pra gente é conceituar o information model, que nada mais é o que define a aplicação personalizada do cliente. Ele representa as ligações e estrutura hierarquicas de toda aquela bagunça de nós dentro do espaçamento de endereços.
+
+E esse modelo de informação ele pode ser customizado pelo usuário de acorodo com a aplicação desejada, partindo de um information model fundamental. 
+
+==============
+Mudar slide - Escopoo
+==============
+
+Falando um pouco agora do escopo de proteção do OPC UA, como já vimos, esse protocolo foi desenvolvido com foco na resolução daquele problema histórico do OPC Classic com a proteção. E Pra garantir essa segurança da informação, esse escopo foi dividido em duas partes: a pela famosa tría CIA, de confidencialidade, integridade e disponibilidade, e pelo framework AAA que garante a autenticação, autorização e auditoria.
+
+Então, a imagem ao lado nos mostra os diferentes caminhos de comunicação que podemos ter ao utilizar o OPC UA. Ela Deixa claro também  que qualquer que seja o caminho escolhido, essa combinação deve garantir estes seis pilares que tornam seguro o OPC UA.
+
+==============
+Mudar slide - processo de conxeão
+==============
+
+Visto isso, desenvolvi este diagrama de sequencia com base no livro OPC Unified Architecture, do mahnke de 2009, que vai auxiliar muito no processo de desenvolvimento deste trabalho, uma vez que a maioria dos serviços e solicitações que a gente precisa estão dispostos aqui nesse diagrama de sequencia.
+
+Não precisamos entrar muito em detalhes deste diagrama, mas vale destacar que este processo de conxão segura deve respeitar uma série de medidas de negociação de segurança, decisão e checkagem do algoritmo de criptografia, a decisaão das politicas e perfis de segurança configurados no servidor, entre outras medidas.
+
+Nesse slide a gente pode visualizar o processo de criação do secure channel. Que começa com o cliente querendo saber quais os endpoints disponíveis naquele Server. Depois passa por um processo de reconhecimento da certificação da aplicação e por fim a solicitação de abertura deste canal seguro é enviada e tratada pelo serviço de validação, que pode estar no hospedeiro do OPC UA Server ou não.
+
+==============
+Mudar slide - processo de conxeao
+==============
+
+Tendo o servidor tratado aquela requisição de abertura de canal seguro, um outro processo de estabelecimento da sessão se inicia, justamente com a solicitação do cliente para o Endpoint reconhecido. Daí por diante, toda a validação de certificações e segurança ocorrem até que a resposta da sessão ativa seja enviada para o cliente.
+
+Então aqui a gente tem toda aquelas perguntas básicas para o OPC UA funcionar corretamente: você tem o meu certificado validado ai do seu lado cliente? Você tem o meu servidor? E o meu usuário e senha você sabe? e assim por diante.
+
+==============
+Mudar slide - processo de conxeao
+==============
+
+Por fim, a conexão segura ela deve ser encerrada com esta ultima etapa, nas quais devem ser fechadas a sessão e canal seguro abertos anteriormente.
+
+Basicamente este é o processo de connexão segura do OPC UA que a OPC Foundation desenvolveu muito bem, mas que a literatura correalta e este trabalho vai mostrar pra gente que mesmo com tanta atenção para segurança, sempre o lado malicioso encontra brechas e portas de entrada para derrubar um sistema.
+
+==============
+Mudar slide - convergencia
+==============
+
+Uma outra seção apresentada no referencial teórico deste mestrado é a ciber segurança. 
+
+Pra gente entender melhor o nosso desenvolvimento, precisamos comentar sobre a convergencia IT OT que está acontecendo neste momento nas indústrias, e por que o OPC UA desemprenha um papel importânte nesse processo.
+
+Bom, de forma bem resumida, por muito tempo este dois universos foram tratados como duas formas distintas de tecnologia, a IT, responsável pela parte superior da piramide da automação, desempenhando um papel crucial na gestão da informação adbinda da parte mais inferior da pirâmide, que é a operacional. Essa OT, por sua vez, tem o peso de suportar todos os sistemas de automação e controle industriais, SCADA, sistemas de controle distribuidos, PLC, dispositivos de campo, etc.
+
+Então, em determinado momento da história, percebeu-se que essa divisão estava sendo desfavorável para os processos, e que precisava cada vez mais de que o topo da piramide falasse a mesma lingua que os field devices lá em baixo.
+
+Ai que entra o OPC UA. Ele é o protocolo que se encaixa perfeitamente em todas as camadas da piramide de automação, colaborando assim pra essa convergência.
+
+Tá. mas o que isso tem haver com a segurança cibernética? Digo pra vocês que tem muittooo a ver, pelo fato de que
+, essa convergencia não foi algo planejado, ou seja, não foi desenvolvida do zero. Isso impoe novas diretrizes de segurança, e consequentemente, novas ameaças estão surgindo a cada dia.
+
+Pra a gente conseguir quantificar isto, a equipe de resposta a emergências cibernéticas em sistemas de controle industriais da Kaspersky registrou em seu relatório aproximadamente 1.2 milhão de ataques a sistemas industriais no ano de 2022, o que representa um aumento de 16.2% comparado com o ano de 2021.
+
+Então, numeros como estes, além dos acontecimentos históricos nos mostram como este assunto tem que ser constantemente tratado e desenvolvido.
+
+==============
+Mudar slide - ataques
+==============
+
+Continuando aqui neste contexto de cibersecurity, tudo começa com anomalias na rede. Essa anomalias podem ser identificadas com o anomalias de 
+- operação - aquelas que são falhas ou problemas pontuais no funcionamento da rede,
+- de medição - que são oriundas de erros ou falhas nos métodos de médição dos dados
+- flash crowd - que representam um aumento repentido no tráfego da rede
+- e os ataques - como já sabemos, são as anomalias resultantes de atividades maliciosas direcionadas a rede.
+
+Neste projeto em especifico, as anamolias estudadas e aplicadas serão ataques, divididos entre eles em ativos, ou seja, aqueles que executam ações modificando mensagens ou alterando o fluxo de dados, como o Denial of Service e ManInTheMiddle.
+
+E os passivos, que são aqueles onde há apenas uma escuta silenciosa da comunicação, sem nenhuma ação.
+
+Estes ataques quando realizados com sucesso, eles objetivam sempre a quebrar algum dos 6 pilares da comunicação segura que a gente viu anteriormente- a triade ou o framework.
+
+==============
+Mudar slide - análise e descoberta
+==============
+
+Para nos proteger contra estes ataques e forticificar os sistemas contra possíveis ameaças, algumas ações podem ser tomadas preventivamente, como a análise e descoberta de vulnerabilidades em um sistema ou um software.
+
+As vulnerabilidades são quaisquer pontos de entrada para um invasor em um sistema ou aplicação, desde erros de desnvolvimento, erros na configuração do sistema, falhas operacionais, entre outras.
+
+Especificamente no protocolo OPC UA, um dado mostra que 92% dos sistemas que utilizam este protocolo são cofigurados de maneira erronea, o que consequentemente devem possuir vulnerabilidades nesse sistema.
+
+A análise de vulnerabilidade, por sua vez, ela pode ser empregada para analisar esses pontos fracos do sistema, e pode ser implementada de modo:
+- Estático: que analisa o código fonte do software em questão, e não precisa de uma execução real-time para isso
+- Pode ser de modo dinâmico: que ao contrário da estática, o software é avaliado em execução, e o seu comportamento é monitorado em vários estados.
+- Ou pode ser a junção dos dois anteriores, conhecida como híbrida.
+
+Já as descobertas destes pontos fracos devem ser feitas utilizando algumas outras abortagens de hacking:
+- como o pentest: muito famoso nesse mundo por sinal, que envolve um teste manual de segurança para explorar as vulnerabilidades
+- o fuzz-testing: no qual ele altera os dados de entrada e os introduz novamente na execução do software em questão
+- ou pro análise estática do fluxo de dados, que rastreia os dados mal formado s para identificar o tratamento destes e uma vez identificados, adotar medidas com foco neste tratamento.
+
+==============
+Mudar slide - bancada
+==============
+
+Bom, finalizado o referencial teórico, podemos entrar agora no desenvolvimento do nosso projeto.
+
+O primeiro passo para que possamos realizar este projeto com sucesso, foi a criação de uma bancada experimental que simula um ambiente industrial para realizar estes testes de intrusão. 
+
+O diagrama representa a rede criada, que consiste nesses equipamentos: que é:
+- a DF63 NG, a nova geração de controlador da nova Smar. 
+- duas Raspberry Pi 4 modelo B
+- Um switch Ethernet
+- e um computador que representa o elemento invasor.
+
+==============
+Mudar slide - bancada
+==============
+
+Já por parte dos softwares utilizados, foram impolementado dois servidores OPC UA:
+- um proprietário da Nova Smar para rodar na DF63 NG,
+- e o outro, de código aberto, opcua-asyncio, implementado em pythom para rodarmos nas Raspberry Pi.
+- Já para simularmos ataques, utilizou-se o framework OPC UA Exploit, também open-source, e ele contem diversos exploits focados pro protocolo OPC UA.
+- O ettercap
+- Hping3
+- o Wireshark, para realizarmos a coleta do tráfego da rede
+- e o Nmap, para simularmos a etapa de recon de um ataque cibernético.
+
+==============
+Mudar slide - bancada
+==============
+
+- Essa é a foto que demonstra o kit montado e funcional, e este kit está no centro de presquisa e desenvolvimento da Nova Smar.
+
+==============
+Mudar slide - packet
+==============
+
+Bom, os três ataques escolhidos para  rede OPC UA desenvolvida, foi o Packet Sniffing, o DoS e o MiTM.
+
+O packet Sniffing representa um ataque passivo, no qual o objetivo principal é quebrar a confidencialidade dos dados através de uma espionagem da rede. Como o nome já diz, fazer o sniffing dos pacotes.
+
+Esse diagrama ilustra bem o processo deste ataque. Os pacotes direcionados do cliente pro servidor, e vice e versa, são replicados para o elemento invasor através de uma configuração física pelo switch, ou por uma configuração de software pelo Ettercap.
+
+==============
+Mudar slide - Man In the Middle
+==============
+
+Já no ataque ManInTheMiddle, o invasor intercepta os dados e assume o controle da comunicação de forma ativa. E uma das formas de realizar este ataque é pelo envenenamento da tabela ARP. No qual o invasor consegue rastrear a rede, encontrar os endereços MAC do cliente e servidor, e roubar estes endereços para que a comunicação bypasse por ele. Para o cliente, o invasor é o servidor. Já para o servidor, o invasor passa a ser o cliente.
+
+Essa manobra maliciosa concede ao elemento invasor a possibilidade de quebrar a integridade, confidencialidade e disponibilidade da comunicação, uma vez que ele tem total controle do tráfego.
+
+==============
+Mudar slide - DoS
+==============
+
+O útlimo ataque escolhido é o de denial of service. que Consiste basicamente na inundação da rede por mensagens contínuas, esgotando assim os recursos do servidor, e resultatndo em uma negação de serviço.
+
+==============
+Mudar slide - SYN
+==============
+
+Este ataque pode ser realizado de diversas formas, começando pela inundação com pacotes SYN, via TCP/IP. Uma comunicação TCP/IP básica consiste num handshake inicial de SYN e SYN/ACK entre os dois agentes. Quando o DoS com SYN Flooding ocorre, o servidor é lotado de solicitações SYN de um bot, e esse servidor, depois dessa enxorrada de pacotes, fica perdido e não sabe a quem direcionar a resposta de SYN/ACK. é valido enfatizar que é apenas um bot oriundo do elemento invasor, se não seria um DoS distribuido ( que é o famoso DDoS), 
+
+==============
+Mudar slide - HEL
+==============
+
+No OPC UA, especificamente, o handshake ocorre por uma mensagem de HELLO. O cliente manda essa solicitação de HEL para o Endpoint do servidor e o servidor envia a resposta HEL. Então, nós podemos chegar à negação de servico com várias solicitações de HEL ao servidor. Toda comunicação OPC UA apresenta esse endereço de Endpoint, que é formado pelo squema utilizado, o endereço IP do servidor (ou DNS caso tiver), a porta aberta da comunicação e o discobery Endpoint.
+
+==============
+Mudar slide - Chunk
+==============
+
+Um outro jeio de realizar a negação de serviço no OPC UA é pela inundação com chunk.
+
+Esse chunk é a unidade de dados que o OPC UA adotou para essa transmissão de mesnagens entre o servidor e o cliente.
+
+Toda a comunicação é feito por estes fragmentos de mensagens denominados MessageChunks.
+
+Então, caso ocorra um erro na criação desse chunk, por algum motivo, um chunk final de sinalização deve ser enviado. COmo se fosse uma flag dizendo que essa comunicação deve ser abortada.
+
+A inundação com messagechunk, consite então no envio de uma quantidade muito grande destes fragmentos ao servidor, sem que o chunk final seja enviado, fazendo com que o server receba e interprete cada um destes fragmentos.
+
+==============
+Mudar slide - abertura
+==============
+
+A outra forma de DoS é pelo envio de várias solicitações de OpenSecureChannel. 
+
+Essas solicitações podem consumir muito o processamento do hospedeiro do servidor porque se a gente se lembrar do diagrama de sequencia mostrado anteriormente, é bem nessa etapa ocorre a validação de certificados e do processo de criptografia da mensagem. Então, o servidor deve processar todas essas requisições. Ainda mais se essa entidade de validationAuthority estiver localizada em outra máquina ou outro sistema. Que pode acontecer em sistemas maiores.
+
+Isso exigiria não só recursos do servidor, mas também da rede.
+
+==============
+Mudar slide - tradução
+==============
+
+E o último implementado é a negação de serviço pela tradução do caminho de navegação. que se resume no envio de uma grande quantidade de GetEndpoints para o servidor.
+
+==============
+Mudar slide - fluxo
+==============
+
+Bom, este fluxograma mostra o fluxo de atividades adotado neste projeto, que começa com a 
+- aquisição dos dados, no qual todo o sistema é preparado para a coleta do tráfego da rede e da monitoração do processamento e memória dos equipamentos da comunicação.
+- depois a gente passa por uma etapa de interpretação destes dados, tentando encontrar os bytes mais valiosos para essa análise, ou encontrar alguma correlação entre os pacotes e o desempenho dos componentes,
+- e passamos para uma análise destes ataques e vulnerabilidades encontradas.
+Caso seja encontrada alguma vulnerabilidade nova, precisamos escrever um relatório nos padrões internacionais e report=alas no CVE, que é o maior repositório de vulnerabilidades existentes atualmente.
+- e por fim, mesmo que não encontramos nenhuma vulnerabilidade nova, apresentamos as contramedidas de segurança para mitigar os pontos fracos encontrados no sistema.
+
+==============
+Mudar slide - resultados
+==============
+
+No momento, não temos nenhum resultado prontos, mas fiz um levantamento dos resultados esperado para cada tipo de ataque.
+
+Para o Packet Sniffing, é esperado que a rede OPC UA demonstre um alto nível de resistência à tentativa de quebra de confidencialidade por um acesso não autorizado, mas que isso tá totalmente ligado com o nível de segurança configurado na planta. Ou seja, pra aquele nível mais alto de assinatura e criptografia, o OPC UA não deve permitir este acesso. Mas praqueles mais baixos, deve ser mais fáceis de quebrar.
+
+Pro ManInTheMiddle, também devemos considerar uma dependencia significativa da configuração aplicada na comunicação, assim com o anterior. Ou seja, caso o mode de segurança seja o mais alto, o OPC UA não deve permitir a quebra de algum pilar. O que não deve acontecer para os níveis mais baixos de segurança.
+
+Por fim, os resultados esperados para o DoS podem diferir dos anterioris pois dependem agora também da capacidade da rede e dos pocessamentos dos componentes. Mas, mesmo com o nível mais alto configurados, devemos conseguir esgotar os recursos em alguns tipo de ataques DoS, comprometendo assim a disponibilidade dos dados.
+
+

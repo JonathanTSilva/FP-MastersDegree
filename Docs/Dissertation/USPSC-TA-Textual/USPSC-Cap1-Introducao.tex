@@ -22,7 +22,7 @@
 
     Com o avanço da convergência, a transmissão de dados entre equipamentos de controle torna-se mais crítica, e os protocolos de comunicação emergem como elementos fundamentais nesse cenário. A interoperabilidade, antes ausente em protocolos industriais proprietários, passa a ser um requisito essencial. Nesse contexto, o protocolo \index{OPC UA}OPC UA (do inglês \textit{Open Platform Communications Unified Architecture}) se destaca, pois possibilita a troca segura e confiável de informações entre dispositivos e sistemas heterogêneos.
 
-    O \index{OPC UA}OPC UA é amplamente utilizado em aplicações \index{IIoT}IIoT e de automação industrial, fornecendo uma camada de comunicação segura e confiável para a \index{Indústria 4.0}Indústria 4.0. Segundo \citeonline{pocock2014}, sua concepção inclui requisitos essenciais de segurança, como autenticação de usuários e aplicativos, confidencialidade e integridade de mensagens, disponibilidade por meio de processamento mínimo antes da autenticação e auditabilidade por meio de eventos de auditoria. Assim, conforme identificado por \citeonline{lange2010}, o \index{OPC UA}OPC UA é reconhecido como um protocolo seguro, sendo um pilar confiável para comunicação industrial.
+    O \index{OPC UA}OPC UA é amplamente utilizado em aplicações \index{IIoT}IIoT e de automação industrial, fornecendo uma camada de comunicação segura e confiável para a \index{Indústria 4.0}Indústria 4.0. Segundo \citeonline{pocock2014}, sua concepção inclui requisitos essenciais de segurança, como autenticação de usuários e aplicativos, confidencialidade e integridade de mensagens. Adicionalmente, o protocolo assegura a disponibilidade ao minimizar o processamento pré-autenticação e promove a auditabilidade via eventos de auditoria. Assim, conforme identificado por \citeonline{lange2010}, o \index{OPC UA}OPC UA é reconhecido como um protocolo seguro, sendo um pilar confiável para comunicação industrial.
 
     Entretanto, apesar de sua arquitetura robusta, é fundamental reconhecer a dinamicidade do cenário de \index{Segurança Cibernética}segurança cibernética. A evolução tecnológica e o avanço de táticas adversárias podem introduzir novas \index{Ameaça Cibernética}ameaças e \index{Vulnerabilidade}vulnerabilidades ao protocolo. Ademais, diferentes configurações de segurança podem impactar significativamente sua eficácia. Dessa forma, é substancial adotar uma postura proativa para mitigar ameaças emergentes e garantir a resiliência do ecossistema industrial. A vigilância contínua e a análise de vulnerabilidades são indispensáveis para o aprimoramento do \index{OPC UA}OPC UA.
 
@@ -37,6 +37,8 @@
     A investigação de trabalhos na comunidade científica serviu como base para justificar esta dissertação e motivar a escolha do tema proposto. Para definir o escopo deste estudo, foram conduzidas duas buscas principais: a primeira (I), voltada para a análise do panorama, desafios e oportunidades do protocolo \index{OPC UA}OPC UA no contexto atual; e a segunda (II), focada na identificação do principal gargalo do protocolo, conforme apontado na etapa anterior.
     
     Por meio de uma pesquisa sistemática na base de dados \texttt{IEEE Xplore}, foram analisadas publicações relacionadas ao protocolo \index{OPC UA}OPC UA no período de $2018$ a $2024$, escritas em inglês e filtradas por critérios de exclusão. Como resultado, $339$ publicações (incluindo artigos, periódicos, revistas e anais de conferências) foram classificadas em categorias, e seus achados foram apresentados e discutidos para fornecer uma visão abrangente do protocolo, bem como investigar seus desafios e oportunidades na aplicação em ambientes industriais modernos.
+
+    \subsection*{\underline{Pesquisa I}}\label{subsec:pesqI}
 
     Inicialmente, diferentes variações do termo \index{OPC UA}`OPC UA' foram consideradas, incluindo `OPC-UA', `OPC:UA' e `OPC \textit{Unified Architecture}', resultando em um total de $502$ publicações. Para garantir a relevância do material selecionado, aplicaram-se os seguintes critérios de exclusão:
 
@@ -76,10 +78,10 @@
         \item \underline{Outros (O)}: contempla uma variedade de áreas de pesquisa relacionadas à tecnologia \index{OPC UA}OPC UA, incluindo modelagem de dados, interoperabilidade semântica, virtualização, computação em nuvem e computação de borda.
     \end{itemize}
 
-    A presente análise apresenta implicações relevantes para a identificação de lacunas no estado atual da pesquisa sobre o \index{OPC UA}OPC UA na comunidade científica. Nesse contexto, o artigo intitulado ``\textit{A Survey on OPC UA Protocol: Overview, Challenges and Opportunities}'' \cite{daSilva2023} foi desenvolvido e publicado na \texttt{IEEE/IAS International Conference on Industry Applications}, oferecendo uma discussão aprofundada e integrada sobre os estudos conduzidos em cada categoria. 
+    A presente análise apresenta implicações relevantes para a identificação de lacunas no estado atual da pesquisa sobre o \index{OPC UA}OPC UA na comunidade científica. Nesse contexto, o artigo intitulado ``\textit{A Survey on OPC UA Protocol: Overview, Challenges and Opportunities}'' \cite{daSilva2023} foi desenvolvido e publicado na \texttt{IEEE/IAS International Conference on Industry Applications}, oferecendo uma discussão aprofundada e integrada sobre os estudos conduzidos em cada categoria.
 
-    Observa-se que a literatura existente sobre \index{OPC UA}OPC UA carece de investigações que explorem a interseção entre segurança e comunicação sem fio, evidenciando uma lacuna crítica. A \autoref{tab:paperCategory} apresenta um resumo abrangente dos tópicos abordados nas publicações analisadas ao longo do período estudado, permitindo uma avaliação sistemática das tendências e padrões observados na comunidade científica nos últimos anos.
-    
+    A \autoref{tab:paperCategory} apresenta um resumo abrangente dos tópicos abordados nas publicações analisadas ao longo do período estudado, permitindo uma avaliação sistemática das tendências e padrões observados na comunidade científica nos últimos anos. Observa-se que a literatura existente sobre \index{OPC UA}OPC UA carece de investigações que explorem a interseção entre segurança e comunicação sem fio, evidenciando uma lacuna crítica.
+
     \begin{table}[htbp]
         \centering
         \caption{Quantidade de publicações por categorias}%
@@ -121,10 +123,10 @@
     
     % As publicações listadas na categoria "Outros (O)", que constituem um número significativo, indicam que o protocolo foi extensivamente estudado em múltiplos domínios dentro da comunidade acadêmica. A literatura sobre este tema tem se concentrado principalmente na aplicação do protocolo em vários contextos.
     % } % Fim da cor vermelha
-    
-    % \subsection{Pesquisa II}\label{subsec:pesqII}
 
     As descobertas deste estudo inicial foram relevantes ao fornecer uma visão atualizada e abrangente do protocolo \index{OPC UA}OPC UA, ressaltando a importância de manter um monitoramento da segurança para assegurar a resiliência do protocolo diante das ameaças emergentes nesses sistemas. Diante dessa necessidade, realizou-se uma nova análise quantitativa com foco específico nos trabalhos voltados à \index{Segurança Cibernética}segurança cibernética em redes industriais baseadas no \index{OPC UA}OPC UA. Para tanto, foram utilizadas as bases de dados \texttt{IEEE Xplore}, \texttt{Web of Science} e \texttt{Scopus}.
+
+    \subsection*{\underline{Pesquisa II}}\label{subsec:pesqII}
 
     Na etapa inicial da pesquisa, os termos \index{OPC UA}`OPC UA' e `\textit{Security}' foram empregados como palavras-chave, seguindo os mesmos critérios de inclusão estabelecidos na análise anterior. No entanto, nesta fase, não foram aplicados critérios de exclusão. A \autoref{fig:pubAmount} apresenta a distribuição dos estudos identificados ao longo dos anos, abrangendo o período de $2013$ a $2024$.
 
@@ -137,9 +139,9 @@
         \fonte{elaborada pelo autor.}
     \end{figure}
 
-    A análise do panorama das publicações relacionadas à segurança em redes \index{OPC UA}OPC UA ao longo da última década revela um crescimento significativo no número de trabalhos dedicados ao tema, refletindo um interesse crescente e uma conscientização ampliada sobre os desafios de segurança inerentes a esse protocolo. No entanto, a partir de $2021$, observa-se uma redução seguida de uma estagnação na produção acadêmica e técnica. Essa tendência pode estar associada a diversos fatores, como o esgotamento de discussões sobre aspectos já amplamente explorados, a ascensão de novos temas emergentes em \index{Segurança Cibernética}segurança cibernética ou até mesmo influências externas que afetaram a dinâmica das pesquisas e publicações (\textit{e.g.}, pandemia de COVID-19).
+    A análise do panorama das publicações relacionadas à segurança em redes \index{OPC UA}OPC UA ao longo da última década revela um crescimento significativo no número de trabalhos dedicados ao tema, refletindo um interesse crescente e uma conscientização ampliada sobre os desafios de segurança inerentes a esse protocolo. No entanto, a partir de $2020$, observa-se uma redução na produção acadêmica e técnica. Essa tendência pode estar associada a diversos fatores, como o esgotamento de discussões sobre aspectos já amplamente explorados, a ascensão de novos temas emergentes em \index{Segurança Cibernética}segurança cibernética ou até mesmo influências externas que afetaram a dinâmica das pesquisas e publicações (\textit{e.g.}, pandemia de COVID-19). Contudo, a retomada vigorosa em $2024$ demonstra que o campo de pesquisa permanece dinâmico, provavelmente impulsionado pela crescente complexidade das implementações do protocolo em cenários de IIoT e pela sua integração com novas tecnologias.
 
-    A fim de selecionar estudos especificamente voltados à análise de \index{Vulnerabilidade}vulnerabilidades em redes \index{OPC UA}OPC UA, aplicou-se a seguinte estrutura de pesquisa. Foram estabelecidos como critérios de inclusão publicações no período de $2013$ a $2022$, redigidas em inglês. Considerou-se `TKA' a junção dos campos \textit{title}, \textit{keywords} e \textit{abstract}. Os resultados obtidos são apresentados na \autoref{fig:pubVulAmount}.
+    A fim de selecionar estudos especificamente voltados à análise de \index{Vulnerabilidade}vulnerabilidades em redes \index{OPC UA}OPC UA, aplicou-se a seguinte estrutura de pesquisa.
 
     \begin{minted}[
         breaklines,
@@ -154,6 +156,8 @@
 ("TKA":“OPC UA” OR "TKA":“OPC-UA” OR "TKA":“OPC:UA” OR "TKA":“OPC Unified Automation”) AND ("TKA":“Vulnerabilities” OR "TKA":“Vulnerabilities Analysis” OR "TKA":“Vulnerabilities Assessment”)
     \end{minted}
     
+    Foram estabelecidos como critérios de inclusão publicações no período de $2013$ a $2022$, redigidas em inglês. Considerou-se `TKA' a junção dos campos \textit{title}, \textit{keywords} e \textit{abstract}. Os resultados obtidos são apresentados na \autoref{fig:pubVulAmount}.
+
     \begin{figure}[htbp]
         \caption{Quantidade de publicações sobre vulnerabilidades em redes OPC UA nos últimos anos}
         \label{fig:pubVulAmount}
@@ -163,7 +167,7 @@
         \fonte{elaborada pelo autor.}
     \end{figure}
     
-    A avaliação desses resultados conduz a uma conclusão semelhante à anterior, porém evidencia uma oscilação notável. Em $2019$, um pico expressivo no número de publicações indica um aumento do interesse da comunidade científica e um maior reconhecimento das \index{Vulnerabilidade}vulnerabilidades associadas ao \index{OPC UA}OPC UA. Contudo, a partir de $2020$, verifica-se uma inversão dessa tendência, com uma redução no volume de trabalhos publicados. Esse declínio pode estar relacionado a diversos fatores interconectados, conforme mencionado anteriormente. Ainda assim, destaca-se a relevância do presente estudo, uma vez que a imprevisibilidade das ameaças e a constante evolução das vulnerabilidades em ambientes industriais que utilizam esse protocolo são amplamente reconhecidas.
+    A avaliação desses resultados conduz a uma conclusão semelhante à anterior, porém evidencia uma oscilação notável. Após um período de interesse moderado e relativamente constante entre $2018$ e $2022$, o ano de $2024$ emerge com um pico sem precedentes de publicações, quase dobrando o volume dos picos anteriores. Este salto quantitativo sugere uma transição na comunidade de pesquisa: de discussões sobre a implementação dos mecanismos de segurança do OPC UA para uma análise mais crítica e prática de suas fragilidades. Esse fenômeno pode ser atribuído à maturação e à maior disseminação do protocolo na indústria, tornando-o um alvo mais proeminente para pesquisadores de segurança. Diante deste cenário, a imprevisibilidade das ameaças e a constante evolução das vulnerabilidades em ambientes industriais reforçam inequivocamente a relevância e a oportunidade desta dissertação.
     
     \section{Objetivos} \label{sec:objetivos}
 
@@ -182,4 +186,4 @@
     
     \section{Estrutura dos Capítulos} \label{sec:estCapitulos}
 
-    Esta dissertação está estruturada em capítulos que abordam diferentes aspectos do estudo desenvolvido. O \autoref{cap:refTeorico} apresenta uma revisão abrangente da literatura relacionada ao tema, contemplando os conceitos fundamentais das redes \index{OPC UA}OPC UA, os princípios essenciais da \index{Segurança Cibernética}segurança cibernética e as principais técnicas de análise de \index{Vulnerabilidade}vulnerabilidades aplicadas a essas redes. Além disso, são discutidos estudos anteriores relevantes para o contexto deste estudo. No \autoref{cap:desenvolvimento}, detalham-se os principais componentes e materiais utilizados na montagem da bancada experimental para a realização dos ensaios de intrusão. Ademais, descrevem-se os ataques cibernéticos selecionados e a metodologia adotada para sua análise. Os resultados e discussões são apresentados no \autoref{cap:resultados}, onde se abordam a implementação da bancada experimental, a aquisição de dados nos cenários de ataques cibernéticos, o processamento dessas informações e a análise dos resultados obtidos. Além disso, são propostas estratégias de mitigação e aprimoramento, abrangendo recomendações para comunicações seguras utilizando o protocolo \index{OPC UA}OPC UA, melhorias na infraestrutura e na gestão de redes, bem como diretrizes baseadas em normas e regulamentações. Por fim, o \autoref{cap:conclusao} apresenta as considerações finais do estudo, destacando as conclusões obtidas e sugerindo possíveis direções para trabalhos futuros.
+    Esta dissertação está estruturada em capítulos que abordam diferentes aspectos do estudo desenvolvido. O \autoref{cap:refTeorico} apresenta uma revisão abrangente da literatura relacionada ao tema, contemplando os conceitos fundamentais das redes \index{OPC UA}OPC UA, os princípios essenciais da \index{Segurança Cibernética}segurança cibernética e as principais técnicas de análise de \index{Vulnerabilidade}vulnerabilidades aplicadas a essas redes. Além disso, são discutidos estudos anteriores relevantes para o contexto deste trabalho. No \autoref{cap:desenvolvimento}, detalham-se os principais componentes e materiais utilizados na montagem da bancada experimental para a realização dos ensaios de intrusão. Ademais, descrevem-se os ataques cibernéticos selecionados e a metodologia adotada para sua análise. Os resultados e discussões são apresentados no \autoref{cap:resultados}, onde se abordam a implementação da bancada experimental, a aquisição de dados nos cenários de ataques cibernéticos, o processamento dessas informações e a análise dos resultados obtidos. Também são propostas estratégias de mitigação e aprimoramento, abrangendo recomendações para comunicações seguras utilizando o protocolo \index{OPC UA}OPC UA, melhorias na infraestrutura e na gestão de redes, bem como diretrizes baseadas em normas e regulamentações. Por fim, o \autoref{cap:conclusao} apresenta as considerações finais do estudo, destacando as conclusões obtidas e sugerindo possíveis direções para trabalhos futuros.

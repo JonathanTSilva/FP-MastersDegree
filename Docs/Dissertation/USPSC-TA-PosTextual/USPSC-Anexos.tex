@@ -11,7 +11,7 @@
 
 \begin{minted}[
     breaklines,
-    %linenos,
+    linenos,
     mathescape,
     encoding=utf8,
     framesep=2mm,
@@ -31,10 +31,7 @@ NOME_ARQUIVO_SAIDA = 'dados_recursos_hping3.csv'
 
 class CPUTracker:
     """
-    Uma classe para encapsular a lógica e o estado do monitoramento da CPU.
-
-    Isso evita o uso de atributos de função, que é uma prática não padrão
-    e torna o código mais difícil de entender e testar.
+    Classe para encapsular a lógica e o estado do monitoramento da CPU.
     """
     def __init__(self):
         """Inicializa o tracker lendo os valores iniciais da CPU."""
@@ -77,9 +74,6 @@ class CPUTracker:
 def get_memory_usage_percent() -> float:
     """
     Calcula a utilização da memória em percentual lendo /proc/meminfo.
-
-    Essa abordagem é mais eficiente e segura do que usar os.popen com grep/awk,
-    pois não cria processos de shell externos.
     """
     mem_total, mem_available = 0, 0
     with open('/proc/meminfo') as f:

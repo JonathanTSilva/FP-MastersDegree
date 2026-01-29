@@ -1435,6 +1435,8 @@
 	\begin{center}
 		{\ABNTEXchapterfont\bfseries\large\imprimirnotafolharosto\par\par} 
 		\vspace*{\fill}
+        {Trata-se da versão original.\par}
+        \vspace*{\fill}
 		{\ABNTEXchapterfont\bfseries\large\imprimirlocal}
 		\par
 		{\ABNTEXchapterfont\bfseries\large\imprimirdata}
